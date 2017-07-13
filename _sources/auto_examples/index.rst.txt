@@ -10,13 +10,13 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="">
+    <div class="sphx-glr-thumbcontainer" tooltip="[1] Jost, Philippe, et al.     "MoTIF: An efficient algorithm for learning     translation inva...">
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_thumb.png
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_simulate.py`
+        :ref:`sphx_glr_auto_examples_plot_simulate_motif.py`
 
 .. raw:: html
 
@@ -26,7 +26,47 @@ Examples Gallery
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_simulate
+   /auto_examples/plot_simulate_motif
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_simulate_csc.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_simulate_csc
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_simulate_alphacsc.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_simulate_alphacsc
 .. raw:: html
 
     <div style='clear:both'></div>

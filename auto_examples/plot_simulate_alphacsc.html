@@ -95,7 +95,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/auto_examples/plot_simulate.rst.txt"
+  <a href="../_sources/auto_examples/plot_simulate_alphacsc.rst.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -120,7 +120,7 @@
     <div class="col-md-12 content">
       
   <div class="section" id="alpha-csc-on-simulated-data">
-<span id="sphx-glr-auto-examples-plot-simulate-py"></span><h1>Alpha CSC on simulated data<a class="headerlink" href="#alpha-csc-on-simulated-data" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-examples-plot-simulate-alphacsc-py"></span><h1>Alpha CSC on simulated data<a class="headerlink" href="#alpha-csc-on-simulated-data" title="Permalink to this headline">¶</a></h1>
 <p>This example demonstrates alphaCSC on simulated data.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Authors: Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Tom Dupre La Tour &lt;tom.duprelatour@telecom-paristech.fr&gt;</span>
@@ -145,8 +145,6 @@
 <span class="n">n_iter_optim</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">n_iter_mcmc</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">n_burnin_mcmc</span> <span class="o">=</span> <span class="mi">50</span>
-
-<span class="n">n_iter</span> <span class="o">=</span> <span class="n">n_iter_global</span> <span class="o">*</span> <span class="n">n_iter_optim</span>  <span class="c1"># fair comparison</span>
 </pre></div>
 </div>
 <p>Here, we simulate the data</p>
@@ -157,12 +155,11 @@
                                    <span class="n">n_atoms</span><span class="p">,</span> <span class="n">random_state_simulate</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Add some noise and corrupt some trials</p>
+<p>Add some noise and corrupt some trials even with impulsive noise</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">levy_stable</span> <span class="c1"># noqa</span>
 <span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">check_random_state</span> <span class="c1"># noqa</span>
 
-<span class="n">fraction_corrupted</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;fraction_corrupted: </span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">fraction_corrupted</span><span class="p">)</span>
+<span class="n">fraction_corrupted</span> <span class="o">=</span> <span class="mf">0.02</span>
 <span class="n">n_corrupted_trials</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">fraction_corrupted</span> <span class="o">*</span> <span class="n">n_trials</span><span class="p">)</span>
 
 <span class="c1"># Add stationary noise:</span>
@@ -171,46 +168,25 @@
 
 <span class="n">noise_level</span> <span class="o">=</span> <span class="mf">0.005</span>
 <span class="c1"># add impulsive noise</span>
-<span class="k">if</span> <span class="n">n_corrupted_trials</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">idx_corrupted</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_trials</span><span class="p">,</span>
-                                <span class="n">size</span><span class="o">=</span><span class="n">n_corrupted_trials</span><span class="p">)</span>
-    <span class="n">X</span><span class="p">[</span><span class="n">idx_corrupted</span><span class="p">]</span> <span class="o">+=</span> <span class="n">levy_stable</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">noise_level</span><span class="p">,</span>
-                                        <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_corrupted_trials</span><span class="p">,</span> <span class="n">n_times</span><span class="p">),</span>
-                                        <span class="n">random_state</span><span class="o">=</span><span class="n">random_state_simulate</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">fraction_corrupted</span><span class="p">:</span> <span class="mf">0.01</span>
-</pre></div>
-</div>
-<p>Now, we run vanilla CSC on the data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span> <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">learn_d_z</span><span class="p">,</span> <span class="n">update_d_block</span> <span class="c1"># noqa</span>
-
-<span class="n">random_state</span> <span class="o">=</span> <span class="mi">60</span>
-<span class="n">func</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">update_d_block</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;dual&#39;</span><span class="p">)</span>
-
-<span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">Z_hat</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">func_d</span><span class="o">=</span><span class="n">func</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span>
-    <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
-    <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">factr</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
-    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">solver_z</span><span class="o">=</span><span class="s1">&#39;l_bfgs&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Vanilla CSC&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................</span><span class="n">Vanilla</span> <span class="n">CSC</span>
+<span class="n">idx_corrupted</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_trials</span><span class="p">,</span>
+                            <span class="n">size</span><span class="o">=</span><span class="n">n_corrupted_trials</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="n">idx_corrupted</span><span class="p">]</span> <span class="o">+=</span> <span class="n">levy_stable</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">noise_level</span><span class="p">,</span>
+                                    <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_corrupted_trials</span><span class="p">,</span> <span class="n">n_times</span><span class="p">),</span>
+                                    <span class="n">random_state</span><span class="o">=</span><span class="n">random_state_simulate</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>and then alpha CSC on the same data</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">learn_d_z_weighted</span> <span class="c1"># noqa</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span> <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">update_d_block</span><span class="p">,</span> <span class="n">learn_d_z_weighted</span> <span class="c1"># noqa</span>
 
-<span class="n">d_hat_mcem</span><span class="p">,</span> <span class="n">z_hat_mcem</span><span class="p">,</span> <span class="n">Tau</span> <span class="o">=</span> <span class="n">learn_d_z_weighted</span><span class="p">(</span>
+<span class="n">func</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">update_d_block</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;dual&#39;</span><span class="p">)</span>
+
+<span class="n">d_hat</span><span class="p">,</span> <span class="n">z_hat</span><span class="p">,</span> <span class="n">Tau</span> <span class="o">=</span> <span class="n">learn_d_z_weighted</span><span class="p">(</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">func_d</span><span class="o">=</span><span class="n">func</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span>
     <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">factr</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">n_iter_global</span><span class="o">=</span><span class="n">n_iter_global</span><span class="p">,</span>
     <span class="n">n_iter_optim</span><span class="o">=</span><span class="n">n_iter_optim</span><span class="p">,</span> <span class="n">init_tau</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
     <span class="n">n_iter_mcmc</span><span class="o">=</span><span class="n">n_iter_mcmc</span><span class="p">,</span> <span class="n">n_burnin_mcmc</span><span class="o">=</span><span class="n">n_burnin_mcmc</span><span class="p">,</span>
-    <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">solver_z</span><span class="o">=</span><span class="s1">&#39;l_bfgs&#39;</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">solver_z</span><span class="o">=</span><span class="s1">&#39;l_bfgs&#39;</span><span class="p">,</span>
     <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -227,25 +203,25 @@
 <span class="o">..................................................</span><span class="n">Global</span> <span class="n">Iter</span><span class="p">:</span> <span class="mi">9</span>
 </pre></div>
 </div>
-<p>Finally, let&#8217;s compare the results.</p>
+<p>Finally, let&#8217;s compare the results. Now, it works even in the presence
+of impulsive noise.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> <span class="c1"># noqa</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d_hat</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;CSC&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d_hat_mcem</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha$CSC&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_true</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True atoms&#39;</span><span class="p">)</span>
 <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">labels</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_plot_simulate_001.png" class="align-center" src="../_images/sphx_glr_plot_simulate_001.png" />
+<img alt="../_images/sphx_glr_plot_simulate_alphacsc_001.png" class="align-center" src="../_images/sphx_glr_plot_simulate_alphacsc_001.png" />
 <p><strong>Total running time of the script:</strong>
-(4 minutes 34.637 seconds)</p>
+(2 minutes 56.833 seconds)</p>
 <div class="sphx-glr-download docutils container">
-<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_simulate.py" download=""><code class="xref download docutils literal"><span class="pre">plot_simulate.py</span></code></a></div>
+<strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_simulate_alphacsc.py" download=""><code class="xref download docutils literal"><span class="pre">plot_simulate_alphacsc.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
-<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_simulate.ipynb" download=""><code class="xref download docutils literal"><span class="pre">plot_simulate.ipynb</span></code></a></div>
+<strong>Download IPython notebook:</strong> <a class="reference download internal" href="../_downloads/plot_simulate_alphacsc.ipynb" download=""><code class="xref download docutils literal"><span class="pre">plot_simulate_alphacsc.ipynb</span></code></a></div>
 </div>
 
 
