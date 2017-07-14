@@ -118,8 +118,7 @@ Now, we run vanilla CSC on the data.
 .. code-block:: python
 
 
-    from functools import partial # noqa
-    from alphacsc import learn_d_z, update_d_block # noqa
+    from alphacsc import learn_d_z # noqa
 
     random_state = 60
 
@@ -212,7 +211,7 @@ to learn how to deal with such data.
 
 
 **Total running time of the script:**
-(0 minutes 22.786 seconds)
+(0 minutes 22.128 seconds)
 
 
 

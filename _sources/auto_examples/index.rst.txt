@@ -34,6 +34,26 @@ Examples Gallery
 
 .. only:: html
 
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_simulate_randomstate.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_simulate_randomstate
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="">
+
+.. only:: html
+
     .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
 
         :ref:`sphx_glr_auto_examples_plot_simulate_csc.py`
