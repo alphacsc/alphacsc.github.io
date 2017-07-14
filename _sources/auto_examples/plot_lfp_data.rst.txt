@@ -1,0 +1,488 @@
+
+
+.. _sphx_glr_auto_examples_plot_lfp_data.py:
+
+
+==============================
+CSC to learn LFP spiking atoms
+==============================
+
+Here, we show how CSC can be used to learn spiking
+atoms from Local Field Potential (LFP) data [1].
+
+[1] Hitziger, Sebastian, et al.
+    Adaptive Waveform Learning: A Framework for Modeling Variability in
+    Neurophysiological Signals. IEEE Transactions on Signal Processing (2017).
+
+First, let us fetch the data (~14 MB)
+
+
+.. code-block:: python
+
+    import os
+    from mne.utils import _fetch_file # noqa
+
+    url = ('https://github.com/hitziger/AWL/raw/master/Experiments/data/'
+           'LFP_data_contiguous_1250_Hz.mat')
+    fname = './LFP_data_contiguous_1250_Hz.mat'
+    if not os.path.exists(fname):
+        _fetch_file(url, fname)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out::
+
+      Downloading data from https://raw.githubusercontent.com/hitziger/AWL/master/Experiments/data/LFP_data_contiguous_1250_Hz.mat (13.8 MB)
+
+    [                                        ] 0.05682 | (8 kB / 13.8 MB)       [                                        ] 0.17045 / (24 kB / 13.8 MB)       [                                        ] 0.28408 - (40 kB / 13.8 MB)       [                                        ] 0.39772 \ (56 kB / 13.8 MB)       [                                        ] 0.51135 | (72 kB / 13.8 MB)       [                                        ] 0.62498 / (88 kB / 13.8 MB)       [                                        ] 0.73861 - (104 kB / 13.8 MB)       [                                        ] 0.85225 \ (120 kB / 13.8 MB)       [                                        ] 0.96588 | (136 kB / 13.8 MB)       [                                        ] 1.07951 / (152 kB / 13.8 MB)       [                                        ] 1.19315 - (168 kB / 13.8 MB)       [                                        ] 1.30678 \ (184 kB / 13.8 MB)       [                                        ] 1.42041 | (200 kB / 13.8 MB)       [                                        ] 1.53405 / (216 kB / 13.8 MB)       [                                        ] 1.64768 - (232 kB / 13.8 MB)       [                                        ] 1.76131 \ (248 kB / 13.8 MB)       [                                        ] 1.98858 | (280 kB / 13.8 MB)       [                                        ] 2.44311 / (344 kB / 13.8 MB)       [.                                       ] 3.35217 - (472 kB / 13.8 MB)       [.                                       ] 3.80671 \ (536 kB / 13.8 MB)       [.                                       ] 4.03397 | (568 kB / 13.8 MB)       [.                                       ] 4.26124 / (600 kB / 13.8 MB)       [.                                       ] 4.48850 - (632 kB / 13.8 MB)       [.                                       ] 4.71577 \ (664 kB / 13.8 MB)       [.                                       ] 4.94304 | (696 kB / 13.8 MB)       [..                                      ] 5.17030 / (728 kB / 13.8 MB)       [..                                      ] 5.39757 - (760 kB / 13.8 MB)       [..                                      ] 5.62483 \ (792 kB / 13.8 MB)       [..                                      ] 5.85210 | (824 kB / 13.8 MB)       [..                                      ] 6.07937 / (856 kB / 13.8 MB)       [..                                      ] 6.30663 - (888 kB / 13.8 MB)       [..                                      ] 6.53390 \ (920 kB / 13.8 MB)       [..                                      ] 6.76116 | (952 kB / 13.8 MB)       [..                                      ] 6.98843 / (984 kB / 13.8 MB)       [..                                      ] 7.21570 - (1016 kB / 13.8 MB)       [..                                      ] 7.44296 \ (1.0 MB / 13.8 MB)       [...                                     ] 7.67023 | (1.1 MB / 13.8 MB)       [...                                     ] 7.89749 / (1.1 MB / 13.8 MB)       [...                                     ] 8.12476 - (1.1 MB / 13.8 MB)       [...                                     ] 8.35203 \ (1.1 MB / 13.8 MB)       [...                                     ] 8.57929 | (1.2 MB / 13.8 MB)       [...                                     ] 8.80656 / (1.2 MB / 13.8 MB)       [...                                     ] 9.03382 - (1.2 MB / 13.8 MB)       [...                                     ] 9.26109 \ (1.3 MB / 13.8 MB)       [...                                     ] 9.48836 | (1.3 MB / 13.8 MB)       [...                                     ] 9.71562 / (1.3 MB / 13.8 MB)       [...                                     ] 9.94289 - (1.4 MB / 13.8 MB)       [....                                    ] 10.17015 \ (1.4 MB / 13.8 MB)       [....                                    ] 10.39742 | (1.4 MB / 13.8 MB)       [....                                    ] 10.62469 / (1.5 MB / 13.8 MB)       [....                                    ] 10.85195 - (1.5 MB / 13.8 MB)       [....                                    ] 11.07922 \ (1.5 MB / 13.8 MB)       [....                                    ] 11.30648 | (1.6 MB / 13.8 MB)       [....                                    ] 11.53375 / (1.6 MB / 13.8 MB)       [....                                    ] 11.76102 - (1.6 MB / 13.8 MB)       [....                                    ] 11.98828 \ (1.6 MB / 13.8 MB)       [....                                    ] 12.21555 | (1.7 MB / 13.8 MB)       [....                                    ] 12.44281 / (1.7 MB / 13.8 MB)       [.....                                   ] 12.67008 - (1.7 MB / 13.8 MB)       [.....                                   ] 12.89735 \ (1.8 MB / 13.8 MB)       [.....                                   ] 13.12461 | (1.8 MB / 13.8 MB)       [.....                                   ] 13.35188 / (1.8 MB / 13.8 MB)       [.....                                   ] 13.57914 - (1.9 MB / 13.8 MB)       [.....                                   ] 13.80641 \ (1.9 MB / 13.8 MB)       [.....                                   ] 14.03368 | (1.9 MB / 13.8 MB)       [.....                                   ] 14.26094 / (2.0 MB / 13.8 MB)       [.....                                   ] 14.48821 - (2.0 MB / 13.8 MB)       [.....                                   ] 14.71547 \ (2.0 MB / 13.8 MB)       [.....                                   ] 14.94274 | (2.1 MB / 13.8 MB)       [......                                  ] 15.17001 / (2.1 MB / 13.8 MB)       [......                                  ] 15.39727 - (2.1 MB / 13.8 MB)       [......                                  ] 15.62454 \ (2.1 MB / 13.8 MB)       [......                                  ] 15.85180 | (2.2 MB / 13.8 MB)       [......                                  ] 16.07907 / (2.2 MB / 13.8 MB)       [......                                  ] 16.30634 - (2.2 MB / 13.8 MB)       [......                                  ] 16.53360 \ (2.3 MB / 13.8 MB)       [......                                  ] 16.76087 | (2.3 MB / 13.8 MB)       [......                                  ] 16.98813 / (2.3 MB / 13.8 MB)       [......                                  ] 17.21540 - (2.4 MB / 13.8 MB)       [......                                  ] 17.44267 \ (2.4 MB / 13.8 MB)       [.......                                 ] 17.66993 | (2.4 MB / 13.8 MB)       [.......                                 ] 17.89720 / (2.5 MB / 13.8 MB)       [.......                                 ] 18.12446 - (2.5 MB / 13.8 MB)       [.......                                 ] 18.35173 \ (2.5 MB / 13.8 MB)       [.......                                 ] 18.57900 | (2.6 MB / 13.8 MB)       [.......                                 ] 18.80626 / (2.6 MB / 13.8 MB)       [.......                                 ] 19.03353 - (2.6 MB / 13.8 MB)       [.......                                 ] 19.26079 \ (2.6 MB / 13.8 MB)       [.......                                 ] 19.48806 | (2.7 MB / 13.8 MB)       [.......                                 ] 19.71533 / (2.7 MB / 13.8 MB)       [.......                                 ] 19.94259 - (2.7 MB / 13.8 MB)       [........                                ] 20.16986 \ (2.8 MB / 13.8 MB)       [........                                ] 20.39712 | (2.8 MB / 13.8 MB)       [........                                ] 20.62439 / (2.8 MB / 13.8 MB)       [........                                ] 20.85166 - (2.9 MB / 13.8 MB)       [........                                ] 21.07892 \ (2.9 MB / 13.8 MB)       [........                                ] 21.30619 | (2.9 MB / 13.8 MB)       [........                                ] 21.53345 / (3.0 MB / 13.8 MB)       [........                                ] 21.76072 - (3.0 MB / 13.8 MB)       [........                                ] 21.98799 \ (3.0 MB / 13.8 MB)       [........                                ] 22.21525 | (3.1 MB / 13.8 MB)       [........                                ] 22.44252 / (3.1 MB / 13.8 MB)       [.........                               ] 22.66978 - (3.1 MB / 13.8 MB)       [.........                               ] 22.89705 \ (3.1 MB / 13.8 MB)       [.........                               ] 23.12432 | (3.2 MB / 13.8 MB)       [.........                               ] 23.35158 / (3.2 MB / 13.8 MB)       [.........                               ] 23.57885 - (3.2 MB / 13.8 MB)       [.........                               ] 23.80611 \ (3.3 MB / 13.8 MB)       [.........                               ] 24.03338 | (3.3 MB / 13.8 MB)       [.........                               ] 24.26065 / (3.3 MB / 13.8 MB)       [.........                               ] 24.48791 - (3.4 MB / 13.8 MB)       [.........                               ] 24.71518 \ (3.4 MB / 13.8 MB)       [.........                               ] 24.94244 | (3.4 MB / 13.8 MB)       [..........                              ] 25.16971 / (3.5 MB / 13.8 MB)       [..........                              ] 25.39698 - (3.5 MB / 13.8 MB)       [..........                              ] 25.62424 \ (3.5 MB / 13.8 MB)       [..........                              ] 25.85151 | (3.6 MB / 13.8 MB)       [..........                              ] 26.07877 / (3.6 MB / 13.8 MB)       [..........                              ] 26.30604 - (3.6 MB / 13.8 MB)       [..........                              ] 26.53331 \ (3.6 MB / 13.8 MB)       [..........                              ] 26.76057 | (3.7 MB / 13.8 MB)       [..........                              ] 26.98784 / (3.7 MB / 13.8 MB)       [..........                              ] 27.21510 - (3.7 MB / 13.8 MB)       [..........                              ] 27.44237 \ (3.8 MB / 13.8 MB)       [...........                             ] 27.66964 | (3.8 MB / 13.8 MB)       [...........                             ] 27.89690 / (3.8 MB / 13.8 MB)       [...........                             ] 28.12417 - (3.9 MB / 13.8 MB)       [...........                             ] 28.35143 \ (3.9 MB / 13.8 MB)       [...........                             ] 28.57870 | (3.9 MB / 13.8 MB)       [...........                             ] 28.80597 / (4.0 MB / 13.8 MB)       [...........                             ] 29.03323 - (4.0 MB / 13.8 MB)       [...........                             ] 29.26050 \ (4.0 MB / 13.8 MB)       [...........                             ] 29.48776 | (4.1 MB / 13.8 MB)       [...........                             ] 29.71503 / (4.1 MB / 13.8 MB)       [...........                             ] 29.94230 - (4.1 MB / 13.8 MB)       [............                            ] 30.16956 \ (4.1 MB / 13.8 MB)       [............                            ] 30.39683 | (4.2 MB / 13.8 MB)       [............                            ] 30.62409 / (4.2 MB / 13.8 MB)       [............                            ] 30.85136 - (4.2 MB / 13.8 MB)       [............                            ] 31.07863 \ (4.3 MB / 13.8 MB)       [............                            ] 31.30589 | (4.3 MB / 13.8 MB)       [............                            ] 31.53316 / (4.3 MB / 13.8 MB)       [............                            ] 31.76042 - (4.4 MB / 13.8 MB)       [............                            ] 31.98769 \ (4.4 MB / 13.8 MB)       [............                            ] 32.21496 | (4.4 MB / 13.8 MB)       [............                            ] 32.44222 / (4.5 MB / 13.8 MB)       [.............                           ] 32.66949 - (4.5 MB / 13.8 MB)       [.............                           ] 32.89675 \ (4.5 MB / 13.8 MB)       [.............                           ] 33.12402 | (4.6 MB / 13.8 MB)       [.............                           ] 33.35128 / (4.6 MB / 13.8 MB)       [.............                           ] 33.57855 - (4.6 MB / 13.8 MB)       [.............                           ] 33.80582 \ (4.6 MB / 13.8 MB)       [.............                           ] 34.03308 | (4.7 MB / 13.8 MB)       [.............                           ] 34.26035 / (4.7 MB / 13.8 MB)       [.............                           ] 34.48761 - (4.7 MB / 13.8 MB)       [.............                           ] 34.71488 \ (4.8 MB / 13.8 MB)       [.............                           ] 34.94215 | (4.8 MB / 13.8 MB)       [..............                          ] 35.16941 / (4.8 MB / 13.8 MB)       [..............                          ] 35.62394 - (4.9 MB / 13.8 MB)       [..............                          ] 36.53301 \ (5.0 MB / 13.8 MB)       [..............                          ] 36.98754 | (5.1 MB / 13.8 MB)       [..............                          ] 37.44207 / (5.1 MB / 13.8 MB)       [...............                         ] 37.89660 - (5.2 MB / 13.8 MB)       [...............                         ] 38.80567 \ (5.3 MB / 13.8 MB)       [...............                         ] 39.26020 | (5.4 MB / 13.8 MB)       [...............                         ] 39.71473 / (5.5 MB / 13.8 MB)       [................                        ] 40.16926 - (5.5 MB / 13.8 MB)       [................                        ] 40.62380 \ (5.6 MB / 13.8 MB)       [................                        ] 41.07833 | (5.6 MB / 13.8 MB)       [................                        ] 41.53286 / (5.7 MB / 13.8 MB)       [................                        ] 41.98739 - (5.8 MB / 13.8 MB)       [................                        ] 42.44192 \ (5.8 MB / 13.8 MB)       [.................                       ] 42.89646 | (5.9 MB / 13.8 MB)       [.................                       ] 43.35099 / (6.0 MB / 13.8 MB)       [.................                       ] 43.80552 - (6.0 MB / 13.8 MB)       [.................                       ] 44.26005 \ (6.1 MB / 13.8 MB)       [.................                       ] 44.71458 | (6.1 MB / 13.8 MB)       [..................                      ] 45.16912 / (6.2 MB / 13.8 MB)       [..................                      ] 45.62365 - (6.3 MB / 13.8 MB)       [..................                      ] 46.07818 \ (6.3 MB / 13.8 MB)       [..................                      ] 46.53271 | (6.4 MB / 13.8 MB)       [..................                      ] 46.98724 / (6.5 MB / 13.8 MB)       [..................                      ] 47.44178 - (6.5 MB / 13.8 MB)       [...................                     ] 47.89631 \ (6.6 MB / 13.8 MB)       [...................                     ] 48.35084 | (6.6 MB / 13.8 MB)       [...................                     ] 48.80537 / (6.7 MB / 13.8 MB)       [...................                     ] 49.25990 - (6.8 MB / 13.8 MB)       [...................                     ] 49.71444 \ (6.8 MB / 13.8 MB)       [....................                    ] 50.16897 | (6.9 MB / 13.8 MB)       [....................                    ] 50.62350 / (7.0 MB / 13.8 MB)       [....................                    ] 51.07803 - (7.0 MB / 13.8 MB)       [....................                    ] 51.53256 \ (7.1 MB / 13.8 MB)       [....................                    ] 51.98710 | (7.1 MB / 13.8 MB)       [....................                    ] 52.44163 / (7.2 MB / 13.8 MB)       [.....................                   ] 52.89616 - (7.3 MB / 13.8 MB)       [.....................                   ] 53.35069 \ (7.3 MB / 13.8 MB)       [.....................                   ] 53.80522 | (7.4 MB / 13.8 MB)       [.....................                   ] 54.25976 / (7.5 MB / 13.8 MB)       [.....................                   ] 54.71429 - (7.5 MB / 13.8 MB)       [......................                  ] 55.16882 \ (7.6 MB / 13.8 MB)       [......................                  ] 55.62335 | (7.6 MB / 13.8 MB)       [......................                  ] 56.07788 / (7.7 MB / 13.8 MB)       [......................                  ] 56.53242 - (7.8 MB / 13.8 MB)       [......................                  ] 56.98695 \ (7.8 MB / 13.8 MB)       [......................                  ] 57.44148 | (7.9 MB / 13.8 MB)       [.......................                 ] 57.89601 / (8.0 MB / 13.8 MB)       [.......................                 ] 58.35054 - (8.0 MB / 13.8 MB)       [.......................                 ] 58.80508 \ (8.1 MB / 13.8 MB)       [.......................                 ] 59.25961 | (8.1 MB / 13.8 MB)       [.......................                 ] 59.71414 / (8.2 MB / 13.8 MB)       [........................                ] 60.16867 - (8.3 MB / 13.8 MB)       [........................                ] 60.62320 \ (8.3 MB / 13.8 MB)       [........................                ] 61.07774 | (8.4 MB / 13.8 MB)       [........................                ] 61.53227 / (8.5 MB / 13.8 MB)       [........................                ] 61.98680 - (8.5 MB / 13.8 MB)       [........................                ] 62.44133 \ (8.6 MB / 13.8 MB)       [.........................               ] 62.89586 | (8.6 MB / 13.8 MB)       [.........................               ] 63.35040 / (8.7 MB / 13.8 MB)       [.........................               ] 63.80493 - (8.8 MB / 13.8 MB)       [.........................               ] 64.25946 \ (8.8 MB / 13.8 MB)       [.........................               ] 64.71399 | (8.9 MB / 13.8 MB)       [..........................              ] 65.16852 / (9.0 MB / 13.8 MB)       [..........................              ] 65.62306 - (9.0 MB / 13.8 MB)       [..........................              ] 66.07759 \ (9.1 MB / 13.8 MB)       [..........................              ] 66.53212 | (9.1 MB / 13.8 MB)       [..........................              ] 66.98665 / (9.2 MB / 13.8 MB)       [..........................              ] 67.44118 - (9.3 MB / 13.8 MB)       [...........................             ] 67.89572 \ (9.3 MB / 13.8 MB)       [...........................             ] 68.35025 | (9.4 MB / 13.8 MB)       [...........................             ] 68.80478 / (9.5 MB / 13.8 MB)       [...........................             ] 69.25931 - (9.5 MB / 13.8 MB)       [...........................             ] 69.71384 \ (9.6 MB / 13.8 MB)       [............................            ] 70.16838 | (9.6 MB / 13.8 MB)       [............................            ] 70.62291 / (9.7 MB / 13.8 MB)       [............................            ] 71.07744 - (9.8 MB / 13.8 MB)       [............................            ] 71.53197 \ (9.8 MB / 13.8 MB)       [............................            ] 71.98650 | (9.9 MB / 13.8 MB)       [............................            ] 72.44104 / (10.0 MB / 13.8 MB)       [.............................           ] 72.89557 - (10.0 MB / 13.8 MB)       [.............................           ] 73.35010 \ (10.1 MB / 13.8 MB)       [.............................           ] 73.80463 | (10.1 MB / 13.8 MB)       [.............................           ] 74.25916 / (10.2 MB / 13.8 MB)       [.............................           ] 74.71370 - (10.3 MB / 13.8 MB)       [..............................          ] 75.16823 \ (10.3 MB / 13.8 MB)       [..............................          ] 75.62276 | (10.4 MB / 13.8 MB)       [..............................          ] 76.07729 / (10.5 MB / 13.8 MB)       [..............................          ] 76.53182 - (10.5 MB / 13.8 MB)       [..............................          ] 76.98636 \ (10.6 MB / 13.8 MB)       [..............................          ] 77.44089 | (10.6 MB / 13.8 MB)       [...............................         ] 77.89542 / (10.7 MB / 13.8 MB)       [...............................         ] 78.34995 - (10.8 MB / 13.8 MB)       [...............................         ] 78.80448 \ (10.8 MB / 13.8 MB)       [...............................         ] 79.25902 | (10.9 MB / 13.8 MB)       [...............................         ] 79.71355 / (11.0 MB / 13.8 MB)       [................................        ] 80.16808 - (11.0 MB / 13.8 MB)       [................................        ] 80.62261 \ (11.1 MB / 13.8 MB)       [................................        ] 81.07714 | (11.1 MB / 13.8 MB)       [................................        ] 81.53168 / (11.2 MB / 13.8 MB)       [................................        ] 81.98621 - (11.3 MB / 13.8 MB)       [................................        ] 82.44074 \ (11.3 MB / 13.8 MB)       [.................................       ] 82.89527 | (11.4 MB / 13.8 MB)       [.................................       ] 83.34980 / (11.5 MB / 13.8 MB)       [.................................       ] 83.80434 - (11.5 MB / 13.8 MB)       [.................................       ] 84.25887 \ (11.6 MB / 13.8 MB)       [.................................       ] 84.71340 | (11.6 MB / 13.8 MB)       [..................................      ] 85.16793 / (11.7 MB / 13.8 MB)       [..................................      ] 85.62246 - (11.8 MB / 13.8 MB)       [..................................      ] 86.07700 \ (11.8 MB / 13.8 MB)       [..................................      ] 86.53153 | (11.9 MB / 13.8 MB)       [..................................      ] 86.98606 / (12.0 MB / 13.8 MB)       [..................................      ] 87.44059 - (12.0 MB / 13.8 MB)       [...................................     ] 87.89512 \ (12.1 MB / 13.8 MB)       [...................................     ] 88.34966 | (12.1 MB / 13.8 MB)       [...................................     ] 88.80419 / (12.2 MB / 13.8 MB)       [...................................     ] 89.25872 - (12.3 MB / 13.8 MB)       [...................................     ] 89.71325 \ (12.3 MB / 13.8 MB)       [....................................    ] 90.16778 | (12.4 MB / 13.8 MB)       [....................................    ] 90.62232 / (12.5 MB / 13.8 MB)       [....................................    ] 91.07685 - (12.5 MB / 13.8 MB)       [....................................    ] 91.53138 \ (12.6 MB / 13.8 MB)       [....................................    ] 91.98591 | (12.6 MB / 13.8 MB)       [....................................    ] 92.44044 / (12.7 MB / 13.8 MB)       [.....................................   ] 92.89498 - (12.8 MB / 13.8 MB)       [.....................................   ] 93.34951 \ (12.8 MB / 13.8 MB)       [.....................................   ] 93.80404 | (12.9 MB / 13.8 MB)       [.....................................   ] 94.25857 / (13.0 MB / 13.8 MB)       [.....................................   ] 94.71310 - (13.0 MB / 13.8 MB)       [......................................  ] 95.16764 \ (13.1 MB / 13.8 MB)       [......................................  ] 95.62217 | (13.1 MB / 13.8 MB)       [......................................  ] 96.07670 / (13.2 MB / 13.8 MB)       [......................................  ] 96.53123 - (13.3 MB / 13.8 MB)       [......................................  ] 96.98576 \ (13.3 MB / 13.8 MB)       [......................................  ] 97.44030 | (13.4 MB / 13.8 MB)       [....................................... ] 97.89483 / (13.5 MB / 13.8 MB)       [....................................... ] 98.34936 - (13.5 MB / 13.8 MB)       [....................................... ] 98.80389 \ (13.6 MB / 13.8 MB)       [....................................... ] 99.25842 | (13.6 MB / 13.8 MB)       [....................................... ] 99.71296 / (13.7 MB / 13.8 MB)       [........................................] 100.00000 - (13.8 MB / 13.8 MB)   
+    File saved as ./LFP_data_contiguous_1250_Hz.mat.
+
+
+It is a mat file, so we use scipy to load it
+
+
+.. code-block:: python
+
+    from scipy import io # noqa
+
+    data = io.loadmat(fname)
+    X, sfreq = data['X'].T, float(data['sfreq'])
+
+
+
+
+
+
+
+And now let us look at the data
+
+
+.. code-block:: python
+
+    import numpy as np # noqa
+    import matplotlib.pyplot as plt # noqa
+
+    start, stop = 11000, 15000
+    times = np.arange(start, stop) / sfreq
+    plt.plot(times, X[0, start:stop], color='b')
+    plt.xlabel('Time (s)')
+    plt.ylabel(r'$\mu$ V')
+    plt.xlim([9., 12.])
+
+
+
+
+.. image:: /auto_examples/images/sphx_glr_plot_lfp_data_001.png
+    :align: center
+
+
+
+
+and filter it using a convenient function from MNE. This will remove low
+frequency drifts, but we keep the high frequency as much as we can
+
+
+.. code-block:: python
+
+    from mne.filter import filter_data # noqa
+    X = filter_data(X.astype(np.float64), sfreq, l_freq=1, h_freq=300)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out::
+
+      Setting up band-pass filter from 1 - 3e+02 Hz
+    fir_design defaults to "firwin2" in 0.15 but will change to "firwin" in 0.16, set it explicitly to avoid this warning.
+    l_trans_bandwidth chosen to be 1.0 Hz
+    h_trans_bandwidth chosen to be 75.0 Hz
+    Filter length of 8250 samples (6.600 sec) selected
+
+
+Now, we define the parameters of our model.
+
+
+.. code-block:: python
+
+
+    reg = 6.0
+    n_times = 2500
+    n_times_atom = 350
+    n_trials = 100
+    n_atoms = 3
+    n_iter = 60
+
+
+
+
+
+
+Let's stick to one random state for now, but if you want to learn how to
+select the random state, consult this example.
+
+
+.. code-block:: python
+
+    random_state = 10
+
+
+
+
+
+
+
+Now, we epoch the trials
+
+
+.. code-block:: python
+
+
+    overlap = 0
+    starts = np.arange(0, X.shape[1] - n_times, n_times - overlap)
+    stops = np.arange(n_times, X.shape[1], n_times - overlap)
+
+    X_new = []
+    for idx, (start, stop) in enumerate(zip(starts, stops)):
+        if idx >= n_trials:
+            break
+        X_new.append(X[0, start:stop])
+    X_new = np.vstack(X_new)
+    del X
+
+
+
+
+
+
+
+We remove the mean and scale to unit variance.
+
+
+.. code-block:: python
+
+    X_new -= np.mean(X_new)
+    X_new /= np.std(X_new)
+
+
+
+
+
+
+
+The convolutions can result in edge artifacts at the edges of the trials.
+Therefore, we discount the contributions from the edges by windowing the
+trials.
+
+
+.. code-block:: python
+
+    from numpy import hamming # noqa
+    X_new *= hamming(n_times)[None, :]
+
+
+
+
+
+
+
+Of course, in a data-limited setting we want to use as much of the data as
+possible. If this is the case, you can set `overlap` to non-zero (for example
+half the epoch length).
+
+Now, we run regular CSC since the trials are not too noisy
+
+
+.. code-block:: python
+
+    from alphacsc import learn_d_z # noqa
+    pobj, times, d_hat, Z_hat = learn_d_z(X_new, n_atoms, n_times_atom, reg=reg,
+                                          n_iter=n_iter, random_state=random_state,
+                                          n_jobs=1)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out::
+
+      Coordinate descent loop 0 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 173516.56790388
+    Using method dual for projection
+    [seed 10] Objective (d) 37370.06816348
+    Coordinate descent loop 1 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 30231.86434836
+    Using method dual for projection
+    [seed 10] Objective (d) 27606.83482907
+    Coordinate descent loop 2 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 25522.07745187
+    Using method dual for projection
+    [seed 10] Objective (d) 24905.24275242
+    Coordinate descent loop 3 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 24133.23053350
+    Using method dual for projection
+    [seed 10] Objective (d) 23875.82028303
+    Coordinate descent loop 4 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 23281.54101385
+    Using method dual for projection
+    [seed 10] Objective (d) 23113.67006190
+    Coordinate descent loop 5 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 22249.89358662
+    Using method dual for projection
+    [seed 10] Objective (d) 22212.73006467
+    Coordinate descent loop 6 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 21419.71369536
+    Using method dual for projection
+    [seed 10] Objective (d) 21379.54352928
+    Coordinate descent loop 7 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 20881.29354160
+    Using method dual for projection
+    [seed 10] Objective (d) 20869.62890610
+    Coordinate descent loop 8 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 20371.93142111
+    Using method dual for projection
+    [seed 10] Objective (d) 20362.63416430
+    Coordinate descent loop 9 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 19928.92243091
+    Using method dual for projection
+    [seed 10] Objective (d) 19924.69947561
+    Coordinate descent loop 10 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 19548.98293781
+    Using method dual for projection
+    [seed 10] Objective (d) 19544.81040812
+    Coordinate descent loop 11 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 19235.69296631
+    Using method dual for projection
+    [seed 10] Objective (d) 19233.33546176
+    Coordinate descent loop 12 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 18956.52893910
+    Using method dual for projection
+    [seed 10] Objective (d) 18951.10813864
+    Coordinate descent loop 13 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 18670.05419582
+    Using method dual for projection
+    [seed 10] Objective (d) 18667.76940922
+    Coordinate descent loop 14 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 18399.65768651
+    Using method dual for projection
+    [seed 10] Objective (d) 18397.72217244
+    Coordinate descent loop 15 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 18205.02079750
+    Using method dual for projection
+    [seed 10] Objective (d) 18202.16689672
+    Coordinate descent loop 16 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 18026.92246534
+    Using method dual for projection
+    [seed 10] Objective (d) 18016.30902890
+    Coordinate descent loop 17 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 17832.95718965
+    Using method dual for projection
+    [seed 10] Objective (d) 17831.68652739
+    Coordinate descent loop 18 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 17676.22504267
+    Using method dual for projection
+    [seed 10] Objective (d) 17673.91572363
+    Coordinate descent loop 19 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 17509.69147694
+    Using method dual for projection
+    [seed 10] Objective (d) 17503.73770077
+    Coordinate descent loop 20 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 17340.48667757
+    Using method dual for projection
+    [seed 10] Objective (d) 17339.89208792
+    Coordinate descent loop 21 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 17218.45280585
+    Using method dual for projection
+    [seed 10] Objective (d) 17215.80799929
+    Coordinate descent loop 22 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 17070.42294569
+    Using method dual for projection
+    [seed 10] Objective (d) 17067.00296600
+    Coordinate descent loop 23 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16953.83221669
+    Using method dual for projection
+    [seed 10] Objective (d) 16963.91629643
+    Coordinate descent loop 24 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16850.62442153
+    Using method dual for projection
+    [seed 10] Objective (d) 16835.37789726
+    Coordinate descent loop 25 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16728.85978330
+    Using method dual for projection
+    [seed 10] Objective (d) 16742.21645087
+    Coordinate descent loop 26 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16657.04230947
+    Using method dual for projection
+    [seed 10] Objective (d) 16656.64455186
+    Coordinate descent loop 27 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16583.55209474
+    Using method dual for projection
+    [seed 10] Objective (d) 16565.39440988
+    Coordinate descent loop 28 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16505.82684169
+    Using method dual for projection
+    [seed 10] Objective (d) 16503.92115061
+    Coordinate descent loop 29 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16437.30622461
+    Using method dual for projection
+    [seed 10] Objective (d) 16439.73567101
+    Coordinate descent loop 30 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16376.70599197
+    Using method dual for projection
+    [seed 10] Objective (d) 16371.56429806
+    Coordinate descent loop 31 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16300.14806563
+    Using method dual for projection
+    [seed 10] Objective (d) 16299.86608478
+    Coordinate descent loop 32 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16243.40823188
+    Using method dual for projection
+    [seed 10] Objective (d) 16242.31926109
+    Coordinate descent loop 33 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16182.55064856
+    Using method dual for projection
+    [seed 10] Objective (d) 16188.45203300
+    Coordinate descent loop 34 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16131.63174743
+    Using method dual for projection
+    [seed 10] Objective (d) 16124.59279265
+    Coordinate descent loop 35 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16083.83718014
+    Using method dual for projection
+    [seed 10] Objective (d) 16087.89083997
+    Coordinate descent loop 36 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 16037.15961769
+    Using method dual for projection
+    [seed 10] Objective (d) 16032.14516509
+    Coordinate descent loop 37 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15996.25629250
+    Using method dual for projection
+    [seed 10] Objective (d) 15999.11083836
+    Coordinate descent loop 38 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15963.13875962
+    Using method dual for projection
+    [seed 10] Objective (d) 15960.01766514
+    Coordinate descent loop 39 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15925.45045181
+    Using method dual for projection
+    [seed 10] Objective (d) 15933.80668168
+    Coordinate descent loop 40 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15906.20040716
+    Using method dual for projection
+    [seed 10] Objective (d) 15907.16897128
+    Coordinate descent loop 41 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15883.20575135
+    Using method dual for projection
+    [seed 10] Objective (d) 15873.90232196
+    Coordinate descent loop 42 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15853.20756078
+    Using method dual for projection
+    [seed 10] Objective (d) 15852.83711880
+    Coordinate descent loop 43 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15836.63539333
+    Using method dual for projection
+    [seed 10] Objective (d) 15836.61010654
+    Coordinate descent loop 44 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15822.16244507
+    Using method dual for projection
+    [seed 10] Objective (d) 15822.29566617
+    Coordinate descent loop 45 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15808.26554942
+    Using method dual for projection
+    [seed 10] Objective (d) 15819.39533991
+    Coordinate descent loop 46 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15800.52431151
+    Using method dual for projection
+    [seed 10] Objective (d) 15789.45505280
+    Coordinate descent loop 47 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15776.38213441
+    Using method dual for projection
+    [seed 10] Objective (d) 15776.37622097
+    Coordinate descent loop 48 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15759.05932571
+    Using method dual for projection
+    [seed 10] Objective (d) 15759.03893169
+    Coordinate descent loop 49 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15748.92655161
+    Using method dual for projection
+    [seed 10] Objective (d) 15758.75162536
+    Coordinate descent loop 50 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15747.88679038
+    Using method dual for projection
+    [seed 10] Objective (d) 15738.03037719
+    Coordinate descent loop 51 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15729.60480141
+    Using method dual for projection
+    [seed 10] Objective (d) 15741.79274921
+    Coordinate descent loop 52 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15732.54658015
+    Using method dual for projection
+    [seed 10] Objective (d) 15723.42529827
+    Coordinate descent loop 53 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15715.66932002
+    Using method dual for projection
+    [seed 10] Objective (d) 15712.29051665
+    Coordinate descent loop 54 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15703.32394037
+    Using method dual for projection
+    [seed 10] Objective (d) 15703.59287960
+    Coordinate descent loop 55 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15695.72091163
+    Using method dual for projection
+    [seed 10] Objective (d) 15706.32201826
+    Coordinate descent loop 56 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15697.98477976
+    Using method dual for projection
+    [seed 10] Objective (d) 15702.34399460
+    Coordinate descent loop 57 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15688.62612893
+    Using method dual for projection
+    [seed 10] Objective (d) 15675.74374828
+    Coordinate descent loop 58 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15668.20466537
+    Using method dual for projection
+    [seed 10] Objective (d) 15688.25646926
+    Coordinate descent loop 59 / 60 [n_jobs=1]
+    [seed 10] Objective (Z) : 15682.32059738
+    Using method dual for projection
+    [seed 10] Objective (d) 15674.22235140
+
+
+Let's look at the atoms now.
+
+
+.. code-block:: python
+
+    plt.figure()
+    plt.plot(d_hat.T)
+    plt.show()
+
+
+
+.. image:: /auto_examples/images/sphx_glr_plot_lfp_data_002.png
+    :align: center
+
+
+
+
+**Total running time of the script:**
+(1 minutes 34.080 seconds)
+
+
+
+.. container:: sphx-glr-download
+
+    **Download Python source code:** :download:`plot_lfp_data.py <plot_lfp_data.py>`
+
+
+.. container:: sphx-glr-download
+
+    **Download IPython notebook:** :download:`plot_lfp_data.ipynb <plot_lfp_data.ipynb>`
