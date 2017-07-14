@@ -178,13 +178,11 @@ same time instant.</p>
 <span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">learn_d_z</span><span class="p">,</span> <span class="n">update_d_block</span> <span class="c1"># noqa</span>
 
 <span class="n">random_state</span> <span class="o">=</span> <span class="mi">60</span>
-<span class="n">func</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">update_d_block</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;dual&#39;</span><span class="p">)</span>
 
 <span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">Z_hat</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">func_d</span><span class="o">=</span><span class="n">func</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span>
-    <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
     <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">factr</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
-    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">solver_z</span><span class="o">=</span><span class="s1">&#39;l_bfgs&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Vanilla CSC&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -215,10 +213,9 @@ to learn how to deal with such data.</p>
                                     <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_corrupted_trials</span><span class="p">,</span> <span class="n">n_times</span><span class="p">),</span>
                                     <span class="n">random_state</span><span class="o">=</span><span class="n">random_state_simulate</span><span class="p">)</span>
 <span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">Z_hat</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">func_d</span><span class="o">=</span><span class="n">func</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span>
-    <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
     <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">factr</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
-    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">solver_z</span><span class="o">=</span><span class="s1">&#39;l_bfgs&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d_hat</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -230,7 +227,7 @@ to learn how to deal with such data.</p>
 </pre></div>
 </div>
 <p><strong>Total running time of the script:</strong>
-(0 minutes 23.051 seconds)</p>
+(0 minutes 22.786 seconds)</p>
 <div class="sphx-glr-download docutils container">
 <strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_simulate_csc.py" download=""><code class="xref download docutils literal"><span class="pre">plot_simulate_csc.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">

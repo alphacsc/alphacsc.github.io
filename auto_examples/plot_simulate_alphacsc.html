@@ -177,17 +177,14 @@
 </div>
 <p>and then alpha CSC on the same data</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span> <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">update_d_block</span><span class="p">,</span> <span class="n">learn_d_z_weighted</span> <span class="c1"># noqa</span>
-
-<span class="n">func</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">update_d_block</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;dual&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">learn_d_z_weighted</span> <span class="c1"># noqa</span>
 
 <span class="n">d_hat</span><span class="p">,</span> <span class="n">z_hat</span><span class="p">,</span> <span class="n">Tau</span> <span class="o">=</span> <span class="n">learn_d_z_weighted</span><span class="p">(</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">func_d</span><span class="o">=</span><span class="n">func</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span>
     <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">factr</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">n_iter_global</span><span class="o">=</span><span class="n">n_iter_global</span><span class="p">,</span>
     <span class="n">n_iter_optim</span><span class="o">=</span><span class="n">n_iter_optim</span><span class="p">,</span> <span class="n">init_tau</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
     <span class="n">n_iter_mcmc</span><span class="o">=</span><span class="n">n_iter_mcmc</span><span class="p">,</span> <span class="n">n_burnin_mcmc</span><span class="o">=</span><span class="n">n_burnin_mcmc</span><span class="p">,</span>
-    <span class="n">random_state</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">solver_z</span><span class="o">=</span><span class="s1">&#39;l_bfgs&#39;</span><span class="p">,</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -217,7 +214,7 @@ of impulsive noise.</p>
 </div>
 <img alt="../_images/sphx_glr_plot_simulate_alphacsc_001.png" class="align-center" src="../_images/sphx_glr_plot_simulate_alphacsc_001.png" />
 <p><strong>Total running time of the script:</strong>
-(2 minutes 56.833 seconds)</p>
+(2 minutes 55.426 seconds)</p>
 <div class="sphx-glr-download docutils container">
 <strong>Download Python source code:</strong> <a class="reference download internal" href="../_downloads/plot_simulate_alphacsc.py" download=""><code class="xref download docutils literal"><span class="pre">plot_simulate_alphacsc.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
