@@ -10,7 +10,7 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="[1] Jost, Philippe, et al.     "MoTIF: An efficient algorithm for learning     translation inva...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates MoTIF [1] on simulated data. In the alphacsc module, we are offering ...">
 
 .. only:: html
 
@@ -30,7 +30,7 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="[1] Gips, Bart, et al.     Discovering recurring patterns in electrophysiological recordings.  ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how the sliding window method (SWM) [1] works on simulated data. The code is...">
 
 .. only:: html
 
@@ -70,7 +70,7 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="">
+    <div class="sphx-glr-thumbcontainer" tooltip="The CSC problem is non-convex. Therefore, the solution depends on the initialization. Here, we ...">
 
 .. only:: html
 
@@ -90,7 +90,7 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates `vanilla' CSC on simulated data. Note that `vanilla' CSC is just a sp...">
 
 .. only:: html
 
@@ -110,7 +110,7 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates alphaCSC on simulated data.">
 
 .. only:: html
 

@@ -6,6 +6,7 @@
 ==============================
 Selecting random state for CSC
 ==============================
+
 The CSC problem is non-convex. Therefore, the solution depends
 on the initialization. Here, we show how to select the
 best atoms amongst different initializations.
@@ -164,7 +165,7 @@ Now, we select the best atom amongst them.
 
 
 **Total running time of the script:**
-(0 minutes 55.951 seconds)
+(1 minutes 1.795 seconds)
 
 
 

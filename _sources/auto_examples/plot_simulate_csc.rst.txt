@@ -6,6 +6,7 @@
 =============================
 Vanilla CSC on simulated data
 =============================
+
 This example demonstrates `vanilla' CSC on simulated data.
 Note that `vanilla' CSC is just a special case of
 alphaCSC with alpha=2.
@@ -211,7 +212,7 @@ to learn how to deal with such data.
 
 
 **Total running time of the script:**
-(0 minutes 22.128 seconds)
+(0 minutes 24.045 seconds)
 
 
 
