@@ -30,6 +30,26 @@ Examples Gallery
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="[1] Gips, Bart, et al. "Discovering recurring patterns in electrophysiological recordings." Jou...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
+
+        :ref:`sphx_glr_auto_examples_plot_simulate_swm.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/plot_simulate_swm
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Here, we show how CSC can be used to learn spiking atoms from Local Field Potential (LFP) data ...">
 
 .. only:: html
