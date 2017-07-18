@@ -30,7 +30,7 @@ Examples Gallery
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="[1] Gips, Bart, et al. "Discovering recurring patterns in electrophysiological recordings." Jou...">
+    <div class="sphx-glr-thumbcontainer" tooltip="[1] Gips, Bart, et al.     Discovering recurring patterns in electrophysiological recordings.  ...">
 
 .. only:: html
 
