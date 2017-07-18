@@ -122,7 +122,13 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <h1>&alpha;CSC</h1><p>This is a library to perform convolutional dictionary learning on neural time-series data.</p>
+  <h1>&alpha;CSC</h1><p>This is a library to perform shift-invariant
+<a class="reference external" href="https://en.wikipedia.org/wiki/Sparse_dictionary_learning">dictionary learning</a> on neural time-series data.</p>
+<p>Wait ... but what is alphaCSC [1] anyway?</p>
+<p>CSC stands for &#8220;Convolutional Sparse Coding&#8221;. The alpha refers to the fact that we assume an <a class="reference external" href="https://en.wikipedia.org/wiki/Stable_distribution">alpha-stable
+distribution</a> for the noise term.
+This leads to a weighted formulation of <a href="#id1"><span class="problematic" id="id2">`</span></a>vanilla&#8217; CSC, the weights being used to downweight
+noisy portions of the data.</p>
 <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>We recommend the <a class="reference external" href="https://www.continuum.io/downloads">Anaconda Python distribution</a>. To install <code class="docutils literal"><span class="pre">alphacsc</span></code>, you first need to install its dependencies:</p>
@@ -147,9 +153,8 @@ with <cite>pip</cite>. To upgrade, use the <code class="docutils literal"><span 
 length of atoms <cite>n_times_atom</cite> and the number of atoms <cite>n_atoms</cite> you would like to estimate.
 The penalty parameter <cite>reg</cite> controls the sparsity in the activations estimated.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="k">import</span> <span class="n">learn_d_z</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">160</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">Z_hat</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span>
-<span class="go">                                          reg=reg, n_iter=n_iter)  </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">60</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">Z_hat</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
