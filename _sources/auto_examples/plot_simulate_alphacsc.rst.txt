@@ -166,14 +166,44 @@ of impulsive noise.
 
 
 
+
 .. image:: /auto_examples/images/sphx_glr_plot_simulate_alphacsc_001.png
     :align: center
 
 
 
 
+We can even visualize the weights to see what time points were
+downweighted by the algorithm
+
+
+.. code-block:: python
+
+
+    fig, axes = plt.subplots(2, 1, sharex=True)
+    axes[0].set_xlim([-20, n_times])
+    axes[0].set_ylim([0, 2])
+    axes[1].set_ylim([-0.5, 0.3])
+
+    for t in [2, 250]:
+        axes[0].axvline(t, linestyle='-.')
+        axes[1].axvline(t, linestyle='-.')
+
+    axes[0].plot(1 / Tau[idx_corrupted[0], :])
+    axes[0].set_ylabel('1 / weights')
+    axes[1].plot(X[idx_corrupted[0], :])
+    axes[1].set_ylabel('Corrupted trial')
+
+
+
+.. image:: /auto_examples/images/sphx_glr_plot_simulate_alphacsc_002.png
+    :align: center
+
+
+
+
 **Total running time of the script:**
-(4 minutes 34.701 seconds)
+(3 minutes 0.299 seconds)
 
 
 
