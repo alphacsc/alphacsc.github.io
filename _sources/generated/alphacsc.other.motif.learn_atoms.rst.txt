@@ -1,0 +1,6 @@
+alphacsc.other.motif.learn\_atoms
+=================================
+
+.. currentmodule:: alphacsc.other.motif
+
+.. autofunction:: learn_atoms

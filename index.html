@@ -1,45 +1,31 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Installation &#8212; alphacsc 0.1dev0 documentation</title>
-    
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <title>alphaCSC: Convolution sparse coding for time-series &#8212; alphacsc 0.1dev0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1dev0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples Gallery" href="auto_examples/index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+  </head><body>
 
   <div id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -71,7 +57,12 @@
      href="#">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pactools/pactools">Fork pactools on Github</a></li>
+</ul>
+</ul>
 </li>
               
                 <li class="dropdown">
@@ -83,10 +74,17 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Installation</a></li>
+<li><a class="reference internal" href="#">alphaCSC: Convolution sparse coding for time-series</a><ul>
+<li><a class="reference internal" href="#model-descriptions">Model descriptions</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#quickstart">Quickstart</a></li>
 <li><a class="reference internal" href="#bug-reports">Bug reports</a></li>
-<li><a class="reference internal" href="#cite">Cite</a></li>
+<li><a class="reference internal" href="#cite-our-work">Cite our work</a><ul>
+<li><a class="reference internal" href="#contents">Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -122,60 +120,168 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <h1>&alpha;CSC</h1><p>This is a library to perform shift-invariant
-<a class="reference external" href="https://en.wikipedia.org/wiki/Sparse_dictionary_learning">dictionary learning</a> on neural time-series data.
-Framed mathematically, if we are giving a signal <span class="math">\(x_n \in \mathbb{R}^T\)</span>, we want to learn <span class="math">\(k\)</span>
-atoms <span class="math">\(d^k \in \mathbb{R}^{L}\)</span> and their associated activations <span class="math">\(z^k_n \in \mathbb{R}^{T - L + 1}\)</span>. The optimization
-problem boils down to minimizing an <span class="math">\(\ell_2\)</span> reconstruction loss with an <span class="math">\(\ell_1\)</span> penalty term, i.e.,</p>
-<div class="math">
-\[\min_{d,z} \sum_n (\|x_n - \sum_k d^k * z^k_n \|_2^2 + \lambda \sum_k z_n^k)\]</div>
-<p>subject to <span class="math">\(z_k &gt;= 0\)</span>. The shift invariance is encoded by the convolution operator <span class="math">\(*\)</span> which is
-why these methods are called &#8220;convolutional sparse coding&#8221;.</p>
-<p>The alpha in alphaCSC [1] refers to the fact that we assume an <a class="reference external" href="https://en.wikipedia.org/wiki/Stable_distribution">alpha-stable
-distribution</a> for the noise.
-This leads to a weighted formulation of <a href="#id1"><span class="problematic" id="id2">`</span></a>vanilla&#8217; CSC, the weights being used to downweight
-noisy portions of the data. Or in other words:</p>
-<div class="math">
-\[\min_{d,z} \sum_n (\|\sqrt{w_n} \odot (x_n - \sum_k d^k * z^k_n) \|_2^2 + \lambda \sum_k z_k)\]</div>
-<p>where <span class="math">\(w_n\)</span> are the weights which are learned using an <a class="reference external" href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm">EM algorithm</a>.</p>
+  <div class="section" id="alphacsc-convolution-sparse-coding-for-time-series">
+<h1>alphaCSC: Convolution sparse coding for time-series<a class="headerlink" href="#alphacsc-convolution-sparse-coding-for-time-series" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://travis-ci.org/alphacsc/alphacsc"><img alt="Build Status" src="https://api.travis-ci.org/alphacsc/alphacsc.svg?branch=master" /></a>
+<a class="reference external image-reference" href="https://codecov.io/gh/alphacsc/alphacsc"><img alt="Test coverage" src="https://codecov.io/github/alphacsc/alphacsc/coverage.svg?precision=0" /></a>
+<p>This is a library to perform shift-invariant <a class="reference external" href="https://en.wikipedia.org/wiki/Sparse_dictionary_learning">sparse dictionary learning</a>, also known as
+convolutional sparse coding (CSC), on time-series data.
+It includes a number of different models:</p>
+<ol class="arabic simple">
+<li>univariate CSC</li>
+<li>multivariate CSC</li>
+<li>multivariate CSC with a rank-1 constraint</li>
+<li>univariate CSC with an alpha-stable distribution</li>
+</ol>
+<div class="section" id="model-descriptions">
+<h2>Model descriptions<a class="headerlink" href="#model-descriptions" title="Permalink to this headline">¶</a></h2>
+<p><strong>1. Univariate CSC</strong></p>
+<p>Framed mathematically, if we are giving a signal <span class="math notranslate nohighlight">\(x^n \in \mathbb{R}^T\)</span>,
+we want to learn <span class="math notranslate nohighlight">\(k\)</span> atoms <span class="math notranslate nohighlight">\(d^k \in \mathbb{R}^{L}\)</span> and their
+associated activations <span class="math notranslate nohighlight">\(z_k^n \in \mathbb{R}^{T - L + 1}\)</span>. The
+optimization problem boils down to minimizing an <span class="math notranslate nohighlight">\(\ell_2\)</span> reconstruction
+loss, which corresponds to a Gaussian noise model, with a sparsity-inducing
+<span class="math notranslate nohighlight">\(\ell_1\)</span> penalty term:</p>
+<div class="math notranslate nohighlight">
+\[\min_{d,z} \sum_n \left(\|x^n - \sum_k d^k * z_k^n \|_2^2 + \lambda \sum_k z_k^n \right)\]</div>
+<p>subject to <span class="math notranslate nohighlight">\(z_k^n \ge 0\)</span> and <span class="math notranslate nohighlight">\(||d_k||_2 \le 1\)</span>. The shift invariance
+is encoded by the convolution operator <span class="math notranslate nohighlight">\(*\)</span> which is why these methods are
+called <strong>convolutional</strong> sparse coding.</p>
+<p><strong>2. Multivariate CSC</strong></p>
+<p>In the multivariate case, we are giving a multivariate signal <span class="math notranslate nohighlight">\(X^n \in
+\mathbb{R}^{T \times P}\)</span>, where <span class="math notranslate nohighlight">\(P\)</span> is the dimension of the signal, and
+we want to learn <span class="math notranslate nohighlight">\(k\)</span> multivariate atoms <span class="math notranslate nohighlight">\(D_k \in \mathbb{R}^{L
+\times P}\)</span> and their associated activations <span class="math notranslate nohighlight">\(z_k^n \in \mathbb{R}^{T - L +
+1}\)</span>. The objective function reads:</p>
+<div class="math notranslate nohighlight">
+\[\min_{D,z} \sum_n \left(\|X^n - \sum_k D_k * z_k^n \|_2^2 + \lambda \sum_k z_k^n \right)\]</div>
+<p>subject to <span class="math notranslate nohighlight">\(z_k^n \ge 0\)</span> and <span class="math notranslate nohighlight">\(||D_k||_2 \le 1\)</span>.</p>
+<p><strong>3. Multivariate CSC with a rank-1 constraint</strong></p>
+<p>A variant of the multivariate CSC model considers an additional constraint on
+the multivariate atoms, stating that they need to be rank-1. In other words,
+each atom can be written as a product of univariate vectors <span class="math notranslate nohighlight">\(D_k = u_k
+v_k^\top\)</span>, where <span class="math notranslate nohighlight">\(u_k^\top \in \mathbb{R}^{P}\)</span> is the pattern over
+channels, and <span class="math notranslate nohighlight">\(v_k^\top \in \mathbb{R}^{L}\)</span> is the pattern over time. The
+objective function reads:</p>
+<div class="math notranslate nohighlight">
+\[\min_{u, v, z} \sum_n \left(\|X^n - \sum_k (u_k v_k^\top) * z_k^n \|_2^2 + \lambda \sum_k z_k^n \right)\]</div>
+<p>subject to <span class="math notranslate nohighlight">\(z_k^n \ge 0\)</span>, <span class="math notranslate nohighlight">\(||u_k||_2 \le 1\)</span>, and <span class="math notranslate nohighlight">\(||v_k||_2
+\le 1\)</span>. This rank-1 formulation is particularly meaningful in the case of
+magnetoencephalography (MEG), due to the physical properties of electromagnetic
+waves, which propagate instantaneously and add up linearly. It also brings
+robustness to the atom estimates, since less parameters are estimated.</p>
+<p>This model is described in details in the original NIPS paper <a class="footnote-reference" href="#id3" id="id1">[1]</a>.</p>
+<p><strong>4. Univariate CSC with an alpha-stable distribution</strong></p>
+<p>The name alphaCSC originally referred to a particular model which uses an
+<a class="reference external" href="https://en.wikipedia.org/wiki/Stable_distribution">alpha-stable distribution</a>
+for the noise, instead of the more classical Gaussian distribution. Note that
+the <code class="docutils literal notranslate"><span class="pre">alphaCSC</span></code> library is <strong>not</strong> limited to this particular model.</p>
+<p>This model leads to a weighted formulation of univariate CSC, the weights being
+used to downweight noisy portions of the data:</p>
+<div class="math notranslate nohighlight">
+\[\min_{d,z} \sum_n \left( \|\sqrt{w_n} \odot (x^n - \sum_k d_k * z_k^n) \|_2^2 + \lambda \sum_k z_k^n \right)\]</div>
+<p>subject to <span class="math notranslate nohighlight">\(z_k^n \ge 0\)</span> and <span class="math notranslate nohighlight">\(||d_k||_2 \le 1\)</span>, and  where
+<span class="math notranslate nohighlight">\(w_n\)</span> are the weights which are learned using an <a class="reference external" href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm">EM algorithm</a>.</p>
+<p>This model is described in details in the original NIPS paper <a class="footnote-reference" href="#id4" id="id2">[2]</a>.</p>
+</div>
 <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>We recommend the <a class="reference external" href="https://www.continuum.io/downloads">Anaconda Python distribution</a>. To install <code class="docutils literal"><span class="pre">alphacsc</span></code>, you first need to install its dependencies:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install numpy matplotlib scipy
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To install this package, the easiest way is using <code class="docutils literal notranslate"><span class="pre">pip</span></code>. It will install this
+package and its dependencies. The <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> depends on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and
+<code class="docutils literal notranslate"><span class="pre">cython</span></code> for the installation so it is advised to install them beforehand. To
+install this package, please run</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span> <span class="n">cython</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">alphacsc</span><span class="o">/</span><span class="n">alphacsc</span><span class="o">.</span><span class="n">git</span><span class="c1">#egg=alphacsc</span>
 </pre></div>
 </div>
-<p>Then install alphacsc:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install git+https://github.com/alphacsc/alphacsc.git#egg=alphacsc
-</pre></div>
-</div>
-<p>If you do not have admin privileges on the computer, use the <code class="docutils literal"><span class="pre">--user</span></code> flag
-with <cite>pip</cite>. To upgrade, use the <code class="docutils literal"><span class="pre">--upgrade</span></code> flag provided by <cite>pip</cite>.</p>
-<p>To check if everything worked fine, you can do:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ python -c &#39;import alphacsc&#39;
+<p>If you do not have admin privileges on the computer, use the <code class="docutils literal notranslate"><span class="pre">--user</span></code> flag
+with <code class="docutils literal notranslate"><span class="pre">pip</span></code>. To upgrade, use the <code class="docutils literal notranslate"><span class="pre">--upgrade</span></code> flag provided by <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>To check if everything worked fine, you can run:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;import alphacsc&#39;</span>
 </pre></div>
 </div>
 <p>and it should not give any error messages.</p>
 </div>
 <div class="section" id="quickstart">
-<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<p>All you need is a numpy array <code class="docutils literal"><span class="pre">X</span></code> of shape <cite>n_trials</cite> x <cite>n_times</cite>. You need to specify the
-length of atoms <cite>n_times_atom</cite> and the number of atoms <cite>n_atoms</cite> you would like to estimate.
-The penalty parameter <cite>reg</cite> controls the sparsity in the activations estimated.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="k">import</span> <span class="n">learn_d_z</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">60</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">Z_hat</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">)</span>  
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example to present briefly the API:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">alphacsc</span> <span class="k">import</span> <span class="n">BatchCDL</span>
+
+<span class="c1"># Define the different dimensions of the problem</span>
+<span class="n">n_atoms</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n_times_atom</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">n_channels</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">n_trials</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n_times</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Generate a random set of signals</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_trials</span><span class="p">,</span> <span class="n">n_channels</span><span class="p">,</span> <span class="n">n_times</span><span class="p">)</span>
+
+<span class="c1"># Learn a dictionary with batch algorithm and rank1 constraints.</span>
+<span class="n">cdl</span> <span class="o">=</span> <span class="n">BatchCDL</span><span class="p">(</span><span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">rank1</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cdl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Display the learned atoms</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">n_atoms</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="s2">&quot;Dictionary&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_atoms</span><span class="p">):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cdl</span><span class="o">.</span><span class="n">u_hat_</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cdl</span><span class="o">.</span><span class="n">v_hat_</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Spatial map&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Temporal map&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">():</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="bug-reports">
-<h1>Bug reports<a class="headerlink" href="#bug-reports" title="Permalink to this headline">¶</a></h1>
+<h2>Bug reports<a class="headerlink" href="#bug-reports" title="Permalink to this headline">¶</a></h2>
 <p>Use the <a class="reference external" href="https://github.com/alphacsc/alphacsc/issues">github issue tracker</a> to report bugs.</p>
 </div>
-<div class="section" id="cite">
-<h1>Cite<a class="headerlink" href="#cite" title="Permalink to this headline">¶</a></h1>
-<p>[1] Jas, M., Dupré La Tour, T., Şimşekli, U., &amp; Gramfort, A. (2017). <a class="reference external" href="https://papers.nips.cc/paper/6710-learning-the-morphology-of-brain-signals-using-alpha-stable-convolutional-sparse-coding.pdf">Learning the Morphology of
-Brain Signals Using Alpha-Stable Convolutional Sparse Coding</a>.
-Advances in Neural Information Processing Systems (NIPS), pages 1099&#8211;1108.</p>
+<div class="section" id="cite-our-work">
+<h2>Cite our work<a class="headerlink" href="#cite-our-work" title="Permalink to this headline">¶</a></h2>
+<p>If you use this code in your project, please consider citing our work:</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Dupré La Tour, T., Moreau, T., Jas, M., &amp; Gramfort, A. (2018).
+<a class="reference external" href="https://arxiv.org/abs/1805.09654v2">Multivariate Convolutional Sparse Coding for Electromagnetic Brain Signals.</a>. Advances in Neural Information
+Processing Systems (NIPS).</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Jas, M., Dupré La Tour, T., Şimşekli, U., &amp; Gramfort, A. (2017). <a class="reference external" href="https://papers.nips.cc/paper/6710-learning-the-morphology-of-brain-signals-using-alpha-stable-convolutional-sparse-coding.pdf">Learning
+the Morphology of Brain Signals Using Alpha-Stable Convolutional Sparse Coding</a>.
+Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</td></tr>
+</tbody>
+</table>
+<div class="section" id="contents">
+<h3>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples Gallery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_examples/index.html#alpha-stable-csc">Alpha stable CSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_examples/index.html#multivariate-csc-with-rank-1-constraints">Multivariate CSC with rank 1 constraints</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#learn-atoms">Learn atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#simulation">Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#visualization">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pactools/pactools">Fork pactools on Github</a></li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -191,7 +297,7 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099&#8211;1108.
     </p>
     <p>
         &copy; Copyright 2017, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
     </p>
   </div>
 </footer>

@@ -11,6 +11,17 @@ Examples Gallery
 
 
 
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+.. _alphacsc_examples:
+
+Alpha stable CSC
+----------------
+
+
+
 
 .. raw:: html
 
@@ -18,9 +29,9 @@ Examples Gallery
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
+    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_simulate_motif.py`
+        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_motif.py`
 
 .. raw:: html
 
@@ -30,7 +41,7 @@ Examples Gallery
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_simulate_motif
+   /auto_examples/alphacsc/plot_simulate_motif
 
 .. raw:: html
 
@@ -38,9 +49,9 @@ Examples Gallery
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
+    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_simulate_swm.py`
+        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_swm.py`
 
 .. raw:: html
 
@@ -50,7 +61,7 @@ Examples Gallery
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_simulate_swm
+   /auto_examples/alphacsc/plot_simulate_swm
 
 .. raw:: html
 
@@ -58,9 +69,9 @@ Examples Gallery
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_lfp_data_thumb.png
+    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_lfp_data_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_lfp_data.py`
+        :ref:`sphx_glr_auto_examples_alphacsc_plot_lfp_data.py`
 
 .. raw:: html
 
@@ -70,7 +81,7 @@ Examples Gallery
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_lfp_data
+   /auto_examples/alphacsc/plot_lfp_data
 
 .. raw:: html
 
@@ -78,9 +89,9 @@ Examples Gallery
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
+    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_simulate_randomstate.py`
+        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_randomstate.py`
 
 .. raw:: html
 
@@ -90,17 +101,17 @@ Examples Gallery
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_simulate_randomstate
+   /auto_examples/alphacsc/plot_simulate_randomstate
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates `vanilla&#x27; CSC on simulated data. Note that `vanilla&#x27; CSC is just a sp...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates `vanilla` CSC on simulated data. Note that `vanilla` CSC is just a sp...">
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
+    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_simulate_csc.py`
+        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_csc.py`
 
 .. raw:: html
 
@@ -110,7 +121,7 @@ Examples Gallery
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_simulate_csc
+   /auto_examples/alphacsc/plot_simulate_csc
 
 .. raw:: html
 
@@ -118,9 +129,9 @@ Examples Gallery
 
 .. only:: html
 
-    .. figure:: /auto_examples/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
+    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
 
-        :ref:`sphx_glr_auto_examples_plot_simulate_alphacsc.py`
+        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_alphacsc.py`
 
 .. raw:: html
 
@@ -130,26 +141,63 @@ Examples Gallery
 .. toctree::
    :hidden:
 
-   /auto_examples/plot_simulate_alphacsc
+   /auto_examples/alphacsc/plot_simulate_alphacsc
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+.. _multicsc_examples:
+
+Multivariate CSC with rank 1 constraints
+----------------------------------------
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank1 atoms on the somato-sensorymotor dataset from :code...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_somato_mu_waves_thumb.png
+
+        :ref:`sphx_glr_auto_examples_multicsc_plot_somato_mu_waves.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/multicsc/plot_somato_mu_waves
 .. raw:: html
 
     <div style='clear:both'></div>
 
 
 
-.. container:: sphx-glr-footer
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-gallery
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Python source code: auto_examples_python.zip <//home/mainak/Desktop/projects/github_repos/alphacsc/doc/auto_examples/auto_examples_python.zip>`
+    :download:`Download all examples in Python source code: auto_examples_python.zip <//home/tom/Work/phd/multicsc/doc/auto_examples/auto_examples_python.zip>`
 
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip <//home/mainak/Desktop/projects/github_repos/alphacsc/doc/auto_examples/auto_examples_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip <//home/tom/Work/phd/multicsc/doc/auto_examples/auto_examples_jupyter.zip>`
 
-.. rst-class:: sphx-glr-signature
 
-    `Generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_

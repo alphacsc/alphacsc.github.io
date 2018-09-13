@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_auto_examples_plot_lfp_data.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_auto_examples_plot_lfp_data.py:
 
@@ -73,7 +77,7 @@ And now let us look at the data
 
 
 .. image:: /auto_examples/images/sphx_glr_plot_lfp_data_001.png
-    :align: center
+    :class: sphx-glr-single-img
 
 
 
@@ -95,7 +99,9 @@ frequency drifts, but we keep the high frequencies
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Setting up high-pass filter at 1 Hz
     l_trans_bandwidth chosen to be 1.0 Hz
@@ -205,7 +211,7 @@ Now, we run regular CSC since the trials are not too noisy
 .. code-block:: python
 
     from alphacsc import learn_d_z # noqa
-    pobj, times, d_hat, Z_hat = learn_d_z(X_new, n_atoms, n_times_atom, reg=reg,
+    pobj, times, d_hat, z_hat = learn_d_z(X_new, n_atoms, n_times_atom, reg=reg,
                                           n_iter=n_iter, random_state=random_state,
                                           n_jobs=1)
 
@@ -215,248 +221,250 @@ Now, we run regular CSC since the trials are not too noisy
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Coordinate descent loop 0 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 174054.74134230
+    [seed 10] Objective (z_hat) : 51134.32096508
     Using method dual for projection
-    [seed 10] Objective (d) 37428.93205832
+    [seed 10] Objective (d) 45299.80903125
     Coordinate descent loop 1 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 30329.27567991
+    [seed 10] Objective (z_hat) : 26399.47853871
     Using method dual for projection
-    [seed 10] Objective (d) 27752.07709373
+    [seed 10] Objective (d) 25948.80915409
     Coordinate descent loop 2 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 25710.08131777
+    [seed 10] Objective (z_hat) : 23777.89064427
     Using method dual for projection
-    [seed 10] Objective (d) 25107.04446020
+    [seed 10] Objective (d) 23704.90593344
     Coordinate descent loop 3 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 24334.49341832
+    [seed 10] Objective (z_hat) : 22233.60227587
     Using method dual for projection
-    [seed 10] Objective (d) 24088.47449759
+    [seed 10] Objective (d) 22221.01870097
     Coordinate descent loop 4 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 23573.67536369
+    [seed 10] Objective (z_hat) : 21202.43876006
     Using method dual for projection
-    [seed 10] Objective (d) 23384.51602946
+    [seed 10] Objective (d) 21169.49202496
     Coordinate descent loop 5 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 22492.60770465
+    [seed 10] Objective (z_hat) : 20579.63611160
     Using method dual for projection
-    [seed 10] Objective (d) 22441.15903964
+    [seed 10] Objective (d) 20618.98107838
     Coordinate descent loop 6 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 21700.77415205
+    [seed 10] Objective (z_hat) : 20283.55110757
     Using method dual for projection
-    [seed 10] Objective (d) 21644.77606132
+    [seed 10] Objective (d) 20210.75292119
     Coordinate descent loop 7 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 21132.79058456
+    [seed 10] Objective (z_hat) : 19971.53116238
     Using method dual for projection
-    [seed 10] Objective (d) 21121.59340514
+    [seed 10] Objective (d) 19970.52325693
     Coordinate descent loop 8 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 20560.75613150
+    [seed 10] Objective (z_hat) : 19708.44554814
     Using method dual for projection
-    [seed 10] Objective (d) 20538.45189717
+    [seed 10] Objective (d) 19691.20196937
     Coordinate descent loop 9 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 20101.76637428
+    [seed 10] Objective (z_hat) : 19462.43966049
     Using method dual for projection
-    [seed 10] Objective (d) 20091.90695143
+    [seed 10] Objective (d) 19467.01239142
     Coordinate descent loop 10 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 19773.78188673
+    [seed 10] Objective (z_hat) : 19233.45092821
     Using method dual for projection
-    [seed 10] Objective (d) 19757.77020844
+    [seed 10] Objective (d) 19214.12766228
     Coordinate descent loop 11 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 19418.61028664
+    [seed 10] Objective (z_hat) : 19085.64469638
     Using method dual for projection
-    [seed 10] Objective (d) 19421.36595352
+    [seed 10] Objective (d) 19084.13170902
     Coordinate descent loop 12 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 19186.35004924
+    [seed 10] Objective (z_hat) : 18945.61954180
     Using method dual for projection
-    [seed 10] Objective (d) 19175.22129619
+    [seed 10] Objective (d) 18980.31578131
     Coordinate descent loop 13 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 18878.26840608
+    [seed 10] Objective (z_hat) : 18876.43985522
     Using method dual for projection
-    [seed 10] Objective (d) 18871.78057048
+    [seed 10] Objective (d) 18836.38353365
     Coordinate descent loop 14 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 18666.45423841
+    [seed 10] Objective (z_hat) : 18720.74584344
     Using method dual for projection
-    [seed 10] Objective (d) 18663.64395106
+    [seed 10] Objective (d) 18721.54845149
     Coordinate descent loop 15 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 18464.68178034
+    [seed 10] Objective (z_hat) : 18623.64002131
     Using method dual for projection
-    [seed 10] Objective (d) 18461.92121317
+    [seed 10] Objective (d) 18621.18904484
     Coordinate descent loop 16 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 18300.21908164
+    [seed 10] Objective (z_hat) : 18547.81611676
     Using method dual for projection
-    [seed 10] Objective (d) 18296.23064961
+    [seed 10] Objective (d) 18545.24281148
     Coordinate descent loop 17 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 18145.38882281
+    [seed 10] Objective (z_hat) : 18471.88752075
     Using method dual for projection
-    [seed 10] Objective (d) 18141.88023829
+    [seed 10] Objective (d) 18470.42055101
     Coordinate descent loop 18 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 17985.44041813
+    [seed 10] Objective (z_hat) : 18393.84202336
     Using method dual for projection
-    [seed 10] Objective (d) 17987.71325374
+    [seed 10] Objective (d) 18391.78226334
     Coordinate descent loop 19 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 17841.06461259
+    [seed 10] Objective (z_hat) : 18331.73169084
     Using method dual for projection
-    [seed 10] Objective (d) 17848.33422148
+    [seed 10] Objective (d) 18328.84451727
     Coordinate descent loop 20 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 17745.91302387
+    [seed 10] Objective (z_hat) : 18274.15271778
     Using method dual for projection
-    [seed 10] Objective (d) 17728.57890690
+    [seed 10] Objective (d) 18297.40702014
     Coordinate descent loop 21 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 17585.15958806
+    [seed 10] Objective (z_hat) : 18257.44912766
     Using method dual for projection
-    [seed 10] Objective (d) 17596.52868138
+    [seed 10] Objective (d) 18276.17808984
     Coordinate descent loop 22 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 17438.40659989
+    [seed 10] Objective (z_hat) : 18243.49274441
     Using method dual for projection
-    [seed 10] Objective (d) 17423.13458982
+    [seed 10] Objective (d) 18261.00618805
     Coordinate descent loop 23 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 17301.19031568
+    [seed 10] Objective (z_hat) : 18234.36110407
     Using method dual for projection
-    [seed 10] Objective (d) 17296.64572129
+    [seed 10] Objective (d) 18208.94505628
     Coordinate descent loop 24 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 17215.47268840
+    [seed 10] Objective (z_hat) : 18179.04646059
     Using method dual for projection
-    [seed 10] Objective (d) 17213.03677423
+    [seed 10] Objective (d) 18179.60670435
     Coordinate descent loop 25 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 17123.39743502
+    [seed 10] Objective (z_hat) : 18156.84098633
     Using method dual for projection
-    [seed 10] Objective (d) 17122.17209823
+    [seed 10] Objective (d) 18166.58627535
     Coordinate descent loop 26 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 17042.84333416
+    [seed 10] Objective (z_hat) : 18145.85002332
     Using method dual for projection
-    [seed 10] Objective (d) 17041.48704878
+    [seed 10] Objective (d) 18152.93057101
     Coordinate descent loop 27 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16960.23888355
+    [seed 10] Objective (z_hat) : 18131.29821032
     Using method dual for projection
-    [seed 10] Objective (d) 16958.57125294
+    [seed 10] Objective (d) 18131.16932362
     Coordinate descent loop 28 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16896.91468966
+    [seed 10] Objective (z_hat) : 18119.63496373
     Using method dual for projection
-    [seed 10] Objective (d) 16914.32062067
+    [seed 10] Objective (d) 18111.53150850
     Coordinate descent loop 29 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16865.08204192
+    [seed 10] Objective (z_hat) : 18095.94337598
     Using method dual for projection
-    [seed 10] Objective (d) 16845.63701529
+    [seed 10] Objective (d) 18106.50708582
     Coordinate descent loop 30 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16781.49709793
+    [seed 10] Objective (z_hat) : 18098.05240620
     Using method dual for projection
-    [seed 10] Objective (d) 16780.14366461
+    [seed 10] Objective (d) 18097.82992343
     Coordinate descent loop 31 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16721.80336422
+    [seed 10] Objective (z_hat) : 18084.15734809
     Using method dual for projection
-    [seed 10] Objective (d) 16721.23946706
+    [seed 10] Objective (d) 18025.10057883
     Coordinate descent loop 32 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16652.49095184
+    [seed 10] Objective (z_hat) : 18015.48731320
     Using method dual for projection
-    [seed 10] Objective (d) 16651.45716684
+    [seed 10] Objective (d) 18015.15574564
     Coordinate descent loop 33 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16595.04289592
+    [seed 10] Objective (z_hat) : 18009.09809163
     Using method dual for projection
-    [seed 10] Objective (d) 16594.25328782
+    [seed 10] Objective (d) 18010.63890542
     Coordinate descent loop 34 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16544.59485296
+    [seed 10] Objective (z_hat) : 18004.88799023
     Using method dual for projection
-    [seed 10] Objective (d) 16544.02716533
+    [seed 10] Objective (d) 18058.43305048
     Coordinate descent loop 35 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16497.38373313
+    [seed 10] Objective (z_hat) : 18049.18841707
     Using method dual for projection
-    [seed 10] Objective (d) 16497.02586689
+    [seed 10] Objective (d) 17997.43401446
     Coordinate descent loop 36 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16458.05970835
+    [seed 10] Objective (z_hat) : 17990.54846467
     Using method dual for projection
-    [seed 10] Objective (d) 16457.01096394
+    [seed 10] Objective (d) 17990.87719259
     Coordinate descent loop 37 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16420.19661698
+    [seed 10] Objective (z_hat) : 17985.96102599
     Using method dual for projection
-    [seed 10] Objective (d) 16418.93948738
+    [seed 10] Objective (d) 17988.72471628
     Coordinate descent loop 38 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16377.15037191
+    [seed 10] Objective (z_hat) : 17984.75057044
     Using method dual for projection
-    [seed 10] Objective (d) 16376.31073330
+    [seed 10] Objective (d) 18049.41985903
     Coordinate descent loop 39 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16346.54725977
+    [seed 10] Objective (z_hat) : 18046.54412269
     Using method dual for projection
-    [seed 10] Objective (d) 16351.87098258
+    [seed 10] Objective (d) 17984.35902694
     Coordinate descent loop 40 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16326.73106481
+    [seed 10] Objective (z_hat) : 17980.96972757
     Using method dual for projection
-    [seed 10] Objective (d) 16339.69876784
+    [seed 10] Objective (d) 17980.80770245
     Coordinate descent loop 41 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16319.42789268
+    [seed 10] Objective (z_hat) : 17972.69753312
     Using method dual for projection
-    [seed 10] Objective (d) 16300.68258128
+    [seed 10] Objective (d) 17972.04412269
     Coordinate descent loop 42 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16270.33215077
+    [seed 10] Objective (z_hat) : 17966.98889595
     Using method dual for projection
-    [seed 10] Objective (d) 16272.94321353
+    [seed 10] Objective (d) 17966.83389562
     Coordinate descent loop 43 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16247.31093219
+    [seed 10] Objective (z_hat) : 17962.44373939
     Using method dual for projection
-    [seed 10] Objective (d) 16244.36042378
+    [seed 10] Objective (d) 17977.55609301
     Coordinate descent loop 44 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16207.24479185
+    [seed 10] Objective (z_hat) : 17975.06334333
     Using method dual for projection
-    [seed 10] Objective (d) 16206.94612057
+    [seed 10] Objective (d) 17965.91909413
     Coordinate descent loop 45 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16184.19778615
+    [seed 10] Objective (z_hat) : 17963.51557159
     Using method dual for projection
-    [seed 10] Objective (d) 16184.43668266
+    [seed 10] Objective (d) 17978.76528550
     Coordinate descent loop 46 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16168.91756234
+    [seed 10] Objective (z_hat) : 17976.64782433
     Using method dual for projection
-    [seed 10] Objective (d) 16168.85760316
+    [seed 10] Objective (d) 17972.77907303
     Coordinate descent loop 47 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16153.70477672
+    [seed 10] Objective (z_hat) : 17970.86174269
     Using method dual for projection
-    [seed 10] Objective (d) 16153.74275107
+    [seed 10] Objective (d) 17972.47575814
     Coordinate descent loop 48 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16132.99492537
+    [seed 10] Objective (z_hat) : 17970.50843842
     Using method dual for projection
-    [seed 10] Objective (d) 16139.70154416
+    [seed 10] Objective (d) 17964.12393853
     Coordinate descent loop 49 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16122.98433136
+    [seed 10] Objective (z_hat) : 17961.91502426
     Using method dual for projection
-    [seed 10] Objective (d) 16115.57474623
+    [seed 10] Objective (d) 17971.95846882
     Coordinate descent loop 50 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16101.66155652
+    [seed 10] Objective (z_hat) : 17967.98029617
     Using method dual for projection
-    [seed 10] Objective (d) 16104.47635681
+    [seed 10] Objective (d) 17970.09686134
     Coordinate descent loop 51 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16089.61734814
+    [seed 10] Objective (z_hat) : 17968.35332098
     Using method dual for projection
-    [seed 10] Objective (d) 16111.31442669
+    [seed 10] Objective (d) 17962.68647238
     Coordinate descent loop 52 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16101.08039488
+    [seed 10] Objective (z_hat) : 17960.62676772
     Using method dual for projection
-    [seed 10] Objective (d) 16103.61758667
+    [seed 10] Objective (d) 17964.09746899
     Coordinate descent loop 53 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16094.08434850
+    [seed 10] Objective (z_hat) : 17963.10699217
     Using method dual for projection
-    [seed 10] Objective (d) 16067.00637321
+    [seed 10] Objective (d) 17960.59376126
     Coordinate descent loop 54 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16057.59697184
+    [seed 10] Objective (z_hat) : 17959.37356324
     Using method dual for projection
-    [seed 10] Objective (d) 16057.52900889
+    [seed 10] Objective (d) 17954.84100029
     Coordinate descent loop 55 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16045.03530403
+    [seed 10] Objective (z_hat) : 17953.97372202
     Using method dual for projection
-    [seed 10] Objective (d) 16044.93408215
+    [seed 10] Objective (d) 17960.88093244
     Coordinate descent loop 56 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16029.22234371
+    [seed 10] Objective (z_hat) : 17959.65108933
     Using method dual for projection
-    [seed 10] Objective (d) 16029.03267237
+    [seed 10] Objective (d) 17957.44184535
     Coordinate descent loop 57 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16019.97545831
+    [seed 10] Objective (z_hat) : 17956.22924010
     Using method dual for projection
-    [seed 10] Objective (d) 16020.24618850
+    [seed 10] Objective (d) 17955.63062590
     Coordinate descent loop 58 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16012.23811867
+    [seed 10] Objective (z_hat) : 17954.76010772
     Using method dual for projection
-    [seed 10] Objective (d) 16015.09520047
+    [seed 10] Objective (d) 17946.56530959
     Coordinate descent loop 59 / 60 [n_jobs=1]
-    [seed 10] Objective (Z) : 16008.35823547
+    [seed 10] Objective (z_hat) : 17945.23167260
     Using method dual for projection
-    [seed 10] Objective (d) 16012.50178577
+    [seed 10] Objective (d) 17944.55864418
 
 
 Let's look at the atoms now.
@@ -472,16 +480,22 @@ Let's look at the atoms now.
 
 
 .. image:: /auto_examples/images/sphx_glr_plot_lfp_data_002.png
-    :align: center
+    :class: sphx-glr-single-img
 
 
 
 
-**Total running time of the script:** ( 1 minutes  28.522 seconds)
+**Total running time of the script:** ( 1 minutes  5.605 seconds)
 
 
+.. _sphx_glr_download_auto_examples_plot_lfp_data.py:
 
-.. container:: sphx-glr-footer
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download
@@ -494,6 +508,9 @@ Let's look at the atoms now.
 
      :download:`Download Jupyter notebook: plot_lfp_data.ipynb <plot_lfp_data.ipynb>`
 
-.. rst-class:: sphx-glr-signature
 
-    `Generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_
