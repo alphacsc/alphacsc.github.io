@@ -1,0 +1,23 @@
+alphacsc.learn\_d\_z\_multi
+===========================
+
+.. automodule:: alphacsc.learn_d_z_multi
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      get_iteration_func
+      learn_d_z_multi
+   
+   
+
+   
+   
+   
+
+   
+   
+   

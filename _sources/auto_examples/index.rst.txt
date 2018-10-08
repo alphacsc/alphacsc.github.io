@@ -15,53 +15,12 @@ Examples Gallery
 
     <div style='clear:both'></div>
 
-.. _alphacsc_examples:
+.. _csc_examples:
 
-Alpha stable CSC
-----------------
-
-
+Univariate CSC
+--------------
 
 
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates MoTIF [1] on simulated data. In the alphacsc module, we are offering ...">
-
-.. only:: html
-
-    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
-
-        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_motif.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/alphacsc/plot_simulate_motif
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how the sliding window method (SWM) [1] works on simulated data. The code is...">
-
-.. only:: html
-
-    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
-
-        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_swm.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/alphacsc/plot_simulate_swm
 
 .. raw:: html
 
@@ -69,9 +28,9 @@ Alpha stable CSC
 
 .. only:: html
 
-    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_lfp_data_thumb.png
+    .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_lfp_data_thumb.png
 
-        :ref:`sphx_glr_auto_examples_alphacsc_plot_lfp_data.py`
+        :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py`
 
 .. raw:: html
 
@@ -81,7 +40,7 @@ Alpha stable CSC
 .. toctree::
    :hidden:
 
-   /auto_examples/alphacsc/plot_lfp_data
+   /auto_examples/csc/plot_lfp_data
 
 .. raw:: html
 
@@ -89,9 +48,9 @@ Alpha stable CSC
 
 .. only:: html
 
-    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
+    .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
 
-        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_randomstate.py`
+        :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py`
 
 .. raw:: html
 
@@ -101,7 +60,7 @@ Alpha stable CSC
 .. toctree::
    :hidden:
 
-   /auto_examples/alphacsc/plot_simulate_randomstate
+   /auto_examples/csc/plot_simulate_randomstate
 
 .. raw:: html
 
@@ -109,29 +68,9 @@ Alpha stable CSC
 
 .. only:: html
 
-    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
+    .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
 
-        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_csc.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/alphacsc/plot_simulate_csc
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates alphaCSC on simulated data.">
-
-.. only:: html
-
-    .. figure:: /auto_examples/alphacsc/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
-
-        :ref:`sphx_glr_auto_examples_alphacsc_plot_simulate_alphacsc.py`
+        :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py`
 
 .. raw:: html
 
@@ -141,7 +80,7 @@ Alpha stable CSC
 .. toctree::
    :hidden:
 
-   /auto_examples/alphacsc/plot_simulate_alphacsc
+   /auto_examples/csc/plot_simulate_csc
 .. raw:: html
 
     <div style='clear:both'></div>
@@ -150,7 +89,6 @@ Alpha stable CSC
 
 Multivariate CSC with rank 1 constraints
 ----------------------------------------
-
 
 
 
@@ -173,6 +111,86 @@ Multivariate CSC with rank 1 constraints
    :hidden:
 
    /auto_examples/multicsc/plot_somato_mu_waves
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+.. _alphacsc_examples:
+
+Univariate CSC with an alpha-stable distribution
+------------------------------------------------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates alphaCSC on simulated data.">
+
+.. only:: html
+
+    .. figure:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
+
+        :ref:`sphx_glr_auto_examples_noise_alpha_plot_simulate_alphacsc.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/noise_alpha/plot_simulate_alphacsc
+.. raw:: html
+
+    <div style='clear:both'></div>
+
+.. _other_examples:
+
+Other shift-invariant dictionary learning algorithms
+----------------------------------------------------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates MoTIF [1] on simulated data. In the alphacsc module, we are offering ...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
+
+        :ref:`sphx_glr_auto_examples_other_plot_simulate_motif.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/other/plot_simulate_motif
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how the sliding window method (SWM) [1] works on simulated data. The code is...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
+
+        :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/other/plot_simulate_swm
 .. raw:: html
 
     <div style='clear:both'></div>

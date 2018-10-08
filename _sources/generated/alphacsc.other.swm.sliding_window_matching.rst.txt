@@ -1,6 +1,0 @@
-alphacsc.other.swm.sliding\_window\_matching
-============================================
-
-.. currentmodule:: alphacsc.other.swm
-
-.. autofunction:: sliding_window_matching
