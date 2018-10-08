@@ -15,7 +15,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -60,7 +60,7 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples Gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/pactools/pactools">Fork pactools on Github</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/alphacsc/alphacsc">Fork alphacsc on Github</a></li>
 </ul>
 </ul>
 </li>
@@ -108,7 +108,29 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">alphacsc.other.motif.learn_atoms</a></li>
+</ul>
+
+  <li>
+    <a href="alphacsc.other.swm.sliding_window_matching.html" title="Previous Chapter: alphacsc.other.swm.sliding_window_matching"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; alphacsc.othe...</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../_sources/generated/alphacsc.other.motif.learn_atoms.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
       
   <div class="section" id="alphacsc-other-motif-learn-atoms">
 <h1>alphacsc.other.motif.learn_atoms<a class="headerlink" href="#alphacsc-other-motif-learn-atoms" title="Permalink to this headline">¶</a></h1>
@@ -120,26 +142,30 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_trials, n_times)</span></dt>
-<dd><p class="first last">The data on which to apply MoTIF.</p>
-</dd>
-<dt><strong>n_atoms</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of atoms.</p>
-</dd>
-<dt><strong>n_times_atom</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The support of the atoms</p>
-</dd>
-<dt><strong>n_iter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of iterations</p>
-</dd>
-<dt><strong>max_shift</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The maximum allowable shift for the atoms.</p>
-</dd>
-<dt><strong>random_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int | None</span></dt>
-<dd><p class="first last">The random initialization.</p>
-</dd>
-</dl>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array, shape (n_trials, n_times)</p>
+<blockquote>
+<div><p>The data on which to apply MoTIF.</p>
+</div></blockquote>
+<p><strong>n_atoms</strong> : int</p>
+<blockquote>
+<div><p>The number of atoms.</p>
+</div></blockquote>
+<p><strong>n_times_atom</strong> : int</p>
+<blockquote>
+<div><p>The support of the atoms</p>
+</div></blockquote>
+<p><strong>n_iter</strong> : int</p>
+<blockquote>
+<div><p>The number of iterations</p>
+</div></blockquote>
+<p><strong>max_shift</strong> : int</p>
+<blockquote>
+<div><p>The maximum allowable shift for the atoms.</p>
+</div></blockquote>
+<p><strong>random_state</strong> : int | None</p>
+<blockquote class="last">
+<div><p>The random initialization.</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -161,7 +187,7 @@
     </p>
     <p>
         &copy; Copyright 2017, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
     </p>
   </div>
 </footer>

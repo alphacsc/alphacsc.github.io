@@ -15,7 +15,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,7 +59,7 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples Gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/pactools/pactools">Fork pactools on Github</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/alphacsc/alphacsc">Fork alphacsc on Github</a></li>
 </ul>
 </ul>
 </li>
@@ -73,7 +73,9 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">alphacsc.OnlineCDL</a></li>
+<li><a class="reference internal" href="#">alphacsc.OnlineCDL</a><ul>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -107,79 +109,114 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">alphacsc.OnlineCDL</a><ul>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../_sources/generated/alphacsc.OnlineCDL.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
       
   <div class="section" id="alphacsc-onlinecdl">
 <h1>alphacsc.OnlineCDL<a class="headerlink" href="#alphacsc-onlinecdl" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="alphacsc.OnlineCDL">
-<em class="property">class </em><code class="descclassname">alphacsc.</code><code class="descname">OnlineCDL</code><span class="sig-paren">(</span><em>n_atoms</em>, <em>n_times_atom</em>, <em>reg=0.1</em>, <em>n_iter=60</em>, <em>n_jobs=1</em>, <em>solver_z='lgcd'</em>, <em>solver_z_kwargs={}</em>, <em>unbiased_z_hat=False</em>, <em>solver_d='alternate_adaptive'</em>, <em>solver_d_kwargs={}</em>, <em>rank1=True</em>, <em>uv_constraint='separate'</em>, <em>lmbd_max='scaled'</em>, <em>eps=1e-10</em>, <em>D_init=None</em>, <em>D_init_params={}</em>, <em>alpha=0.8</em>, <em>batch_size=1</em>, <em>batch_selection='random'</em>, <em>verbose=10</em>, <em>random_state=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.OnlineCDL" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">alphacsc.</code><code class="descname">OnlineCDL</code><span class="sig-paren">(</span><em>n_atoms</em>, <em>n_times_atom</em>, <em>reg=0.1</em>, <em>n_iter=60</em>, <em>n_jobs=1</em>, <em>solver_z='lgcd'</em>, <em>solver_z_kwargs={}</em>, <em>unbiased_z_hat=False</em>, <em>solver_d='alternate_adaptive'</em>, <em>solver_d_kwargs={}</em>, <em>rank1=True</em>, <em>window=False</em>, <em>uv_constraint='separate'</em>, <em>lmbd_max='scaled'</em>, <em>eps=1e-10</em>, <em>D_init=None</em>, <em>D_init_params={}</em>, <em>alpha=0.8</em>, <em>batch_size=1</em>, <em>batch_selection='random'</em>, <em>verbose=10</em>, <em>random_state=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.OnlineCDL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Online algorithm for convolutional dictionary learning</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>Problem Specs</strong></dt>
-<dd></dd>
-<dt><strong>n_atoms</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of atoms to learn.</p>
-</dd>
-<dt><strong>n_times_atom</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The support of the atom.</p>
-</dd>
-<dt><strong>loss</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{ ‘l2’ | ‘dtw’ | ‘whitening’ }</span></dt>
-<dd><p class="first last">Loss for the data-fit term. Either the norm l2 or the soft-DTW.</p>
-</dd>
-<dt><strong>loss_params</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Parameters of the loss</p>
-</dd>
-<dt><strong>rank1</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">If set to True, learn rank 1 dictionary atoms.</p>
-</dd>
-<dt><strong>uv_constraint</strong> <span class="classifier-delimiter">:</span> <span class="classifier">{‘joint’, ‘separate’, ‘box’}</span></dt>
-<dd><p class="first">The kind of norm constraint on the atoms:</p>
-<ul class="last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>Problem Specs</strong></p>
+<p><strong>n_atoms</strong> : int</p>
+<blockquote>
+<div><p>The number of atoms to learn.</p>
+</div></blockquote>
+<p><strong>n_times_atom</strong> : int</p>
+<blockquote>
+<div><p>The support of the atom.</p>
+</div></blockquote>
+<p><strong>loss</strong> : { ‘l2’ | ‘dtw’ | ‘whitening’ }</p>
+<blockquote>
+<div><p>Loss for the data-fit term. Either the norm l2 or the soft-DTW.</p>
+</div></blockquote>
+<p><strong>loss_params</strong> : dict</p>
+<blockquote>
+<div><p>Parameters of the loss</p>
+</div></blockquote>
+<p><strong>rank1</strong> : boolean</p>
+<blockquote>
+<div><p>If set to True, learn rank 1 dictionary atoms.</p>
+</div></blockquote>
+<p><strong>window</strong> : boolean</p>
+<blockquote>
+<div><p>If set to True, re-parametrizes the atoms with a temporal Tukey window.</p>
+</div></blockquote>
+<p><strong>uv_constraint</strong> : {‘joint’ | ‘separate’}</p>
+<blockquote>
+<div><p>The kind of norm constraint on the atoms:</p>
+<ul class="simple">
 <li><code class="code docutils literal notranslate"><span class="pre">'joint'</span></code>: the constraint is ||[u, v]||_2 &lt;= 1</li>
 <li><code class="code docutils literal notranslate"><span class="pre">'separate'</span></code>: the constraint is ||u||_2 &lt;= 1 and ||v||_2 &lt;= 1</li>
-<li><code class="code docutils literal notranslate"><span class="pre">'box'</span></code>: the constraint is ||[u, v]||_inf &lt;= 1</li>
 </ul>
-</dd>
-<dt><strong>Global algorithm</strong></dt>
-<dd><p class="first last">Online algorithm</p>
-</dd>
-<dt><strong>alpha</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Forgetting factor for online learning. If set to 0, the learning is
+</div></blockquote>
+<p><strong>Global algorithm</strong></p>
+<blockquote>
+<div><p>Online algorithm</p>
+</div></blockquote>
+<p><strong>alpha</strong> : float</p>
+<blockquote>
+<div><p>Forgetting factor for online learning. If set to 0, the learning is
 stochastic and each D-step is independent from the previous steps.
 When set to 1, each the previous values z_hat - computed with different
 dictionary - have the same weight as the current one. This factor
 should be large enough to ensure convergence but to large factor can
 lead to sub-optimal minima.</p>
-</dd>
-<dt><strong>batch_selection</strong> <span class="classifier-delimiter">:</span> <span class="classifier">‘random’ | ‘cyclic’</span></dt>
-<dd><p class="first last">The batch selection strategy for online learning. The batch are either
+</div></blockquote>
+<p><strong>batch_selection</strong> : ‘random’ | ‘cyclic’</p>
+<blockquote>
+<div><p>The batch selection strategy for online learning. The batch are either
 selected randomly among all samples (without replacement) or in a
 cyclic way.</p>
-</dd>
-<dt><strong>batch_size</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int in [1, n_trials]</span></dt>
-<dd><p class="first last">Size of the batch used in online learning. Increasing it regularizes
+</div></blockquote>
+<p><strong>batch_size</strong> : int in [1, n_trials]</p>
+<blockquote>
+<div><p>Size of the batch used in online learning. Increasing it regularizes
 the dictionary learning as there is less variance for the successive
 estimates. But it also increases the computational cost as more coding
 signals z_hat must be estimate at each iteration.</p>
-</dd>
-<dt><strong>n_iter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of alternate steps to perform.</p>
-</dd>
-<dt><strong>eps</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Stopping criterion. If the cost descent after a uv and a z update is
+</div></blockquote>
+<p><strong>n_iter</strong> : int</p>
+<blockquote>
+<div><p>The number of alternate steps to perform.</p>
+</div></blockquote>
+<p><strong>eps</strong> : float</p>
+<blockquote>
+<div><p>Stopping criterion. If the cost descent after a uv and a z update is
 smaller than eps, return.</p>
-</dd>
-<dt><strong>reg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The regularization parameter</p>
-</dd>
-<dt><strong>lmbd_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">‘fixed’ | ‘scaled’ | ‘per_atom’ | ‘shared’</span></dt>
-<dd><p class="first">If not fixed, adapt the regularization rate as a ratio of lambda_max:</p>
-<ul class="last simple">
+</div></blockquote>
+<p><strong>reg</strong> : float</p>
+<blockquote>
+<div><p>The regularization parameter</p>
+</div></blockquote>
+<p><strong>lmbd_max</strong> : ‘fixed’ | ‘scaled’ | ‘per_atom’ | ‘shared’</p>
+<blockquote>
+<div><p>If not fixed, adapt the regularization rate as a ratio of lambda_max:</p>
+<ul class="simple">
 <li><code class="code docutils literal notranslate"><span class="pre">'scaled'</span></code>: the regularization parameter is fixed as a ratio of
 its maximal value at init <em>i.e.</em>
 <span class="math notranslate nohighlight">\(\lambda\)</span> = reg * lmbd_max(uv_init)</li>
@@ -190,85 +227,99 @@ estimate <em>i.e.</em> <span class="math notranslate nohighlight">\(\lambda\)</s
 at each iteration as a ratio of its maximal value for this atom
 <em>i.e.</em> <span class="math notranslate nohighlight">\(\lambda[k]\)</span> = reg * lmbd_max(uv_hat[k])</li>
 </ul>
-</dd>
-<dt><strong>Z-step parameters</strong></dt>
-<dd></dd>
-<dt><strong>solver_z</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The solver to use for the z update. Options are
+</div></blockquote>
+<p><strong>Z-step parameters</strong></p>
+<p><strong>solver_z</strong> : str</p>
+<blockquote>
+<div><p>The solver to use for the z update. Options are
 ‘l_bfgs’ (default) | “lgcd”</p>
-</dd>
-<dt><strong>solver_z_kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Additional keyword arguments to pass to update_z_multi</p>
-</dd>
-<dt><strong>use_sparse_z</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">Use sparse lil_matrices to store the activations.</p>
-</dd>
-<dt><strong>unbiased_z_hat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">If set to True, the value of the non-zero coefficients in the returned
+</div></blockquote>
+<p><strong>solver_z_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Additional keyword arguments to pass to update_z_multi</p>
+</div></blockquote>
+<p><strong>use_sparse_z</strong> : boolean</p>
+<blockquote>
+<div><p>Use sparse lil_matrices to store the activations.</p>
+</div></blockquote>
+<p><strong>unbiased_z_hat</strong> : boolean</p>
+<blockquote>
+<div><p>If set to True, the value of the non-zero coefficients in the returned
 z_hat are recomputed with reg=0 on the frozen support.</p>
-</dd>
-<dt><strong>D-step parameters</strong></dt>
-<dd></dd>
-<dt><strong>solver_d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The solver to use for the d update. Options are
-‘alternate’ | ‘alternate_adaptive’ (default) | ‘joint’ | ‘l-bfgs’</p>
-</dd>
-<dt><strong>solver_d_kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Additional keyword arguments to provide to update_d</p>
-</dd>
-<dt><strong>D_init</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or array</span></dt>
-<dd><p class="first last">The initial atoms with shape (n_atoms, n_channels + n_times_atoms) or
+</div></blockquote>
+<p><strong>D-step parameters</strong></p>
+<p><strong>solver_d</strong> : str</p>
+<blockquote>
+<div><p>The solver to use for the d update. Options are
+‘alternate’ | ‘alternate_adaptive’ (default) | ‘joint’</p>
+</div></blockquote>
+<p><strong>solver_d_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Additional keyword arguments to provide to update_d</p>
+</div></blockquote>
+<p><strong>D_init</strong> : str or array</p>
+<blockquote>
+<div><p>The initial atoms with shape (n_atoms, n_channels + n_times_atoms) or
 (n_atoms, n_channels, n_times_atom) or an initialization scheme str in
 {‘kmeans’ | ‘ssa’ | ‘chunks’ | ‘random’}.</p>
-</dd>
-<dt><strong>D_init_params</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Dictionnary of parameters for the kmeans init method.</p>
-</dd>
-<dt><strong>Technical parameters</strong></dt>
-<dd></dd>
-<dt><strong>n_jobs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of parallel jobs.</p>
-</dd>
-<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The verbosity level.</p>
-</dd>
-<dt><strong>callback</strong> <span class="classifier-delimiter">:</span> <span class="classifier">func</span></dt>
-<dd><p class="first last">A callback function called at the end of each loop of the
+</div></blockquote>
+<p><strong>D_init_params</strong> : dict</p>
+<blockquote>
+<div><p>Dictionnary of parameters for the kmeans init method.</p>
+</div></blockquote>
+<p><strong>Technical parameters</strong></p>
+<p><strong>n_jobs</strong> : int</p>
+<blockquote>
+<div><p>The number of parallel jobs.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : int</p>
+<blockquote>
+<div><p>The verbosity level.</p>
+</div></blockquote>
+<p><strong>callback</strong> : func</p>
+<blockquote>
+<div><p>A callback function called at the end of each loop of the
 coordinate descent.</p>
-</dd>
-<dt><strong>random_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int | None</span></dt>
-<dd><p class="first last">The random state.</p>
-</dd>
-<dt><strong>raise_on_increase</strong> <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
-<dd><p class="first last">Raise an error if the objective function increase</p>
-</dd>
-</dl>
+</div></blockquote>
+<p><strong>random_state</strong> : int | None</p>
+<blockquote>
+<div><p>The random state.</p>
+</div></blockquote>
+<p><strong>raise_on_increase</strong> : boolean</p>
+<blockquote class="last">
+<div><p>Raise an error if the objective function increase</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Attributes:</th><td class="field-body"><dl class="first last docutils">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">D_hat_</span></code></dt>
-<dd><p class="first last">array: dictionary in full rank mode.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">pobj_</span></code></dt>
-<dd><p class="first last">list: Objective function value at each step of the alternate minimization.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">times_</span></code></dt>
-<dd><p class="first last">list: Cumulative time for each iteration of the coordinate descent.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">u_hat_</span></code></dt>
-<dd><p class="first last">array: spatial map of the dictionary. If <cite>rank1 = False</cite>, this is an</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">uv_hat_</span></code></dt>
-<dd><p class="first last">array: dictionary in rank 1 mode. If <cite>rank1 = False</cite>, this is an</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">v_hat_</span></code></dt>
-<dd><p class="first last">array: temporal patterns of the dictionary. If <cite>rank1 = False</cite>, this</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">z_hat_</span></code></dt>
-<dd><p class="first last">array: Sparse code associated to the signals used to fit the model.</p>
-</dd>
-</dl>
-</td>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">D_hat_</span></code></td>
+<td>array: dictionary in full rank mode.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">pobj_</span></code></td>
+<td>list: Objective function value at each step of the alternate minimization.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">times_</span></code></td>
+<td>list: Cumulative time for each iteration of the coordinate descent.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">u_hat_</span></code></td>
+<td>array: spatial map of the dictionary.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">uv_hat_</span></code></td>
+<td>array: dictionary in rank 1 mode.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">v_hat_</span></code></td>
+<td>array: temporal patterns of the dictionary.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">z_hat_</span></code></td>
+<td>array: Sparse code associated to the signals used to fit the model.</td>
 </tr>
 </tbody>
 </table>
@@ -295,7 +346,7 @@ coordinate descent.</p>
 </table>
 <dl class="method">
 <dt id="alphacsc.OnlineCDL.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>n_atoms</em>, <em>n_times_atom</em>, <em>reg=0.1</em>, <em>n_iter=60</em>, <em>n_jobs=1</em>, <em>solver_z='lgcd'</em>, <em>solver_z_kwargs={}</em>, <em>unbiased_z_hat=False</em>, <em>solver_d='alternate_adaptive'</em>, <em>solver_d_kwargs={}</em>, <em>rank1=True</em>, <em>uv_constraint='separate'</em>, <em>lmbd_max='scaled'</em>, <em>eps=1e-10</em>, <em>D_init=None</em>, <em>D_init_params={}</em>, <em>alpha=0.8</em>, <em>batch_size=1</em>, <em>batch_selection='random'</em>, <em>verbose=10</em>, <em>random_state=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.OnlineCDL.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>n_atoms</em>, <em>n_times_atom</em>, <em>reg=0.1</em>, <em>n_iter=60</em>, <em>n_jobs=1</em>, <em>solver_z='lgcd'</em>, <em>solver_z_kwargs={}</em>, <em>unbiased_z_hat=False</em>, <em>solver_d='alternate_adaptive'</em>, <em>solver_d_kwargs={}</em>, <em>rank1=True</em>, <em>window=False</em>, <em>uv_constraint='separate'</em>, <em>lmbd_max='scaled'</em>, <em>eps=1e-10</em>, <em>D_init=None</em>, <em>D_init_params={}</em>, <em>alpha=0.8</em>, <em>batch_size=1</em>, <em>batch_selection='random'</em>, <em>verbose=10</em>, <em>random_state=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.OnlineCDL.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
@@ -370,7 +421,7 @@ coordinate descent.</p>
     </p>
     <p>
         &copy; Copyright 2017, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
     </p>
   </div>
 </footer>

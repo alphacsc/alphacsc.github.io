@@ -15,7 +15,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -60,7 +60,7 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples Gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/pactools/pactools">Fork pactools on Github</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/alphacsc/alphacsc">Fork alphacsc on Github</a></li>
 </ul>
 </ul>
 </li>
@@ -108,7 +108,29 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">alphacsc.learn_d_z</a></li>
+</ul>
+
+  <li>
+    <a href="alphacsc.learn_d_z_weighted.html" title="Next Chapter: alphacsc.learn_d_z_weighted"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">alphacsc.lear... &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../_sources/generated/alphacsc.learn_d_z.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
       
   <div class="section" id="alphacsc-learn-d-z">
 <h1>alphacsc.learn_d_z<a class="headerlink" href="#alphacsc-learn-d-z" title="Permalink to this headline">¶</a></h1>
@@ -120,72 +142,87 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_trials, n_times)</span></dt>
-<dd><p class="first last">The data on which to perform CSC.</p>
-</dd>
-<dt><strong>n_atoms</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of atoms to learn.</p>
-</dd>
-<dt><strong>n_times_atom</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The support of the atom.</p>
-</dd>
-<dt><strong>func_d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable</span></dt>
-<dd><p class="first last">The function to update the atoms.</p>
-</dd>
-<dt><strong>reg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The regularization parameter</p>
-</dd>
-<dt><strong>n_iter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of coordinate-descent iterations.</p>
-</dd>
-<dt><strong>random_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int | None</span></dt>
-<dd><p class="first last">The random state.</p>
-</dd>
-<dt><strong>n_jobs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of parallel jobs.</p>
-</dd>
-<dt><strong>solver_z</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The solver to use for the z update. Options are
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array, shape (n_trials, n_times)</p>
+<blockquote>
+<div><p>The data on which to perform CSC.</p>
+</div></blockquote>
+<p><strong>n_atoms</strong> : int</p>
+<blockquote>
+<div><p>The number of atoms to learn.</p>
+</div></blockquote>
+<p><strong>n_times_atom</strong> : int</p>
+<blockquote>
+<div><p>The support of the atom.</p>
+</div></blockquote>
+<p><strong>func_d</strong> : callable</p>
+<blockquote>
+<div><p>The function to update the atoms.</p>
+</div></blockquote>
+<p><strong>reg</strong> : float</p>
+<blockquote>
+<div><p>The regularization parameter</p>
+</div></blockquote>
+<p><strong>n_iter</strong> : int</p>
+<blockquote>
+<div><p>The number of coordinate-descent iterations.</p>
+</div></blockquote>
+<p><strong>random_state</strong> : int | None</p>
+<blockquote>
+<div><p>The random state.</p>
+</div></blockquote>
+<p><strong>n_jobs</strong> : int</p>
+<blockquote>
+<div><p>The number of parallel jobs.</p>
+</div></blockquote>
+<p><strong>solver_z</strong> : str</p>
+<blockquote>
+<div><p>The solver to use for the z update. Options are
 ‘l-bfgs’ (default) | ‘ista’ | ‘fista’</p>
-</dd>
-<dt><strong>solver_d_kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Additional keyword arguments to provide to update_d</p>
-</dd>
-<dt><strong>solver_z_kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Additional keyword arguments to pass to update_z</p>
-</dd>
-<dt><strong>ds_init</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_atoms, n_times_atom)</span></dt>
-<dd><p class="first last">The initialization for the atoms.</p>
-</dd>
-<dt><strong>sample_weights</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_trials, n_times)</span></dt>
-<dd><p class="first last">The weights in the alphaCSC problem. Should be None
+</div></blockquote>
+<p><strong>solver_d_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Additional keyword arguments to provide to update_d</p>
+</div></blockquote>
+<p><strong>solver_z_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Additional keyword arguments to pass to update_z</p>
+</div></blockquote>
+<p><strong>ds_init</strong> : array, shape (n_atoms, n_times_atom)</p>
+<blockquote>
+<div><p>The initialization for the atoms.</p>
+</div></blockquote>
+<p><strong>sample_weights</strong> : array, shape (n_trials, n_times)</p>
+<blockquote>
+<div><p>The weights in the alphaCSC problem. Should be None
 when using vanilla CSC.</p>
-</dd>
-<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The verbosity level.</p>
-</dd>
-<dt><strong>callback</strong> <span class="classifier-delimiter">:</span> <span class="classifier">func</span></dt>
-<dd><p class="first last">A callback function called at the end of each loop of the
+</div></blockquote>
+<p><strong>verbose</strong> : int</p>
+<blockquote>
+<div><p>The verbosity level.</p>
+</div></blockquote>
+<p><strong>callback</strong> : func</p>
+<blockquote>
+<div><p>A callback function called at the end of each loop of the
 coordinate descent.</p>
-</dd>
-</dl>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pobj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">The objective function value at each step of the coordinate descent.</p>
-</dd>
-<dt><strong>times</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">The cumulative time for each iteration of the coordinate descent.</p>
-</dd>
-<dt><strong>d_hat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_atoms, n_times)</span></dt>
-<dd><p class="first last">The estimated atoms.</p>
-</dd>
-<dt><strong>z_hat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_atoms, n_trials, n_times - n_times_atom + 1)</span></dt>
-<dd><p class="first last">The sparse activation matrix.</p>
-</dd>
-</dl>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pobj</strong> : list</p>
+<blockquote>
+<div><p>The objective function value at each step of the coordinate descent.</p>
+</div></blockquote>
+<p><strong>times</strong> : list</p>
+<blockquote>
+<div><p>The cumulative time for each iteration of the coordinate descent.</p>
+</div></blockquote>
+<p><strong>d_hat</strong> : array, shape (n_atoms, n_times)</p>
+<blockquote>
+<div><p>The estimated atoms.</p>
+</div></blockquote>
+<p><strong>z_hat</strong> : array, shape (n_atoms, n_trials, n_times - n_times_atom + 1)</p>
+<blockquote class="last">
+<div><p>The sparse activation matrix.</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -207,7 +244,7 @@ coordinate descent.</p>
     </p>
     <p>
         &copy; Copyright 2017, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
     </p>
   </div>
 </footer>

@@ -15,7 +15,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -61,7 +61,7 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Examples Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/pactools/pactools">Fork pactools on Github</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/alphacsc/alphacsc">Fork alphacsc on Github</a></li>
 </ul>
 </ul>
 </li>
@@ -109,7 +109,33 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset</a></li>
+</ul>
+
+  <li>
+    <a href="../alphacsc/plot_simulate_alphacsc.html" title="Previous Chapter: Alpha CSC on simulated data"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Alpha CSC on ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../../api.html" title="Next Chapter: API Documentation"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">API Documentation &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../../_sources/auto_examples/multicsc/plot_somato_mu_waves.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
       
   <div class="sphx-glr-download-link-note admonition note">
 <p class="first admonition-title">Note</p>
@@ -149,7 +175,7 @@ dataset from <code class="code docutils literal notranslate"><span class="pre">m
     <span class="c1"># rescale the regularization parameter to be 20% of lambda_max</span>
     <span class="n">lmbd_max</span><span class="o">=</span><span class="s2">&quot;scaled&quot;</span><span class="p">,</span> <span class="n">reg</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span>
     <span class="c1"># Number of iteration for the alternate minimization and cvg threshold</span>
-    <span class="n">n_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e3</span><span class="p">,</span>
+    <span class="n">n_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
     <span class="c1"># solver for the z-step</span>
     <span class="n">solver_z</span><span class="o">=</span><span class="s2">&quot;lgcd&quot;</span><span class="p">,</span> <span class="n">solver_z_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;tol&#39;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="s1">&#39;max_iter&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">},</span>
     <span class="c1"># solver for the d-step</span>
@@ -168,8 +194,9 @@ dataset from <code class="code docutils literal notranslate"><span class="pre">m
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[CDL] Max value for lambda: 138.19863611142347
-.............[BatchCDL] Converged after 12 iteration, dz, du =9.732e+02, 8.609e+02
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>..............
+[BatchCDL] Converged after 14 iteration, (dz, du) = 9.735e-05, 8.066e-05
+[BatchCDL] Fit in 5.5e+02s
 </pre></div>
 </div>
 <p>Display the 4-th atom, which displays a <span class="math notranslate nohighlight">\(\mu\)</span>-waveform in its temporal
@@ -211,7 +238,7 @@ pattern.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_somato_mu_waves_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_somato_mu_waves_001.png" />
-<p><strong>Total running time of the script:</strong> ( 5 minutes  56.917 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 9 minutes  14.044 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-somato-mu-waves-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/plot_somato_mu_waves.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_somato_mu_waves.py</span></code></a></div>
@@ -234,7 +261,7 @@ pattern.</p>
     </p>
     <p>
         &copy; Copyright 2017, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
     </p>
   </div>
 </footer>

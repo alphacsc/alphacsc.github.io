@@ -15,7 +15,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -61,7 +61,7 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples Gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/pactools/pactools">Fork pactools on Github</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/alphacsc/alphacsc">Fork alphacsc on Github</a></li>
 </ul>
 </ul>
 </li>
@@ -109,7 +109,33 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">alphacsc.other.swm.sliding_window_matching</a></li>
+</ul>
+
+  <li>
+    <a href="alphacsc.learn_d_z_weighted.html" title="Previous Chapter: alphacsc.learn_d_z_weighted"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; alphacsc.lear...</span>
+    </a>
+  </li>
+  <li>
+    <a href="alphacsc.other.motif.learn_atoms.html" title="Next Chapter: alphacsc.other.motif.learn_atoms"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">alphacsc.othe... &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../_sources/generated/alphacsc.other.swm.sliding_window_matching.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
       
   <div class="section" id="alphacsc-other-swm-sliding-window-matching">
 <h1>alphacsc.other.swm.sliding_window_matching<a class="headerlink" href="#alphacsc-other-swm-sliding-window-matching" title="Permalink to this headline">¶</a></h1>
@@ -121,42 +147,48 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>x</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like 1d</span></dt>
-<dd><p class="first last">voltage time series</p>
-</dd>
-<dt><strong>L</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">window length (seconds)</p>
-</dd>
-<dt><strong>G</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">minimum window spacing (seconds)</p>
-</dd>
-<dt><strong>T</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">temperature parameter. Controls probability of accepting a new window</p>
-</dd>
-<dt><strong>max_iterations</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum number of iterations of potential changes in window placement</p>
-</dd>
-<dt><strong>window_starts_custom</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray (1d)</span></dt>
-<dd><p class="first last">Pre-set locations of initial windows (instead of evenly spaced by 2G)</p>
-</dd>
-<dt><strong>random_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The random state</p>
-</dd>
-</dl>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : array-like 1d</p>
+<blockquote>
+<div><p>voltage time series</p>
+</div></blockquote>
+<p><strong>L</strong> : float</p>
+<blockquote>
+<div><p>window length (seconds)</p>
+</div></blockquote>
+<p><strong>G</strong> : float</p>
+<blockquote>
+<div><p>minimum window spacing (seconds)</p>
+</div></blockquote>
+<p><strong>T</strong> : float</p>
+<blockquote>
+<div><p>temperature parameter. Controls probability of accepting a new window</p>
+</div></blockquote>
+<p><strong>max_iterations</strong> : int</p>
+<blockquote>
+<div><p>Maximum number of iterations of potential changes in window placement</p>
+</div></blockquote>
+<p><strong>window_starts_custom</strong> : np.ndarray (1d)</p>
+<blockquote>
+<div><p>Pre-set locations of initial windows (instead of evenly spaced by 2G)</p>
+</div></blockquote>
+<p><strong>random_state</strong> : int</p>
+<blockquote>
+<div><p>The random state</p>
+</div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>avg_window</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray (1d)</span></dt>
-<dd><p class="first last">The average waveform in x.</p>
-</dd>
-<dt><strong>window_starts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">ndarray (1d)</span></dt>
-<dd><p class="first last">Indices at which each window begins for the final set of windows</p>
-</dd>
-<dt><strong>J</strong> <span class="classifier-delimiter">:</span> <span class="classifier">np.ndarray (1d)</span></dt>
-<dd><p class="first last">Cost function value at each iteration</p>
-</dd>
-</dl>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>avg_window</strong> : ndarray (1d)</p>
+<blockquote>
+<div><p>The average waveform in x.</p>
+</div></blockquote>
+<p><strong>window_starts</strong> : ndarray (1d)</p>
+<blockquote>
+<div><p>Indices at which each window begins for the final set of windows</p>
+</div></blockquote>
+<p><strong>J</strong> : np.ndarray (1d)</p>
+<blockquote class="last">
+<div><p>Cost function value at each iteration</p>
+</div></blockquote>
 </td>
 </tr>
 </tbody>
@@ -190,7 +222,7 @@ MATLAB code: <a class="reference external" href="https://github.com/bartgips/SWM
     </p>
     <p>
         &copy; Copyright 2017, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
     </p>
   </div>
 </footer>

@@ -187,13 +187,13 @@ Multivariate CSC with rank 1 constraints
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Python source code: auto_examples_python.zip <//home/tom/Work/phd/multicsc/doc/auto_examples/auto_examples_python.zip>`
+    :download:`Download all examples in Python source code: auto_examples_python.zip <//cal/homes/tdupre/work/src/alphacsc/doc/auto_examples/auto_examples_python.zip>`
 
 
 
   .. container:: sphx-glr-download
 
-    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip <//home/tom/Work/phd/multicsc/doc/auto_examples/auto_examples_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip <//cal/homes/tdupre/work/src/alphacsc/doc/auto_examples/auto_examples_jupyter.zip>`
 
 
 .. only:: html

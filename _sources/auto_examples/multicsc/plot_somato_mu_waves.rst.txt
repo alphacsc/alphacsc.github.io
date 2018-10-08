@@ -72,7 +72,7 @@ Next, we define the parameters for multivariate CSC
         # rescale the regularization parameter to be 20% of lambda_max
         lmbd_max="scaled", reg=.2,
         # Number of iteration for the alternate minimization and cvg threshold
-        n_iter=100, eps=1e3,
+        n_iter=100, eps=1e-4,
         # solver for the z-step
         solver_z="lgcd", solver_z_kwargs={'tol': 1e-2, 'max_iter': 1000},
         # solver for the d-step
@@ -122,8 +122,9 @@ Fit the model and learn rank1 atoms
 
  .. code-block:: none
 
-    [CDL] Max value for lambda: 138.19863611142347
-    .............[BatchCDL] Converged after 12 iteration, dz, du =9.732e+02, 8.609e+02
+    ..............
+    [BatchCDL] Converged after 14 iteration, (dz, du) = 9.735e-05, 8.066e-05
+    [BatchCDL] Fit in 5.5e+02s
 
 
 Display the 4-th atom, which displays a :math:`\mu`-waveform in its temporal
@@ -177,7 +178,7 @@ pattern.
 
 
 
-**Total running time of the script:** ( 5 minutes  56.917 seconds)
+**Total running time of the script:** ( 9 minutes  14.044 seconds)
 
 
 .. _sphx_glr_download_auto_examples_multicsc_plot_somato_mu_waves.py:

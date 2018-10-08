@@ -15,7 +15,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -61,7 +61,7 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Examples Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/pactools/pactools">Fork pactools on Github</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/alphacsc/alphacsc">Fork alphacsc on Github</a></li>
 </ul>
 </ul>
 </li>
@@ -109,7 +109,33 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">MoTIF on simulated data</a></li>
+</ul>
+
+  <li>
+    <a href="../index.html" title="Previous Chapter: Examples Gallery"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Examples Gallery</span>
+    </a>
+  </li>
+  <li>
+    <a href="plot_simulate_swm.html" title="Next Chapter: SWM on simulated data"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">SWM on simulated data &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../../_sources/auto_examples/alphacsc/plot_simulate_motif.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
       
   <div class="sphx-glr-download-link-note admonition note">
 <p class="first admonition-title">Note</p>
@@ -165,8 +191,8 @@ to avoid overlapping atoms which MoTIF cannot handle</p>
 </div>
 <p>Note, how we use constant_amplitude=True since
 MoTIF cannot handle atoms of varying amplitudes. Check out our examples
-on <a class="reference internal" href="../plot_simulate_csc.html#sphx-glr-auto-examples-plot-simulate-csc-py"><span class="std std-ref">vanilla CSC</span></a> and
-<a class="reference internal" href="../plot_simulate_alphacsc.html#sphx-glr-auto-examples-plot-simulate-alphacsc-py"><span class="std std-ref">alphaCSC</span></a> to learn
+on <span class="xref std std-ref">vanilla CSC</span> and
+<span class="xref std std-ref">alphaCSC</span> to learn
 how to deal with such cases.
 Finally, let us estimate the atoms.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ds_hat</span> <span class="o">=</span> <span class="n">learn_atoms</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
@@ -205,7 +231,7 @@ Finally, let us estimate the atoms.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_simulate_motif_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_simulate_motif_002.png" />
-<p><strong>Total running time of the script:</strong> ( 0 minutes  1.479 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.973 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-alphacsc-plot-simulate-motif-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/plot_simulate_motif.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_simulate_motif.py</span></code></a></div>
@@ -228,7 +254,7 @@ Finally, let us estimate the atoms.</p>
     </p>
     <p>
         &copy; Copyright 2017, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.<br/>
     </p>
   </div>
 </footer>
