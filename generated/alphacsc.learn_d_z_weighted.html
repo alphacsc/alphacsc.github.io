@@ -97,8 +97,108 @@
 <h1>alphacsc.learn_d_z_weighted<a class="headerlink" href="#alphacsc-learn-d-z-weighted" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="alphacsc.learn_d_z_weighted">
-<code class="descclassname">alphacsc.</code><code class="descname">learn_d_z_weighted</code><span class="sig-paren">(</span><em>X</em>, <em>n_atoms</em>, <em>n_times_atom</em>, <em>func_d=&lt;function update_d_block&gt;</em>, <em>reg=0.1</em>, <em>alpha=1.9</em>, <em>n_iter_global=10</em>, <em>init_tau=False</em>, <em>n_iter_optim=10</em>, <em>n_iter_mcmc=10</em>, <em>n_burnin_mcmc=0</em>, <em>random_state=None</em>, <em>n_jobs=1</em>, <em>solver_z='l-bfgs'</em>, <em>solver_d_kwargs={}</em>, <em>solver_z_kwargs={}</em>, <em>verbose=10</em>, <em>callback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z_weighted" title="Permalink to this definition">¶</a></dt>
-<dd><p>Learn atoms using alphaCSC.</p>
+<code class="descclassname">alphacsc.</code><code class="descname">learn_d_z_weighted</code><span class="sig-paren">(</span><em>X</em>, <em>n_atoms</em>, <em>n_times_atom</em>, <em>func_d=&lt;function update_d_block&gt;</em>, <em>reg=0.1</em>, <em>alpha=1.9</em>, <em>n_iter_global=10</em>, <em>init_tau=False</em>, <em>n_iter_optim=10</em>, <em>n_iter_mcmc=10</em>, <em>n_burnin_mcmc=0</em>, <em>random_state=None</em>, <em>n_jobs=1</em>, <em>solver_z='l-bfgs'</em>, <em>solver_d_kwargs={}</em>, <em>solver_z_kwargs={}</em>, <em>ds_init=None</em>, <em>verbose=10</em>, <em>callback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z_weighted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Univariate Convolutional Sparse Coding with an alpha-stable distribution</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array, shape (n_trials, n_times)</p>
+<blockquote>
+<div><p>The data on which to perform CSC.</p>
+</div></blockquote>
+<p><strong>n_atoms</strong> : int</p>
+<blockquote>
+<div><p>The number of atoms to learn.</p>
+</div></blockquote>
+<p><strong>n_times_atom</strong> : int</p>
+<blockquote>
+<div><p>The support of the atom.</p>
+</div></blockquote>
+<p><strong>func_d</strong> : callable</p>
+<blockquote>
+<div><p>The function to update the atoms.</p>
+</div></blockquote>
+<p><strong>reg</strong> : float</p>
+<blockquote>
+<div><p>The regularization parameter</p>
+</div></blockquote>
+<p><strong>alpha</strong> : float in [0, 2[:</p>
+<blockquote>
+<div><p>Parameter of the alpha-stable noise distribution.</p>
+</div></blockquote>
+<p><strong>n_iter_global</strong> : int</p>
+<blockquote>
+<div><p>The number of iteration of the Expectation-Maximisation outer loop.</p>
+</div></blockquote>
+<p><strong>init_tau</strong> : boolean</p>
+<blockquote>
+<div><p>If True, use a heuristic to initialize the weights tau.</p>
+</div></blockquote>
+<p><strong>n_iter_optim</strong> : int</p>
+<blockquote>
+<div><p>The number of iteration of the Maximisation step (weighted CSC).</p>
+</div></blockquote>
+<p><strong>n_iter_mcmc</strong> : int</p>
+<blockquote>
+<div><p>The number of iteration of the Expectation step (MCMC).</p>
+</div></blockquote>
+<p><strong>n_burnin_mcmc</strong> : int</p>
+<blockquote>
+<div><p>The number of iteration unused by the MCMC algorithm.</p>
+</div></blockquote>
+<p><strong>random_state</strong> : int | None</p>
+<blockquote>
+<div><p>The random state.</p>
+</div></blockquote>
+<p><strong>n_jobs</strong> : int</p>
+<blockquote>
+<div><p>The number of parallel jobs.</p>
+</div></blockquote>
+<p><strong>solver_z</strong> : str</p>
+<blockquote>
+<div><p>The solver to use for the z update. Options are
+‘l-bfgs’ (default) | ‘ista’ | ‘fista’</p>
+</div></blockquote>
+<p><strong>solver_d_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Additional keyword arguments to provide to update_d</p>
+</div></blockquote>
+<p><strong>solver_z_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Additional keyword arguments to pass to update_z</p>
+</div></blockquote>
+<p><strong>ds_init</strong> : array, shape (n_atoms, n_times_atom)</p>
+<blockquote>
+<div><p>The initialization for the atoms.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : int</p>
+<blockquote>
+<div><p>The verbosity level.</p>
+</div></blockquote>
+<p><strong>callback</strong> : func</p>
+<blockquote>
+<div><p>A callback function called at the end of each loop of the
+coordinate descent.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>d_hat</strong> : array, shape (n_atoms, n_times)</p>
+<blockquote>
+<div><p>The estimated atoms.</p>
+</div></blockquote>
+<p><strong>z_hat</strong> : array, shape (n_atoms, n_trials, n_times - n_times_atom + 1)</p>
+<blockquote>
+<div><p>The sparse activation matrix.</p>
+</div></blockquote>
+<p><strong>tau</strong> : array, shape (n_trials, n_times)</p>
+<blockquote class="last">
+<div><p>Weights estimated by the Expectation-Maximisation algorithm.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

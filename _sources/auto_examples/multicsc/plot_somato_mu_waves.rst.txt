@@ -126,8 +126,8 @@ Fit the model and learn rank1 atoms
  .. code-block:: none
 
     ..............
-    [BatchCDL] Converged after 14 iteration, (dz, du) = 9.735e-05, 8.066e-05
-    [BatchCDL] Fit in 5.5e+02s
+    [BatchCDL] Converged after 14 iteration, (dz, du) = 8.766e-05, 8.712e-05
+    [BatchCDL] Fit in 5.9e+02s
 
 
 Display the 4-th atom, which displays a :math:`\mu`-waveform in its temporal
@@ -181,7 +181,7 @@ pattern.
 
 
 
-**Total running time of the script:** ( 9 minutes  39.911 seconds)
+**Total running time of the script:** ( 10 minutes  9.497 seconds)
 
 
 .. _sphx_glr_download_auto_examples_multicsc_plot_somato_mu_waves.py:

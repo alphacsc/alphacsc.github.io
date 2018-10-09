@@ -19,6 +19,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="alphacsc.OnlineCDL" href="alphacsc.OnlineCDL.html" />
     <link rel="prev" title="API Documentation" href="../api.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -230,57 +231,6 @@ coordinate descent.</p>
 <div><p>Raise an error if the objective function increase</p>
 </div></blockquote>
 </td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">D_hat_</span></code></td>
-<td>array: dictionary in full rank mode.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">pobj_</span></code></td>
-<td>list: Objective function value at each step of the alternate minimization.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">times_</span></code></td>
-<td>list: Cumulative time for each iteration of the coordinate descent.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">u_hat_</span></code></td>
-<td>array: spatial map of the dictionary.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">uv_hat_</span></code></td>
-<td>array: dictionary in rank 1 mode.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">v_hat_</span></code></td>
-<td>array: temporal patterns of the dictionary.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">z_hat_</span></code></td>
-<td>array: Sparse code associated to the signals used to fit the model.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code>(X[,&nbsp;y])</td>
-<td>Learn a convolutional dictionary from the set of signals X.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code>(X[,&nbsp;y])</td>
-<td>Fit to data, then transform it.</td>
-</tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code>(X)</td>
-<td>Returns sparse codes associated to the signals X for the dictionary.</td>
-</tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_inverse</span></code>(z_hat)</td>
-<td>Reconstruct the signals from the given sparse codes.</td>
 </tr>
 </tbody>
 </table>

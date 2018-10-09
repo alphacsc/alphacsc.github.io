@@ -94,24 +94,202 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="module-alphacsc.learn_d_z_multi">
-<span id="alphacsc-learn-d-z-multi"></span><h1>alphacsc.learn_d_z_multi<a class="headerlink" href="#module-alphacsc.learn_d_z_multi" title="Permalink to this headline">¶</a></h1>
-<p>Convolutional dictionary learning</p>
-<p class="rubric">Functions</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
+  <div class="section" id="alphacsc-learn-d-z-multi">
+<h1>alphacsc.learn_d_z_multi<a class="headerlink" href="#alphacsc-learn-d-z-multi" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="alphacsc.learn_d_z_multi">
+<code class="descclassname">alphacsc.</code><code class="descname">learn_d_z_multi</code><span class="sig-paren">(</span><em>X</em>, <em>n_atoms</em>, <em>n_times_atom</em>, <em>n_iter=60</em>, <em>n_jobs=1</em>, <em>lmbd_max='fixed'</em>, <em>reg=0.1</em>, <em>loss='l2'</em>, <em>loss_params={'gamma': 0.1</em>, <em>'ordar': 10</em>, <em>'sakoe_chiba_band': 10}</em>, <em>rank1=True</em>, <em>uv_constraint='separate'</em>, <em>eps=1e-10</em>, <em>algorithm='batch'</em>, <em>algorithm_params={}</em>, <em>detrending=None</em>, <em>detrending_params={}</em>, <em>solver_z='l-bfgs'</em>, <em>solver_z_kwargs={}</em>, <em>solver_d='alternate_adaptive'</em>, <em>solver_d_kwargs={}</em>, <em>D_init=None</em>, <em>D_init_params={}</em>, <em>unbiased_z_hat=False</em>, <em>use_sparse_z=False</em>, <em>stopping_pobj=None</em>, <em>raise_on_increase=True</em>, <em>verbose=10</em>, <em>callback=None</em>, <em>random_state=None</em>, <em>name='DL'</em>, <em>window=False</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z_multi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multivariate Convolutional Sparse Coding with optional rank-1 constraint</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
 <tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_iteration_func</span></code>(eps,&nbsp;stopping_pobj,&nbsp;…)</td>
-<td></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array, shape (n_trials, n_channels, n_times)</p>
+<blockquote>
+<div><p>The data on which to perform CSC.</p>
+</div></blockquote>
+<p><strong>n_atoms</strong> : int</p>
+<blockquote>
+<div><p>The number of atoms to learn.</p>
+</div></blockquote>
+<p><strong>n_times_atom</strong> : int</p>
+<blockquote>
+<div><p>The support of the atom.</p>
+</div></blockquote>
+<p><strong>reg</strong> : float</p>
+<blockquote>
+<div><p>The regularization parameter</p>
+</div></blockquote>
+<p><strong>lmbd_max</strong> : ‘fixed’ | ‘scaled’ | ‘per_atom’ | ‘shared’</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>If not fixed, adapt the regularization rate as a ratio of lambda_max:</dt>
+<dd><ul class="first last">
+<li><p class="first">‘scaled’: the regularization parameter is fixed as a ratio of its
+maximal value at init __ie__</p>
+<blockquote>
+<div><p><a href="#id1"><span class="problematic" id="id2">reg_</span></a> = reg * <a href="#id3"><span class="problematic" id="id4">lmbd_</span></a>max(uv_init)</p>
+</div></blockquote>
+</li>
+<li><p class="first">‘shared’: the regularization parameter is set at each iteration as
+a ratio of its maximal value for the current dictionary estimate
+__ie__ <a href="#id5"><span class="problematic" id="id6">reg_</span></a> = reg * <a href="#id7"><span class="problematic" id="id8">lmbd_</span></a>max(uv_hat)</p>
+</li>
+<li><p class="first">‘per_atom’: the regularization parameter is set per atom and at
+each iteration as a ratio of its maximal value for this atom __ie__</p>
+<blockquote>
+<div><p>reg_[k] = reg * <a href="#id9"><span class="problematic" id="id10">lmbd_</span></a>max(uv_hat[k])</p>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>n_iter</strong> : int</p>
+<blockquote>
+<div><p>The number of coordinate-descent iterations.</p>
+</div></blockquote>
+<p><strong>n_jobs</strong> : int</p>
+<blockquote>
+<div><p>The number of parallel jobs.</p>
+</div></blockquote>
+<p><strong>loss</strong> : ‘l2’ | ‘dtw’</p>
+<blockquote>
+<div><p>Loss for the data-fit term. Either the norm l2 or the soft-DTW.</p>
+</div></blockquote>
+<p><strong>loss_params</strong> : dict</p>
+<blockquote>
+<div><p>Parameters of the loss</p>
+</div></blockquote>
+<p><strong>rank1</strong> : boolean</p>
+<blockquote>
+<div><p>If set to True, learn rank 1 dictionary atoms.</p>
+</div></blockquote>
+<p><strong>uv_constraint</strong> : str in {‘joint’ | ‘separate’}</p>
+<blockquote>
+<div><p>The kind of norm constraint on the atoms:
+If ‘joint’, the constraint is norm_2([u, v]) &lt;= 1
+If ‘separate’, the constraint is norm_2(u) &lt;= 1 and norm_2(v) &lt;= 1</p>
+</div></blockquote>
+<p><strong>eps</strong> : float</p>
+<blockquote>
+<div><p>Stopping criterion. If the cost descent after a uv and a z update is
+smaller than eps, return.</p>
+</div></blockquote>
+<p><strong>algorithm</strong> : ‘batch’ | ‘greedy’ | ‘online’</p>
+<blockquote>
+<div><p>Dictionary learning algorithm.</p>
+</div></blockquote>
+<p><strong>algorithm_params</strong> : dict</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Parameters for the global algorithm used to learn the dictionary:</dt>
+<dd><dl class="first last docutils">
+<dt>alpha <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Forgetting factor for online learning. If set to 0, the learning is
+stochastic and each D-step is independent from the previous steps.
+When set to 1, each the previous values z_hat - computed with
+different dictionary - have the same weight as the current one.
+This factor should be large enough to ensure convergence but to
+large factor can lead to sub-optimal minima.</p>
+</dd>
+<dt>batch_selection <span class="classifier-delimiter">:</span> <span class="classifier">‘random’ | ‘cyclic’</span></dt>
+<dd><p class="first last">The batch selection strategy for online learning. The batch are
+either selected randomly among all samples (without replacement) or
+in a cyclic way.</p>
+</dd>
+<dt>batch_size <span class="classifier-delimiter">:</span> <span class="classifier">int in [1, n_trials]</span></dt>
+<dd><p class="first last">Size of the batch used in online learning. Increasing it
+regularizes the dictionary learning as there is less variance for
+the successive estimates. But it also increases the computational
+cost as more coding signals z_hat must be estimate at each
+iteration.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>solver_z</strong> : str</p>
+<blockquote>
+<div><p>The solver to use for the z update. Options are
+‘l-bfgs’ (default) | “lgcd”</p>
+</div></blockquote>
+<p><strong>solver_z_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Additional keyword arguments to pass to update_z_multi</p>
+</div></blockquote>
+<p><strong>solver_d</strong> : str</p>
+<blockquote>
+<div><p>The solver to use for the d update. Options are
+‘alternate’ | ‘alternate_adaptive’ (default) | ‘joint’</p>
+</div></blockquote>
+<p><strong>solver_d_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Additional keyword arguments to provide to update_d</p>
+</div></blockquote>
+<p><strong>D_init</strong> : str or array, shape (n_atoms, n_channels + n_times_atoms) or                            shape (n_atoms, n_channels, n_times_atom)</p>
+<blockquote>
+<div><p>The initial atoms or an initialization scheme in {‘kmeans’ | ‘ssa’ |
+‘chunks’ | ‘random’}.</p>
+</div></blockquote>
+<p><strong>D_init_params</strong> : dict</p>
+<blockquote>
+<div><p>Dictionnary of parameters for the kmeans init method.</p>
+</div></blockquote>
+<p><strong>unbiased_z_hat</strong> : boolean</p>
+<blockquote>
+<div><p>If set to True, the value of the non-zero coefficients in the returned
+z_hat are recomputed with reg=0 on the frozen support.</p>
+</div></blockquote>
+<p><strong>use_sparse_z</strong> : boolean</p>
+<blockquote>
+<div><p>Use sparse lil_matrices to store the activations.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : int</p>
+<blockquote>
+<div><p>The verbosity level.</p>
+</div></blockquote>
+<p><strong>callback</strong> : func</p>
+<blockquote>
+<div><p>A callback function called at the end of each loop of the
+coordinate descent.</p>
+</div></blockquote>
+<p><strong>random_state</strong> : int | None</p>
+<blockquote>
+<div><p>The random state.</p>
+</div></blockquote>
+<p><strong>raise_on_increase</strong> : boolean</p>
+<blockquote>
+<div><p>Raise an error if the objective function increase</p>
+</div></blockquote>
+<p><strong>window</strong> : boolean</p>
+<blockquote>
+<div><p>If True, re-parametrizes the atoms with a temporal Tukey window.</p>
+</div></blockquote>
+</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">learn_d_z_multi</span></code>(X,&nbsp;n_atoms,&nbsp;n_times_atom[,&nbsp;…])</td>
-<td>Learn atoms and activations using Convolutional Sparse Coding.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pobj</strong> : list</p>
+<blockquote>
+<div><p>The objective function value at each step of the coordinate descent.</p>
+</div></blockquote>
+<p><strong>times</strong> : list</p>
+<blockquote>
+<div><p>The cumulative time for each iteration of the coordinate descent.</p>
+</div></blockquote>
+<p><strong>uv_hat</strong> : array, shape (n_atoms, n_channels + n_times_atom)</p>
+<blockquote>
+<div><p>The atoms to learn from the data.</p>
+</div></blockquote>
+<p><strong>z_hat</strong> : array, shape (n_trials, n_atoms, n_times_valid)</p>
+<blockquote class="last">
+<div><p>The sparse activation matrix.</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
 </div>
 
 

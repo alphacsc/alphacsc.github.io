@@ -1,23 +1,6 @@
 alphacsc.learn\_d\_z\_multi
 ===========================
 
-.. automodule:: alphacsc.learn_d_z_multi
+.. currentmodule:: alphacsc
 
-   
-   
-   .. rubric:: Functions
-
-   .. autosummary::
-   
-      get_iteration_func
-      learn_d_z_multi
-   
-   
-
-   
-   
-   
-
-   
-   
-   
+.. autofunction:: learn_d_z_multi

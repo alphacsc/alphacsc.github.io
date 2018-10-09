@@ -10212,7 +10212,7 @@ and the cost function over iterations
 
 
 
-**Total running time of the script:** ( 0 minutes  18.600 seconds)
+**Total running time of the script:** ( 0 minutes  18.771 seconds)
 
 
 .. _sphx_glr_download_auto_examples_other_plot_simulate_swm.py:

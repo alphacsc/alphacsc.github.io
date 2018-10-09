@@ -102,8 +102,8 @@ It includes a number of different models:</p>
 <ol class="arabic simple">
 <li>univariate CSC</li>
 <li>multivariate CSC</li>
-<li>multivariate CSC with a rank-1 constraint</li>
-<li>univariate CSC with an alpha-stable distribution</li>
+<li>multivariate CSC with a rank-1 constraint <a class="footnote-reference" href="#id5" id="id1">[1]</a></li>
+<li>univariate CSC with an alpha-stable distribution <a class="footnote-reference" href="#id6" id="id2">[2]</a></li>
 </ol>
 <div class="section" id="univariate-csc">
 <h2>1. Univariate CSC<a class="headerlink" href="#univariate-csc" title="Permalink to this headline">¶</a></h2>
@@ -145,7 +145,7 @@ objective function reads:</p>
 magnetoencephalography (MEG), due to the physical properties of electromagnetic
 waves, which propagate instantaneously and add up linearly. It also brings
 robustness to the atom estimates, since less parameters are estimated.</p>
-<p>This model is described in details in the original NIPS paper <a class="footnote-reference" href="#id3" id="id1">[1]</a>.</p>
+<p>This model is described in details in the original NIPS paper <a class="footnote-reference" href="#id5" id="id3">[1]</a>.</p>
 </div>
 <div class="section" id="univariate-csc-with-an-alpha-stable-distribution">
 <h2>4. Univariate CSC with an alpha-stable distribution<a class="headerlink" href="#univariate-csc-with-an-alpha-stable-distribution" title="Permalink to this headline">¶</a></h2>
@@ -159,23 +159,23 @@ used to downweight noisy portions of the data:</p>
 \[\min_{d,z} \sum_n \left( \|\sqrt{w_n} \odot (x^n - \sum_k d_k * z_k^n) \|_2^2 + \lambda \sum_k z_k^n \right)\]</div>
 <p>subject to <span class="math notranslate nohighlight">\(z_k^n \ge 0\)</span> and <span class="math notranslate nohighlight">\(||d_k||_2 \le 1\)</span>, and  where
 <span class="math notranslate nohighlight">\(w_n\)</span> are the weights which are learned using an <a class="reference external" href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm">EM algorithm</a>.</p>
-<p>This model is described in details in the original NIPS paper <a class="footnote-reference" href="#id4" id="id2">[2]</a>.</p>
+<p>This model is described in details in the original NIPS paper <a class="footnote-reference" href="#id6" id="id4">[2]</a>.</p>
 </div>
 <div class="section" id="cite-our-work">
 <h2>Cite our work<a class="headerlink" href="#cite-our-work" title="Permalink to this headline">¶</a></h2>
 <p>If you use this code in your project, please consider citing our work:</p>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
+<table class="docutils footnote" frame="void" id="id5" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Dupré La Tour, T., Moreau, T., Jas, M., &amp; Gramfort, A. (2018).
-<a class="reference external" href="https://arxiv.org/abs/1805.09654v2">Multivariate Convolutional Sparse Coding for Electromagnetic Brain Signals.</a>. Advances in Neural Information
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> Dupré La Tour, T., Moreau, T., Jas, M., &amp; Gramfort, A. (2018).
+<a class="reference external" href="https://arxiv.org/abs/1805.09654v2">Multivariate Convolutional Sparse Coding for Electromagnetic Brain Signals</a>. Advances in Neural Information
 Processing Systems (NIPS).</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
+<table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Jas, M., Dupré La Tour, T., Şimşekli, U., &amp; Gramfort, A. (2017). <a class="reference external" href="https://papers.nips.cc/paper/6710-learning-the-morphology-of-brain-signals-using-alpha-stable-convolutional-sparse-coding.pdf">Learning
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>)</em> Jas, M., Dupré La Tour, T., Şimşekli, U., &amp; Gramfort, A. (2017). <a class="reference external" href="https://papers.nips.cc/paper/6710-learning-the-morphology-of-brain-signals-using-alpha-stable-convolutional-sparse-coding.pdf">Learning
 the Morphology of Brain Signals Using Alpha-Stable Convolutional Sparse Coding</a>.
 Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</td></tr>
 </tbody>
