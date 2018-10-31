@@ -97,7 +97,7 @@
 <h1>alphacsc.learn_d_z_weighted<a class="headerlink" href="#alphacsc-learn-d-z-weighted" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="alphacsc.learn_d_z_weighted">
-<code class="descclassname">alphacsc.</code><code class="descname">learn_d_z_weighted</code><span class="sig-paren">(</span><em>X</em>, <em>n_atoms</em>, <em>n_times_atom</em>, <em>func_d=&lt;function update_d_block&gt;</em>, <em>reg=0.1</em>, <em>alpha=1.9</em>, <em>n_iter_global=10</em>, <em>init_tau=False</em>, <em>n_iter_optim=10</em>, <em>n_iter_mcmc=10</em>, <em>n_burnin_mcmc=0</em>, <em>random_state=None</em>, <em>n_jobs=1</em>, <em>solver_z='l-bfgs'</em>, <em>solver_d_kwargs={}</em>, <em>solver_z_kwargs={}</em>, <em>ds_init=None</em>, <em>verbose=10</em>, <em>callback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z_weighted" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">alphacsc.</code><code class="descname">learn_d_z_weighted</code><span class="sig-paren">(</span><em>X</em>, <em>n_atoms</em>, <em>n_times_atom</em>, <em>func_d=&lt;function update_d_block&gt;</em>, <em>reg=0.1</em>, <em>alpha=1.9</em>, <em>n_iter_global=10</em>, <em>init_tau=False</em>, <em>n_iter_optim=10</em>, <em>n_iter_mcmc=10</em>, <em>n_burnin_mcmc=0</em>, <em>random_state=None</em>, <em>n_jobs=1</em>, <em>solver_z='l-bfgs'</em>, <em>solver_d_kwargs={}</em>, <em>solver_z_kwargs={}</em>, <em>ds_init=None</em>, <em>verbose=0</em>, <em>callback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z_weighted" title="Permalink to this definition">¶</a></dt>
 <dd><p>Univariate Convolutional Sparse Coding with an alpha-stable distribution</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -183,7 +183,7 @@ coordinate descent.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>d_hat</strong> : array, shape (n_atoms, n_times)</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>d_hat</strong> : array, shape (n_atoms, n_times_atom)</p>
 <blockquote>
 <div><p>The estimated atoms.</p>
 </div></blockquote>

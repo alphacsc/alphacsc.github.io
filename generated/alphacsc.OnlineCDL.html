@@ -119,7 +119,7 @@
 </div></blockquote>
 <p><strong>loss_params</strong> : dict</p>
 <blockquote>
-<div><p>Parameters of the loss</p>
+<div><p>Parameters of the loss.</p>
 </div></blockquote>
 <p><strong>rank1</strong> : boolean</p>
 <blockquote>
@@ -136,6 +136,10 @@
 <li><code class="code docutils literal notranslate"><span class="pre">'joint'</span></code>: the constraint is ||[u, v]||_2 &lt;= 1</li>
 <li><code class="code docutils literal notranslate"><span class="pre">'separate'</span></code>: the constraint is ||u||_2 &lt;= 1 and ||v||_2 &lt;= 1</li>
 </ul>
+</div></blockquote>
+<p><strong>sort_atoms</strong> : boolean</p>
+<blockquote>
+<div><p>If True, the atoms are sorted by explained variances.</p>
 </div></blockquote>
 <p><strong>Global algorithm</strong></p>
 <blockquote>
@@ -174,7 +178,7 @@ smaller than eps, return.</p>
 </div></blockquote>
 <p><strong>reg</strong> : float</p>
 <blockquote>
-<div><p>The regularization parameter</p>
+<div><p>The regularization parameter.</p>
 </div></blockquote>
 <p><strong>lmbd_max</strong> : ‘fixed’ | ‘scaled’ | ‘per_atom’ | ‘shared’</p>
 <blockquote>
@@ -182,24 +186,24 @@ smaller than eps, return.</p>
 <ul class="simple">
 <li><code class="code docutils literal notranslate"><span class="pre">'scaled'</span></code>: the regularization parameter is fixed as a ratio of
 its maximal value at init <em>i.e.</em>
-<span class="math notranslate nohighlight">\(\lambda\)</span> = reg * lmbd_max(uv_init)</li>
+<span class="math notranslate nohighlight">\(lambda\)</span> = reg * lmbd_max(uv_init).</li>
 <li><code class="code docutils literal notranslate"><span class="pre">'shared'</span></code>: the regularization parameter is set at each
 iteration as a ratio of its maximal value for the current dictionary
-estimate <em>i.e.</em> <span class="math notranslate nohighlight">\(\lambda\)</span> = reg * lmbd_max(uv_hat)</li>
+estimate <em>i.e.</em> <span class="math notranslate nohighlight">\(lambda\)</span> = reg * lmbd_max(uv_hat).</li>
 <li><code class="code docutils literal notranslate"><span class="pre">'per_atom'</span></code>: the regularization parameter is set per atom and
 at each iteration as a ratio of its maximal value for this atom
-<em>i.e.</em> <span class="math notranslate nohighlight">\(\lambda[k]\)</span> = reg * lmbd_max(uv_hat[k])</li>
+<em>i.e.</em> <span class="math notranslate nohighlight">\(lambda[k]\)</span> = reg * lmbd_max(uv_hat[k]).</li>
 </ul>
 </div></blockquote>
 <p><strong>Z-step parameters</strong></p>
 <p><strong>solver_z</strong> : str</p>
 <blockquote>
 <div><p>The solver to use for the z update. Options are
-‘l_bfgs’ (default) | “lgcd”</p>
+{‘l_bfgs’ (default) | ‘lgcd’}.</p>
 </div></blockquote>
 <p><strong>solver_z_kwargs</strong> : dict</p>
 <blockquote>
-<div><p>Additional keyword arguments to pass to update_z_multi</p>
+<div><p>Additional keyword arguments to pass to update_z_multi.</p>
 </div></blockquote>
 <p><strong>use_sparse_z</strong> : boolean</p>
 <blockquote>
@@ -246,11 +250,11 @@ coordinate descent.</p>
 </div></blockquote>
 <p><strong>random_state</strong> : int | None</p>
 <blockquote>
-<div><p>The random state.</p>
+<div><p>State to seed the random number generator.</p>
 </div></blockquote>
 <p><strong>raise_on_increase</strong> : boolean</p>
 <blockquote class="last">
-<div><p>Raise an error if the objective function increase</p>
+<div><p>Raise an error if the objective function increase.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -276,7 +280,7 @@ coordinate descent.</p>
 <td>Learn a convolutional dictionary from the set of signals X.</td>
 </tr>
 <tr class="row-odd"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code>(X[,&nbsp;y])</td>
-<td>Fit to data, then transform it.</td>
+<td>Learn a convolutional dictionary and returns sparse codes.</td>
 </tr>
 <tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code>(X)</td>
 <td>Returns sparse codes associated to the signals X for the dictionary.</td>

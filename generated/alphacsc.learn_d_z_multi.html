@@ -98,7 +98,7 @@
 <h1>alphacsc.learn_d_z_multi<a class="headerlink" href="#alphacsc-learn-d-z-multi" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="alphacsc.learn_d_z_multi">
-<code class="descclassname">alphacsc.</code><code class="descname">learn_d_z_multi</code><span class="sig-paren">(</span><em>X</em>, <em>n_atoms</em>, <em>n_times_atom</em>, <em>n_iter=60</em>, <em>n_jobs=1</em>, <em>lmbd_max='fixed'</em>, <em>reg=0.1</em>, <em>loss='l2'</em>, <em>loss_params={'gamma': 0.1</em>, <em>'ordar': 10</em>, <em>'sakoe_chiba_band': 10}</em>, <em>rank1=True</em>, <em>uv_constraint='separate'</em>, <em>eps=1e-10</em>, <em>algorithm='batch'</em>, <em>algorithm_params={}</em>, <em>detrending=None</em>, <em>detrending_params={}</em>, <em>solver_z='l-bfgs'</em>, <em>solver_z_kwargs={}</em>, <em>solver_d='alternate_adaptive'</em>, <em>solver_d_kwargs={}</em>, <em>D_init=None</em>, <em>D_init_params={}</em>, <em>unbiased_z_hat=False</em>, <em>use_sparse_z=False</em>, <em>stopping_pobj=None</em>, <em>raise_on_increase=True</em>, <em>verbose=10</em>, <em>callback=None</em>, <em>random_state=None</em>, <em>name='DL'</em>, <em>window=False</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z_multi" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">alphacsc.</code><code class="descname">learn_d_z_multi</code><span class="sig-paren">(</span><em>X</em>, <em>n_atoms</em>, <em>n_times_atom</em>, <em>n_iter=60</em>, <em>n_jobs=1</em>, <em>lmbd_max='fixed'</em>, <em>reg=0.1</em>, <em>loss='l2'</em>, <em>loss_params={'gamma': 0.1</em>, <em>'ordar': 10</em>, <em>'sakoe_chiba_band': 10}</em>, <em>rank1=True</em>, <em>uv_constraint='separate'</em>, <em>eps=1e-10</em>, <em>algorithm='batch'</em>, <em>algorithm_params={}</em>, <em>detrending=None</em>, <em>detrending_params={}</em>, <em>solver_z='l-bfgs'</em>, <em>solver_z_kwargs={}</em>, <em>solver_d='alternate_adaptive'</em>, <em>solver_d_kwargs={}</em>, <em>D_init=None</em>, <em>D_init_params={}</em>, <em>unbiased_z_hat=False</em>, <em>use_sparse_z=False</em>, <em>stopping_pobj=None</em>, <em>raise_on_increase=True</em>, <em>verbose=10</em>, <em>callback=None</em>, <em>random_state=None</em>, <em>name='DL'</em>, <em>window=False</em>, <em>sort_atoms=False</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z_multi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multivariate Convolutional Sparse Coding with optional rank-1 constraint</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -128,17 +128,17 @@
 <li><p class="first">‘scaled’: the regularization parameter is fixed as a ratio of its
 maximal value at init __ie__</p>
 <blockquote>
-<div><p><a href="#id1"><span class="problematic" id="id2">reg_</span></a> = reg * <a href="#id3"><span class="problematic" id="id4">lmbd_</span></a>max(uv_init)</p>
+<div><p><a href="#id1"><span class="problematic" id="id2">reg_</span></a> = reg * lmbd_max(uv_init)</p>
 </div></blockquote>
 </li>
 <li><p class="first">‘shared’: the regularization parameter is set at each iteration as
 a ratio of its maximal value for the current dictionary estimate
-__ie__ <a href="#id5"><span class="problematic" id="id6">reg_</span></a> = reg * <a href="#id7"><span class="problematic" id="id8">lmbd_</span></a>max(uv_hat)</p>
+__ie__ <a href="#id3"><span class="problematic" id="id4">reg_</span></a> = reg * lmbd_max(uv_hat)</p>
 </li>
 <li><p class="first">‘per_atom’: the regularization parameter is set per atom and at
 each iteration as a ratio of its maximal value for this atom __ie__</p>
 <blockquote>
-<div><p>reg_[k] = reg * <a href="#id9"><span class="problematic" id="id10">lmbd_</span></a>max(uv_hat[k])</p>
+<div><p>reg_[k] = reg * lmbd_max(uv_hat[k])</p>
 </div></blockquote>
 </li>
 </ul>
@@ -264,7 +264,11 @@ coordinate descent.</p>
 </div></blockquote>
 <p><strong>window</strong> : boolean</p>
 <blockquote>
-<div><p>If True, re-parametrizes the atoms with a temporal Tukey window.</p>
+<div><p>If True, re-parametrizes the atoms with a temporal Tukey window</p>
+</div></blockquote>
+<p><strong>sort_atoms</strong> : boolean</p>
+<blockquote>
+<div><p>If True, the atoms are sorted by explained variances.</p>
 </div></blockquote>
 </td>
 </tr>
