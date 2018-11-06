@@ -64,6 +64,26 @@ Univariate CSC
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie. The data is ...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_cross_frequency_coupling_thumb.png
+
+        :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/csc/plot_cross_frequency_coupling
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates `vanilla` CSC on simulated data. Note that `vanilla` CSC is just a sp...">
 
 .. only:: html
@@ -161,6 +181,26 @@ Univariate CSC with an alpha-stable distribution
    :hidden:
 
    /auto_examples/noise_alpha/plot_simulate_alphacsc
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie affected by s...">
+
+.. only:: html
+
+    .. figure:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_empirical_strong_artifacts_thumb.png
+
+        :ref:`sphx_glr_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/noise_alpha/plot_empirical_strong_artifacts
 .. raw:: html
 
     <div style='clear:both'></div>

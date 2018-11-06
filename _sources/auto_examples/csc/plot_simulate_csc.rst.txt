@@ -107,7 +107,7 @@ Let us look at the first 10 trials to see how they look.
 .. code-block:: python
 
 
-    from alphacsc.utils import plot_data # noqa
+    from alphacsc.viz.callback import plot_data # noqa
     plot_data([X[:10]])
 
 
@@ -133,7 +133,7 @@ Now, we run vanilla CSC on the data.
 
     random_state = 60
 
-    pobj, times, d_hat, z_hat = learn_d_z(
+    pobj, times, d_hat, z_hat, reg = learn_d_z(
         X, n_atoms, n_times_atom, reg=reg, n_iter=n_iter,
         solver_d_kwargs=dict(factr=100), random_state=random_state,
         n_jobs=1, verbose=1)
@@ -149,7 +149,8 @@ Now, we run vanilla CSC on the data.
 
  .. code-block:: none
 
-    V_0/50 .................................................Vanilla CSC
+    V_0/50 .................................................
+    Vanilla CSC
 
 
 Finally, let's compare the results.
@@ -191,10 +192,10 @@ We can also visualize the learned activations
 
 
 
-Note if the data is corrupted with impulsive noise, this method may not
-be the best.  Check out our
-:ref:`example using alphacsc <sphx_glr_auto_examples_plot_simulate_alphacsc.py>`
-to learn how to deal with such data.
+Note if the data is corrupted with impulsive noise, this method may not be
+the best.  Check out our :ref:`example using alphacsc
+<sphx_glr_auto_examples_plot_simulate_alphacsc.py>` to learn how to deal with
+such data.
 
 
 
@@ -206,7 +207,7 @@ to learn how to deal with such data.
     X[idx_corrupted] += levy_stable.rvs(alpha, 0, loc=0, scale=noise_level,
                                         size=(n_corrupted_trials, n_times),
                                         random_state=random_state_simulate)
-    pobj, times, d_hat, z_hat = learn_d_z(
+    pobj, times, d_hat, z_hat, reg = learn_d_z(
         X, n_atoms, n_times_atom, reg=reg, n_iter=n_iter,
         solver_d_kwargs=dict(factr=100), random_state=random_state,
         n_jobs=1, verbose=1)
@@ -230,7 +231,7 @@ to learn how to deal with such data.
     V_0/50 .................................................
 
 
-**Total running time of the script:** ( 0 minutes  28.792 seconds)
+**Total running time of the script:** ( 0 minutes  29.334 seconds)
 
 
 .. _sphx_glr_download_auto_examples_csc_plot_simulate_csc.py:

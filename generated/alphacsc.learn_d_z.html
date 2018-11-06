@@ -98,7 +98,7 @@
 <h1>alphacsc.learn_d_z<a class="headerlink" href="#alphacsc-learn-d-z" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="alphacsc.learn_d_z">
-<code class="descclassname">alphacsc.</code><code class="descname">learn_d_z</code><span class="sig-paren">(</span><em>X</em>, <em>n_atoms</em>, <em>n_times_atom</em>, <em>func_d=&lt;function update_d_block&gt;</em>, <em>reg=0.1</em>, <em>n_iter=60</em>, <em>random_state=None</em>, <em>n_jobs=1</em>, <em>solver_z='l-bfgs'</em>, <em>solver_d_kwargs={}</em>, <em>solver_z_kwargs={}</em>, <em>ds_init=None</em>, <em>sample_weights=None</em>, <em>verbose=10</em>, <em>callback=None</em>, <em>stopping_pobj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">alphacsc.</code><code class="descname">learn_d_z</code><span class="sig-paren">(</span><em>X</em>, <em>n_atoms</em>, <em>n_times_atom</em>, <em>func_d=&lt;function update_d_block&gt;</em>, <em>reg=0.1</em>, <em>lmbd_max='fixed'</em>, <em>n_iter=60</em>, <em>random_state=None</em>, <em>n_jobs=1</em>, <em>solver_z='l-bfgs'</em>, <em>solver_d_kwargs={}</em>, <em>solver_z_kwargs={}</em>, <em>ds_init=None</em>, <em>ds_init_params={}</em>, <em>sample_weights=None</em>, <em>verbose=10</em>, <em>callback=None</em>, <em>stopping_pobj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Univariate Convolutional Sparse Coding.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -123,6 +123,23 @@
 <p><strong>reg</strong> : float</p>
 <blockquote>
 <div><p>The regularization parameter</p>
+</div></blockquote>
+<p><strong>lmbd_max</strong> : ‘fixed’ | ‘scaled’ | ‘per_atom’ | ‘shared’</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>If not fixed, adapt the regularization rate as a ratio of lambda_max:</dt>
+<dd><ul class="first last simple">
+<li>‘scaled’: the regularization parameter is fixed as a ratio of its
+maximal value at init i.e. reg_used = reg * lmbd_max(uv_init)</li>
+<li>‘shared’: the regularization parameter is set at each iteration as
+a ratio of its maximal value for the current dictionary estimate
+i.e. reg_used = reg * lmbd_max(uv_hat)</li>
+<li>‘per_atom’: the regularization parameter is set per atom and at
+each iteration as a ratio of its maximal value for this atom i.e.
+reg_used[k] = reg * lmbd_max(uv_hat[k])</li>
+</ul>
+</dd>
+</dl>
 </div></blockquote>
 <p><strong>n_iter</strong> : int</p>
 <blockquote>
@@ -149,9 +166,14 @@
 <blockquote>
 <div><p>Additional keyword arguments to pass to update_z</p>
 </div></blockquote>
-<p><strong>ds_init</strong> : array, shape (n_atoms, n_times_atom)</p>
+<p><strong>ds_init</strong> : str or array, shape (n_atoms, n_times_atom)</p>
 <blockquote>
-<div><p>The initialization for the atoms.</p>
+<div><p>The initial atoms or an initialization scheme in {‘kmeans’ | ‘ssa’ |
+‘chunks’ | ‘random’}.</p>
+</div></blockquote>
+<p><strong>ds_init_params</strong> : dict</p>
+<blockquote>
+<div><p>Dictionnary of parameters for the kmeans init method.</p>
 </div></blockquote>
 <p><strong>sample_weights</strong> : array, shape (n_trials, n_times)</p>
 <blockquote>
@@ -182,8 +204,12 @@ coordinate descent.</p>
 <div><p>The estimated atoms.</p>
 </div></blockquote>
 <p><strong>z_hat</strong> : array, shape (n_atoms, n_trials, n_times - n_times_atom + 1)</p>
-<blockquote class="last">
+<blockquote>
 <div><p>The sparse activation matrix.</p>
+</div></blockquote>
+<p><strong>reg</strong> : float</p>
+<blockquote class="last">
+<div><p>Regularization parameter used.</p>
 </div></blockquote>
 </td>
 </tr>

@@ -78,7 +78,7 @@ Here, we simulate the data
 .. code-block:: python
 
 
-    from alphacsc.simulate import simulate_data # noqa
+    from alphacsc.simulate import simulate_data
 
     random_state_simulate = 1
     X, ds_true, z_true = simulate_data(n_trials, n_times, n_times_atom,
@@ -97,8 +97,8 @@ Add some noise and corrupt some trials even with impulsive noise
 .. code-block:: python
 
 
-    from scipy.stats import levy_stable # noqa
-    from alphacsc import check_random_state # noqa
+    from scipy.stats import levy_stable
+    from alphacsc import check_random_state
 
     fraction_corrupted = 0.02
     n_corrupted_trials = int(fraction_corrupted * n_trials)
@@ -128,8 +128,7 @@ and then alpha CSC on the same data
 .. code-block:: python
 
 
-    from functools import partial # noqa
-    from alphacsc import learn_d_z_weighted # noqa
+    from alphacsc import learn_d_z_weighted
 
     d_hat, z_hat, Tau = learn_d_z_weighted(
         X, n_atoms, n_times_atom, reg=reg, alpha=alpha,
@@ -148,16 +147,16 @@ and then alpha CSC on the same data
 
  .. code-block:: none
 
-    V_0/50 .................................................Global Iter: 0  
-    V_0/50 .................................................Global Iter: 1  
-    V_0/50 .................................................Global Iter: 2  
-    V_0/50 .................................................Global Iter: 3  
-    V_0/50 .................................................Global Iter: 4  
-    V_0/50 .................................................Global Iter: 5  
-    V_0/50 .................................................Global Iter: 6  
-    V_0/50 .................................................Global Iter: 7  
-    V_0/50 .................................................Global Iter: 8  
-    V_0/50 .................................................Global Iter: 9
+    Global Iter: 0/10       V_0/50 .................................................
+    Global Iter: 1/10       V_0/50 .................................................
+    Global Iter: 2/10       V_0/50 .................................................
+    Global Iter: 3/10       V_0/50 .................................................
+    Global Iter: 4/10       V_0/50 .................................................
+    Global Iter: 5/10       V_0/50 .................................................
+    Global Iter: 6/10       V_0/50 .................................................
+    Global Iter: 7/10       V_0/50 .................................................
+    Global Iter: 8/10       V_0/50 .................................................
+    Global Iter: 9/10       V_0/50 .................................................
 
 
 Finally, let's compare the results. Now, it works even in the presence
@@ -168,7 +167,7 @@ of impulsive noise.
 .. code-block:: python
 
 
-    import matplotlib.pyplot as plt # noqa
+    import matplotlib.pyplot as plt
 
     plt.figure()
     plt.plot(d_hat.T, 'b', label=r'$\alpha$CSC')
@@ -216,7 +215,7 @@ downweighted by the algorithm
 
 
 
-**Total running time of the script:** ( 3 minutes  34.426 seconds)
+**Total running time of the script:** ( 3 minutes  33.496 seconds)
 
 
 .. _sphx_glr_download_auto_examples_noise_alpha_plot_simulate_alphacsc.py:

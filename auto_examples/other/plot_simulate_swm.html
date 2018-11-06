@@ -132,8 +132,8 @@ we simulate only one atom.</p>
 </pre></div>
 </div>
 <p>Now, we can simulate</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">check_random_state</span> <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">alphacsc.simulate</span> <span class="kn">import</span> <span class="n">simulate_data</span> <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">check_random_state</span>
+<span class="kn">from</span> <span class="nn">alphacsc.simulate</span> <span class="kn">import</span> <span class="n">simulate_data</span>
 
 <span class="n">random_state_simulate</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">ds_true</span><span class="p">,</span> <span class="n">z_true</span> <span class="o">=</span> <span class="n">simulate_data</span><span class="p">(</span><span class="n">n_trials</span><span class="p">,</span> <span class="n">n_times</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span>
@@ -147,12 +147,12 @@ we simulate only one atom.</p>
 <p>We expect 10 occurences of the atom in total.
 So, let us define 10 random locations for the algorithm to start with.
 If this number is not known, we will end up estimating more/less windows.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">window_starts</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_trials</span> <span class="o">*</span> <span class="n">n_times</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="n">n_trials</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now, we apply the SWM algorithm now.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.other.swm</span> <span class="kn">import</span> <span class="n">sliding_window_matching</span> <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.other.swm</span> <span class="kn">import</span> <span class="n">sliding_window_matching</span>
 
 <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># expects 1D time series</span>
@@ -10164,7 +10164,7 @@ If this number is not known, we will end up estimating more/less windows.</p>
 </pre></div>
 </div>
 <p>Let us look at the data at the time windows when the atoms are found.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_trials</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
                          <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
@@ -10190,7 +10190,7 @@ is present. Now let us plot the atoms.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_simulate_swm_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_simulate_swm_003.png" />
-<p><strong>Total running time of the script:</strong> ( 0 minutes  18.771 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  18.902 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-other-plot-simulate-swm-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" download="" href="../../_downloads/534f11efa1361c08b83e7b566a9c7799/plot_simulate_swm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_simulate_swm.py</span></code></a></div>

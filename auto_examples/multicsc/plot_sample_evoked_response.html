@@ -128,7 +128,7 @@ non-sinusoidal oscillation.</p>
 </pre></div>
 </div>
 <p>Next, we define the parameters for multivariate CSC</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">GreedyCDL</span>  <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">GreedyCDL</span>
 <span class="n">cdl</span> <span class="o">=</span> <span class="n">GreedyCDL</span><span class="p">(</span>
     <span class="c1"># Shape of the dictionary</span>
     <span class="n">n_atoms</span><span class="o">=</span><span class="n">n_atoms</span><span class="p">,</span>
@@ -166,7 +166,7 @@ non-sinusoidal oscillation.</p>
 <p>Here, we load the data from the sample datase. The data is not epoched yet,
 but we split it into 12 parts to make the most of multiple processors during
 the model fitting.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.datasets.somato</span> <span class="kn">import</span> <span class="n">load_data</span>  <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.datasets.somato</span> <span class="kn">import</span> <span class="n">load_data</span>
 <span class="n">X_split</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">sfreq</span><span class="o">=</span><span class="n">sfreq</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="n">n_splits</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n_jobs</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -178,7 +178,7 @@ the model fitting.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>.................................................+
 ....
 [GreedyCDL] Converged after 54 iteration, (dz, du) = 9.554e-05, 8.861e-05
-[GreedyCDL] Fit in 1880.4s
+[GreedyCDL] Fit in 1888.0s
 </pre></div>
 </div>
 <p>To avoid artifacts due to the splitting, we can optionally reload the data.</p>
@@ -198,9 +198,9 @@ done
 <p>Display a selection of atoms. We recognize a heartbeat artifact, an
 eyeblink artifact, three atoms of evoked responses, and a non-sinusoidal
 oscillation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mne</span>  <span class="c1"># noqa</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>  <span class="c1"># noqa</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>  <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mne</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">alphacsc.utils.convolution</span> <span class="kn">import</span> <span class="n">construct_X_multi</span>
 <span class="kn">from</span> <span class="nn">alphacsc.viz.epoch</span> <span class="kn">import</span> <span class="n">plot_evoked_surrogates</span>
@@ -321,7 +321,7 @@ Displaying 20-th atom
 Displaying 11-th atom
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 34 minutes  39.767 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 34 minutes  24.428 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-sample-evoked-response-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" download="" href="../../_downloads/c90ce17d135c3a6d07296a69a09471ca/plot_sample_evoked_response.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sample_evoked_response.py</span></code></a></div>

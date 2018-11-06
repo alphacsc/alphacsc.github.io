@@ -109,7 +109,7 @@ Neurophysiological Signals. IEEE Transactions on Signal Processing (2017).</dd>
 </dl>
 <p>First, let us fetch the data (~14 MB)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">_fetch_file</span> <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">_fetch_file</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https://github.com/hitziger/AWL/raw/master/Experiments/data/&#39;</span>
        <span class="s1">&#39;LFP_data_contiguous_1250_Hz.mat&#39;</span><span class="p">)</span>
@@ -119,15 +119,15 @@ Neurophysiological Signals. IEEE Transactions on Signal Processing (2017).</dd>
 </pre></div>
 </div>
 <p>It is a mat file, so we use scipy to load it</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">io</span> <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">io</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
 <span class="n">X</span><span class="p">,</span> <span class="n">sfreq</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>And now let us look at the data</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> <span class="c1"># noqa</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span> <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="mi">11000</span><span class="p">,</span> <span class="mi">15000</span>
 <span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span> <span class="o">/</span> <span class="n">sfreq</span>
@@ -140,9 +140,9 @@ Neurophysiological Signals. IEEE Transactions on Signal Processing (2017).</dd>
 <img alt="../../_images/sphx_glr_plot_lfp_data_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_lfp_data_001.png" />
 <p>and filter it using a convenient function from MNE. This will remove low
 frequency drifts, but we keep the high frequencies</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mne.filter</span> <span class="kn">import</span> <span class="n">filter_data</span> <span class="c1"># noqa</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">filter_data</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span> <span class="n">sfreq</span><span class="p">,</span> <span class="n">l_freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-                <span class="n">fir_design</span><span class="o">=</span><span class="s1">&#39;firwin&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mne.filter</span> <span class="kn">import</span> <span class="n">filter_data</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">filter_data</span><span class="p">(</span>
+    <span class="n">X</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span> <span class="n">sfreq</span><span class="p">,</span> <span class="n">l_freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fir_design</span><span class="o">=</span><span class="s1">&#39;firwin&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Now, we define the parameters of our model.</p>
@@ -181,7 +181,7 @@ select the random state, consult <span class="xref std std-ref">this example</sp
 <p>The convolutions can result in edge artifacts at the edges of the trials.
 Therefore, we discount the contributions from the edges by windowing the
 trials.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">hamming</span> <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">hamming</span>
 <span class="n">X_new</span> <span class="o">*=</span> <span class="n">hamming</span><span class="p">(</span><span class="n">n_times</span><span class="p">)[</span><span class="bp">None</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
@@ -189,10 +189,10 @@ trials.</p>
 possible. If this is the case, you can set <cite>overlap</cite> to non-zero (for example
 half the epoch length).</p>
 <p>Now, we run regular CSC since the trials are not too noisy</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">learn_d_z</span> <span class="c1"># noqa</span>
-<span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">z_hat</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span><span class="n">X_new</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span>
-                                      <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
-                                      <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">learn_d_z</span>
+<span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">z_hat</span><span class="p">,</span> <span class="n">reg</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span><span class="n">X_new</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span>
+                                           <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
+                                           <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -445,7 +445,7 @@ Using method dual for projection
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_lfp_data_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_lfp_data_002.png" />
-<p><strong>Total running time of the script:</strong> ( 1 minutes  32.720 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 1 minutes  35.079 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-csc-plot-lfp-data-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" download="" href="../../_downloads/dba918a8921e455917362037088020b6/plot_lfp_data.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_lfp_data.py</span></code></a></div>

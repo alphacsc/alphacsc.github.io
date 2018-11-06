@@ -60,7 +60,7 @@ Next, we define the parameters for multivariate CSC
 .. code-block:: python
 
 
-    from alphacsc import BatchCDL  # noqa
+    from alphacsc import BatchCDL
     cdl = BatchCDL(
         # Shape of the dictionary
         n_atoms=n_atoms,
@@ -96,7 +96,7 @@ before and finishing 4 seconds after.
 .. code-block:: python
 
 
-    from alphacsc.datasets.somato import load_data  # noqa
+    from alphacsc.datasets.somato import load_data
     t_lim = (-2, 4)
     X, info = load_data(epoch=t_lim, sfreq=sfreq)
 
@@ -127,7 +127,7 @@ Fit the model and learn rank1 atoms
 
     ..............
     [BatchCDL] Converged after 14 iteration, (dz, du) = 8.766e-05, 8.712e-05
-    [BatchCDL] Fit in 5.9e+02s
+    [BatchCDL] Fit in 413.9s
 
 
 Display the 4-th atom, which displays a :math:`\mu`-waveform in its temporal
@@ -138,9 +138,9 @@ pattern.
 .. code-block:: python
 
 
-    import mne  # noqa
-    import numpy as np  # noqa
-    import matplotlib.pyplot as plt  # noqa
+    import mne
+    import numpy as np
+    import matplotlib.pyplot as plt
 
     i_atom = 4
     n_plots = 3
@@ -181,7 +181,7 @@ pattern.
 
 
 
-**Total running time of the script:** ( 10 minutes  9.497 seconds)
+**Total running time of the script:** ( 7 minutes  20.275 seconds)
 
 
 .. _sphx_glr_download_auto_examples_multicsc_plot_somato_mu_waves.py:

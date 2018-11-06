@@ -68,7 +68,7 @@ Next, we define the parameters for multivariate CSC
 .. code-block:: python
 
 
-    from alphacsc import GreedyCDL  # noqa
+    from alphacsc import GreedyCDL
     cdl = GreedyCDL(
         # Shape of the dictionary
         n_atoms=n_atoms,
@@ -118,7 +118,7 @@ the model fitting.
 .. code-block:: python
 
 
-    from alphacsc.datasets.somato import load_data  # noqa
+    from alphacsc.datasets.somato import load_data
     X_split, info = load_data(sfreq=sfreq, dataset='sample', n_splits=2 * n_jobs)
 
 
@@ -148,7 +148,7 @@ Fit the model and learn rank1 atoms
     .................................................+
     ....
     [GreedyCDL] Converged after 54 iteration, (dz, du) = 9.554e-05, 8.861e-05
-    [GreedyCDL] Fit in 1880.4s
+    [GreedyCDL] Fit in 1888.0s
 
 
 To avoid artifacts due to the splitting, we can optionally reload the data.
@@ -198,9 +198,9 @@ oscillation.
 .. code-block:: python
 
 
-    import mne  # noqa
-    import numpy as np  # noqa
-    import matplotlib.pyplot as plt  # noqa
+    import mne
+    import numpy as np
+    import matplotlib.pyplot as plt
 
     from alphacsc.utils.convolution import construct_X_multi
     from alphacsc.viz.epoch import plot_evoked_surrogates
@@ -336,7 +336,7 @@ not statistically significant values.
     Displaying 2-th atom    Displaying 0-th atom    Displaying 3-th atom    Displaying 15-th atom    Displaying 20-th atom    Displaying 11-th atom
 
 
-**Total running time of the script:** ( 34 minutes  39.767 seconds)
+**Total running time of the script:** ( 34 minutes  24.428 seconds)
 
 
 .. _sphx_glr_download_auto_examples_multicsc_plot_sample_evoked_response.py:

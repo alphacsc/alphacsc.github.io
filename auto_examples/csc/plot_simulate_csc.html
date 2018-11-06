@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Extracting \(\mu\)-wave from the somato-sensory dataset" href="../multicsc/plot_somato_mu_waves.html" />
-    <link rel="prev" title="Selecting random state for CSC" href="plot_simulate_randomstate.html" />
+    <link rel="prev" title="Extracting cross-frequency coupling waveforms from rodent LFP data" href="plot_cross_frequency_coupling.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -145,7 +145,7 @@ alphaCSC with alpha=2.</p>
 </pre></div>
 </div>
 <p>Let us look at the first 10 trials to see how they look.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.utils</span> <span class="kn">import</span> <span class="n">plot_data</span> <span class="c1"># noqa</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.viz.callback</span> <span class="kn">import</span> <span class="n">plot_data</span> <span class="c1"># noqa</span>
 <span class="n">plot_data</span><span class="p">([</span><span class="n">X</span><span class="p">[:</span><span class="mi">10</span><span class="p">]])</span>
 </pre></div>
 </div>
@@ -157,7 +157,7 @@ same time instant.</p>
 
 <span class="n">random_state</span> <span class="o">=</span> <span class="mi">60</span>
 
-<span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">z_hat</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span>
+<span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">z_hat</span><span class="p">,</span> <span class="n">reg</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
     <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">factr</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
     <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -165,7 +165,8 @@ same time instant.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>V_0/50 .................................................Vanilla CSC
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>V_0/50 .................................................
+Vanilla CSC
 </pre></div>
 </div>
 <p>Finally, let’s compare the results.</p>
@@ -181,16 +182,15 @@ same time instant.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_simulate_csc_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_simulate_csc_003.png" />
-<p>Note if the data is corrupted with impulsive noise, this method may not
-be the best.  Check out our
-<span class="xref std std-ref">example using alphacsc</span>
-to learn how to deal with such data.</p>
+<p>Note if the data is corrupted with impulsive noise, this method may not be
+the best.  Check out our <span class="xref std std-ref">example using alphacsc</span> to learn how to deal with
+such data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.2</span>
 <span class="n">noise_level</span> <span class="o">=</span> <span class="mf">0.005</span>
 <span class="n">X</span><span class="p">[</span><span class="n">idx_corrupted</span><span class="p">]</span> <span class="o">+=</span> <span class="n">levy_stable</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">noise_level</span><span class="p">,</span>
                                     <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_corrupted_trials</span><span class="p">,</span> <span class="n">n_times</span><span class="p">),</span>
                                     <span class="n">random_state</span><span class="o">=</span><span class="n">random_state_simulate</span><span class="p">)</span>
-<span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">z_hat</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span>
+<span class="n">pobj</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">d_hat</span><span class="p">,</span> <span class="n">z_hat</span><span class="p">,</span> <span class="n">reg</span> <span class="o">=</span> <span class="n">learn_d_z</span><span class="p">(</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="n">reg</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
     <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">factr</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
     <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -205,7 +205,7 @@ to learn how to deal with such data.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>V_0/50 .................................................
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  28.792 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  29.334 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-csc-plot-simulate-csc-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" download="" href="../../_downloads/5c8f8035867be4f8caf8244d3b6c503e/plot_simulate_csc.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_simulate_csc.py</span></code></a></div>

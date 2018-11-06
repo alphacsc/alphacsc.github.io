@@ -98,7 +98,7 @@ Now, we run vanilla CSC on the data but with different initializations.
     pobjs, d_hats = list(), list()
     for random_state in range(5):
         print('\nRandom state: %d' % random_state)
-        pobj, times, d_hat, z_hat = learn_d_z(
+        pobj, times, d_hat, z_hat, reg = learn_d_z(
             X, n_atoms, n_times_atom, reg=reg, n_iter=n_iter,
             solver_d_kwargs=dict(factr=100), random_state=random_state,
             n_jobs=1, verbose=1)
@@ -117,12 +117,16 @@ Now, we run vanilla CSC on the data but with different initializations.
 
     Random state: 0
     V_0/50 .................................................
+
     Random state: 1
     V_0/50 .................................................
+
     Random state: 2
     V_0/50 .................................................
+
     Random state: 3
     V_0/50 .................................................
+
     Random state: 4
     V_0/50 .................................................
 
@@ -176,7 +180,7 @@ Now, we select the best atom amongst them.
 
 
 
-**Total running time of the script:** ( 1 minutes  12.038 seconds)
+**Total running time of the script:** ( 1 minutes  14.085 seconds)
 
 
 .. _sphx_glr_download_auto_examples_csc_plot_simulate_randomstate.py:
