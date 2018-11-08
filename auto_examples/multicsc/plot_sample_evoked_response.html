@@ -100,10 +100,18 @@
 </div>
 <div class="sphx-glr-example-title section" id="extracting-artifact-and-evoked-response-atoms-from-the-sample-dataset">
 <span id="sphx-glr-auto-examples-multicsc-plot-sample-evoked-response-py"></span><h1>Extracting artifact and evoked response atoms from the sample dataset<a class="headerlink" href="#extracting-artifact-and-evoked-response-atoms-from-the-sample-dataset" title="Permalink to this headline">¶</a></h1>
-<p>This example illustrates how to learn rank1 atoms on the sample
-dataset from <code class="code docutils literal notranslate"><span class="pre">mne</span></code>. We display a selection of atoms, featuring
+<p>This example illustrates how to learn rank-1 <a class="footnote-reference" href="#id2" id="id1">[1]</a> atoms on the multivariate
+sample dataset from <code class="code docutils literal notranslate"><span class="pre">mne</span></code>. We display a selection of atoms, featuring
 heartbeat and eyeblink artifacts, three atoms of evoked responses, and a
 non-sinusoidal oscillation.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Dupré La Tour, T., Moreau, T., Jas, M., &amp; Gramfort, A. (2018).
+<a class="reference external" href="https://arxiv.org/abs/1805.09654v2">Multivariate Convolutional Sparse Coding for Electromagnetic Brain Signals</a>. Advances in Neural Information
+Processing Systems (NIPS).</td></tr>
+</tbody>
+</table>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Thomas Moreau &lt;thomas.moreau@inria.fr&gt;</span>
 <span class="c1">#          Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Tom Dupre La Tour &lt;tom.duprelatour@telecom-paristech.fr&gt;</span>
@@ -178,7 +186,7 @@ the model fitting.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>.................................................+
 ....
 [GreedyCDL] Converged after 54 iteration, (dz, du) = 9.554e-05, 8.861e-05
-[GreedyCDL] Fit in 1888.0s
+[GreedyCDL] Fit in 1890.4s
 </pre></div>
 </div>
 <p>To avoid artifacts due to the splitting, we can optionally reload the data.</p>
@@ -321,7 +329,7 @@ Displaying 20-th atom
 Displaying 11-th atom
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 34 minutes  24.428 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 34 minutes  23.903 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-sample-evoked-response-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" download="" href="../../_downloads/c90ce17d135c3a6d07296a69a09471ca/plot_sample_evoked_response.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sample_evoked_response.py</span></code></a></div>

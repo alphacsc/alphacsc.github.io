@@ -11,8 +11,13 @@
 Alpha CSC on simulated data
 ===========================
 
-This example demonstrates alphaCSC on simulated data.
+This example demonstrates alphaCSC [1]_ on simulated data.
 
+.. [1] Jas, M., Dupré La Tour, T., Şimşekli, U., & Gramfort, A. (2017).
+    `Learning the Morphology of Brain Signals Using Alpha-Stable Convolutional
+    Sparse Coding
+    <https://papers.nips.cc/paper/6710-learning-the-morphology-of-brain-signals-using-alpha-stable-convolutional-sparse-coding.pdf>`_.
+    Advances in Neural Information Processing Systems (NIPS), pages 1099--1108.
 
 
 
@@ -215,7 +220,7 @@ downweighted by the algorithm
 
 
 
-**Total running time of the script:** ( 3 minutes  33.496 seconds)
+**Total running time of the script:** ( 3 minutes  30.548 seconds)
 
 
 .. _sphx_glr_download_auto_examples_noise_alpha_plot_simulate_alphacsc.py:

@@ -114,7 +114,7 @@ Multivariate CSC with rank 1 constraints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank1 atoms on the somato-sensorymotor dataset from :code...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 atoms [1]_ on the multivariate somato-sensorymotor...">
 
 .. only:: html
 
@@ -134,7 +134,7 @@ Multivariate CSC with rank 1 constraints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank1 atoms on the sample dataset from :code:`mne`. We di...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from...">
 
 .. only:: html
 
@@ -164,7 +164,7 @@ Univariate CSC with an alpha-stable distribution
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates alphaCSC on simulated data.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates alphaCSC [1]_ on simulated data.">
 
 .. only:: html
 

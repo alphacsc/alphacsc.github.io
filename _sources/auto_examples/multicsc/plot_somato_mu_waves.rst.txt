@@ -11,10 +11,14 @@
 Extracting :math:`\mu`-wave from the somato-sensory dataset
 ===========================================================
 
-This example illustrates how to learn rank1 atoms on the somato-sensorymotor
-dataset from :code:`mne`. The displayed results highlight the presence of
-:math:`\mu`-waves located in the SI cortex.
+This example illustrates how to learn rank-1 atoms [1]_ on the multivariate
+somato-sensorymotor dataset from :code:`mne`. The displayed results highlight
+the presence of :math:`\mu`-waves located in the SI cortex.
 
+.. [1] Dupré La Tour, T., Moreau, T., Jas, M., & Gramfort, A. (2018).
+    `Multivariate Convolutional Sparse Coding for Electromagnetic Brain Signals
+    <https://arxiv.org/abs/1805.09654v2>`_. Advances in Neural Information
+    Processing Systems (NIPS).
 
 
 
@@ -127,7 +131,7 @@ Fit the model and learn rank1 atoms
 
     ..............
     [BatchCDL] Converged after 14 iteration, (dz, du) = 8.766e-05, 8.712e-05
-    [BatchCDL] Fit in 413.9s
+    [BatchCDL] Fit in 435.2s
 
 
 Display the 4-th atom, which displays a :math:`\mu`-waveform in its temporal
@@ -181,7 +185,7 @@ pattern.
 
 
 
-**Total running time of the script:** ( 7 minutes  20.275 seconds)
+**Total running time of the script:** ( 7 minutes  17.697 seconds)
 
 
 .. _sphx_glr_download_auto_examples_multicsc_plot_somato_mu_waves.py:

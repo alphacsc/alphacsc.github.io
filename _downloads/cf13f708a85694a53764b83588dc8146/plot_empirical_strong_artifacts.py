@@ -14,14 +14,20 @@ The convolutional sparse coding (CSC) model is able to learn the prototypical
 waveforms of the signal, on which we can clearly see the CFC. However, when the
 CSC model is fitted on a data section with strong artifacts, the learned atoms
 do not show the expected CFC waveforms. To solve this problem, another model
-can be used, called alpha-CSC, which is less affected by strong artifacts in
-the data.
+can be used, called alpha-CSC [2]_, which is less affected by strong artifacts
+in the data.
 
 .. [1] G. Dallérac, M. Graupner, J. Knippenberg, R. C. R. Martinez,
     T. F. Tavares, L. Tallot, N. El Massioui, A. Verschueren, S. Höhn,
     J.B. Bertolus, et al. Updating temporal expectancy of an aversive event
     engages striatal plasticity under amygdala control.
     Nature Communications, 8:13920, 2017
+
+.. [2] Jas, M., Dupré La Tour, T., Şimşekli, U., & Gramfort, A. (2017).
+    `Learning the Morphology of Brain Signals Using Alpha-Stable Convolutional
+    Sparse Coding
+    <https://papers.nips.cc/paper/6710-learning-the-morphology-of-brain-signals-using-alpha-stable-convolutional-sparse-coding.pdf>`_.
+    Advances in Neural Information Processing Systems (NIPS), pages 1099--1108.
 """
 
 # Authors: Tom Dupre La Tour <tom.duprelatour@telecom-paristech.fr>
@@ -129,7 +135,7 @@ def plot_atoms(d_hat):
 common_params = dict(
     n_atoms=3,
     n_times_atom=int(sfreq * 1.0),  # 1000. ms
-    reg=5.,
+    reg=3.,
     solver_z='l-bfgs',
     solver_z_kwargs=dict(factr=1e9),
     solver_d_kwargs=dict(factr=1e2),
@@ -177,6 +183,6 @@ X = data_dirty
 
 d_hat, z_hat, tau = learn_d_z_weighted(
     X, n_iter_optim=n_iter, n_iter_global=3, n_iter_mcmc=300,
-    n_burnin_mcmc=100, alpha=alpha, init_tau=True, **common_params)
+    n_burnin_mcmc=100, alpha=alpha, **common_params)
 
 plot_atoms(d_hat)

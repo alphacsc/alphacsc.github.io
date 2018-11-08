@@ -11,11 +11,15 @@
 Extracting artifact and evoked response atoms from the sample dataset
 =====================================================================
 
-This example illustrates how to learn rank1 atoms on the sample
-dataset from :code:`mne`. We display a selection of atoms, featuring
+This example illustrates how to learn rank-1 [1]_ atoms on the multivariate
+sample dataset from :code:`mne`. We display a selection of atoms, featuring
 heartbeat and eyeblink artifacts, three atoms of evoked responses, and a
 non-sinusoidal oscillation.
 
+.. [1] Dupré La Tour, T., Moreau, T., Jas, M., & Gramfort, A. (2018).
+    `Multivariate Convolutional Sparse Coding for Electromagnetic Brain Signals
+    <https://arxiv.org/abs/1805.09654v2>`_. Advances in Neural Information
+    Processing Systems (NIPS).
 
 
 
@@ -148,7 +152,7 @@ Fit the model and learn rank1 atoms
     .................................................+
     ....
     [GreedyCDL] Converged after 54 iteration, (dz, du) = 9.554e-05, 8.861e-05
-    [GreedyCDL] Fit in 1888.0s
+    [GreedyCDL] Fit in 1890.4s
 
 
 To avoid artifacts due to the splitting, we can optionally reload the data.
@@ -336,7 +340,7 @@ not statistically significant values.
     Displaying 2-th atom    Displaying 0-th atom    Displaying 3-th atom    Displaying 15-th atom    Displaying 20-th atom    Displaying 11-th atom
 
 
-**Total running time of the script:** ( 34 minutes  24.428 seconds)
+**Total running time of the script:** ( 34 minutes  23.903 seconds)
 
 
 .. _sphx_glr_download_auto_examples_multicsc_plot_sample_evoked_response.py:

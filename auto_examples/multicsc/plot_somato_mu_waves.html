@@ -100,9 +100,17 @@
 </div>
 <div class="sphx-glr-example-title section" id="extracting-mu-wave-from-the-somato-sensory-dataset">
 <span id="sphx-glr-auto-examples-multicsc-plot-somato-mu-waves-py"></span><h1>Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset<a class="headerlink" href="#extracting-mu-wave-from-the-somato-sensory-dataset" title="Permalink to this headline">¶</a></h1>
-<p>This example illustrates how to learn rank1 atoms on the somato-sensorymotor
-dataset from <code class="code docutils literal notranslate"><span class="pre">mne</span></code>. The displayed results highlight the presence of
-<span class="math notranslate nohighlight">\(\mu\)</span>-waves located in the SI cortex.</p>
+<p>This example illustrates how to learn rank-1 atoms <a class="footnote-reference" href="#id2" id="id1">[1]</a> on the multivariate
+somato-sensorymotor dataset from <code class="code docutils literal notranslate"><span class="pre">mne</span></code>. The displayed results highlight
+the presence of <span class="math notranslate nohighlight">\(\mu\)</span>-waves located in the SI cortex.</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Dupré La Tour, T., Moreau, T., Jas, M., &amp; Gramfort, A. (2018).
+<a class="reference external" href="https://arxiv.org/abs/1805.09654v2">Multivariate Convolutional Sparse Coding for Electromagnetic Brain Signals</a>. Advances in Neural Information
+Processing Systems (NIPS).</td></tr>
+</tbody>
+</table>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Thomas Moreau &lt;thomas.moreau@inria.fr&gt;</span>
 <span class="c1">#          Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Tom Dupre La Tour &lt;tom.duprelatour@telecom-paristech.fr&gt;</span>
@@ -156,7 +164,7 @@ before and finishing 4 seconds after.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>..............
 [BatchCDL] Converged after 14 iteration, (dz, du) = 8.766e-05, 8.712e-05
-[BatchCDL] Fit in 413.9s
+[BatchCDL] Fit in 435.2s
 </pre></div>
 </div>
 <p>Display the 4-th atom, which displays a <span class="math notranslate nohighlight">\(\mu\)</span>-waveform in its temporal
@@ -198,7 +206,7 @@ pattern.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_somato_mu_waves_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_somato_mu_waves_001.png" />
-<p><strong>Total running time of the script:</strong> ( 7 minutes  20.275 seconds)</p>
+<p><strong>Total running time of the script:</strong> ( 7 minutes  17.697 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-somato-mu-waves-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" download="" href="../../_downloads/7239e2d7ce364885f34fb12eaa62d931/plot_somato_mu_waves.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_somato_mu_waves.py</span></code></a></div>
