@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Extracting artifact and evoked response atoms from the sample dataset &#8212; alphacsc 0.2dev documentation</title>
+    <title>Extracting artifact and evoked response atoms from the sample dataset &#8212; alphacsc 0.3.dev documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../../index.html">
           alphacsc</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.2dev</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.3.dev</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -102,7 +102,7 @@
 <span id="sphx-glr-auto-examples-multicsc-plot-sample-evoked-response-py"></span><h1>Extracting artifact and evoked response atoms from the sample dataset<a class="headerlink" href="#extracting-artifact-and-evoked-response-atoms-from-the-sample-dataset" title="Permalink to this headline">¶</a></h1>
 <p>This example illustrates how to learn rank-1 <a class="footnote-reference" href="#id2" id="id1">[1]</a> atoms on the multivariate
 sample dataset from <code class="code docutils literal notranslate"><span class="pre">mne</span></code>. We display a selection of atoms, featuring
-heartbeat and eyeblink artifacts, three atoms of evoked responses, and a
+heartbeat and eyeblink artifacts, two atoms of evoked responses, and a
 non-sinusoidal oscillation.</p>
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -121,18 +121,24 @@ Processing Systems (NIPS).</td></tr>
 </pre></div>
 </div>
 <p>Let us first define the parameters of our model.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample frequency</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sampling frequency. The signal will be resampled to match this.</span>
 <span class="n">sfreq</span> <span class="o">=</span> <span class="mf">150.</span>
 
 <span class="c1"># Define the shape of the dictionary</span>
 <span class="n">n_atoms</span> <span class="o">=</span> <span class="mi">40</span>
 <span class="n">n_times_atom</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">sfreq</span> <span class="o">*</span> <span class="mf">1.0</span><span class="p">))</span>  <span class="c1"># 1000. ms</span>
 
-<span class="c1"># Regularization parameter which control sparsity</span>
+<span class="c1"># Regularization parameter which control sparsity</span>
 <span class="n">reg</span> <span class="o">=</span> <span class="mf">0.1</span>
 
 <span class="c1"># number of processors for parallel computing</span>
 <span class="n">n_jobs</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># To accelerate the run time of this example, we split the signal in n_slits.</span>
+<span class="c1"># The number of splits should actually be the smallest possible to avoid</span>
+<span class="c1"># introducing border artifacts in the learned atoms and it should be not much</span>
+<span class="c1"># larger than n_jobs.</span>
+<span class="n">n_splits</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
 <p>Next, we define the parameters for multivariate CSC</p>
@@ -158,8 +164,8 @@ Processing Systems (NIPS).</td></tr>
     <span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
     <span class="c1"># solver for the z-step</span>
     <span class="n">solver_z</span><span class="o">=</span><span class="s2">&quot;lgcd&quot;</span><span class="p">,</span>
-    <span class="n">solver_z_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;tol&#39;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span>
-                     <span class="s1">&#39;max_iter&#39;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">},</span>
+    <span class="n">solver_z_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;tol&#39;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span>
+                     <span class="s1">&#39;max_iter&#39;</span><span class="p">:</span> <span class="mi">100000</span><span class="p">},</span>
     <span class="c1"># solver for the d-step</span>
     <span class="n">solver_d</span><span class="o">=</span><span class="s1">&#39;alternate_adaptive&#39;</span><span class="p">,</span>
     <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;max_iter&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">},</span>
@@ -171,11 +177,50 @@ Processing Systems (NIPS).</td></tr>
     <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here, we load the data from the sample datase. The data is not epoched yet,
-but we split it into 12 parts to make the most of multiple processors during
-the model fitting.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.datasets.somato</span> <span class="kn">import</span> <span class="n">load_data</span>
-<span class="n">X_split</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">sfreq</span><span class="o">=</span><span class="n">sfreq</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="n">n_splits</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n_jobs</span><span class="p">)</span>
+<p>Load the sample data from MNE-python and select the gradiometer channels.
+The MNE sample data contains MEG recordings of a subject with visual and
+auditory stimuli. We load the data using utilities from MNE-python as a Raw
+object and select the gradiometers from the signal.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">mne</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Loading the data...&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">data_path</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span><span class="p">()</span>
+<span class="n">subjects_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;subjects&quot;</span><span class="p">)</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">)</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;sample_audvis_raw.fif&#39;</span><span class="p">)</span>
+<span class="n">raw</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">pick_types</span><span class="p">(</span><span class="n">meg</span><span class="o">=</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">stim</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading the data...done
+</pre></div>
+</div>
+<p>Then, we remove the powerline artifacts and high-pass filter to remove the
+drift which can impact the CSC technique. The signal is also resampled to
+150 Hz to reduce the computationnal burden.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Preprocessing the data...&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">notch_filter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">raw</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">sfreq</span><span class="p">,</span> <span class="n">npad</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;done&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Preprocessing the data...done
+</pre></div>
+</div>
+<p>Load the data as an array and split it in chunks to allow parallel processing
+during the model fit. Each split is considered as independent.
+To reduce the impact of border artifacts, we use <cite>apply_window=True</cite>
+which scales down the border of each split with a tukey window.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.utils.signal</span> <span class="kn">import</span> <span class="n">split_signal</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;meg&#39;</span><span class="p">])</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">pick_types</span><span class="p">(</span><span class="n">meg</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">info</span>  <span class="c1"># info of the loaded channels</span>
+<span class="n">X_split</span> <span class="o">=</span> <span class="n">split_signal</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n_splits</span><span class="o">=</span><span class="n">n_splits</span><span class="p">,</span> <span class="n">apply_window</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Fit the model and learn rank1 atoms</p>
@@ -183,38 +228,30 @@ the model fitting.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>.................................................+
-....
-[GreedyCDL] Converged after 54 iteration, (dz, du) = 9.554e-05, 8.861e-05
-[GreedyCDL] Fit in 1890.4s
-</pre></div>
-</div>
-<p>To avoid artifacts due to the splitting, we can optionally reload the data.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">sfreq</span><span class="o">=</span><span class="n">sfreq</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="n">n_splits</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>................................................
+[GreedyCDL] Converged after 48 iteration, (dz, du) = 7.545e-05, 5.635e-05
+[GreedyCDL] Fit in 1402.1s
 </pre></div>
 </div>
 <p>Then we call the <cite>transform</cite> method, which returns the sparse codes
-associated with X, without changing the dictionary learned during the <cite>fit</cite>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z_hat</span> <span class="o">=</span> <span class="n">cdl</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+associated with X, without changing the dictionary learned during the <cite>fit</cite>.
+Note that we transform on the <em>unsplit</em> data so that the sparse codes
+reflect the original data and not the windowed data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z_hat</span> <span class="o">=</span> <span class="n">cdl</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="p">:])</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Refitting the activation to avoid amplitude bias...
-done
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Refitting the activation to avoid amplitude bias...done
 </pre></div>
 </div>
-<p>Display a selection of atoms. We recognize a heartbeat artifact, an
-eyeblink artifact, three atoms of evoked responses, and a non-sinusoidal
-oscillation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mne</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-<span class="kn">from</span> <span class="nn">alphacsc.utils.convolution</span> <span class="kn">import</span> <span class="n">construct_X_multi</span>
-<span class="kn">from</span> <span class="nn">alphacsc.viz.epoch</span> <span class="kn">import</span> <span class="n">plot_evoked_surrogates</span>
+<div class="section" id="display-a-selection-of-atoms">
+<h2>Display a selection of atoms<a class="headerlink" href="#display-a-selection-of-atoms" title="Permalink to this headline">¶</a></h2>
+<p>We recognize a heartbeat artifact, an eyeblink artifact, two atoms of evoked
+responses, and a non-sinusoidal oscillation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="c1"># preselected atoms of interest</span>
-<span class="n">plotted_atoms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">plotted_atoms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 
 <span class="n">n_plots</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># number of plots by atom</span>
 <span class="n">n_columns</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">plotted_atoms</span><span class="p">))</span>
@@ -254,33 +291,54 @@ oscillation.</p>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Displayed {} atoms&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plotted_atoms</span><span class="p">))</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">40</span><span class="p">))</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_sample_evoked_response_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_sample_evoked_response_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Displaying 2-th atom
-Displaying 0-th atom
-Displaying 3-th atom
-Displaying 15-th atom
-Displaying 20-th atom
-Displaying 11-th atom
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Displaying 0-th atom
+Displaying 1-th atom
+Displaying 2-th atom
+Displaying 6-th atom
+Displaying 4-th atom
+Displayed 5 atoms
 </pre></div>
 </div>
-<p>Display the evoked reconstructed enveloppe:
-For each atom (columns), and for each event (rows), we compute the enveloppe
+</div>
+<div class="section" id="display-the-evoked-reconstructed-envelope">
+<h2>Display the evoked reconstructed envelope<a class="headerlink" href="#display-the-evoked-reconstructed-envelope" title="Permalink to this headline">¶</a></h2>
+<p>The MNE sample data contains data for auditory (event_id=1 and 2) and
+visual stimuli (event_id=3 and 4). We extract the events now so that we can
+later identify the atoms related to different events. Note that the
+convolutional sparse coding method does not need to know the events for
+learning atoms.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">event_id</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">find_events</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">stim_channel</span><span class="o">=</span><span class="s1">&#39;STI 014&#39;</span><span class="p">)</span>
+<span class="n">events</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">pick_events</span><span class="p">(</span><span class="n">events</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">event_id</span><span class="p">)</span>
+<span class="n">events</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">raw</span><span class="o">.</span><span class="n">first_samp</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>319 events found
+Event IDs: [ 1  2  3  4  5 32]
+</pre></div>
+</div>
+<p>For each atom (columns), and for each event (rows), we compute the envelope
 of the reconstructed signal, align it with respect to the event onsets, and
 take the average. For some atoms, the activations are correlated with the
-events, leading to a large evoked enveloppe. The gray area corresponds to
-not statistically significant values.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
-<span class="kn">from</span> <span class="nn">alphacsc.utils.signal</span> <span class="kn">import</span> <span class="n">fast_hilbert</span>
+events, leading to a large evoked envelope. The gray area corresponds to
+not statistically significant values, computing with sampling.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.utils.signal</span> <span class="kn">import</span> <span class="n">fast_hilbert</span>
+<span class="kn">from</span> <span class="nn">alphacsc.viz.epoch</span> <span class="kn">import</span> <span class="n">plot_evoked_surrogates</span>
+<span class="kn">from</span> <span class="nn">alphacsc.utils.convolution</span> <span class="kn">import</span> <span class="n">construct_X_multi</span>
 
-<span class="c1"># time window around the events</span>
+<span class="c1"># time window around the events. Note that for the sample datasets, the time</span>
+<span class="c1"># inter-event is around 0.5s</span>
 <span class="n">t_lim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 
-<span class="n">n_plots</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]))</span>
+<span class="n">n_plots</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">event_id</span><span class="p">)</span>
 <span class="n">n_columns</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">plotted_atoms</span><span class="p">))</span>
 <span class="n">split</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plotted_atoms</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_columns</span><span class="p">))</span>
 <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n_columns</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n_plots</span> <span class="o">*</span> <span class="n">split</span><span class="p">)</span>
@@ -289,7 +347,7 @@ not statistically significant values.</p>
 <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">kk</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">plotted_atoms</span><span class="p">):</span>
 
     <span class="c1"># Select the axes to display the current atom</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Displaying {}-th atom&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kk</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Displaying {}-th atom envelope&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kk</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">i_row</span><span class="p">,</span> <span class="n">i_col</span> <span class="o">=</span> <span class="n">ii</span> <span class="o">//</span> <span class="n">n_columns</span><span class="p">,</span> <span class="n">ii</span> <span class="o">%</span> <span class="n">n_columns</span>
     <span class="n">it_axes</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i_row</span> <span class="o">*</span> <span class="n">n_plots</span><span class="p">:(</span><span class="n">i_row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n_plots</span><span class="p">,</span> <span class="n">i_col</span><span class="p">])</span>
 
@@ -299,44 +357,104 @@ not statistically significant values.</p>
     <span class="n">z_k</span> <span class="o">=</span> <span class="n">z_hat</span><span class="p">[:,</span> <span class="n">kk</span><span class="p">:</span><span class="n">kk</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">X_k</span> <span class="o">=</span> <span class="n">construct_X_multi</span><span class="p">(</span><span class="n">z_k</span><span class="p">,</span> <span class="n">v_k_1</span><span class="p">,</span> <span class="n">n_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 
-    <span class="c1"># compute the &#39;enveloppe&#39; of the reconstructed signal X_k</span>
+    <span class="c1"># compute the &#39;envelope&#39; of the reconstructed signal X_k</span>
     <span class="n">correlation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fast_hilbert</span><span class="p">(</span><span class="n">X_k</span><span class="p">))</span>
 
     <span class="c1"># loop over all events IDs</span>
-    <span class="k">for</span> <span class="n">this_event_id</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]):</span>
-        <span class="c1"># select the event by its ID, and create a new info dictionary</span>
-        <span class="n">this_info</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
-        <span class="n">this_info</span><span class="p">[</span><span class="s1">&#39;events&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_info</span><span class="p">[</span><span class="s1">&#39;events&#39;</span><span class="p">][</span><span class="n">this_info</span><span class="p">[</span><span class="s1">&#39;events&#39;</span><span class="p">][:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span>
-                                                  <span class="n">this_event_id</span><span class="p">]</span>
-        <span class="n">this_info</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_event_id</span>
-
+    <span class="k">for</span> <span class="n">this_event_id</span> <span class="ow">in</span> <span class="n">event_id</span><span class="p">:</span>
+        <span class="n">this_events</span> <span class="o">=</span> <span class="n">events</span><span class="p">[</span><span class="n">events</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">this_event_id</span><span class="p">]</span>
         <span class="c1"># plotting function</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it_axes</span><span class="p">)</span>
+        <span class="n">this_info</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">this_info</span><span class="p">[</span><span class="s1">&#39;event_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">this_event_id</span>
+        <span class="n">this_info</span><span class="p">[</span><span class="s1">&#39;events&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">events</span>
         <span class="n">plot_evoked_surrogates</span><span class="p">(</span><span class="n">correlation</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="n">this_info</span><span class="p">,</span> <span class="n">t_lim</span><span class="o">=</span><span class="n">t_lim</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
                                <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;event </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">this_event_id</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Evoked enveloppe </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">kk</span><span class="p">)</span>
-
+        <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Evoked envelope </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">kk</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Displayed {} atoms&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plotted_atoms</span><span class="p">))</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">40</span><span class="p">))</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_plot_sample_evoked_response_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_sample_evoked_response_002.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Displaying 2-th atom
-Displaying 0-th atom
-Displaying 3-th atom
-Displaying 15-th atom
-Displaying 20-th atom
-Displaying 11-th atom
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Displaying 0-th atom envelope
+Displaying 1-th atom envelope
+Displaying 2-th atom envelope
+Displaying 6-th atom envelope
+Displaying 4-th atom envelope
+Displayed 5 atoms
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 34 minutes  23.903 seconds)</p>
+</div>
+<div class="section" id="display-the-equivalent-dipole-for-a-learned-topomap">
+<h2>Display the equivalent dipole for a learned topomap<a class="headerlink" href="#display-the-equivalent-dipole-for-a-learned-topomap" title="Permalink to this headline">¶</a></h2>
+<p>Finally, let us fit a dipole to one of the atoms. To fit a dipole,
+we need the following:</p>
+<ul class="simple">
+<li>BEM solution: Obtained by running the cortical reconstruction pipeline
+of Freesurfer and describes the conductivity of different tissues in
+the head.</li>
+<li>Trans: An affine transformation matrix needed to bring the data
+from sensor space to head space. This is usually done by coregistering
+the fiducials with the MRI.</li>
+<li>Noise covariance matrix: To whiten the data so that the assumption
+of Gaussian noise model with identity covariance matrix is satisfied.</li>
+</ul>
+<p>We recommend users to consult the MNE documentation for further information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subjects_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;subjects&#39;</span><span class="p">)</span>
+<span class="n">fname_bem</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subjects_dir</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;bem&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;sample-5120-bem-sol.fif&#39;</span><span class="p">)</span>
+<span class="n">fname_trans</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;sample_audvis_raw-trans.fif&#39;</span><span class="p">)</span>
+<span class="n">fname_cov</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_audvis-cov.fif&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let us construct an evoked object for MNE with the spatial pattern of the
+atoms.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">evoked</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">EvokedArray</span><span class="p">(</span><span class="n">cdl</span><span class="o">.</span><span class="n">u_hat_</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Fit a dipole to each of the atoms.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dip</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">fit_dipole</span><span class="p">(</span><span class="n">evoked</span><span class="p">,</span> <span class="n">fname_cov</span><span class="p">,</span> <span class="n">fname_bem</span><span class="p">,</span> <span class="n">fname_trans</span><span class="p">,</span>
+                     <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Plot the dipole fit from the 3rd atom, linked to mu-wave and display the
+goodness of fit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Display the dipole fit</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">dip</span><span class="o">.</span><span class="n">plot_locations</span><span class="p">(</span><span class="n">fname_trans</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="n">subjects_dir</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Atom #3 (GOF {:.2f}%)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dip</span><span class="o">.</span><span class="n">gof</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+
+<span class="c1"># Plot the spatial map</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_topomap</span><span class="p">(</span><span class="n">cdl</span><span class="o">.</span><span class="n">u_hat_</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">info</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="c1"># Plot the temporal atom</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_times_atom</span><span class="p">)</span> <span class="o">/</span> <span class="n">sfreq</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">cdl</span><span class="o">.</span><span class="n">v_hat_</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_times_atom</span> <span class="o">/</span> <span class="n">sfreq</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Temporal pattern 3&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/sphx_glr_plot_sample_evoked_response_003.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_sample_evoked_response_003.png" />
+<p><strong>Total running time of the script:</strong> ( 26 minutes  34.204 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-sample-evoked-response-py">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../../_downloads/c90ce17d135c3a6d07296a69a09471ca/plot_sample_evoked_response.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sample_evoked_response.py</span></code></a></div>
+<a class="reference download internal" download="" href="../../_downloads/a4513965a8295b5e01e3ddda780bda56/plot_sample_evoked_response.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sample_evoked_response.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../../_downloads/18a2b30ff1734d9bf945d89a3e9f638d/plot_sample_evoked_response.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_sample_evoked_response.ipynb</span></code></a></div>
+<a class="reference download internal" download="" href="../../_downloads/629f62ab4e951db7d99858721524c9f7/plot_sample_evoked_response.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_sample_evoked_response.ipynb</span></code></a></div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
 </div>
 
 

@@ -16,6 +16,7 @@ alphacsc.OnlineCDL
       ~OnlineCDL.__init__
       ~OnlineCDL.fit
       ~OnlineCDL.fit_transform
+      ~OnlineCDL.partial_fit
       ~OnlineCDL.transform
       ~OnlineCDL.transform_inverse
    

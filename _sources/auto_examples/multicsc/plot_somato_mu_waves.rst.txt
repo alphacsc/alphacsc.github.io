@@ -130,8 +130,8 @@ Fit the model and learn rank1 atoms
  .. code-block:: none
 
     ..............
-    [BatchCDL] Converged after 14 iteration, (dz, du) = 8.766e-05, 8.712e-05
-    [BatchCDL] Fit in 435.2s
+    [BatchCDL] Converged after 14 iteration, (dz, du) = 8.570e-05, 8.726e-05
+    [BatchCDL] Fit in 359.8s
 
 
 Display the 4-th atom, which displays a :math:`\mu`-waveform in its temporal
@@ -148,7 +148,7 @@ pattern.
 
     i_atom = 4
     n_plots = 3
-    figsize = (n_plots * 3.5, 5)
+    figsize = (n_plots * 5, 5.5)
     fig, axes = plt.subplots(1, n_plots, figsize=figsize, squeeze=False)
 
     # Plot the spatial map of the learn atom using mne topomap
@@ -185,7 +185,7 @@ pattern.
 
 
 
-**Total running time of the script:** ( 7 minutes  17.697 seconds)
+**Total running time of the script:** ( 6 minutes  0.547 seconds)
 
 
 .. _sphx_glr_download_auto_examples_multicsc_plot_somato_mu_waves.py:

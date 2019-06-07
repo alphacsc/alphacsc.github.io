@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>alphacsc.learn_d_z &#8212; alphacsc 0.2dev documentation</title>
+    <title>alphacsc.learn_d_z &#8212; alphacsc 0.3.dev documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           alphacsc</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.2dev</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.3.dev</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -104,29 +104,24 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array, shape (n_trials, n_times)</p>
-<blockquote>
-<div><p>The data on which to perform CSC.</p>
-</div></blockquote>
-<p><strong>n_atoms</strong> : int</p>
-<blockquote>
-<div><p>The number of atoms to learn.</p>
-</div></blockquote>
-<p><strong>n_times_atom</strong> : int</p>
-<blockquote>
-<div><p>The support of the atom.</p>
-</div></blockquote>
-<p><strong>func_d</strong> : callable</p>
-<blockquote>
-<div><p>The function to update the atoms.</p>
-</div></blockquote>
-<p><strong>reg</strong> : float</p>
-<blockquote>
-<div><p>The regularization parameter</p>
-</div></blockquote>
-<p><strong>lmbd_max</strong> : ‘fixed’ | ‘scaled’ | ‘per_atom’ | ‘shared’</p>
-<blockquote>
-<div><dl class="docutils">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_trials, n_times)</span></dt>
+<dd><p class="first last">The data on which to perform CSC.</p>
+</dd>
+<dt><strong>n_atoms</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of atoms to learn.</p>
+</dd>
+<dt><strong>n_times_atom</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The support of the atom.</p>
+</dd>
+<dt><strong>func_d</strong> <span class="classifier-delimiter">:</span> <span class="classifier">callable</span></dt>
+<dd><p class="first last">The function to update the atoms.</p>
+</dd>
+<dt><strong>reg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The regularization parameter</p>
+</dd>
+<dt><strong>lmbd_max</strong> <span class="classifier-delimiter">:</span> <span class="classifier">‘fixed’ | ‘scaled’ | ‘per_atom’ | ‘shared’</span></dt>
+<dd><dl class="first last docutils">
 <dt>If not fixed, adapt the regularization rate as a ratio of lambda_max:</dt>
 <dd><ul class="first last simple">
 <li>‘scaled’: the regularization parameter is fixed as a ratio of its
@@ -140,77 +135,64 @@ reg_used[k] = reg * lmbd_max(uv_hat[k])</li>
 </ul>
 </dd>
 </dl>
-</div></blockquote>
-<p><strong>n_iter</strong> : int</p>
-<blockquote>
-<div><p>The number of coordinate-descent iterations.</p>
-</div></blockquote>
-<p><strong>random_state</strong> : int | None</p>
-<blockquote>
-<div><p>The random state.</p>
-</div></blockquote>
-<p><strong>n_jobs</strong> : int</p>
-<blockquote>
-<div><p>The number of parallel jobs.</p>
-</div></blockquote>
-<p><strong>solver_z</strong> : str</p>
-<blockquote>
-<div><p>The solver to use for the z update. Options are
+</dd>
+<dt><strong>n_iter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of coordinate-descent iterations.</p>
+</dd>
+<dt><strong>random_state</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int | None</span></dt>
+<dd><p class="first last">The random state.</p>
+</dd>
+<dt><strong>n_jobs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The number of parallel jobs.</p>
+</dd>
+<dt><strong>solver_z</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The solver to use for the z update. Options are
 ‘l-bfgs’ (default) | ‘ista’ | ‘fista’</p>
-</div></blockquote>
-<p><strong>solver_d_kwargs</strong> : dict</p>
-<blockquote>
-<div><p>Additional keyword arguments to provide to update_d</p>
-</div></blockquote>
-<p><strong>solver_z_kwargs</strong> : dict</p>
-<blockquote>
-<div><p>Additional keyword arguments to pass to update_z</p>
-</div></blockquote>
-<p><strong>ds_init</strong> : str or array, shape (n_atoms, n_times_atom)</p>
-<blockquote>
-<div><p>The initial atoms or an initialization scheme in {‘kmeans’ | ‘ssa’ |
-‘chunks’ | ‘random’}.</p>
-</div></blockquote>
-<p><strong>ds_init_params</strong> : dict</p>
-<blockquote>
-<div><p>Dictionnary of parameters for the kmeans init method.</p>
-</div></blockquote>
-<p><strong>sample_weights</strong> : array, shape (n_trials, n_times)</p>
-<blockquote>
-<div><p>The weights in the alphaCSC problem. Should be None
+</dd>
+<dt><strong>solver_d_kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Additional keyword arguments to provide to update_d</p>
+</dd>
+<dt><strong>solver_z_kwargs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Additional keyword arguments to pass to update_z</p>
+</dd>
+<dt><strong>ds_init</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str or array, shape (n_atoms, n_times_atom)</span></dt>
+<dd><p class="first last">The initial atoms or an initialization scheme in {‘kmeans’ | ‘ssa’ |
+‘chunk’ | ‘random’}.</p>
+</dd>
+<dt><strong>ds_init_params</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
+<dd><p class="first last">Dictionnary of parameters for the kmeans init method.</p>
+</dd>
+<dt><strong>sample_weights</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_trials, n_times)</span></dt>
+<dd><p class="first last">The weights in the alphaCSC problem. Should be None
 when using vanilla CSC.</p>
-</div></blockquote>
-<p><strong>verbose</strong> : int</p>
-<blockquote>
-<div><p>The verbosity level.</p>
-</div></blockquote>
-<p><strong>callback</strong> : func</p>
-<blockquote>
-<div><p>A callback function called at the end of each loop of the
+</dd>
+<dt><strong>verbose</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The verbosity level.</p>
+</dd>
+<dt><strong>callback</strong> <span class="classifier-delimiter">:</span> <span class="classifier">func</span></dt>
+<dd><p class="first last">A callback function called at the end of each loop of the
 coordinate descent.</p>
-</div></blockquote>
+</dd>
+</dl>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>pobj</strong> : list</p>
-<blockquote>
-<div><p>The objective function value at each step of the coordinate descent.</p>
-</div></blockquote>
-<p><strong>times</strong> : list</p>
-<blockquote>
-<div><p>The cumulative time for each iteration of the coordinate descent.</p>
-</div></blockquote>
-<p><strong>d_hat</strong> : array, shape (n_atoms, n_times)</p>
-<blockquote>
-<div><p>The estimated atoms.</p>
-</div></blockquote>
-<p><strong>z_hat</strong> : array, shape (n_atoms, n_trials, n_times - n_times_atom + 1)</p>
-<blockquote>
-<div><p>The sparse activation matrix.</p>
-</div></blockquote>
-<p><strong>reg</strong> : float</p>
-<blockquote class="last">
-<div><p>Regularization parameter used.</p>
-</div></blockquote>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
+<dt><strong>pobj</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">The objective function value at each step of the coordinate descent.</p>
+</dd>
+<dt><strong>times</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">The cumulative time for each iteration of the coordinate descent.</p>
+</dd>
+<dt><strong>d_hat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_atoms, n_times)</span></dt>
+<dd><p class="first last">The estimated atoms.</p>
+</dd>
+<dt><strong>z_hat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array, shape (n_atoms, n_trials, n_times - n_times_atom + 1)</span></dt>
+<dd><p class="first last">The sparse activation matrix.</p>
+</dd>
+<dt><strong>reg</strong> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Regularization parameter used.</p>
+</dd>
+</dl>
 </td>
 </tr>
 </tbody>
