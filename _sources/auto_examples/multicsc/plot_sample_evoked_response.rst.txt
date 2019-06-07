@@ -231,7 +231,7 @@ Fit the model and learn rank1 atoms
 
     ................................................
     [GreedyCDL] Converged after 48 iteration, (dz, du) = 7.545e-05, 5.635e-05
-    [GreedyCDL] Fit in 1431.8s
+    [GreedyCDL] Fit in 1537.0s
 
 
 Then we call the `transform` method, which returns the sparse codes
@@ -540,7 +540,8 @@ goodness of fit.
     t = np.arange(n_times_atom) / sfreq
     ax.plot(t, cdl.v_hat_[atom_dipole_idx])
     ax.set_xlim(0, n_times_atom / sfreq)
-    ax.set(xlabel='Time (sec)', title="Temporal pattern 3")
+    ax.set(xlabel='Time (sec)', title="Temporal pattern {}"
+           .format(atom_dipole_idx))
 
     fig.suptitle('')
     fig.tight_layout()
@@ -553,7 +554,7 @@ goodness of fit.
 
 
 
-**Total running time of the script:** ( 27 minutes  12.704 seconds)
+**Total running time of the script:** ( 29 minutes  15.637 seconds)
 
 
 .. _sphx_glr_download_auto_examples_multicsc_plot_sample_evoked_response.py:
