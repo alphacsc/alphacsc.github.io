@@ -231,7 +231,7 @@ Fit the model and learn rank1 atoms
 
     ................................................
     [GreedyCDL] Converged after 48 iteration, (dz, du) = 7.545e-05, 5.635e-05
-    [GreedyCDL] Fit in 1402.1s
+    [GreedyCDL] Fit in 1431.8s
 
 
 Then we call the `transform` method, which returns the sparse codes
@@ -517,23 +517,28 @@ goodness of fit.
 
 .. code-block:: python
 
+
+    atom_dipole_idx = 4
+
     from mpl_toolkits.mplot3d import Axes3D
 
     fig = plt.figure(figsize=(10, 4))
 
     # Display the dipole fit
     ax = fig.add_subplot(1, 3, 1, projection='3d')
-    dip.plot_locations(fname_trans, 'sample', subjects_dir, idx=3, ax=ax)
-    ax.set_title('Atom #3 (GOF {:.2f}%)'.format(dip.gof[3]))
+    dip.plot_locations(fname_trans, 'sample', subjects_dir, idx=atom_dipole_idx,
+                       ax=ax)
+    ax.set_title('Atom #{} (GOF {:.2f}%)'.format(atom_dipole_idx,
+                                                 dip.gof[atom_dipole_idx]))
 
     # Plot the spatial map
     ax = fig.add_subplot(1, 3, 2)
-    mne.viz.plot_topomap(cdl.u_hat_[3], info, axes=ax)
+    mne.viz.plot_topomap(cdl.u_hat_[atom_dipole_idx], info, axes=ax)
 
     # Plot the temporal atom
     ax = fig.add_subplot(1, 3, 3)
     t = np.arange(n_times_atom) / sfreq
-    ax.plot(t, cdl.v_hat_[3])
+    ax.plot(t, cdl.v_hat_[atom_dipole_idx])
     ax.set_xlim(0, n_times_atom / sfreq)
     ax.set(xlabel='Time (sec)', title="Temporal pattern 3")
 
@@ -548,7 +553,7 @@ goodness of fit.
 
 
 
-**Total running time of the script:** ( 26 minutes  34.204 seconds)
+**Total running time of the script:** ( 27 minutes  12.704 seconds)
 
 
 .. _sphx_glr_download_auto_examples_multicsc_plot_sample_evoked_response.py:
