@@ -2,9 +2,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Extracting cross-frequency coupling waveforms from rodent LFP data &#8212; alphacsc 0.3.dev documentation</title>
+    <meta charset="utf-8" />
+    <title>Extracting cross-frequency coupling waveforms from rodent LFP data &#8212; alphacsc 0.3 documentation</title>
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
@@ -12,11 +11,8 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Vanilla CSC on simulated data" href="plot_simulate_csc.html" />
@@ -25,6 +21,10 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
 
@@ -39,7 +39,7 @@
         </button>
         <a class="navbar-brand" href="../../index.html">
           alphacsc</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.3.dev</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -92,31 +92,30 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="body col-md-12 content" role="main">
       
   <div class="sphx-glr-download-link-note admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Click <a class="reference internal" href="#sphx-glr-download-auto-examples-csc-plot-cross-frequency-coupling-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-csc-plot-cross-frequency-coupling-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="extracting-cross-frequency-coupling-waveforms-from-rodent-lfp-data">
 <span id="sphx-glr-auto-examples-csc-plot-cross-frequency-coupling-py"></span><h1>Extracting cross-frequency coupling waveforms from rodent LFP data<a class="headerlink" href="#extracting-cross-frequency-coupling-waveforms-from-rodent-lfp-data" title="Permalink to this headline">¶</a></h1>
 <p>This example illustrates how to learn univariate atoms on a univariate
 time-serie. The data is a single LFP channel recorded on a rodent’s striatum
-<a class="footnote-reference" href="#id2" id="id1">[1]</a>. Interestingly in this time-serie, the high frequency oscillations around
+<a class="footnote-reference brackets" href="#id2" id="id1">1</a>. Interestingly in this time-serie, the high frequency oscillations around
 80 Hz are modulated in amplitude by the low-frequency oscillation around 3 Hz,
 a phenomenon known as cross-frequency coupling (CFC).</p>
 <p>The convolutional sparse coding (CSC) model is able to learn the prototypical
 waveforms of the signal, on which we can clearly see the CFC.</p>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>G. Dallérac, M. Graupner, J. Knippenberg, R. C. R. Martinez,
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>G. Dallérac, M. Graupner, J. Knippenberg, R. C. R. Martinez,
 T. F. Tavares, L. Tallot, N. El Massioui, A. Verschueren, S. Höhn,
 J.B. Bertolus, et al. Updating temporal expectancy of an aversive event
 engages striatal plasticity under amygdala control.
-Nature Communications, 8:13920, 2017</td></tr>
-</tbody>
-</table>
+Nature Communications, 8:13920, 2017</p>
+</dd>
+</dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Tom Dupre La Tour &lt;tom.duprelatour@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Umut Simsekli &lt;umut.simsekli@telecom-paristech.fr&gt;</span>
@@ -282,9 +281,11 @@ waveforms of the signal on which we can clearly see the CFC.</p>
 <p><strong>Total running time of the script:</strong> ( 4 minutes  13.157 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-csc-plot-cross-frequency-coupling-py">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../../_downloads/53df02256add7dbfe95ab1f6e6c8fa88/plot_cross_frequency_coupling.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_cross_frequency_coupling.py</span></code></a></div>
+<p><a class="reference download internal" download="" href="../../_downloads/53df02256add7dbfe95ab1f6e6c8fa88/plot_cross_frequency_coupling.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_cross_frequency_coupling.py</span></code></a></p>
+</div>
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" download="" href="../../_downloads/fb6cf57dd65324da8c634b6bb2993a19/plot_cross_frequency_coupling.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_cross_frequency_coupling.ipynb</span></code></a></div>
+<p><a class="reference download internal" download="" href="../../_downloads/fb6cf57dd65324da8c634b6bb2993a19/plot_cross_frequency_coupling.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_cross_frequency_coupling.ipynb</span></code></a></p>
+</div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
@@ -302,7 +303,7 @@ waveforms of the signal on which we can clearly see the CFC.</p>
     </p>
     <p>
         &copy; Copyright 2017-2018, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.1.<br/>
     </p>
   </div>
 </footer>

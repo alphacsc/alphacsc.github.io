@@ -1,5 +1,9 @@
 :orphan:
 
+
+
+.. _sphx_glr_auto_examples:
+
 .. _general_examples:
 
 Examples Gallery
@@ -14,6 +18,10 @@ Examples Gallery
 .. raw:: html
 
     <div style='clear:both'></div>
+
+
+
+.. _sphx_glr_auto_examples_csc:
 
 .. _csc_examples:
 
@@ -105,6 +113,10 @@ Univariate CSC
 
     <div style='clear:both'></div>
 
+
+
+.. _sphx_glr_auto_examples_multicsc:
+
 .. _multicsc_examples:
 
 Multivariate CSC with rank 1 constraints
@@ -155,6 +167,10 @@ Multivariate CSC with rank 1 constraints
 
     <div style='clear:both'></div>
 
+
+
+.. _sphx_glr_auto_examples_noise_alpha:
+
 .. _alphacsc_examples:
 
 Univariate CSC with an alpha-stable distribution
@@ -204,6 +220,10 @@ Univariate CSC with an alpha-stable distribution
 .. raw:: html
 
     <div style='clear:both'></div>
+
+
+
+.. _sphx_glr_auto_examples_other:
 
 .. _other_examples:
 
