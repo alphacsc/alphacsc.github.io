@@ -3,16 +3,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>API Documentation &#8212; alphacsc 0.3 documentation</title>
+    <title>API Documentation &#8212; alphacsc 0.4.dev0 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-rendered-html.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="alphacsc.BatchCDL" href="generated/alphacsc.BatchCDL.html" />
@@ -39,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           alphacsc</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.4.dev0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -60,7 +63,6 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">alphaCSC: Convolution sparse coding for time-series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Model descriptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples Gallery</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a></li>
@@ -107,14 +109,18 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BatchCDL</span></code></a>(n_atoms, n_times_atom[, reg, …])</p></td>
 <td><p>Batch algorithm for convolutional dictionary learning</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/alphacsc.OnlineCDL.html#alphacsc.OnlineCDL" title="alphacsc.OnlineCDL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OnlineCDL</span></code></a>(n_atoms, n_times_atom[, reg, …])</p></td>
-<td><p>Online algorithm for convolutional dictionary learning</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/alphacsc.GreedyCDL.html#alphacsc.GreedyCDL" title="alphacsc.GreedyCDL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GreedyCDL</span></code></a>(n_atoms, n_times_atom[, reg, …])</p></td>
+<td><p>Greedy batch algorithm for convolutional dictionary learning</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/alphacsc.OnlineCDL.html#alphacsc.OnlineCDL" title="alphacsc.OnlineCDL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OnlineCDL</span></code></a>(n_atoms, n_times_atom[, reg, …])</p></td>
+<td><p>Base class for convolutional dictionary learning algorithms.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions to learn atoms (d) and activations (z) from the signal</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -124,11 +130,26 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/alphacsc.learn_d_z.html#alphacsc.learn_d_z" title="alphacsc.learn_d_z"><code class="xref py py-obj docutils literal notranslate"><span class="pre">learn_d_z</span></code></a>(X, n_atoms, n_times_atom[, …])</p></td>
 <td><p>Univariate Convolutional Sparse Coding.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/alphacsc.learn_d_z_multi.html#alphacsc.learn_d_z_multi" title="alphacsc.learn_d_z_multi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">learn_d_z_multi</span></code></a>(X, n_atoms, n_times_atom[, …])</p></td>
-<td><p>Multivariate Convolutional Sparse Coding with optional rank-1 constraint</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/alphacsc.learn_d_z_weighted.html#alphacsc.learn_d_z_weighted" title="alphacsc.learn_d_z_weighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">learn_d_z_weighted</span></code></a>(X, n_atoms, n_times_atom)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/alphacsc.learn_d_z_weighted.html#alphacsc.learn_d_z_weighted" title="alphacsc.learn_d_z_weighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">learn_d_z_weighted</span></code></a>(X, n_atoms, n_times_atom)</p></td>
 <td><p>Univariate Convolutional Sparse Coding with an alpha-stable distribution</p></td>
+</tr>
+</tbody>
+</table>
+<p>Utility functions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">alphacsc.utils</span></code>):</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/alphacsc.utils.check_univariate_signal.html#alphacsc.utils.check_univariate_signal" title="alphacsc.utils.check_univariate_signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_univariate_signal</span></code></a>(X)</p></td>
+<td><p>Return an array that can be used with alphacsc transformers for univariate signals.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/alphacsc.utils.check_multivariate_signal.html#alphacsc.utils.check_multivariate_signal" title="alphacsc.utils.check_multivariate_signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_multivariate_signal</span></code></a>(X)</p></td>
+<td><p>Return an array that can be used with alphacsc transformers for multivariate signals.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/alphacsc.utils.split_signal.html#alphacsc.utils.split_signal" title="alphacsc.utils.split_signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_signal</span></code></a>(X[, n_splits, apply_window])</p></td>
+<td><p>Split the signal in <code class="docutils literal notranslate"><span class="pre">n_splits</span></code> chunks for faster training.</p></td>
 </tr>
 </tbody>
 </table>
@@ -148,7 +169,7 @@
     </p>
     <p>
         &copy; Copyright 2017-2018, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
     </p>
   </div>
 </footer>

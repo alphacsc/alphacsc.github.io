@@ -3,19 +3,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>alphacsc.BatchCDL &#8212; alphacsc 0.3 documentation</title>
+    <title>alphacsc.BatchCDL &#8212; alphacsc 0.4.dev0 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="alphacsc.OnlineCDL" href="alphacsc.OnlineCDL.html" />
+    <link rel="next" title="alphacsc.GreedyCDL" href="alphacsc.GreedyCDL.html" />
     <link rel="prev" title="API Documentation" href="../api.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -39,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           alphacsc</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.4.dev0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -60,7 +63,6 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">alphaCSC: Convolution sparse coding for time-series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../models.html">Model descriptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">Examples Gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a></li>
@@ -100,6 +102,17 @@
 <dt id="alphacsc.BatchCDL">
 <em class="property">class </em><code class="sig-prename descclassname">alphacsc.</code><code class="sig-name descname">BatchCDL</code><span class="sig-paren">(</span><em class="sig-param">n_atoms</em>, <em class="sig-param">n_times_atom</em>, <em class="sig-param">reg=0.1</em>, <em class="sig-param">n_iter=60</em>, <em class="sig-param">n_jobs=1</em>, <em class="sig-param">solver_z='lgcd'</em>, <em class="sig-param">solver_z_kwargs={}</em>, <em class="sig-param">unbiased_z_hat=False</em>, <em class="sig-param">solver_d='alternate_adaptive'</em>, <em class="sig-param">solver_d_kwargs={}</em>, <em class="sig-param">rank1=True</em>, <em class="sig-param">window=False</em>, <em class="sig-param">uv_constraint='separate'</em>, <em class="sig-param">lmbd_max='scaled'</em>, <em class="sig-param">eps=1e-10</em>, <em class="sig-param">D_init=None</em>, <em class="sig-param">D_init_params={}</em>, <em class="sig-param">verbose=10</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">sort_atoms=False</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.BatchCDL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Batch algorithm for convolutional dictionary learning</p>
+<p>This transformer solves the following problem
+\[</p>
+<blockquote>
+<div><dl class="simple">
+<dt>\arg\min_{D, Z} \sum_{n=1}^N</dt><dd><p>\frac{1}{2}\|X^{(n)} - \sum_{k=1}^K D_k*Z^{(n)}_k\|_2^2
++ \lambda\|Z^{(n)}\|_2</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>\]
+for <cite>K = n_atoms</cite> and <cite>N = n_samples</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -186,7 +199,7 @@ coordinate descent.</p>
 </dl>
 <dl class="method">
 <dt id="alphacsc.BatchCDL.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_atoms</em>, <em class="sig-param">n_times_atom</em>, <em class="sig-param">reg=0.1</em>, <em class="sig-param">n_iter=60</em>, <em class="sig-param">n_jobs=1</em>, <em class="sig-param">solver_z='lgcd'</em>, <em class="sig-param">solver_z_kwargs={}</em>, <em class="sig-param">unbiased_z_hat=False</em>, <em class="sig-param">solver_d='alternate_adaptive'</em>, <em class="sig-param">solver_d_kwargs={}</em>, <em class="sig-param">rank1=True</em>, <em class="sig-param">window=False</em>, <em class="sig-param">uv_constraint='separate'</em>, <em class="sig-param">lmbd_max='scaled'</em>, <em class="sig-param">eps=1e-10</em>, <em class="sig-param">D_init=None</em>, <em class="sig-param">D_init_params={}</em>, <em class="sig-param">verbose=10</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">sort_atoms=False</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.BatchCDL.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">n_atoms</em>, <em class="sig-param">n_times_atom</em>, <em class="sig-param">reg=0.1</em>, <em class="sig-param">n_iter=60</em>, <em class="sig-param">n_jobs=1</em>, <em class="sig-param">solver_z='lgcd'</em>, <em class="sig-param">solver_z_kwargs={}</em>, <em class="sig-param">unbiased_z_hat=False</em>, <em class="sig-param">solver_d='alternate_adaptive'</em>, <em class="sig-param">solver_d_kwargs={}</em>, <em class="sig-param">rank1=True</em>, <em class="sig-param">window=False</em>, <em class="sig-param">uv_constraint='separate'</em>, <em class="sig-param">lmbd_max='scaled'</em>, <em class="sig-param">eps=1e-10</em>, <em class="sig-param">D_init=None</em>, <em class="sig-param">D_init_params={}</em>, <em class="sig-param">verbose=10</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">sort_atoms=False</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.BatchCDL.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
@@ -197,19 +210,19 @@ coordinate descent.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#alphacsc.BatchCDL.__init__" title="alphacsc.BatchCDL.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(self, n_atoms, n_times_atom[, reg, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#alphacsc.BatchCDL.__init__" title="alphacsc.BatchCDL.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(n_atoms, n_times_atom[, reg, …])</p></td>
 <td><p>Initialize self.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code>(self, X[, y])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code>(X[, y])</p></td>
 <td><p>Learn a convolutional dictionary from the set of signals X.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code>(self, X[, y])</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code>(X[, y])</p></td>
 <td><p>Learn a convolutional dictionary and returns sparse codes.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code>(self, X)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code>(X)</p></td>
 <td><p>Returns sparse codes associated to the signals X for the dictionary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_inverse</span></code>(self, z_hat)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform_inverse</span></code>(z_hat)</p></td>
 <td><p>Reconstruct the signals from the given sparse codes.</p></td>
 </tr>
 </tbody>
@@ -261,7 +274,7 @@ coordinate descent.</p>
     </p>
     <p>
         &copy; Copyright 2017-2018, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
     </p>
   </div>
 </footer>

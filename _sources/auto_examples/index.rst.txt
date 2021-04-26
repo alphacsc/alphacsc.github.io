@@ -17,7 +17,7 @@ Examples Gallery
 
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -36,9 +36,10 @@ Univariate CSC
 
 .. only:: html
 
-    .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_lfp_data_thumb.png
+ .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_lfp_data_thumb.png
+     :alt: CSC to learn LFP spiking atoms
 
-        :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py`
+     :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py`
 
 .. raw:: html
 
@@ -56,9 +57,10 @@ Univariate CSC
 
 .. only:: html
 
-    .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
+ .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
+     :alt: Selecting random state for CSC
 
-        :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py`
+     :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py`
 
 .. raw:: html
 
@@ -76,9 +78,10 @@ Univariate CSC
 
 .. only:: html
 
-    .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_cross_frequency_coupling_thumb.png
+ .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_cross_frequency_coupling_thumb.png
+     :alt: Extracting cross-frequency coupling waveforms from rodent LFP data
 
-        :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py`
+     :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py`
 
 .. raw:: html
 
@@ -92,13 +95,14 @@ Univariate CSC
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates `vanilla` CSC on simulated data. Note that `vanilla` CSC is just a sp...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates vanilla CSC on simulated data. Note that vanilla CSC is just a specia...">
 
 .. only:: html
 
-    .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
+ .. figure:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
+     :alt: Vanilla CSC on simulated data
 
-        :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py`
+     :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py`
 
 .. raw:: html
 
@@ -111,7 +115,7 @@ Univariate CSC
    /auto_examples/csc/plot_simulate_csc
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -130,9 +134,10 @@ Multivariate CSC with rank 1 constraints
 
 .. only:: html
 
-    .. figure:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_somato_mu_waves_thumb.png
+ .. figure:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_somato_mu_waves_thumb.png
+     :alt: Extracting :math:`\mu`-wave from the somato-sensory dataset
 
-        :ref:`sphx_glr_auto_examples_multicsc_plot_somato_mu_waves.py`
+     :ref:`sphx_glr_auto_examples_multicsc_plot_somato_mu_waves.py`
 
 .. raw:: html
 
@@ -150,9 +155,10 @@ Multivariate CSC with rank 1 constraints
 
 .. only:: html
 
-    .. figure:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_sample_evoked_response_thumb.png
+ .. figure:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_sample_evoked_response_thumb.png
+     :alt: Extracting artifact and evoked response atoms from the sample dataset
 
-        :ref:`sphx_glr_auto_examples_multicsc_plot_sample_evoked_response.py`
+     :ref:`sphx_glr_auto_examples_multicsc_plot_sample_evoked_response.py`
 
 .. raw:: html
 
@@ -165,7 +171,7 @@ Multivariate CSC with rank 1 constraints
    /auto_examples/multicsc/plot_sample_evoked_response
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -184,9 +190,10 @@ Univariate CSC with an alpha-stable distribution
 
 .. only:: html
 
-    .. figure:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
+ .. figure:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
+     :alt: Alpha CSC on simulated data
 
-        :ref:`sphx_glr_auto_examples_noise_alpha_plot_simulate_alphacsc.py`
+     :ref:`sphx_glr_auto_examples_noise_alpha_plot_simulate_alphacsc.py`
 
 .. raw:: html
 
@@ -204,9 +211,10 @@ Univariate CSC with an alpha-stable distribution
 
 .. only:: html
 
-    .. figure:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_empirical_strong_artifacts_thumb.png
+ .. figure:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_empirical_strong_artifacts_thumb.png
+     :alt: Alpha CSC on empirical time-series with strong artifacts
 
-        :ref:`sphx_glr_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py`
+     :ref:`sphx_glr_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py`
 
 .. raw:: html
 
@@ -219,7 +227,7 @@ Univariate CSC with an alpha-stable distribution
    /auto_examples/noise_alpha/plot_empirical_strong_artifacts
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -238,9 +246,10 @@ Other shift-invariant dictionary learning algorithms
 
 .. only:: html
 
-    .. figure:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
+ .. figure:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
+     :alt: MoTIF on simulated data
 
-        :ref:`sphx_glr_auto_examples_other_plot_simulate_motif.py`
+     :ref:`sphx_glr_auto_examples_other_plot_simulate_motif.py`
 
 .. raw:: html
 
@@ -258,9 +267,10 @@ Other shift-invariant dictionary learning algorithms
 
 .. only:: html
 
-    .. figure:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
+ .. figure:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
+     :alt: SWM on simulated data
 
-        :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py`
+     :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py`
 
 .. raw:: html
 
@@ -273,7 +283,7 @@ Other shift-invariant dictionary learning algorithms
    /auto_examples/other/plot_simulate_swm
 .. raw:: html
 
-    <div style='clear:both'></div>
+    <div class="sphx-glr-clear"></div>
 
 
 
@@ -283,19 +293,19 @@ Other shift-invariant dictionary learning algorithms
     :class: sphx-glr-footer-gallery
 
 
-  .. container:: sphx-glr-download
+  .. container:: sphx-glr-download sphx-glr-download-python
 
-    :download:`Download all examples in Python source code: auto_examples_python.zip <//home/tom/Work/phd/alphacsc/doc/auto_examples/auto_examples_python.zip>`
+    :download:`Download all examples in Python source code: auto_examples_python.zip </auto_examples/auto_examples_python.zip>`
 
 
 
-  .. container:: sphx-glr-download
+  .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip <//home/tom/Work/phd/alphacsc/doc/auto_examples/auto_examples_jupyter.zip>`
+    :download:`Download all examples in Jupyter notebooks: auto_examples_jupyter.zip </auto_examples/auto_examples_jupyter.zip>`
 
 
 .. only:: html
 
  .. rst-class:: sphx-glr-signature
 
-    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

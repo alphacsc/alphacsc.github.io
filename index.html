@@ -3,16 +3,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>alphaCSC: Convolution sparse coding for time-series &#8212; alphacsc 0.3 documentation</title>
+    <title>alphaCSC: Convolution sparse coding for time-series &#8212; alphacsc 0.4.dev0 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery-rendered-html.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Model descriptions" href="models.html" />
@@ -38,7 +41,7 @@
         </button>
         <a class="navbar-brand" href="#">
           alphacsc</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.4.dev0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -58,8 +61,7 @@
      href="#">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">alphaCSC: Convolution sparse coding for time-series</a></li>
+      aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Model descriptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Examples Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
@@ -95,8 +97,7 @@
       
   <div class="section" id="alphacsc-convolution-sparse-coding-for-time-series">
 <h1>alphaCSC: Convolution sparse coding for time-series<a class="headerlink" href="#alphacsc-convolution-sparse-coding-for-time-series" title="Permalink to this headline">¶</a></h1>
-<a class="reference external image-reference" href="https://travis-ci.org/alphacsc/alphacsc"><img alt="Build Status" src="https://api.travis-ci.org/alphacsc/alphacsc.svg?branch=master" /></a>
-<a class="reference external image-reference" href="https://codecov.io/gh/alphacsc/alphacsc"><img alt="Test coverage" src="https://codecov.io/github/alphacsc/alphacsc/coverage.svg?precision=0" /></a>
+<p><img alt="Build Status" src="https://github.com/alphacsc/alphacsc/workflows/unittests/badge.svg" /> <a class="reference external" href="https://codecov.io/gh/alphacsc/alphacsc"><img alt="codecov" src="https://codecov.io/gh/alphacsc/alphacsc/branch/master/graph/badge.svg" /></a></p>
 <p>This is a library to perform shift-invariant <a class="reference external" href="https://en.wikipedia.org/wiki/Sparse_dictionary_learning">sparse dictionary learning</a>, also known as
 convolutional sparse coding (CSC), on time-series data.
 It includes a number of different models:</p>
@@ -134,8 +135,8 @@ with <code class="docutils literal notranslate"><span class="pre">pip</span></co
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example to present briefly the API:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">BatchCDL</span>
 
 <span class="c1"># Define the different dimensions of the problem</span>
@@ -149,7 +150,7 @@ with <code class="docutils literal notranslate"><span class="pre">pip</span></co
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_trials</span><span class="p">,</span> <span class="n">n_channels</span><span class="p">,</span> <span class="n">n_times</span><span class="p">)</span>
 
 <span class="c1"># Learn a dictionary with batch algorithm and rank1 constraints.</span>
-<span class="n">cdl</span> <span class="o">=</span> <span class="n">BatchCDL</span><span class="p">(</span><span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">rank1</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">cdl</span> <span class="o">=</span> <span class="n">BatchCDL</span><span class="p">(</span><span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">rank1</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">cdl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
 <span class="c1"># Display the learned atoms</span>
@@ -191,15 +192,7 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
 <div class="section" id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">alphaCSC: Convolution sparse coding for time-series</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#quickstart">Quickstart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bug-reports">Bug reports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cite-our-work">Cite our work</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#contents">Contents</a></li>
-</ul>
-</li>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Model descriptions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="models.html#univariate-csc">1. Univariate CSC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html#multivariate-csc">2. Multivariate CSC</a></li>
@@ -239,7 +232,7 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
     </p>
     <p>
         &copy; Copyright 2017-2018, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
     </p>
   </div>
 </footer>
