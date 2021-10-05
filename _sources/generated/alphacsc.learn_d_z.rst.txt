@@ -1,4 +1,4 @@
-alphacsc.learn\_d\_z
+﻿alphacsc.learn\_d\_z
 ====================
 
 .. currentmodule:: alphacsc

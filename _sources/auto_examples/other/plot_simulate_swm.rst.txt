@@ -10197,9 +10197,10 @@ Let us look at the data at the time windows when the atoms are found.
 
 
 
-.. image:: /auto_examples/other/images/sphx_glr_plot_simulate_swm_001.png
-    :alt: plot simulate swm
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/other/images/sphx_glr_plot_simulate_swm_001.png
+   :alt: plot simulate swm
+   :srcset: /auto_examples/other/images/sphx_glr_plot_simulate_swm_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -10222,9 +10223,10 @@ is present. Now let us plot the atoms.
 
 
 
-.. image:: /auto_examples/other/images/sphx_glr_plot_simulate_swm_002.png
-    :alt: plot simulate swm
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/other/images/sphx_glr_plot_simulate_swm_002.png
+   :alt: plot simulate swm
+   :srcset: /auto_examples/other/images/sphx_glr_plot_simulate_swm_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -10234,7 +10236,7 @@ is present. Now let us plot the atoms.
  .. code-block:: none
 
 
-    [<matplotlib.lines.Line2D object at 0x7effbefc38b0>]
+    [<matplotlib.lines.Line2D object at 0x7fcd71047e20>]
 
 
 
@@ -10255,9 +10257,10 @@ and the cost function over iterations
 
 
 
-.. image:: /auto_examples/other/images/sphx_glr_plot_simulate_swm_003.png
-    :alt: plot simulate swm
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/other/images/sphx_glr_plot_simulate_swm_003.png
+   :alt: plot simulate swm
+   :srcset: /auto_examples/other/images/sphx_glr_plot_simulate_swm_003.png
+   :class: sphx-glr-single-img
 
 
 
@@ -10266,7 +10269,7 @@ and the cost function over iterations
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.499 seconds)
+   **Total running time of the script:** ( 0 minutes  8.848 seconds)
 
 
 .. _sphx_glr_download_auto_examples_other_plot_simulate_swm.py:

@@ -214,9 +214,10 @@ of impulsive noise.
 
 
 
-.. image:: /auto_examples/noise_alpha/images/sphx_glr_plot_simulate_alphacsc_001.png
-    :alt: plot simulate alphacsc
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/noise_alpha/images/sphx_glr_plot_simulate_alphacsc_001.png
+   :alt: plot simulate alphacsc
+   :srcset: /auto_examples/noise_alpha/images/sphx_glr_plot_simulate_alphacsc_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -248,9 +249,10 @@ downweighted by the algorithm
 
 
 
-.. image:: /auto_examples/noise_alpha/images/sphx_glr_plot_simulate_alphacsc_002.png
-    :alt: plot simulate alphacsc
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/noise_alpha/images/sphx_glr_plot_simulate_alphacsc_002.png
+   :alt: plot simulate alphacsc
+   :srcset: /auto_examples/noise_alpha/images/sphx_glr_plot_simulate_alphacsc_002.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -267,7 +269,7 @@ downweighted by the algorithm
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  54.332 seconds)
+   **Total running time of the script:** ( 2 minutes  41.028 seconds)
 
 
 .. _sphx_glr_download_auto_examples_noise_alpha_plot_simulate_alphacsc.py:

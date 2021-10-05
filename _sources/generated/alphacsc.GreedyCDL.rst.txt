@@ -1,4 +1,4 @@
-alphacsc.GreedyCDL
+﻿alphacsc.GreedyCDL
 ==================
 
 .. currentmodule:: alphacsc

@@ -174,9 +174,10 @@ Now, let us look at the atoms for different initializations.
 
 
 
-.. image:: /auto_examples/csc/images/sphx_glr_plot_simulate_randomstate_001.png
-    :alt: pobj: 12.52, pobj: 12.70, pobj: 12.84, pobj: 13.37, pobj: 12.88
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/csc/images/sphx_glr_plot_simulate_randomstate_001.png
+   :alt: pobj: 12.52, pobj: 12.70, pobj: 12.84, pobj: 13.37, pobj: 12.88
+   :srcset: /auto_examples/csc/images/sphx_glr_plot_simulate_randomstate_001.png
+   :class: sphx-glr-single-img
 
 
 
@@ -202,9 +203,10 @@ Now, we select the best atom amongst them.
 
 
 
-.. image:: /auto_examples/csc/images/sphx_glr_plot_simulate_randomstate_002.png
-    :alt: plot simulate randomstate
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/csc/images/sphx_glr_plot_simulate_randomstate_002.png
+   :alt: plot simulate randomstate
+   :srcset: /auto_examples/csc/images/sphx_glr_plot_simulate_randomstate_002.png
+   :class: sphx-glr-single-img
 
 
 
@@ -213,7 +215,7 @@ Now, we select the best atom amongst them.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  26.383 seconds)
+   **Total running time of the script:** ( 0 minutes  57.688 seconds)
 
 
 .. _sphx_glr_download_auto_examples_csc_plot_simulate_randomstate.py:

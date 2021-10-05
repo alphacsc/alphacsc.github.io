@@ -1,4 +1,4 @@
-alphacsc.learn\_d\_z\_weighted
+﻿alphacsc.learn\_d\_z\_weighted
 ==============================
 
 .. currentmodule:: alphacsc

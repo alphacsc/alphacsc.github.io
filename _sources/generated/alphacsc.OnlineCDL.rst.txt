@@ -1,4 +1,4 @@
-alphacsc.OnlineCDL
+﻿alphacsc.OnlineCDL
 ==================
 
 .. currentmodule:: alphacsc

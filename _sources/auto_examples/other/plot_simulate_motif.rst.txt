@@ -142,9 +142,10 @@ Finally, let us estimate the atoms.
 
 
 
-.. image:: /auto_examples/other/images/sphx_glr_plot_simulate_motif_001.png
-    :alt: plot simulate motif
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/other/images/sphx_glr_plot_simulate_motif_001.png
+   :alt: plot simulate motif
+   :srcset: /auto_examples/other/images/sphx_glr_plot_simulate_motif_001.png
+   :class: sphx-glr-single-img
 
 
 .. rst-class:: sphx-glr-script-out
@@ -177,7 +178,7 @@ Finally, let us estimate the atoms.
     [seed 42] Atom 1 Iteration 8
     [seed 42] Atom 1 Iteration 9
 
-    [<matplotlib.lines.Line2D object at 0x7effbeeea6d0>, <matplotlib.lines.Line2D object at 0x7effbeeea130>]
+    [<matplotlib.lines.Line2D object at 0x7fcd7865c400>, <matplotlib.lines.Line2D object at 0x7fcd7865ceb0>]
 
 
 
@@ -195,9 +196,10 @@ Compare this to the original atoms
 
 
 
-.. image:: /auto_examples/other/images/sphx_glr_plot_simulate_motif_002.png
-    :alt: plot simulate motif
-    :class: sphx-glr-single-img
+.. image-sg:: /auto_examples/other/images/sphx_glr_plot_simulate_motif_002.png
+   :alt: plot simulate motif
+   :srcset: /auto_examples/other/images/sphx_glr_plot_simulate_motif_002.png
+   :class: sphx-glr-single-img
 
 
 
@@ -206,7 +208,7 @@ Compare this to the original atoms
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.309 seconds)
+   **Total running time of the script:** ( 0 minutes  0.912 seconds)
 
 
 .. _sphx_glr_download_auto_examples_other_plot_simulate_motif.py:

@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSC to learn LFP spiking atoms &#8212; alphacsc 0.4.dev0 documentation</title>
-    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Selecting random state for CSC" href="plot_simulate_randomstate.html" />
-    <link rel="prev" title="Examples Gallery" href="../index.html" />
+    <link rel="next" title="Extracting cross-frequency coupling waveforms from rodent LFP data" href="plot_cross_frequency_coupling.html" />
+    <link rel="prev" title="Selecting random state for CSC" href="plot_simulate_randomstate.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js "></script>
 <script type="text/javascript" src="../../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
 <script type="text/javascript" src="../../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
@@ -112,36 +112,39 @@ Neurophysiological Signals. IEEE Transactions on Signal Processing (2017).</p>
 </dl>
 <p>First, let us fetch the data (~14 MB)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">_fetch_file</span>
+<span class="kn">from</span> <span class="nn">mne.datasets</span> <span class="kn">import</span> <span class="n">fetch_dataset</span>
+<span class="kn">from</span> <span class="nn">mne.utils</span> <span class="kn">import</span> <span class="n">get_config</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https://github.com/hitziger/AWL/raw/master/Experiments/data/&#39;</span>
        <span class="s1">&#39;LFP_data_contiguous_1250_Hz.mat&#39;</span><span class="p">)</span>
-<span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;./LFP_data_contiguous_1250_Hz.mat&#39;</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-    <span class="n">_fetch_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+
+<span class="n">folder_name</span> <span class="o">=</span> <span class="s2">&quot;LFP&quot;</span>
+<span class="n">archive_name</span> <span class="o">=</span> <span class="s2">&quot;LFP_data_contiguous_1250_Hz.mat&quot;</span>
+
+<span class="n">fname</span> <span class="o">=</span> <span class="n">fetch_dataset</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;dataset_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LFP_data&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+     <span class="s2">&quot;archive_name&quot;</span><span class="p">:</span> <span class="n">archive_name</span><span class="p">,</span>
+     <span class="s2">&quot;folder_name&quot;</span><span class="p">:</span> <span class="n">folder_name</span><span class="p">,</span>
+     <span class="s2">&quot;hash&quot;</span><span class="p">:</span> <span class="kc">None</span>
+     <span class="p">},</span>
+    <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">force_update</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">archive_name</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Downloading https://raw.githubusercontent.com/hitziger/AWL/master/Experiments/data/LFP_data_contiguous_1250_Hz.mat (13.8 MB)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using default location ~/mne_data for LFP_data...
+Creating ~/mne_data
+Downloading file &#39;LFP_data_contiguous_1250_Hz.mat&#39; from &#39;https://github.com/hitziger/AWL/raw/master/Experiments/data/LFP_data_contiguous_1250_Hz.mat&#39; to &#39;/github/home/mne_data/LFP&#39;.
 
-  0%|          | Downloading : 0.00/13.8M [00:00&lt;?,        ?B/s]
-  2%|1         | Downloading : 248k/13.8M [00:00&lt;00:01,    11.3MB/s]
-  4%|4         | Downloading : 632k/13.8M [00:00&lt;00:01,    11.5MB/s]
-  8%|8         | Downloading : 1.12M/13.8M [00:00&lt;00:01,    11.7MB/s]
- 12%|#1        | Downloading : 1.62M/13.8M [00:00&lt;00:01,    12.0MB/s]
- 15%|#5        | Downloading : 2.12M/13.8M [00:00&lt;00:00,    12.3MB/s]
- 19%|#9        | Downloading : 2.62M/13.8M [00:00&lt;00:00,    12.7MB/s]
- 23%|##2       | Downloading : 3.12M/13.8M [00:00&lt;00:00,    13.1MB/s]
- 30%|##9       | Downloading : 4.12M/13.8M [00:00&lt;00:00,    13.5MB/s]
- 37%|###7      | Downloading : 5.12M/13.8M [00:00&lt;00:00,    14.0MB/s]
- 44%|####4     | Downloading : 6.12M/13.8M [00:00&lt;00:00,    14.4MB/s]
- 52%|#####1    | Downloading : 7.12M/13.8M [00:00&lt;00:00,    15.0MB/s]
- 59%|#####9    | Downloading : 8.12M/13.8M [00:00&lt;00:00,    15.6MB/s]
- 66%|######6   | Downloading : 9.12M/13.8M [00:00&lt;00:00,    16.2MB/s]
- 81%|########  | Downloading : 11.1M/13.8M [00:00&lt;00:00,    16.8MB/s]
- 95%|#########5| Downloading : 13.1M/13.8M [00:00&lt;00:00,    17.6MB/s]
-100%|##########| Downloading : 13.8M/13.8M [00:00&lt;00:00,    41.4MB/s]
-File saved as ./LFP_data_contiguous_1250_Hz.mat.
+  0%|                                              | 0.00/14.4M [00:00&lt;?, ?B/s]
+ 40%|██████████████▋                      | 5.73M/14.4M [00:00&lt;00:00, 57.3MB/s]
+ 85%|███████████████████████████████▌     | 12.3M/14.4M [00:00&lt;00:00, 62.4MB/s]
+  0%|                                              | 0.00/14.4M [00:00&lt;?, ?B/s]
+100%|█████████████████████████████████████| 14.4M/14.4M [00:00&lt;00:00, 25.1GB/s]
 </pre></div>
 </div>
 <p>It is a mat file, so we use scipy to load it</p>
@@ -163,8 +166,7 @@ File saved as ./LFP_data_contiguous_1250_Hz.mat.
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">])</span>
 </pre></div>
 </div>
-<img alt="plot lfp data" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_lfp_data_001.png" />
-<p class="sphx-glr-script-out">Out:</p>
+<img src="../../_images/sphx_glr_plot_lfp_data_001.png" srcset="../../_images/sphx_glr_plot_lfp_data_001.png" alt="plot lfp data" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(9.0, 12.0)
 </pre></div>
 </div>
@@ -290,195 +292,195 @@ Using method dual for projection
 Coordinate descent loop 12 / 60 [n_jobs=1]
 [seed 10] Objective (z_hat) : 18945.61954180
 Using method dual for projection
-[seed 10] Objective (d) 18980.31578130
+[seed 10] Objective (d) 18980.31578131
 Coordinate descent loop 13 / 60 [n_jobs=1]
 [seed 10] Objective (z_hat) : 18876.43985522
 Using method dual for projection
 [seed 10] Objective (d) 18836.38353365
 Coordinate descent loop 14 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18720.74584344
+[seed 10] Objective (z_hat) : 18720.74584343
 Using method dual for projection
 [seed 10] Objective (d) 18721.54845149
 Coordinate descent loop 15 / 60 [n_jobs=1]
 [seed 10] Objective (z_hat) : 18623.64002131
 Using method dual for projection
-[seed 10] Objective (d) 18621.18904484
+[seed 10] Objective (d) 18621.18904483
 Coordinate descent loop 16 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18547.81611677
+[seed 10] Objective (z_hat) : 18547.81611676
 Using method dual for projection
-[seed 10] Objective (d) 18545.24281149
+[seed 10] Objective (d) 18545.24281148
 Coordinate descent loop 17 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18471.88752076
+[seed 10] Objective (z_hat) : 18471.88752075
 Using method dual for projection
-[seed 10] Objective (d) 18470.42055102
+[seed 10] Objective (d) 18470.42055101
 Coordinate descent loop 18 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18393.84202336
+[seed 10] Objective (z_hat) : 18393.84202337
 Using method dual for projection
-[seed 10] Objective (d) 18391.78226333
+[seed 10] Objective (d) 18391.78226334
 Coordinate descent loop 19 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18331.73169088
+[seed 10] Objective (z_hat) : 18331.73169084
 Using method dual for projection
-[seed 10] Objective (d) 18328.84451731
+[seed 10] Objective (d) 18328.84451727
 Coordinate descent loop 20 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18274.15271777
+[seed 10] Objective (z_hat) : 18274.15271778
 Using method dual for projection
-[seed 10] Objective (d) 18297.40702001
+[seed 10] Objective (d) 18297.40702014
 Coordinate descent loop 21 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18257.44912753
+[seed 10] Objective (z_hat) : 18257.44912769
 Using method dual for projection
-[seed 10] Objective (d) 18276.17808941
+[seed 10] Objective (d) 18276.17808983
 Coordinate descent loop 22 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18243.49274399
+[seed 10] Objective (z_hat) : 18243.49274437
 Using method dual for projection
-[seed 10] Objective (d) 18261.00618760
+[seed 10] Objective (d) 18261.00618802
 Coordinate descent loop 23 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18234.36110377
+[seed 10] Objective (z_hat) : 18234.36110406
 Using method dual for projection
-[seed 10] Objective (d) 18208.94505583
+[seed 10] Objective (d) 18208.94505641
 Coordinate descent loop 24 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18179.04646011
+[seed 10] Objective (z_hat) : 18179.04646073
 Using method dual for projection
-[seed 10] Objective (d) 18179.60670379
+[seed 10] Objective (d) 18179.60670458
 Coordinate descent loop 25 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18156.84098608
+[seed 10] Objective (z_hat) : 18156.84098661
 Using method dual for projection
-[seed 10] Objective (d) 18166.58627613
+[seed 10] Objective (d) 18166.58627590
 Coordinate descent loop 26 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18145.85002395
+[seed 10] Objective (z_hat) : 18145.85002390
 Using method dual for projection
-[seed 10] Objective (d) 18152.93057163
+[seed 10] Objective (d) 18152.93057208
 Coordinate descent loop 27 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18131.29821007
+[seed 10] Objective (z_hat) : 18131.29821082
 Using method dual for projection
-[seed 10] Objective (d) 18131.16931437
+[seed 10] Objective (d) 18131.16932102
 Coordinate descent loop 28 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18119.63495424
+[seed 10] Objective (z_hat) : 18119.63496136
 Using method dual for projection
-[seed 10] Objective (d) 18111.53149908
+[seed 10] Objective (d) 18111.53150713
 Coordinate descent loop 29 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18095.94336427
+[seed 10] Objective (z_hat) : 18095.94337252
 Using method dual for projection
-[seed 10] Objective (d) 18106.50704483
+[seed 10] Objective (d) 18106.50706470
 Coordinate descent loop 30 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18098.05237108
+[seed 10] Objective (z_hat) : 18098.05239048
 Using method dual for projection
-[seed 10] Objective (d) 18097.82986580
+[seed 10] Objective (d) 18097.82989618
 Coordinate descent loop 31 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18084.15728135
+[seed 10] Objective (z_hat) : 18084.15731424
 Using method dual for projection
-[seed 10] Objective (d) 18025.10056781
+[seed 10] Objective (d) 18025.10057300
 Coordinate descent loop 32 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18015.48732584
+[seed 10] Objective (z_hat) : 18015.48731898
 Using method dual for projection
-[seed 10] Objective (d) 18015.15575949
+[seed 10] Objective (d) 18015.15575225
 Coordinate descent loop 33 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18009.09807407
+[seed 10] Objective (z_hat) : 18009.09807747
 Using method dual for projection
-[seed 10] Objective (d) 18010.63887443
+[seed 10] Objective (d) 18010.63888413
 Coordinate descent loop 34 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18004.88799234
+[seed 10] Objective (z_hat) : 18004.88798515
 Using method dual for projection
-[seed 10] Objective (d) 18058.43293210
+[seed 10] Objective (d) 18058.43296499
 Coordinate descent loop 35 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18049.18813464
+[seed 10] Objective (z_hat) : 18049.18820723
 Using method dual for projection
-[seed 10] Objective (d) 17997.43386491
+[seed 10] Objective (d) 17997.43389779
 Coordinate descent loop 36 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17990.54845616
+[seed 10] Objective (z_hat) : 17990.54845397
 Using method dual for projection
-[seed 10] Objective (d) 17990.87719772
+[seed 10] Objective (d) 17990.87719402
 Coordinate descent loop 37 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17985.96103205
+[seed 10] Objective (z_hat) : 17985.96103343
 Using method dual for projection
-[seed 10] Objective (d) 17988.72474918
+[seed 10] Objective (d) 17988.72474384
 Coordinate descent loop 38 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17984.75058006
+[seed 10] Objective (z_hat) : 17984.75058652
 Using method dual for projection
-[seed 10] Objective (d) 18049.42011442
+[seed 10] Objective (d) 18049.42010169
 Coordinate descent loop 39 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18046.54422892
+[seed 10] Objective (z_hat) : 18046.54419459
 Using method dual for projection
-[seed 10] Objective (d) 17984.35873616
+[seed 10] Objective (d) 17984.35868916
 Coordinate descent loop 40 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17980.96915625
+[seed 10] Objective (z_hat) : 17980.96905645
 Using method dual for projection
-[seed 10] Objective (d) 17980.80707644
+[seed 10] Objective (d) 17980.80696744
 Coordinate descent loop 41 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17972.69493108
+[seed 10] Objective (z_hat) : 17972.69417664
 Using method dual for projection
-[seed 10] Objective (d) 17972.04184020
+[seed 10] Objective (d) 17972.04115688
 Coordinate descent loop 42 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17966.98649655
+[seed 10] Objective (z_hat) : 17966.98591943
 Using method dual for projection
-[seed 10] Objective (d) 17966.83150709
+[seed 10] Objective (d) 17966.83093278
 Coordinate descent loop 43 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17962.44047465
+[seed 10] Objective (z_hat) : 17962.43978174
 Using method dual for projection
-[seed 10] Objective (d) 17977.54374342
+[seed 10] Objective (d) 17977.54114663
 Coordinate descent loop 44 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17975.04612385
+[seed 10] Objective (z_hat) : 17975.04292573
 Using method dual for projection
-[seed 10] Objective (d) 17966.06732417
+[seed 10] Objective (d) 17966.09338030
 Coordinate descent loop 45 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17963.66667151
+[seed 10] Objective (z_hat) : 17963.69280509
 Using method dual for projection
-[seed 10] Objective (d) 17978.86459069
+[seed 10] Objective (d) 17978.87871899
 Coordinate descent loop 46 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17976.72231007
+[seed 10] Objective (z_hat) : 17976.73198405
 Using method dual for projection
-[seed 10] Objective (d) 17972.63751522
+[seed 10] Objective (d) 17972.60364476
 Coordinate descent loop 47 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17970.65368076
+[seed 10] Objective (z_hat) : 17970.60426522
 Using method dual for projection
-[seed 10] Objective (d) 17972.25121372
+[seed 10] Objective (d) 17972.20645974
 Coordinate descent loop 48 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17970.16847655
+[seed 10] Objective (z_hat) : 17970.10502509
 Using method dual for projection
-[seed 10] Objective (d) 17963.41803928
+[seed 10] Objective (d) 17963.31898407
 Coordinate descent loop 49 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17961.33180656
+[seed 10] Objective (z_hat) : 17961.24361358
 Using method dual for projection
-[seed 10] Objective (d) 17970.35373032
+[seed 10] Objective (d) 17970.10975214
 Coordinate descent loop 50 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17966.26928880
+[seed 10] Objective (z_hat) : 17966.00607578
 Using method dual for projection
-[seed 10] Objective (d) 17965.69391441
+[seed 10] Objective (d) 17965.51659822
 Coordinate descent loop 51 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17963.73074041
+[seed 10] Objective (z_hat) : 17963.62233508
 Using method dual for projection
-[seed 10] Objective (d) 17967.10902158
+[seed 10] Objective (d) 17967.95977336
 Coordinate descent loop 52 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17965.63419249
+[seed 10] Objective (z_hat) : 17966.52705383
 Using method dual for projection
-[seed 10] Objective (d) 17963.08733467
+[seed 10] Objective (d) 17960.94193408
 Coordinate descent loop 53 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17960.62183609
+[seed 10] Objective (z_hat) : 17958.57930740
 Using method dual for projection
-[seed 10] Objective (d) 17963.36298801
+[seed 10] Objective (d) 17949.79296272
 Coordinate descent loop 54 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17961.63761555
+[seed 10] Objective (z_hat) : 17948.24663983
 Using method dual for projection
-[seed 10] Objective (d) 17951.68641979
+[seed 10] Objective (d) 17956.59146739
 Coordinate descent loop 55 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17950.55938694
+[seed 10] Objective (z_hat) : 17955.58798127
 Using method dual for projection
-[seed 10] Objective (d) 17951.77950304
+[seed 10] Objective (d) 17956.14630179
 Coordinate descent loop 56 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17950.68341972
+[seed 10] Objective (z_hat) : 17955.05624306
 Using method dual for projection
-[seed 10] Objective (d) 17958.12636305
+[seed 10] Objective (d) 17956.36891522
 Coordinate descent loop 57 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17957.15668954
+[seed 10] Objective (z_hat) : 17955.37306123
 Using method dual for projection
-[seed 10] Objective (d) 17955.60882908
+[seed 10] Objective (d) 17952.68312049
 Coordinate descent loop 58 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17954.69506867
+[seed 10] Objective (z_hat) : 17950.64614544
 Using method dual for projection
-[seed 10] Objective (d) 17955.90837767
+[seed 10] Objective (d) 17947.49200250
 Coordinate descent loop 59 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17955.02198450
+[seed 10] Objective (z_hat) : 17946.39450974
 Using method dual for projection
-[seed 10] Objective (d) 17951.99640941
+[seed 10] Objective (d) 17950.43942539
 </pre></div>
 </div>
 <p>Let’s look at the atoms now.</p>
@@ -487,8 +489,7 @@ Using method dual for projection
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="plot lfp data" class="sphx-glr-single-img" src="../../_images/sphx_glr_plot_lfp_data_002.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  11.729 seconds)</p>
+<img src="../../_images/sphx_glr_plot_lfp_data_002.png" srcset="../../_images/sphx_glr_plot_lfp_data_002.png" alt="plot lfp data" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  35.825 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-csc-plot-lfp-data-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/f93a497b17a2035de2f8a7969f6a761b/plot_lfp_data.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_lfp_data.py</span></code></a></p>
@@ -513,7 +514,7 @@ Using method dual for projection
     </p>
     <p>
         &copy; Copyright 2017-2018, Mainak Jas.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1.<br/>
     </p>
   </div>
 </footer>
