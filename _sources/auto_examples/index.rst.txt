@@ -119,6 +119,41 @@ Univariate CSC
 
 
 
+.. _sphx_glr_auto_examples_dicodile:
+
+.. _dicodile_examples:
+
+Univariate and Multivariate CSC with 'dicodile' solver
+------------------------------------------------------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Gait (steps) example">
+
+.. only:: html
+
+ .. figure:: /auto_examples/dicodile/images/thumb/sphx_glr_plot_gait_thumb.png
+     :alt: Gait (steps) example
+
+     :ref:`sphx_glr_auto_examples_dicodile_plot_gait.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/dicodile/plot_gait
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
 .. _sphx_glr_auto_examples_multicsc:
 
 .. _multicsc_examples:
