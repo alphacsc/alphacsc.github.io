@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**04:29.609** total execution time for **auto_examples_dicodile** files:
+**01:19.455** total execution time for **auto_examples_dicodile** files:
 
 +------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_dicodile_plot_gait.py` (``plot_gait.py``) | 04:29.609 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_dicodile_plot_gait.py` (``plot_gait.py``) | 01:19.455 | 0.0 MB |
 +------------------------------------------------------------------------+-----------+--------+
