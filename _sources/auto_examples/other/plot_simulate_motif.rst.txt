@@ -178,7 +178,7 @@ Finally, let us estimate the atoms.
     [seed 42] Atom 1 Iteration 8
     [seed 42] Atom 1 Iteration 9
 
-    [<matplotlib.lines.Line2D object at 0x7fe6b7c73550>, <matplotlib.lines.Line2D object at 0x7fe6b7c73160>]
+    [<matplotlib.lines.Line2D object at 0x7f071e879970>, <matplotlib.lines.Line2D object at 0x7f071e8798e0>]
 
 
 
@@ -208,7 +208,7 @@ Compare this to the original atoms
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.589 seconds)
+   **Total running time of the script:** ( 0 minutes  0.595 seconds)
 
 
 .. _sphx_glr_download_auto_examples_other_plot_simulate_motif.py:
