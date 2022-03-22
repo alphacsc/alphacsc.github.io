@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>alphacsc.BatchCDL &#8212; alphacsc 0.1.dev1+g5bd7f4c documentation</title>
+    <title>alphacsc.BatchCDL &#8212; alphacsc 0.1.dev1+g8cb5782 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -42,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           alphacsc</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1.dev1+g5bd7f4c</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1.dev1+g8cb5782</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -102,20 +102,15 @@
 <dt id="alphacsc.BatchCDL">
 <em class="property">class </em><code class="sig-prename descclassname">alphacsc.</code><code class="sig-name descname">BatchCDL</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n_atoms</span></em>, <em class="sig-param"><span class="n">n_times_atom</span></em>, <em class="sig-param"><span class="n">reg</span><span class="o">=</span><span class="default_value">0.1</span></em>, <em class="sig-param"><span class="n">n_iter</span><span class="o">=</span><span class="default_value">60</span></em>, <em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">solver_z</span><span class="o">=</span><span class="default_value">'lgcd'</span></em>, <em class="sig-param"><span class="n">solver_z_kwargs</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">unbiased_z_hat</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">solver_d</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">solver_d_kwargs</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">rank1</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">window</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">uv_constraint</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">lmbd_max</span><span class="o">=</span><span class="default_value">'scaled'</span></em>, <em class="sig-param"><span class="n">eps</span><span class="o">=</span><span class="default_value">1e-10</span></em>, <em class="sig-param"><span class="n">D_init</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">D_init_params</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_atoms</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.BatchCDL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Batch algorithm for convolutional dictionary learning</p>
-<p>This transformer solves the following problem
-\[</p>
-<blockquote>
-<div><dl class="simple">
-<dt>\arg\min_{D, Z} \sum_{n=1}^N</dt><dd><p>\frac{1}{2}\|X^{(n)} - \sum_{k=1}^K D_k*Z^{(n)}_k\|_2^2
-+ \lambda\|Z^{(n)}\|_2</p>
-</dd>
-</dl>
-</div></blockquote>
-<p>\]
-for <cite>K = n_atoms</cite> and <cite>N = n_samples</cite>.</p>
-<dl class="field-list">
+<p>This transformer solves the following problem</p>
+<div class="math notranslate nohighlight">
+\[\min_{D, Z} \sum_{n=1}^N
+    \frac{1}{2} \|X^{(n)} - \sum_{k=1}^K D_k*Z^{(n)}_k\|_2^2
+    + \lambda\|Z^{(n)}\|_2\]</div>
+<p>for <cite>K = n_atoms</cite> and <cite>N = n_samples</cite>.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>Problem Specs</strong></dt><dd></dd>
 <dt><strong>n_atoms</strong><span class="classifier">int</span></dt><dd><p>The number of atoms to learn.</p>
 </dd>
@@ -133,9 +128,9 @@ for <cite>K = n_atoms</cite> and <cite>N = n_samples</cite>.</p>
 <code class="code docutils literal notranslate"><span class="pre">rank1=False</span></code>, it must be ‘auto’, else it can be:</p>
 <ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">'joint'</span></code>: the constraint is ||[u, v]||_2 &lt;= 1</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">'separate'</span></code>: the constraint is ||u||_2 &lt;= 1 and ||v||_2 &lt;= 1.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">'separate'</span></code>: the constraint is ||u||_2 &lt;= 1 and ||v||_2 &lt;= 1.
+This is the default for rank1 with if ‘auto’.</p></li>
 </ul>
-<p>This is the default for rank1 with if ‘auto’.</p>
 </dd>
 <dt><strong>sort_atoms</strong><span class="classifier">boolean</span></dt><dd><p>If True, the atoms are sorted by explained variances.</p>
 </dd>
@@ -152,13 +147,13 @@ smaller than eps, return.</p>
 <ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">'scaled'</span></code>: the regularization parameter is fixed as a ratio of
 its maximal value at init <em>i.e.</em>
-<span class="math notranslate nohighlight">\(lambda\)</span> = reg * lmbd_max(uv_init).</p></li>
+lambda = reg * lmbd_max(uv_init).</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">'shared'</span></code>: the regularization parameter is set at each
 iteration as a ratio of its maximal value for the current dictionary
-estimate <em>i.e.</em> <span class="math notranslate nohighlight">\(lambda\)</span> = reg * lmbd_max(uv_hat).</p></li>
+estimate <em>i.e.</em> lambda = reg * lmbd_max(uv_hat).</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">'per_atom'</span></code>: the regularization parameter is set per atom and
 at each iteration as a ratio of its maximal value for this atom
-<em>i.e.</em> <span class="math notranslate nohighlight">\(lambda[k]\)</span> = reg * lmbd_max(uv_hat[k]).</p></li>
+<em>i.e.</em> lambda[k] = reg * lmbd_max(uv_hat[k]).</p></li>
 </ul>
 </dd>
 <dt><strong>Z-step parameters</strong></dt><dd></dd>
