@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>alphacsc.learn_d_z &#8212; alphacsc 0.1.dev1+g8cb5782 documentation</title>
+    <title>alphacsc.learn_d_z &#8212; alphacsc 0.1.dev1+gcbad10b documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
@@ -42,7 +42,7 @@
         </button>
         <a class="navbar-brand" href="../index.html">
           alphacsc</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.1.dev1+g8cb5782</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.1.dev1+gcbad10b</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -100,7 +100,7 @@
 <h1>alphacsc.learn_d_z<a class="headerlink" href="#alphacsc-learn-d-z" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="alphacsc.learn_d_z">
-<code class="sig-prename descclassname">alphacsc.</code><code class="sig-name descname">learn_d_z</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">n_atoms</em>, <em class="sig-param">n_times_atom</em>, <em class="sig-param">func_d=&lt;function update_d_block&gt;</em>, <em class="sig-param">reg=0.1</em>, <em class="sig-param">lmbd_max='fixed'</em>, <em class="sig-param">n_iter=60</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">n_jobs=1</em>, <em class="sig-param">solver_z='l-bfgs'</em>, <em class="sig-param">solver_d_kwargs={}</em>, <em class="sig-param">solver_z_kwargs={}</em>, <em class="sig-param">ds_init=None</em>, <em class="sig-param">ds_init_params={}</em>, <em class="sig-param">sample_weights=None</em>, <em class="sig-param">verbose=10</em>, <em class="sig-param">callback=None</em>, <em class="sig-param">stopping_pobj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">alphacsc.</code><code class="sig-name descname">learn_d_z</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">n_atoms</em>, <em class="sig-param">n_times_atom</em>, <em class="sig-param">func_d=&lt;function update_d_block&gt;</em>, <em class="sig-param">reg=0.1</em>, <em class="sig-param">lmbd_max='fixed'</em>, <em class="sig-param">n_iter=60</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">n_jobs=1</em>, <em class="sig-param">solver_z='l-bfgs'</em>, <em class="sig-param">solver_d_kwargs={}</em>, <em class="sig-param">solver_z_kwargs={}</em>, <em class="sig-param">ds_init=None</em>, <em class="sig-param">sample_weights=None</em>, <em class="sig-param">verbose=10</em>, <em class="sig-param">callback=None</em>, <em class="sig-param">stopping_pobj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#alphacsc.learn_d_z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Univariate Convolutional Sparse Coding.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -142,10 +142,7 @@ reg_used[k] = reg * lmbd_max(uv_hat[k])</p></li>
 </dd>
 <dt><strong>solver_z_kwargs</strong><span class="classifier">dict</span></dt><dd><p>Additional keyword arguments to pass to update_z</p>
 </dd>
-<dt><strong>ds_init</strong><span class="classifier">str or array, shape (n_atoms, n_times_atom)</span></dt><dd><p>The initial atoms or an initialization scheme in {‘kmeans’ | ‘ssa’ |
-‘chunk’ | ‘random’}.</p>
-</dd>
-<dt><strong>ds_init_params</strong><span class="classifier">dict</span></dt><dd><p>Dictionnary of parameters for the kmeans init method.</p>
+<dt><strong>ds_init</strong><span class="classifier">str or array, shape (n_atoms, n_times_atom)</span></dt><dd><p>The initial atoms or an initialization scheme in {‘chunk’ | ‘random’}.</p>
 </dd>
 <dt><strong>sample_weights</strong><span class="classifier">array, shape (n_trials, n_times)</span></dt><dd><p>The weights in the alphaCSC problem. Should be None
 when using vanilla CSC.</p>
