@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**19:56.082** total execution time for **auto_examples_csc** files:
+**17:27.096** total execution time for **auto_examples_csc** files:
 
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py` (``plot_cross_frequency_coupling.py``) | 15:48.850 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py` (``plot_cross_frequency_coupling.py``) | 13:31.466 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py` (``plot_lfp_data.py``)                                 | 02:10.852 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py` (``plot_lfp_data.py``)                                 | 02:06.870 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py` (``plot_simulate_randomstate.py``)         | 01:22.741 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py` (``plot_simulate_randomstate.py``)         | 01:16.976 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py` (``plot_simulate_csc.py``)                         | 00:33.640 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py` (``plot_simulate_csc.py``)                         | 00:31.784 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
