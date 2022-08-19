@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,6 +35,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -42,7 +43,7 @@
     <link rel="next" title="Examples Gallery" href="auto_examples/index.html" />
     <link rel="prev" title="alphaCSC: Convolution sparse coding for time-series" href="index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -289,7 +290,7 @@ function checkPageExistsAndRedirect(event) {
               <article class="bd-article" role="main">
                 
   <div class="section" id="model-descriptions">
-<h1>Model descriptions<a class="headerlink" href="#model-descriptions" title="Permalink to this headline">#</a></h1>
+<h1>Model descriptions<a class="headerlink" href="#model-descriptions" title="Permalink to this heading">#</a></h1>
 <p>AlphaCSC is a library to perform shift-invariant <a class="reference external" href="https://en.wikipedia.org/wiki/Sparse_dictionary_learning">sparse dictionary learning</a>, also known as
 convolutional sparse coding (CSC), on time-series data.
 It includes a number of different models:</p>
@@ -300,7 +301,7 @@ It includes a number of different models:</p>
 <li><p>univariate CSC with an alpha-stable distribution <a class="footnote-reference brackets" href="#id6" id="id2">2</a></p></li>
 </ol>
 <div class="section" id="univariate-csc">
-<h2>1. Univariate CSC<a class="headerlink" href="#univariate-csc" title="Permalink to this headline">#</a></h2>
+<h2>1. Univariate CSC<a class="headerlink" href="#univariate-csc" title="Permalink to this heading">#</a></h2>
 <p>Framed mathematically, if we are giving a signal <span class="math notranslate nohighlight">\(x^n \in \mathbb{R}^T\)</span>,
 we want to learn <span class="math notranslate nohighlight">\(k\)</span> atoms <span class="math notranslate nohighlight">\(d^k \in \mathbb{R}^{L}\)</span> and their
 associated activations <span class="math notranslate nohighlight">\(z_k^n \in \mathbb{R}^{T - L + 1}\)</span>. The
@@ -314,7 +315,7 @@ is encoded by the convolution operator <span class="math notranslate nohighlight
 called <strong>convolutional</strong> sparse coding.</p>
 </div>
 <div class="section" id="multivariate-csc">
-<h2>2. Multivariate CSC<a class="headerlink" href="#multivariate-csc" title="Permalink to this headline">#</a></h2>
+<h2>2. Multivariate CSC<a class="headerlink" href="#multivariate-csc" title="Permalink to this heading">#</a></h2>
 <p>In the multivariate case, we are giving a multivariate signal <span class="math notranslate nohighlight">\(X^n \in
 \mathbb{R}^{T \times P}\)</span>, where <span class="math notranslate nohighlight">\(P\)</span> is the dimension of the signal, and
 we want to learn <span class="math notranslate nohighlight">\(k\)</span> multivariate atoms <span class="math notranslate nohighlight">\(D_k \in \mathbb{R}^{L
@@ -325,7 +326,7 @@ we want to learn <span class="math notranslate nohighlight">\(k\)</span> multiva
 <p>subject to <span class="math notranslate nohighlight">\(z_k^n \ge 0\)</span> and <span class="math notranslate nohighlight">\(||D_k||_2 \le 1\)</span>.</p>
 </div>
 <div class="section" id="multivariate-csc-with-a-rank-1-constraint">
-<h2>3. Multivariate CSC with a rank-1 constraint<a class="headerlink" href="#multivariate-csc-with-a-rank-1-constraint" title="Permalink to this headline">#</a></h2>
+<h2>3. Multivariate CSC with a rank-1 constraint<a class="headerlink" href="#multivariate-csc-with-a-rank-1-constraint" title="Permalink to this heading">#</a></h2>
 <p>A variant of the multivariate CSC model considers an additional constraint on
 the multivariate atoms, stating that they need to be rank-1. In other words,
 each atom can be written as a product of univariate vectors <span class="math notranslate nohighlight">\(D_k = u_k
@@ -342,7 +343,7 @@ robustness to the atom estimates, since less parameters are estimated.</p>
 <p>This model is described in details in the original NIPS paper <a class="footnote-reference brackets" href="#id5" id="id3">1</a>.</p>
 </div>
 <div class="section" id="univariate-csc-with-an-alpha-stable-distribution">
-<h2>4. Univariate CSC with an alpha-stable distribution<a class="headerlink" href="#univariate-csc-with-an-alpha-stable-distribution" title="Permalink to this headline">#</a></h2>
+<h2>4. Univariate CSC with an alpha-stable distribution<a class="headerlink" href="#univariate-csc-with-an-alpha-stable-distribution" title="Permalink to this heading">#</a></h2>
 <p>The name alphaCSC originally referred to a particular model which uses an
 <a class="reference external" href="https://en.wikipedia.org/wiki/Stable_distribution">alpha-stable distribution</a>
 for the noise, instead of the more classical Gaussian distribution. Note that
@@ -356,7 +357,7 @@ used to downweight noisy portions of the data:</p>
 <p>This model is described in details in the original NIPS paper <a class="footnote-reference brackets" href="#id6" id="id4">2</a>.</p>
 </div>
 <div class="section" id="cite-our-work">
-<h2>Cite our work<a class="headerlink" href="#cite-our-work" title="Permalink to this headline">#</a></h2>
+<h2>Cite our work<a class="headerlink" href="#cite-our-work" title="Permalink to this heading">#</a></h2>
 <p>If you use this code in your project, please consider citing our work:</p>
 <dl class="footnote brackets">
 <dt class="label" id="id5"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
@@ -420,7 +421,7 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

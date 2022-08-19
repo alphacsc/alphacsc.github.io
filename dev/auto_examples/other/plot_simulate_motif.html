@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,13 +35,14 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="SWM on simulated data" href="plot_simulate_swm.html" />
-    <link rel="prev" title="Alpha CSC on empirical time-series with strong artifacts" href="../noise_alpha/plot_empirical_strong_artifacts.html" />
+    <link rel="prev" title="Other shift-invariant dictionary learning algorithms" href="index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -220,85 +221,130 @@ function checkPageExistsAndRedirect(event) {
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../csc/plot_simulate_randomstate.html">
-   Selecting random state for CSC
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../csc/index.html">
+   Univariate CSC
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../csc/plot_simulate_randomstate.html">
+     Selecting random state for CSC
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../csc/plot_lfp_data.html">
+     CSC to learn LFP spiking atoms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../csc/plot_cross_frequency_coupling.html">
+     Extracting cross-frequency coupling waveforms from rodent LFP data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../csc/plot_simulate_csc.html">
+     Vanilla CSC on simulated data
+    </a>
+   </li>
+  </ul>
  </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../csc/plot_lfp_data.html">
-   CSC to learn LFP spiking atoms
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../dicodile/index.html">
+   Univariate and Multivariate CSC with ‘dicodile’ solver
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dicodile/plot_gait.html">
+     Gait (steps) example
+    </a>
+   </li>
+  </ul>
  </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../csc/plot_cross_frequency_coupling.html">
-   Extracting cross-frequency coupling waveforms from rodent LFP data
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../multicsc/index.html">
+   Multivariate CSC with rank 1 constraints
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../multicsc/plot_somato_mu_waves.html">
+     Extracting
+     <span class="math notranslate nohighlight">
+      \(\mu\)
+     </span>
+     -wave from the somato-sensory dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../multicsc/sample_evoked_response_dicodile.html">
+     Extracting artifact and evoked response atoms from the MNE sample dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../multicsc/plot_sample_evoked_response.html">
+     Extracting artifact and evoked response atoms from the sample dataset
+    </a>
+   </li>
+  </ul>
  </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../csc/plot_simulate_csc.html">
-   Vanilla CSC on simulated data
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../noise_alpha/index.html">
+   Univariate CSC with an alpha-stable distribution
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../noise_alpha/plot_simulate_alphacsc.html">
+     Alpha CSC on simulated data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../noise_alpha/plot_empirical_strong_artifacts.html">
+     Alpha CSC on empirical time-series with strong artifacts
+    </a>
+   </li>
+  </ul>
  </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../dicodile/plot_gait.html">
-   Gait (steps) example
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Other shift-invariant dictionary learning algorithms
   </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../multicsc/plot_somato_mu_waves.html">
-   Extracting
-   <span class="math notranslate nohighlight">
-    \(\mu\)
-   </span>
-   -wave from the somato-sensory dataset
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../multicsc/plot_sample_evoked_response.html">
-   Extracting artifact and evoked response atoms from the sample dataset
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../noise_alpha/plot_simulate_alphacsc.html">
-   Alpha CSC on simulated data
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../noise_alpha/plot_empirical_strong_artifacts.html">
-   Alpha CSC on empirical time-series with strong artifacts
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   MoTIF on simulated data
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="plot_simulate_swm.html">
-   SWM on simulated data
-  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     MoTIF on simulated data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="plot_simulate_swm.html">
+     SWM on simulated data
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -344,7 +390,7 @@ function checkPageExistsAndRedirect(event) {
 to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="motif-on-simulated-data">
-<span id="sphx-glr-auto-examples-other-plot-simulate-motif-py"></span><h1>MoTIF on simulated data<a class="headerlink" href="#motif-on-simulated-data" title="Permalink to this headline">#</a></h1>
+<span id="sphx-glr-auto-examples-other-plot-simulate-motif-py"></span><h1>MoTIF on simulated data<a class="headerlink" href="#motif-on-simulated-data" title="Permalink to this heading">#</a></h1>
 <p>This example demonstrates MoTIF [1] on simulated data. In the
 alphacsc module, we are offering all the alternatives for the users
 to try. Please cite our paper [2] if you use this implementation.</p>
@@ -374,21 +420,21 @@ Sparse Coding. arXiv preprint arXiv:1705.08006.</p>
 </div>
 <p>and define the relevant parameters. Note we choose a large n_times
 to avoid overlapping atoms which MoTIF cannot handle</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_times_atom</span> <span class="o">=</span> <span class="mi">64</span>  <span class="c1"># L</span>
-<span class="n">n_times</span> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># T</span>
-<span class="n">n_atoms</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># K</span>
-<span class="n">n_trials</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># N</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a> <span class="o">=</span> <span class="mi">64</span>  <span class="c1"># L</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a> <span class="o">=</span> <span class="mi">5000</span>  <span class="c1"># T</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># K</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_trials</span></a> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># N</span>
 </pre></div>
 </div>
 <p>simulate the data.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">random_state_simulate</span> <span class="o">=</span> <span class="mi">1</span>
-<a href="http://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-np-class"><span class="n">X</span></a><span class="p">,</span> <a href="http://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-np-class"><span class="n">ds_true</span></a><span class="p">,</span> <a href="http://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-np-class"><span class="n">z_true</span></a> <span class="o">=</span> <span class="n">simulate_data</span><span class="p">(</span><span class="n">n_trials</span><span class="p">,</span> <span class="n">n_times</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span>
-                                   <span class="n">n_atoms</span><span class="p">,</span> <span class="n">random_state_simulate</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">random_state_simulate</span></a> <span class="o">=</span> <span class="mi">1</span>
+<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds_true</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">z_true</span></a> <span class="o">=</span> <span class="n">simulate_data</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_trials</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a><span class="p">,</span>
+                                   <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">random_state_simulate</span></a><span class="p">,</span>
                                    <span class="n">constant_amplitude</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">n_times_atom</span> <span class="o">=</span> <span class="n">n_times_atom</span> <span class="o">*</span> <span class="mi">7</span>  <span class="c1"># XXX: hack</span>
-<span class="n">n_iter</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">max_shift</span> <span class="o">=</span> <span class="mi">11</span>  <span class="c1"># after this, the algorithm breaks</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a> <span class="o">*</span> <span class="mi">7</span>  <span class="c1"># XXX: hack</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter</span></a> <span class="o">=</span> <span class="mi">10</span>
+<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_shift</span></a> <span class="o">=</span> <span class="mi">11</span>  <span class="c1"># after this, the algorithm breaks</span>
 </pre></div>
 </div>
 <p>Note, how we use constant_amplitude=True since
@@ -397,13 +443,12 @@ on <span class="xref std std-ref">vanilla CSC</span> and
 <span class="xref std std-ref">alphaCSC</span> to learn
 how to deal with such cases.
 Finally, let us estimate the atoms.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="http://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-np-class"><span class="n">ds_hat</span></a> <span class="o">=</span> <span class="n">learn_atoms</span><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-np-class"><span class="n">X</span></a><span class="p">,</span> <span class="n">n_atoms</span><span class="p">,</span> <span class="n">n_times_atom</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="n">n_iter</span><span class="p">,</span>
-                     <span class="n">max_shift</span><span class="o">=</span><span class="n">max_shift</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-np-class"><span class="n">ds_hat</span><span class="o">.</span><span class="n">T</span></a><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds_hat</span></a> <span class="o">=</span> <span class="n">learn_atoms</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter</span></a><span class="p">,</span>
+                     <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_shift</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_shift</span></a><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds_hat</span><span class="o">.</span><span class="n">T</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_simulate_motif_001.png" srcset="../../_images/sphx_glr_plot_simulate_motif_001.png" alt="plot simulate motif" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/github/workspace/alphacsc/other/motif.py:34: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+<img src="../../_images/sphx_glr_plot_simulate_motif_001.png" srcset="../../_images/sphx_glr_plot_simulate_motif_001.png" alt="plot simulate motif" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/github/workspace/alphacsc/other/motif.py:34: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   match = np.zeros((n_atoms, n_trials), dtype=np.int)
 [seed 42] Atom 0 Iteration 0
@@ -427,17 +472,17 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 [seed 42] Atom 1 Iteration 8
 [seed 42] Atom 1 Iteration 9
 
-[&lt;matplotlib.lines.Line2D object at 0x7fd8975b99a0&gt;, &lt;matplotlib.lines.Line2D object at 0x7fd8975b9df0&gt;]
+[&lt;matplotlib.lines.Line2D object at 0x7f21517746d0&gt;, &lt;matplotlib.lines.Line2D object at 0x7f2151774f10&gt;]
 </pre></div>
 </div>
 <p>Compare this to the original atoms</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="http://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-np-class"><span class="n">ds_true</span><span class="o">.</span><span class="n">T</span></a><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds_true</span><span class="o">.</span><span class="n">T</span></a><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_simulate_motif_002.png" srcset="../../_images/sphx_glr_plot_simulate_motif_002.png" alt="plot simulate motif" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.570 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-other-plot-simulate-motif-py">
+<img src="../../_images/sphx_glr_plot_simulate_motif_002.png" srcset="../../_images/sphx_glr_plot_simulate_motif_002.png" alt="plot simulate motif" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.571 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-other-plot-simulate-motif-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/0b12a6d60c0fbcf3fc91d6fcd57bc109/plot_simulate_motif.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_simulate_motif.py</span></code></a></p>
 </div>
@@ -456,11 +501,11 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
               <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="../noise_alpha/plot_empirical_strong_artifacts.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="index.html" title="previous page">
       <i class="fas fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Alpha CSC on empirical time-series with strong artifacts</p>
+          <p class="prev-next-title">Other shift-invariant dictionary learning algorithms</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="plot_simulate_swm.html" title="next page">
@@ -495,7 +540,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

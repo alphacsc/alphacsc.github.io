@@ -150,8 +150,6 @@ Finally, let us estimate the atoms.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     /github/workspace/alphacsc/other/motif.py:34: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
@@ -178,7 +176,7 @@ Finally, let us estimate the atoms.
     [seed 42] Atom 1 Iteration 8
     [seed 42] Atom 1 Iteration 9
 
-    [<matplotlib.lines.Line2D object at 0x7fd8975b99a0>, <matplotlib.lines.Line2D object at 0x7fd8975b9df0>]
+    [<matplotlib.lines.Line2D object at 0x7f21517746d0>, <matplotlib.lines.Line2D object at 0x7f2151774f10>]
 
 
 
@@ -208,28 +206,23 @@ Compare this to the original atoms
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.570 seconds)
+   **Total running time of the script:** ( 0 minutes  0.571 seconds)
 
 
 .. _sphx_glr_download_auto_examples_other_plot_simulate_motif.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_simulate_motif.py <plot_simulate_motif.py>`
 
-     :download:`Download Python source code: plot_simulate_motif.py <plot_simulate_motif.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_simulate_motif.ipynb <plot_simulate_motif.ipynb>`
+      :download:`Download Jupyter notebook: plot_simulate_motif.ipynb <plot_simulate_motif.ipynb>`
 
 
 .. only:: html

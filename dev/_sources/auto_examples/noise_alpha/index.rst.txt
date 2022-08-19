@@ -1,0 +1,61 @@
+
+
+.. _sphx_glr_auto_examples_noise_alpha:
+
+.. _alphacsc_examples:
+
+Univariate CSC with an alpha-stable distribution
+------------------------------------------------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates alphaCSC [1]_ on simulated data.">
+
+.. only:: html
+
+  .. image:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
+    :alt: Alpha CSC on simulated data
+
+  :ref:`sphx_glr_auto_examples_noise_alpha_plot_simulate_alphacsc.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Alpha CSC on simulated data</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie affected by s...">
+
+.. only:: html
+
+  .. image:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_empirical_strong_artifacts_thumb.png
+    :alt: Alpha CSC on empirical time-series with strong artifacts
+
+  :ref:`sphx_glr_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Alpha CSC on empirical time-series with strong artifacts</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/noise_alpha/plot_simulate_alphacsc
+   /auto_examples/noise_alpha/plot_empirical_strong_artifacts
+

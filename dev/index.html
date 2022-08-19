@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,12 +35,13 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Model descriptions" href="models.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+<meta name="docsearch:language" content="en">
   </head>
   
   
@@ -299,7 +300,7 @@ function checkPageExistsAndRedirect(event) {
               <article class="bd-article" role="main">
                 
   <div class="section" id="alphacsc-convolution-sparse-coding-for-time-series">
-<h1>alphaCSC: Convolution sparse coding for time-series<a class="headerlink" href="#alphacsc-convolution-sparse-coding-for-time-series" title="Permalink to this headline">#</a></h1>
+<h1>alphaCSC: Convolution sparse coding for time-series<a class="headerlink" href="#alphacsc-convolution-sparse-coding-for-time-series" title="Permalink to this heading">#</a></h1>
 <p><img alt="Build Status" src="https://github.com/alphacsc/alphacsc/workflows/unittests/badge.svg" /> <a class="reference external" href="https://codecov.io/gh/alphacsc/alphacsc"><img alt="codecov" src="https://codecov.io/gh/alphacsc/alphacsc/branch/master/graph/badge.svg" /></a></p>
 <p>This is a library to perform shift-invariant <a class="reference external" href="https://en.wikipedia.org/wiki/Sparse_dictionary_learning">sparse dictionary learning</a>, also known as
 convolutional sparse coding (CSC), on time-series data.
@@ -312,7 +313,7 @@ It includes a number of different models:</p>
 </ol>
 <p>A mathematical descriptions of these models is available <a class="reference external" href="https://alphacsc.github.io/models.html">in the documentation</a>.</p>
 <div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
 <p>To install this package, the easiest way is using <code class="docutils literal notranslate"><span class="pre">pip</span></code>. It will install this
 package and its dependencies. The <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> depends on <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and
 <code class="docutils literal notranslate"><span class="pre">cython</span></code> for the installation so it is advised to install them beforehand. To
@@ -341,7 +342,7 @@ with <code class="docutils literal notranslate"><span class="pre">pip</span></co
 <p>and it should not give any error messages.</p>
 </div>
 <div class="section" id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">#</a></h2>
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h2>
 <p>Here is an example to present briefly the API:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -378,20 +379,20 @@ with <code class="docutils literal notranslate"><span class="pre">pip</span></co
 </div>
 </div>
 <div class="section" id="dicodile-backend">
-<h2>Dicodile backend<a class="headerlink" href="#dicodile-backend" title="Permalink to this headline">#</a></h2>
+<h2>Dicodile backend<a class="headerlink" href="#dicodile-backend" title="Permalink to this heading">#</a></h2>
 <p>AlphaCSC can use a <a class="reference external" href="https://github.com/tomMoral/dicodile">dicodile</a>-based backend to perform sparse encoding in parallel.</p>
 <p>To install dicodile, run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">alphacsc[dicodile]</span></code>.</p>
 <div class="section" id="known-openmpi-issues">
-<h3>Known OpenMPI issues<a class="headerlink" href="#known-openmpi-issues" title="Permalink to this headline">#</a></h3>
+<h3>Known OpenMPI issues<a class="headerlink" href="#known-openmpi-issues" title="Permalink to this heading">#</a></h3>
 <p>When self-installing OpenMPI (for instance to run <cite>dicodile</cite> on a single machine, or for continuous integration), running the <cite>dicodile</cite> solver might end up causing a deadlock (no output for a long time). It is often due to communication issue between the workers. This issue can often be solved by disabling Docker-related virtual NICs, for instance by running <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">OMPI_MCA_btl_tcp_if_exclude=&quot;docker0&quot;</span></code>.</p>
 </div>
 </div>
 <div class="section" id="bug-reports">
-<h2>Bug reports<a class="headerlink" href="#bug-reports" title="Permalink to this headline">#</a></h2>
+<h2>Bug reports<a class="headerlink" href="#bug-reports" title="Permalink to this heading">#</a></h2>
 <p>Use the <a class="reference external" href="https://github.com/alphacsc/alphacsc/issues">github issue tracker</a> to report bugs.</p>
 </div>
 <div class="section" id="cite-our-work">
-<h2>Cite our work<a class="headerlink" href="#cite-our-work" title="Permalink to this headline">#</a></h2>
+<h2>Cite our work<a class="headerlink" href="#cite-our-work" title="Permalink to this heading">#</a></h2>
 <p>If you use this code in your project, please consider citing our work:</p>
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -407,7 +408,7 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
 </dl>
 </div>
 <div class="section" id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">#</a></h2>
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Model descriptions</a><ul>
@@ -476,7 +477,7 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
   
   <div class="footer-item">
     <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
 </p>
   </div>
   

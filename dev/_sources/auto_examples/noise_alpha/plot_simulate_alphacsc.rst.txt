@@ -174,8 +174,6 @@ and then alpha CSC on the same data
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     Global Iter: 0/10       V_0/50 .................................................
@@ -257,8 +255,6 @@ downweighted by the algorithm
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
@@ -269,28 +265,23 @@ downweighted by the algorithm
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  24.676 seconds)
+   **Total running time of the script:** ( 2 minutes  25.565 seconds)
 
 
 .. _sphx_glr_download_auto_examples_noise_alpha_plot_simulate_alphacsc.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_simulate_alphacsc.py <plot_simulate_alphacsc.py>`
 
-     :download:`Download Python source code: plot_simulate_alphacsc.py <plot_simulate_alphacsc.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_simulate_alphacsc.ipynb <plot_simulate_alphacsc.ipynb>`
+      :download:`Download Jupyter notebook: plot_simulate_alphacsc.ipynb <plot_simulate_alphacsc.ipynb>`
 
 
 .. only:: html

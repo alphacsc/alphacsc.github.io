@@ -172,8 +172,6 @@ Now, we apply the SWM algorithm now.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     [iter 001] Cost function: 10.095681449318707
@@ -10231,12 +10229,10 @@ is present. Now let us plot the atoms.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    [<matplotlib.lines.Line2D object at 0x7fd8a487a1c0>]
+    [<matplotlib.lines.Line2D object at 0x7f21516a89a0>]
 
 
 
@@ -10269,28 +10265,23 @@ and the cost function over iterations
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.902 seconds)
+   **Total running time of the script:** ( 0 minutes  7.854 seconds)
 
 
 .. _sphx_glr_download_auto_examples_other_plot_simulate_swm.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_simulate_swm.py <plot_simulate_swm.py>`
 
-     :download:`Download Python source code: plot_simulate_swm.py <plot_simulate_swm.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_simulate_swm.ipynb <plot_simulate_swm.ipynb>`
+      :download:`Download Jupyter notebook: plot_simulate_swm.ipynb <plot_simulate_swm.ipynb>`
 
 
 .. only:: html

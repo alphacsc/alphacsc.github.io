@@ -66,14 +66,12 @@ First, let us fetch the data (~14 MB)
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     Using default location ~/mne_data for LFP_data...
     Creating ~/mne_data
     Downloading file 'LFP_data_contiguous_1250_Hz.mat' from 'https://github.com/hitziger/AWL/raw/master/Experiments/data/LFP_data_contiguous_1250_Hz.mat' to '/github/home/mne_data/LFP'.
-      0%|                                              | 0.00/14.4M [00:00<?, ?B/s]     38%|██████████████▏                      | 5.52M/14.4M [00:00<00:00, 55.2MB/s]     83%|██████████████████████████████▌      | 11.9M/14.4M [00:00<00:00, 60.3MB/s]      0%|                                              | 0.00/14.4M [00:00<?, ?B/s]    100%|█████████████████████████████████████| 14.4M/14.4M [00:00<00:00, 29.0GB/s]
+      0%|                                              | 0.00/14.4M [00:00<?, ?B/s]     29%|██████████▋                          | 4.17M/14.4M [00:00<00:00, 41.7MB/s]     72%|██████████████████████████▋          | 10.4M/14.4M [00:00<00:00, 53.9MB/s]      0%|                                              | 0.00/14.4M [00:00<?, ?B/s]    100%|█████████████████████████████████████| 14.4M/14.4M [00:00<00:00, 28.1GB/s]
 
 
 
@@ -127,8 +125,6 @@ And now let us look at the data
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
@@ -155,8 +151,6 @@ frequency drifts, but we keep the high frequencies
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     Setting up high-pass filter at 1 Hz
@@ -170,6 +164,9 @@ frequency drifts, but we keep the high frequencies
     - Lower transition bandwidth: 1.00 Hz (-6 dB cutoff frequency: 0.50 Hz)
     - Filter length: 4125 samples (3.300 sec)
 
+    [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.1s remaining:    0.0s
+    [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.1s finished
 
 
 
@@ -303,8 +300,6 @@ Now, we run regular CSC since the trials are not too noisy
 
 
 .. rst-class:: sphx-glr-script-out
-
- Out:
 
  .. code-block:: none
 
@@ -578,28 +573,23 @@ Let's look at the atoms now.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  39.263 seconds)
+   **Total running time of the script:** ( 1 minutes  39.029 seconds)
 
 
 .. _sphx_glr_download_auto_examples_csc_plot_lfp_data.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_lfp_data.py <plot_lfp_data.py>`
 
-     :download:`Download Python source code: plot_lfp_data.py <plot_lfp_data.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_lfp_data.ipynb <plot_lfp_data.ipynb>`
+      :download:`Download Jupyter notebook: plot_lfp_data.ipynb <plot_lfp_data.ipynb>`
 
 
 .. only:: html
