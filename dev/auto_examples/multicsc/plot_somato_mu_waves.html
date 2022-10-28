@@ -12,8 +12,8 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
 
   
   <link rel="stylesheet"
@@ -22,6 +22,8 @@
     href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
@@ -30,17 +32,18 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/multicsc/plot_somato_mu_waves';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = '/stable/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://alphacsc.github.io/stable/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -68,7 +71,7 @@
     <div class="search-button__search-container">
       
 <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
+  <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
@@ -78,7 +81,7 @@
   
   <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fas fa-bars"></span>
+      <span class="fa-solid fa-bars"></span>
   </label>
   <div id="navbar-start">
     
@@ -144,8 +147,8 @@
     <div id="navbar-end">
       <div class="navbar-end-item navbar-end__search-button-container">
         
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
-  <i class="fas fa-search"></i>
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
 </button>
       </div>
       
@@ -170,7 +173,8 @@
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+          
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -180,7 +184,8 @@
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank"><span><i class="fas fa-box"></i></span>
+          
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fas fa-box"></i></span>
             <label class="sr-only">PyPI</label></a>
         </li>
       </ul>
@@ -192,14 +197,14 @@
 
   
   <div class="search-button-container--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
-  <i class="fas fa-search"></i>
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
 </button>
   </div>
 
   
   <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fas fa-outdent"></span>
+      <span class="fa-solid fa-outdent"></span>
   </label>
   
 
@@ -277,7 +282,8 @@
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+          
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -287,7 +293,8 @@
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank"><span><i class="fas fa-box"></i></span>
+          
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fas fa-box"></i></span>
             <label class="sr-only">PyPI</label></a>
         </li>
       </ul>
@@ -305,130 +312,33 @@
   </p>
   <div class="bd-toc-item navbar-nav">
     <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../csc/index.html">
-   Univariate CSC
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../csc/plot_simulate_randomstate.html">
-     Selecting random state for CSC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../csc/plot_lfp_data.html">
-     CSC to learn LFP spiking atoms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../csc/plot_cross_frequency_coupling.html">
-     Extracting cross-frequency coupling waveforms from rodent LFP data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../csc/plot_simulate_csc.html">
-     Vanilla CSC on simulated data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../dicodile/index.html">
-   Univariate and Multivariate CSC with ‘dicodile’ solver
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../dicodile/plot_gait.html">
-     Gait (steps) example
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
-   Multivariate CSC with rank 1 constraints
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Extracting
-     <span class="math notranslate nohighlight">
-      \(\mu\)
-     </span>
-     -wave from the somato-sensory dataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sample_evoked_response_dicodile.html">
-     Extracting artifact and evoked response atoms from the MNE sample dataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="plot_sample_evoked_response.html">
-     Extracting artifact and evoked response atoms from the sample dataset
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../noise_alpha/index.html">
-   Univariate CSC with an alpha-stable distribution
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../noise_alpha/plot_simulate_alphacsc.html">
-     Alpha CSC on simulated data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../noise_alpha/plot_empirical_strong_artifacts.html">
-     Alpha CSC on empirical time-series with strong artifacts
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../other/index.html">
-   Other shift-invariant dictionary learning algorithms
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../other/plot_simulate_motif.html">
-     MoTIF on simulated data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../other/plot_simulate_swm.html">
-     SWM on simulated data
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../csc/index.html">Univariate CSC</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../csc/plot_simulate_randomstate.html">Selecting random state for CSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../csc/plot_lfp_data.html">CSC to learn LFP spiking atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../csc/plot_cross_frequency_coupling.html">Extracting cross-frequency coupling waveforms from rodent LFP data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../csc/plot_simulate_csc.html">Vanilla CSC on simulated data</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dicodile/index.html">Univariate and Multivariate CSC with ‘dicodile’ solver</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dicodile/plot_gait.html">Gait (steps) example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Multivariate CSC with rank 1 constraints</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_evoked_response_dicodile.html">Extracting artifact and evoked response atoms from the MNE sample dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_sample_evoked_response.html">Extracting artifact and evoked response atoms from the sample dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../noise_alpha/index.html">Univariate CSC with an alpha-stable distribution</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../noise_alpha/plot_simulate_alphacsc.html">Alpha CSC on simulated data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../noise_alpha/plot_empirical_strong_artifacts.html">Alpha CSC on empirical time-series with strong artifacts</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../other/index.html">Other shift-invariant dictionary learning algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../other/plot_simulate_motif.html">MoTIF on simulated data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../other/plot_simulate_swm.html">SWM on simulated data</a></li>
+</ul>
+</li>
 </ul>
 
   </div>
@@ -501,7 +411,7 @@ Processing Systems (NIPS).</p>
     <span class="c1"># Initialize the dictionary with random chunk from the data</span>
     <span class="n">D_init</span><span class="o">=</span><span class="s1">&#39;chunk&#39;</span><span class="p">,</span>
     <span class="c1"># rescale the regularization parameter to be 20% of lambda_max</span>
-    <span class="n">lmbd_max</span><span class="o">=</span><span class="s2">&quot;scaled&quot;</span><span class="p">,</span> <span class="n">reg</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">lmbd_max</span><span class="o">=</span><span class="s2">&quot;scaled&quot;</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span>
     <span class="c1"># Number of iteration for the alternate minimization and cvg threshold</span>
     <span class="n">n_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
     <span class="c1"># solver for the z-step</span>
@@ -523,110 +433,90 @@ before and finishing 4 seconds after.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using default location ~/mne_data for somato...
 
   0%|                                               | 0.00/611M [00:00&lt;?, ?B/s]
-  0%|                                       | 232k/611M [00:00&lt;04:22, 2.32MB/s]
-  0%|                                      | 1.33M/611M [00:00&lt;01:23, 7.31MB/s]
-  0%|▏                                     | 2.13M/611M [00:00&lt;01:20, 7.60MB/s]
-  0%|▏                                     | 2.91M/611M [00:00&lt;01:24, 7.22MB/s]
-  1%|▌                                     | 8.15M/611M [00:00&lt;00:26, 22.8MB/s]
-  2%|▉                                     | 14.8M/611M [00:00&lt;00:16, 37.2MB/s]
-  4%|█▎                                    | 21.5M/611M [00:00&lt;00:12, 46.8MB/s]
-  4%|█▋                                    | 26.3M/611M [00:01&lt;00:24, 23.7MB/s]
-  5%|█▊                                    | 30.0M/611M [00:01&lt;00:22, 26.2MB/s]
-  6%|██▏                                   | 35.9M/611M [00:01&lt;00:17, 33.2MB/s]
-  7%|██▌                                   | 42.0M/611M [00:01&lt;00:14, 39.5MB/s]
-  8%|██▉                                   | 46.9M/611M [00:01&lt;00:19, 29.4MB/s]
-  8%|███▏                                  | 50.8M/611M [00:02&lt;00:29, 19.3MB/s]
-  9%|███▌                                  | 56.8M/611M [00:02&lt;00:21, 25.3MB/s]
- 10%|███▉                                  | 63.4M/611M [00:02&lt;00:16, 32.5MB/s]
- 11%|████▎                                 | 70.1M/611M [00:02&lt;00:13, 39.4MB/s]
- 13%|████▊                                 | 76.8M/611M [00:02&lt;00:11, 45.5MB/s]
- 14%|█████▏                                | 83.5M/611M [00:02&lt;00:10, 50.7MB/s]
- 15%|█████▌                                | 90.3M/611M [00:02&lt;00:09, 54.9MB/s]
- 16%|██████                                | 97.0M/611M [00:02&lt;00:08, 58.3MB/s]
- 17%|██████▋                                | 104M/611M [00:02&lt;00:08, 60.8MB/s]
- 18%|███████                                | 110M/611M [00:03&lt;00:07, 62.6MB/s]
- 19%|███████▍                               | 117M/611M [00:03&lt;00:07, 63.9MB/s]
- 20%|███████▉                               | 124M/611M [00:03&lt;00:07, 65.0MB/s]
- 21%|████████▎                              | 131M/611M [00:03&lt;00:07, 65.7MB/s]
- 23%|████████▊                              | 137M/611M [00:03&lt;00:07, 66.3MB/s]
- 24%|█████████▏                             | 144M/611M [00:03&lt;00:08, 54.2MB/s]
- 25%|█████████▌                             | 150M/611M [00:03&lt;00:08, 56.5MB/s]
- 26%|██████████                             | 157M/611M [00:03&lt;00:07, 59.3MB/s]
- 27%|██████████▍                            | 164M/611M [00:03&lt;00:07, 61.5MB/s]
- 28%|██████████▉                            | 171M/611M [00:03&lt;00:06, 63.1MB/s]
- 29%|███████████▎                           | 177M/611M [00:04&lt;00:06, 64.4MB/s]
- 30%|███████████▊                           | 184M/611M [00:04&lt;00:06, 65.2MB/s]
- 31%|████████████▏                          | 191M/611M [00:04&lt;00:06, 65.8MB/s]
- 32%|████████████▌                          | 198M/611M [00:04&lt;00:06, 66.3MB/s]
- 33%|█████████████                          | 204M/611M [00:04&lt;00:06, 66.6MB/s]
- 35%|█████████████▍                         | 211M/611M [00:04&lt;00:05, 66.9MB/s]
- 36%|█████████████▉                         | 218M/611M [00:04&lt;00:05, 67.1MB/s]
- 37%|██████████████▎                        | 225M/611M [00:04&lt;00:05, 67.2MB/s]
- 38%|██████████████▊                        | 231M/611M [00:04&lt;00:05, 63.6MB/s]
- 39%|███████████████▏                       | 238M/611M [00:05&lt;00:06, 58.9MB/s]
- 40%|███████████████▌                       | 244M/611M [00:05&lt;00:06, 59.8MB/s]
- 41%|███████████████▉                       | 250M/611M [00:05&lt;00:05, 61.1MB/s]
- 42%|████████████████▍                      | 257M/611M [00:05&lt;00:05, 62.9MB/s]
- 43%|████████████████▊                      | 263M/611M [00:05&lt;00:05, 58.1MB/s]
- 44%|█████████████████▏                     | 269M/611M [00:05&lt;00:06, 53.5MB/s]
- 45%|█████████████████▌                     | 275M/611M [00:05&lt;00:06, 53.1MB/s]
- 46%|█████████████████▉                     | 281M/611M [00:05&lt;00:05, 56.2MB/s]
- 47%|██████████████████▍                    | 288M/611M [00:05&lt;00:05, 59.2MB/s]
- 48%|██████████████████▊                    | 295M/611M [00:06&lt;00:05, 61.5MB/s]
- 49%|███████████████████▏                   | 301M/611M [00:06&lt;00:05, 61.6MB/s]
- 50%|███████████████████▋                   | 308M/611M [00:06&lt;00:04, 63.5MB/s]
- 51%|████████████████████                   | 314M/611M [00:06&lt;00:06, 42.8MB/s]
- 52%|████████████████████▍                  | 319M/611M [00:06&lt;00:08, 35.4MB/s]
- 53%|████████████████████▊                  | 326M/611M [00:06&lt;00:06, 41.1MB/s]
- 54%|█████████████████████▏                 | 332M/611M [00:06&lt;00:05, 46.7MB/s]
- 56%|█████████████████████▋                 | 339M/611M [00:06&lt;00:05, 51.6MB/s]
- 57%|██████████████████████                 | 346M/611M [00:07&lt;00:04, 55.7MB/s]
- 58%|██████████████████████▌                | 352M/611M [00:07&lt;00:04, 58.8MB/s]
- 59%|██████████████████████▉                | 359M/611M [00:07&lt;00:04, 61.2MB/s]
- 60%|███████████████████████▍               | 366M/611M [00:07&lt;00:03, 63.0MB/s]
- 61%|███████████████████████▊               | 372M/611M [00:07&lt;00:03, 63.5MB/s]
- 62%|████████████████████████▏              | 379M/611M [00:07&lt;00:03, 64.7MB/s]
- 63%|████████████████████████▋              | 386M/611M [00:07&lt;00:03, 65.5MB/s]
- 64%|█████████████████████████              | 393M/611M [00:07&lt;00:03, 66.0MB/s]
- 65%|█████████████████████████▌             | 399M/611M [00:07&lt;00:03, 66.5MB/s]
- 67%|█████████████████████████▉             | 406M/611M [00:08&lt;00:04, 41.9MB/s]
- 68%|██████████████████████████▎            | 413M/611M [00:08&lt;00:04, 46.6MB/s]
- 69%|██████████████████████████▊            | 419M/611M [00:08&lt;00:03, 51.1MB/s]
- 70%|███████████████████████████▏           | 426M/611M [00:08&lt;00:03, 55.1MB/s]
- 71%|███████████████████████████▋           | 433M/611M [00:08&lt;00:03, 58.4MB/s]
- 72%|████████████████████████████           | 439M/611M [00:08&lt;00:02, 61.0MB/s]
- 73%|████████████████████████████▍          | 446M/611M [00:08&lt;00:02, 56.8MB/s]
- 74%|████████████████████████████▊          | 452M/611M [00:09&lt;00:05, 30.0MB/s]
- 75%|█████████████████████████████▎         | 458M/611M [00:09&lt;00:04, 35.5MB/s]
- 76%|█████████████████████████████▋         | 465M/611M [00:09&lt;00:03, 41.5MB/s]
- 77%|██████████████████████████████         | 470M/611M [00:09&lt;00:04, 31.9MB/s]
- 78%|██████████████████████████████▍        | 477M/611M [00:09&lt;00:03, 37.4MB/s]
- 79%|██████████████████████████████▊        | 483M/611M [00:09&lt;00:02, 42.8MB/s]
- 80%|███████████████████████████████▎       | 490M/611M [00:10&lt;00:02, 48.3MB/s]
- 81%|███████████████████████████████▋       | 497M/611M [00:10&lt;00:02, 52.9MB/s]
- 82%|████████████████████████████████▏      | 503M/611M [00:10&lt;00:01, 56.5MB/s]
- 83%|████████████████████████████████▌      | 509M/611M [00:10&lt;00:03, 33.4MB/s]
- 84%|████████████████████████████████▊      | 514M/611M [00:11&lt;00:04, 24.0MB/s]
- 85%|█████████████████████████████████▎     | 521M/611M [00:11&lt;00:03, 29.9MB/s]
- 86%|█████████████████████████████████▋     | 527M/611M [00:11&lt;00:02, 35.6MB/s]
- 87%|██████████████████████████████████     | 534M/611M [00:11&lt;00:01, 41.6MB/s]
- 88%|██████████████████████████████████▍    | 539M/611M [00:11&lt;00:02, 30.2MB/s]
- 89%|██████████████████████████████████▋    | 544M/611M [00:12&lt;00:03, 18.8MB/s]
- 90%|███████████████████████████████████    | 550M/611M [00:12&lt;00:02, 24.4MB/s]
- 91%|███████████████████████████████████▍   | 554M/611M [00:12&lt;00:02, 23.7MB/s]
- 92%|███████████████████████████████████▊   | 560M/611M [00:12&lt;00:01, 30.1MB/s]
- 93%|████████████████████████████████████   | 565M/611M [00:12&lt;00:01, 24.3MB/s]
- 93%|████████████████████████████████████▍  | 570M/611M [00:12&lt;00:01, 29.1MB/s]
- 94%|████████████████████████████████████▊  | 576M/611M [00:13&lt;00:01, 34.4MB/s]
- 95%|█████████████████████████████████████  | 580M/611M [00:13&lt;00:00, 33.8MB/s]
- 96%|█████████████████████████████████████▍ | 585M/611M [00:13&lt;00:00, 36.9MB/s]
- 97%|█████████████████████████████████████▊ | 591M/611M [00:13&lt;00:00, 41.9MB/s]
- 98%|██████████████████████████████████████ | 596M/611M [00:13&lt;00:00, 23.6MB/s]
- 98%|██████████████████████████████████████▍| 601M/611M [00:13&lt;00:00, 28.2MB/s]
- 99%|██████████████████████████████████████▋| 605M/611M [00:14&lt;00:00, 21.1MB/s]
-100%|██████████████████████████████████████▊| 608M/611M [00:14&lt;00:00, 16.4MB/s]
+  1%|▎                                     | 4.61M/611M [00:00&lt;00:13, 46.1MB/s]
+  2%|▋                                     | 11.6M/611M [00:00&lt;00:09, 60.2MB/s]
+  3%|█▏                                    | 19.0M/611M [00:00&lt;00:08, 66.3MB/s]
+  4%|█▋                                    | 26.4M/611M [00:00&lt;00:08, 69.4MB/s]
+  6%|██                                    | 33.8M/611M [00:00&lt;00:08, 71.0MB/s]
+  7%|██▌                                   | 41.2M/611M [00:00&lt;00:07, 72.0MB/s]
+  8%|███                                   | 48.6M/611M [00:00&lt;00:07, 72.7MB/s]
+  9%|███▍                                  | 56.0M/611M [00:00&lt;00:07, 73.1MB/s]
+ 10%|███▉                                  | 63.4M/611M [00:00&lt;00:07, 73.3MB/s]
+ 12%|████▍                                 | 70.7M/611M [00:01&lt;00:07, 73.5MB/s]
+ 13%|████▊                                 | 78.2M/611M [00:01&lt;00:07, 73.7MB/s]
+ 14%|█████▎                                | 85.6M/611M [00:01&lt;00:07, 73.8MB/s]
+ 15%|█████▊                                | 93.0M/611M [00:01&lt;00:07, 73.9MB/s]
+ 16%|██████▍                                | 100M/611M [00:01&lt;00:06, 74.0MB/s]
+ 18%|██████▉                                | 108M/611M [00:01&lt;00:06, 74.0MB/s]
+ 19%|███████▎                               | 115M/611M [00:01&lt;00:06, 73.9MB/s]
+ 20%|███████▊                               | 123M/611M [00:01&lt;00:06, 73.9MB/s]
+ 21%|████████▎                              | 130M/611M [00:01&lt;00:06, 73.9MB/s]
+ 23%|████████▊                              | 137M/611M [00:01&lt;00:06, 74.0MB/s]
+ 24%|█████████▎                             | 145M/611M [00:02&lt;00:06, 74.0MB/s]
+ 25%|█████████▋                             | 152M/611M [00:02&lt;00:06, 73.9MB/s]
+ 26%|██████████▏                            | 160M/611M [00:02&lt;00:06, 74.0MB/s]
+ 27%|██████████▋                            | 167M/611M [00:02&lt;00:05, 73.9MB/s]
+ 29%|███████████▏                           | 174M/611M [00:02&lt;00:05, 74.0MB/s]
+ 30%|███████████▌                           | 182M/611M [00:02&lt;00:05, 74.0MB/s]
+ 31%|████████████                           | 189M/611M [00:02&lt;00:05, 74.0MB/s]
+ 32%|████████████▌                          | 197M/611M [00:02&lt;00:05, 74.0MB/s]
+ 33%|█████████████                          | 204M/611M [00:02&lt;00:05, 74.0MB/s]
+ 35%|█████████████▌                         | 211M/611M [00:02&lt;00:05, 74.0MB/s]
+ 36%|█████████████▉                         | 219M/611M [00:03&lt;00:05, 74.1MB/s]
+ 37%|██████████████▍                        | 226M/611M [00:03&lt;00:05, 74.1MB/s]
+ 38%|██████████████▉                        | 234M/611M [00:03&lt;00:05, 74.1MB/s]
+ 39%|███████████████▍                       | 241M/611M [00:03&lt;00:04, 74.2MB/s]
+ 41%|███████████████▉                       | 249M/611M [00:03&lt;00:04, 74.1MB/s]
+ 42%|████████████████▎                      | 256M/611M [00:03&lt;00:04, 74.2MB/s]
+ 43%|████████████████▊                      | 263M/611M [00:03&lt;00:04, 74.2MB/s]
+ 44%|█████████████████▎                     | 271M/611M [00:03&lt;00:04, 74.2MB/s]
+ 46%|█████████████████▊                     | 278M/611M [00:03&lt;00:04, 74.1MB/s]
+ 47%|██████████████████▎                    | 286M/611M [00:03&lt;00:04, 74.2MB/s]
+ 48%|██████████████████▋                    | 293M/611M [00:04&lt;00:04, 74.1MB/s]
+ 49%|███████████████████▏                   | 301M/611M [00:04&lt;00:04, 74.2MB/s]
+ 50%|███████████████████▋                   | 308M/611M [00:04&lt;00:04, 74.2MB/s]
+ 52%|████████████████████▏                  | 315M/611M [00:04&lt;00:03, 74.2MB/s]
+ 53%|████████████████████▌                  | 323M/611M [00:04&lt;00:03, 74.1MB/s]
+ 54%|█████████████████████                  | 330M/611M [00:04&lt;00:03, 74.2MB/s]
+ 55%|█████████████████████▌                 | 338M/611M [00:04&lt;00:03, 74.3MB/s]
+ 57%|██████████████████████                 | 345M/611M [00:04&lt;00:03, 74.3MB/s]
+ 58%|██████████████████████▌                | 353M/611M [00:04&lt;00:03, 74.3MB/s]
+ 59%|██████████████████████▉                | 360M/611M [00:04&lt;00:03, 74.3MB/s]
+ 60%|███████████████████████▍               | 367M/611M [00:05&lt;00:03, 74.4MB/s]
+ 61%|███████████████████████▉               | 375M/611M [00:05&lt;00:03, 74.3MB/s]
+ 63%|████████████████████████▍              | 382M/611M [00:05&lt;00:03, 74.3MB/s]
+ 64%|████████████████████████▉              | 390M/611M [00:05&lt;00:02, 74.4MB/s]
+ 65%|█████████████████████████▍             | 397M/611M [00:05&lt;00:02, 74.3MB/s]
+ 66%|█████████████████████████▊             | 405M/611M [00:05&lt;00:02, 74.4MB/s]
+ 68%|██████████████████████████▎            | 412M/611M [00:05&lt;00:02, 74.4MB/s]
+ 69%|██████████████████████████▊            | 420M/611M [00:05&lt;00:02, 74.3MB/s]
+ 70%|███████████████████████████▎           | 427M/611M [00:05&lt;00:02, 74.3MB/s]
+ 71%|███████████████████████████▊           | 434M/611M [00:05&lt;00:02, 74.3MB/s]
+ 72%|████████████████████████████▏          | 442M/611M [00:06&lt;00:02, 74.3MB/s]
+ 74%|████████████████████████████▋          | 449M/611M [00:06&lt;00:02, 74.2MB/s]
+ 75%|█████████████████████████████▏         | 457M/611M [00:06&lt;00:02, 74.2MB/s]
+ 76%|█████████████████████████████▋         | 464M/611M [00:06&lt;00:01, 74.3MB/s]
+ 77%|██████████████████████████████▏        | 472M/611M [00:06&lt;00:01, 74.3MB/s]
+ 78%|██████████████████████████████▌        | 479M/611M [00:06&lt;00:01, 74.4MB/s]
+ 80%|███████████████████████████████        | 487M/611M [00:06&lt;00:01, 74.4MB/s]
+ 81%|███████████████████████████████▌       | 494M/611M [00:06&lt;00:01, 74.5MB/s]
+ 82%|████████████████████████████████       | 501M/611M [00:06&lt;00:01, 74.3MB/s]
+ 83%|████████████████████████████████▌      | 509M/611M [00:06&lt;00:01, 67.4MB/s]
+ 84%|████████████████████████████████▉      | 516M/611M [00:07&lt;00:01, 60.8MB/s]
+ 86%|█████████████████████████████████▍     | 523M/611M [00:07&lt;00:01, 64.1MB/s]
+ 87%|█████████████████████████████████▉     | 530M/611M [00:07&lt;00:01, 66.8MB/s]
+ 88%|██████████████████████████████████▎    | 538M/611M [00:07&lt;00:01, 68.7MB/s]
+ 89%|██████████████████████████████████▊    | 545M/611M [00:07&lt;00:00, 70.2MB/s]
+ 91%|███████████████████████████████████▎   | 553M/611M [00:07&lt;00:00, 71.1MB/s]
+ 92%|███████████████████████████████████▊   | 560M/611M [00:07&lt;00:00, 72.0MB/s]
+ 93%|████████████████████████████████████▏  | 567M/611M [00:07&lt;00:00, 72.7MB/s]
+ 94%|████████████████████████████████████▋  | 575M/611M [00:07&lt;00:00, 73.0MB/s]
+ 95%|█████████████████████████████████████▏ | 582M/611M [00:07&lt;00:00, 73.2MB/s]
+ 97%|█████████████████████████████████████▋ | 590M/611M [00:08&lt;00:00, 73.4MB/s]
+ 98%|██████████████████████████████████████▏| 597M/611M [00:08&lt;00:00, 73.4MB/s]
+ 99%|██████████████████████████████████████▌| 604M/611M [00:08&lt;00:00, 73.6MB/s]
   0%|                                               | 0.00/611M [00:00&lt;?, ?B/s]
-100%|███████████████████████████████████████| 611M/611M [00:00&lt;00:00, 1.85TB/s]
+100%|███████████████████████████████████████| 611M/611M [00:00&lt;00:00, 1.36TB/s]
 Attempting to create new mne-python configuration file:
 /github/home/.mne/mne-python.json
 Opening raw data file /github/home/mne_data/MNE-somato-data/sub-01/meg/sub-01_task-somato_meg.fif...
@@ -705,10 +595,10 @@ Using data from preloaded Raw for 111 events and 1803 original time points ...
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>./github/workspace/alphacsc/utils/optim.py:136: DeprecationWarning: Please use `scalar_search_armijo` from the `scipy.optimize` namespace, the `scipy.optimize.linesearch` namespace is deprecated.
   step_size, obj_uv = optimize.linesearch.scalar_search_armijo(
 .............
-[BatchCDL] Converged after 14 iteration, (dz, du) = 8.570e-05, 8.726e-05
-[BatchCDL] Fit in 857.6s
+[BatchCDL] Converged after 14 iteration, (dz, du) = 8.765e-05, 8.726e-05
+[BatchCDL] Fit in 881.7s
 
-&lt;alphacsc.convolutional_dictionary_learning.BatchCDL object at 0x7ffbd0246af0&gt;
+&lt;alphacsc.convolutional_dictionary_learning.BatchCDL object at 0x7fab9e8d90d0&gt;
 </pre></div>
 </div>
 <p>Display the 4-th atom, which displays a <span class="math notranslate nohighlight">\(\mu\)</span>-waveform in its temporal
@@ -749,7 +639,7 @@ pattern.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_somato_mu_waves_001.png" srcset="../../_images/sphx_glr_plot_somato_mu_waves_001.png" alt="Learned spatial pattern, Learned temporal waveform, Power Spectral Density" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 14 minutes  57.406 seconds)</p>
+<img src="../../_images/sphx_glr_plot_somato_mu_waves_001.png" srcset="../../_images/sphx_glr_plot_somato_mu_waves_001.png" alt="Learned spatial pattern, Learned temporal waveform, Power Spectral Density" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 15 minutes  14.024 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-somato-mu-waves-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/809f9c170688e8d6832319a2470e8039/plot_somato_mu_waves.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_somato_mu_waves.py</span></code></a></p>
@@ -770,7 +660,7 @@ pattern.</p>
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
   <a class='left-prev' id="prev-link" href="index.html" title="previous page">
-      <i class="fas fa-angle-left"></i>
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
           <p class="prev-next-title">Multivariate CSC with rank 1 constraints</p>
@@ -781,7 +671,7 @@ pattern.</p>
       <p class="prev-next-subtitle">next</p>
       <p class="prev-next-title">Extracting artifact and evoked response atoms from the MNE sample dataset</p>
   </div>
-  <i class="fas fa-angle-right"></i>
+  <i class="fa-solid fa-angle-right"></i>
   </a>
 </div>
             </footer>
@@ -794,13 +684,18 @@ pattern.</p>
               
 <div class="toc-item">
   
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
 </div>
 
 <div class="toc-item">
   
 <div class="tocsection sourcelink">
     <a href="../../_sources/auto_examples/multicsc/plot_somato_mu_waves.rst.txt">
-        <i class="fas fa-file-alt"></i> Show Source
+        <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
 </div>
 
@@ -825,7 +720,7 @@ pattern.</p>
     
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
 
   <footer class="bd-footer"><div class="bd-footer__inner container">
   
@@ -842,7 +737,7 @@ pattern.</p>
   <div class="footer-item">
     
 <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
 </p>
 
   </div>

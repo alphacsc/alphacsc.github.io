@@ -12,8 +12,8 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=9b1a4fa89bdd0e95b23b" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
 
   
   <link rel="stylesheet"
@@ -22,6 +22,8 @@
     href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
@@ -30,16 +32,17 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/multicsc/plot_sample_evoked_response';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_switcher_json_url = '/stable/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://alphacsc.github.io/stable/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -67,7 +70,7 @@
     <div class="search-button__search-container">
       
 <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
+  <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form>
@@ -77,7 +80,7 @@
   
   <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fas fa-bars"></span>
+      <span class="fa-solid fa-bars"></span>
   </label>
   <div id="navbar-start">
     
@@ -143,8 +146,8 @@
     <div id="navbar-end">
       <div class="navbar-end-item navbar-end__search-button-container">
         
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
-  <i class="fas fa-search"></i>
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
 </button>
       </div>
       
@@ -169,7 +172,8 @@
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+          
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -179,7 +183,8 @@
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank"><span><i class="fas fa-box"></i></span>
+          
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fas fa-box"></i></span>
             <label class="sr-only">PyPI</label></a>
         </li>
       </ul>
@@ -191,14 +196,14 @@
 
   
   <div class="search-button-container--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search">
-  <i class="fas fa-search"></i>
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
 </button>
   </div>
 
   
   <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fas fa-outdent"></span>
+      <span class="fa-solid fa-outdent"></span>
   </label>
   
 
@@ -276,7 +281,8 @@
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank"><span><i class="fab fa-github-square"></i></span>
+          
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
@@ -286,7 +292,8 @@
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank"><span><i class="fas fa-box"></i></span>
+          
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fas fa-box"></i></span>
             <label class="sr-only">PyPI</label></a>
         </li>
       </ul>
@@ -304,130 +311,33 @@
   </p>
   <div class="bd-toc-item navbar-nav">
     <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../csc/index.html">
-   Univariate CSC
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../csc/plot_simulate_randomstate.html">
-     Selecting random state for CSC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../csc/plot_lfp_data.html">
-     CSC to learn LFP spiking atoms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../csc/plot_cross_frequency_coupling.html">
-     Extracting cross-frequency coupling waveforms from rodent LFP data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../csc/plot_simulate_csc.html">
-     Vanilla CSC on simulated data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../dicodile/index.html">
-   Univariate and Multivariate CSC with ‘dicodile’ solver
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../dicodile/plot_gait.html">
-     Gait (steps) example
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
-   Multivariate CSC with rank 1 constraints
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="plot_somato_mu_waves.html">
-     Extracting
-     <span class="math notranslate nohighlight">
-      \(\mu\)
-     </span>
-     -wave from the somato-sensory dataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sample_evoked_response_dicodile.html">
-     Extracting artifact and evoked response atoms from the MNE sample dataset
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Extracting artifact and evoked response atoms from the sample dataset
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../noise_alpha/index.html">
-   Univariate CSC with an alpha-stable distribution
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../noise_alpha/plot_simulate_alphacsc.html">
-     Alpha CSC on simulated data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../noise_alpha/plot_empirical_strong_artifacts.html">
-     Alpha CSC on empirical time-series with strong artifacts
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../other/index.html">
-   Other shift-invariant dictionary learning algorithms
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label class="toctree-toggle" for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../other/plot_simulate_motif.html">
-     MoTIF on simulated data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../other/plot_simulate_swm.html">
-     SWM on simulated data
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../csc/index.html">Univariate CSC</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../csc/plot_simulate_randomstate.html">Selecting random state for CSC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../csc/plot_lfp_data.html">CSC to learn LFP spiking atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../csc/plot_cross_frequency_coupling.html">Extracting cross-frequency coupling waveforms from rodent LFP data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../csc/plot_simulate_csc.html">Vanilla CSC on simulated data</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dicodile/index.html">Univariate and Multivariate CSC with ‘dicodile’ solver</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dicodile/plot_gait.html">Gait (steps) example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Multivariate CSC with rank 1 constraints</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plot_somato_mu_waves.html">Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_evoked_response_dicodile.html">Extracting artifact and evoked response atoms from the MNE sample dataset</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Extracting artifact and evoked response atoms from the sample dataset</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../noise_alpha/index.html">Univariate CSC with an alpha-stable distribution</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../noise_alpha/plot_simulate_alphacsc.html">Alpha CSC on simulated data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../noise_alpha/plot_empirical_strong_artifacts.html">Alpha CSC on empirical time-series with strong artifacts</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../other/index.html">Other shift-invariant dictionary learning algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../other/plot_simulate_motif.html">MoTIF on simulated data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../other/plot_simulate_swm.html">SWM on simulated data</a></li>
+</ul>
+</li>
 </ul>
 
   </div>
@@ -548,9 +458,9 @@ object and select the gradiometers from the signal.</p>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading the data...&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data_path</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path" class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s2">&quot;subjects&quot;</span><span class="p">)</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_dir</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">)</span>
+<a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path" class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">()</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a><span class="p">,</span> <span class="s2">&quot;subjects&quot;</span><span class="p">)</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_dir</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">)</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">file_name</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_dir</span></a><span class="p">,</span> <span class="s1">&#39;sample_audvis_raw.fif&#39;</span><span class="p">)</span>
 <a href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">raw</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.io.read_raw_fif.html#mne.io.read_raw_fif" title="mne.io.read_raw_fif" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">file_name</span></a><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <a href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.pick_types" title="mne.io.Raw.pick_types" class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method"><span class="n">raw</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">meg</span><span class="o">=</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -560,260 +470,243 @@ object and select the gradiometers from the signal.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading the data...Using default location ~/mne_data for sample...
 
   0%|                                              | 0.00/1.65G [00:00&lt;?, ?B/s]
-  0%|                                      | 313k/1.65G [00:00&lt;08:49, 3.12MB/s]
-  0%|                                     | 4.33M/1.65G [00:00&lt;01:06, 24.9MB/s]
-  1%|▏                                    | 10.7M/1.65G [00:00&lt;00:38, 42.7MB/s]
-  1%|▍                                    | 17.3M/1.65G [00:00&lt;00:31, 51.8MB/s]
-  1%|▌                                    | 23.8M/1.65G [00:00&lt;00:28, 56.4MB/s]
-  2%|▋                                    | 30.3M/1.65G [00:00&lt;00:27, 59.4MB/s]
-  2%|▊                                    | 36.8M/1.65G [00:00&lt;00:26, 61.4MB/s]
-  3%|▉                                    | 43.4M/1.65G [00:00&lt;00:25, 62.7MB/s]
-  3%|█                                    | 49.9M/1.65G [00:00&lt;00:25, 63.6MB/s]
-  3%|█▎                                   | 56.6M/1.65G [00:01&lt;00:24, 64.5MB/s]
-  4%|█▍                                   | 63.1M/1.65G [00:01&lt;00:24, 64.7MB/s]
-  4%|█▌                                   | 69.7M/1.65G [00:01&lt;00:24, 64.9MB/s]
-  5%|█▋                                   | 76.2M/1.65G [00:01&lt;00:24, 65.2MB/s]
-  5%|█▊                                   | 82.9M/1.65G [00:01&lt;00:23, 65.5MB/s]
-  5%|██                                   | 89.5M/1.65G [00:01&lt;00:23, 65.7MB/s]
-  6%|██▏                                  | 96.1M/1.65G [00:01&lt;00:23, 65.8MB/s]
-  6%|██▎                                   | 103M/1.65G [00:01&lt;00:23, 65.6MB/s]
-  7%|██▌                                   | 109M/1.65G [00:01&lt;00:23, 65.6MB/s]
-  7%|██▋                                   | 116M/1.65G [00:01&lt;00:23, 65.6MB/s]
-  7%|██▊                                   | 122M/1.65G [00:02&lt;00:23, 65.6MB/s]
-  8%|██▉                                   | 129M/1.65G [00:02&lt;00:23, 65.4MB/s]
-  8%|███                                   | 135M/1.65G [00:02&lt;00:23, 65.4MB/s]
-  9%|███▎                                  | 142M/1.65G [00:02&lt;00:23, 65.2MB/s]
-  9%|███▍                                  | 149M/1.65G [00:02&lt;00:23, 65.3MB/s]
-  9%|███▌                                  | 155M/1.65G [00:02&lt;00:22, 65.3MB/s]
- 10%|███▋                                  | 162M/1.65G [00:02&lt;00:22, 65.3MB/s]
- 10%|███▊                                  | 168M/1.65G [00:02&lt;00:22, 65.3MB/s]
- 11%|████                                  | 175M/1.65G [00:02&lt;00:22, 65.7MB/s]
- 11%|████▏                                 | 181M/1.65G [00:02&lt;00:22, 65.2MB/s]
- 11%|████▎                                 | 188M/1.65G [00:03&lt;00:22, 65.2MB/s]
- 12%|████▍                                 | 194M/1.65G [00:03&lt;00:22, 65.3MB/s]
- 12%|████▌                                 | 201M/1.65G [00:03&lt;00:22, 65.4MB/s]
- 13%|████▊                                 | 208M/1.65G [00:03&lt;00:22, 65.4MB/s]
- 13%|████▉                                 | 214M/1.65G [00:03&lt;00:21, 65.5MB/s]
- 13%|█████                                 | 221M/1.65G [00:03&lt;00:21, 65.6MB/s]
- 14%|█████▏                                | 227M/1.65G [00:03&lt;00:21, 65.4MB/s]
- 14%|█████▍                                | 234M/1.65G [00:03&lt;00:21, 65.5MB/s]
- 15%|█████▌                                | 240M/1.65G [00:03&lt;00:21, 65.5MB/s]
- 15%|█████▋                                | 247M/1.65G [00:03&lt;00:21, 65.4MB/s]
- 15%|█████▊                                | 253M/1.65G [00:04&lt;00:21, 65.4MB/s]
- 16%|█████▉                                | 260M/1.65G [00:04&lt;00:21, 65.4MB/s]
- 16%|██████▏                               | 267M/1.65G [00:04&lt;00:21, 65.9MB/s]
- 17%|██████▎                               | 273M/1.65G [00:04&lt;00:21, 65.6MB/s]
- 17%|██████▍                               | 280M/1.65G [00:04&lt;00:21, 65.2MB/s]
- 17%|██████▌                               | 286M/1.65G [00:04&lt;00:20, 65.5MB/s]
- 18%|██████▋                               | 293M/1.65G [00:04&lt;00:20, 65.5MB/s]
- 18%|██████▉                               | 300M/1.65G [00:04&lt;00:20, 65.5MB/s]
- 19%|███████                               | 306M/1.65G [00:04&lt;00:20, 65.4MB/s]
- 19%|███████▏                              | 313M/1.65G [00:04&lt;00:20, 65.5MB/s]
- 19%|███████▎                              | 319M/1.65G [00:05&lt;00:20, 65.4MB/s]
- 20%|███████▍                              | 326M/1.65G [00:05&lt;00:20, 65.5MB/s]
- 20%|███████▋                              | 332M/1.65G [00:05&lt;00:20, 65.5MB/s]
- 21%|███████▊                              | 339M/1.65G [00:05&lt;00:20, 65.4MB/s]
- 21%|███████▉                              | 346M/1.65G [00:05&lt;00:19, 66.0MB/s]
- 21%|████████                              | 352M/1.65G [00:05&lt;00:24, 53.1MB/s]
- 22%|████████▏                             | 359M/1.65G [00:05&lt;00:23, 56.1MB/s]
- 22%|████████▍                             | 365M/1.65G [00:05&lt;00:22, 58.2MB/s]
- 22%|████████▌                             | 372M/1.65G [00:05&lt;00:21, 60.3MB/s]
- 23%|████████▋                             | 378M/1.65G [00:05&lt;00:20, 61.7MB/s]
- 23%|████████▊                             | 385M/1.65G [00:06&lt;00:20, 62.9MB/s]
- 24%|████████▉                             | 391M/1.65G [00:06&lt;00:19, 63.7MB/s]
- 24%|█████████▏                            | 398M/1.65G [00:06&lt;00:19, 64.2MB/s]
- 24%|█████████▎                            | 405M/1.65G [00:06&lt;00:19, 64.7MB/s]
- 25%|█████████▍                            | 411M/1.65G [00:06&lt;00:19, 64.9MB/s]
- 25%|█████████▌                            | 418M/1.65G [00:06&lt;00:18, 65.1MB/s]
- 26%|█████████▊                            | 424M/1.65G [00:06&lt;00:18, 65.6MB/s]
- 26%|█████████▉                            | 431M/1.65G [00:06&lt;00:18, 65.5MB/s]
- 26%|██████████                            | 437M/1.65G [00:06&lt;00:18, 65.1MB/s]
- 27%|██████████▏                           | 444M/1.65G [00:06&lt;00:18, 65.1MB/s]
- 27%|██████████▎                           | 450M/1.65G [00:07&lt;00:18, 65.2MB/s]
- 28%|██████████▌                           | 457M/1.65G [00:07&lt;00:18, 65.3MB/s]
- 28%|██████████▋                           | 464M/1.65G [00:07&lt;00:18, 65.3MB/s]
- 28%|██████████▊                           | 470M/1.65G [00:07&lt;00:18, 65.3MB/s]
- 29%|██████████▉                           | 477M/1.65G [00:07&lt;00:18, 65.3MB/s]
- 29%|███████████                           | 483M/1.65G [00:07&lt;00:17, 65.4MB/s]
- 30%|███████████▎                          | 490M/1.65G [00:07&lt;00:17, 65.3MB/s]
- 30%|███████████▍                          | 496M/1.65G [00:07&lt;00:17, 65.3MB/s]
- 30%|███████████▌                          | 503M/1.65G [00:07&lt;00:17, 65.3MB/s]
- 31%|███████████▋                          | 509M/1.65G [00:07&lt;00:17, 65.4MB/s]
- 31%|███████████▊                          | 516M/1.65G [00:08&lt;00:17, 65.3MB/s]
- 32%|████████████                          | 523M/1.65G [00:08&lt;00:17, 65.5MB/s]
- 32%|████████████▏                         | 529M/1.65G [00:08&lt;00:17, 65.5MB/s]
- 32%|████████████▎                         | 536M/1.65G [00:08&lt;00:17, 65.5MB/s]
- 33%|████████████▍                         | 542M/1.65G [00:08&lt;00:16, 65.5MB/s]
- 33%|████████████▌                         | 549M/1.65G [00:08&lt;00:16, 65.7MB/s]
- 34%|████████████▊                         | 556M/1.65G [00:08&lt;00:16, 66.1MB/s]
- 34%|████████████▉                         | 562M/1.65G [00:08&lt;00:16, 65.7MB/s]
- 34%|█████████████                         | 569M/1.65G [00:08&lt;00:16, 65.5MB/s]
- 35%|█████████████▏                        | 575M/1.65G [00:09&lt;00:16, 65.7MB/s]
- 35%|█████████████▍                        | 582M/1.65G [00:09&lt;00:16, 66.0MB/s]
- 36%|█████████████▌                        | 589M/1.65G [00:09&lt;00:16, 65.9MB/s]
- 36%|█████████████▋                        | 595M/1.65G [00:09&lt;00:16, 65.9MB/s]
- 36%|█████████████▊                        | 602M/1.65G [00:09&lt;00:15, 66.1MB/s]
- 37%|█████████████▉                        | 608M/1.65G [00:09&lt;00:15, 65.7MB/s]
- 37%|██████████████▏                       | 615M/1.65G [00:09&lt;00:15, 65.7MB/s]
- 38%|██████████████▎                       | 622M/1.65G [00:09&lt;00:15, 65.6MB/s]
- 38%|██████████████▍                       | 628M/1.65G [00:09&lt;00:15, 65.4MB/s]
- 38%|██████████████▌                       | 635M/1.65G [00:09&lt;00:15, 65.3MB/s]
- 39%|██████████████▋                       | 641M/1.65G [00:10&lt;00:15, 65.4MB/s]
- 39%|██████████████▉                       | 648M/1.65G [00:10&lt;00:15, 65.8MB/s]
- 40%|███████████████                       | 655M/1.65G [00:10&lt;00:15, 65.4MB/s]
- 40%|███████████████▏                      | 661M/1.65G [00:10&lt;00:15, 65.4MB/s]
- 40%|███████████████▎                      | 668M/1.65G [00:10&lt;00:15, 65.4MB/s]
- 41%|███████████████▌                      | 674M/1.65G [00:10&lt;00:14, 65.4MB/s]
- 41%|███████████████▋                      | 681M/1.65G [00:10&lt;00:14, 65.8MB/s]
- 42%|███████████████▊                      | 687M/1.65G [00:10&lt;00:14, 65.5MB/s]
- 42%|███████████████▉                      | 694M/1.65G [00:10&lt;00:14, 65.2MB/s]
- 42%|████████████████                      | 701M/1.65G [00:10&lt;00:14, 65.3MB/s]
- 43%|████████████████▎                     | 707M/1.65G [00:11&lt;00:14, 65.4MB/s]
- 43%|████████████████▍                     | 714M/1.65G [00:11&lt;00:14, 65.4MB/s]
- 44%|████████████████▌                     | 720M/1.65G [00:11&lt;00:14, 65.4MB/s]
- 44%|████████████████▋                     | 727M/1.65G [00:11&lt;00:14, 65.4MB/s]
- 44%|████████████████▊                     | 733M/1.65G [00:11&lt;00:14, 65.5MB/s]
- 45%|█████████████████                     | 740M/1.65G [00:11&lt;00:13, 65.5MB/s]
- 45%|█████████████████▏                    | 746M/1.65G [00:11&lt;00:13, 65.4MB/s]
- 46%|█████████████████▎                    | 753M/1.65G [00:11&lt;00:13, 65.3MB/s]
- 46%|█████████████████▍                    | 760M/1.65G [00:11&lt;00:13, 65.4MB/s]
- 46%|█████████████████▌                    | 766M/1.65G [00:11&lt;00:13, 65.4MB/s]
- 47%|█████████████████▊                    | 773M/1.65G [00:12&lt;00:13, 65.4MB/s]
- 47%|█████████████████▉                    | 779M/1.65G [00:12&lt;00:13, 65.4MB/s]
- 48%|██████████████████                    | 786M/1.65G [00:12&lt;00:13, 65.5MB/s]
- 48%|██████████████████▏                   | 792M/1.65G [00:12&lt;00:13, 65.7MB/s]
- 48%|██████████████████▎                   | 799M/1.65G [00:12&lt;00:12, 65.8MB/s]
- 49%|██████████████████▌                   | 806M/1.65G [00:12&lt;00:12, 65.7MB/s]
- 49%|██████████████████▋                   | 812M/1.65G [00:12&lt;00:12, 65.7MB/s]
- 50%|██████████████████▊                   | 819M/1.65G [00:12&lt;00:12, 65.8MB/s]
- 50%|██████████████████▉                   | 825M/1.65G [00:12&lt;00:12, 65.7MB/s]
- 50%|███████████████████▏                  | 832M/1.65G [00:12&lt;00:12, 65.7MB/s]
- 51%|███████████████████▎                  | 838M/1.65G [00:13&lt;00:12, 65.7MB/s]
- 51%|███████████████████▍                  | 845M/1.65G [00:13&lt;00:12, 65.8MB/s]
- 52%|███████████████████▌                  | 852M/1.65G [00:13&lt;00:12, 65.8MB/s]
- 52%|███████████████████▋                  | 858M/1.65G [00:13&lt;00:12, 65.7MB/s]
- 52%|███████████████████▉                  | 865M/1.65G [00:13&lt;00:12, 65.7MB/s]
- 53%|████████████████████                  | 871M/1.65G [00:13&lt;00:11, 65.6MB/s]
- 53%|████████████████████▏                 | 878M/1.65G [00:13&lt;00:11, 66.1MB/s]
- 54%|████████████████████▎                 | 885M/1.65G [00:13&lt;00:12, 62.9MB/s]
- 54%|████████████████████▍                 | 891M/1.65G [00:13&lt;00:14, 52.7MB/s]
- 54%|████████████████████▋                 | 898M/1.65G [00:13&lt;00:13, 56.0MB/s]
- 55%|████████████████████▊                 | 904M/1.65G [00:14&lt;00:12, 58.2MB/s]
- 55%|████████████████████▉                 | 911M/1.65G [00:14&lt;00:12, 60.4MB/s]
- 55%|█████████████████████                 | 917M/1.65G [00:14&lt;00:11, 61.8MB/s]
- 56%|█████████████████████▏                | 924M/1.65G [00:14&lt;00:11, 63.1MB/s]
- 56%|█████████████████████▍                | 930M/1.65G [00:14&lt;00:11, 63.9MB/s]
- 57%|█████████████████████▌                | 937M/1.65G [00:14&lt;00:11, 64.4MB/s]
- 57%|█████████████████████▋                | 943M/1.65G [00:14&lt;00:10, 64.8MB/s]
- 57%|█████████████████████▊                | 950M/1.65G [00:14&lt;00:10, 65.2MB/s]
- 58%|█████████████████████▉                | 957M/1.65G [00:14&lt;00:10, 65.4MB/s]
- 58%|██████████████████████▏               | 963M/1.65G [00:15&lt;00:10, 65.9MB/s]
- 59%|██████████████████████▎               | 970M/1.65G [00:15&lt;00:10, 65.8MB/s]
- 59%|██████████████████████▍               | 977M/1.65G [00:15&lt;00:10, 65.5MB/s]
- 59%|██████████████████████▌               | 983M/1.65G [00:15&lt;00:10, 65.6MB/s]
- 60%|██████████████████████▊               | 990M/1.65G [00:15&lt;00:10, 65.7MB/s]
- 60%|██████████████████████▉               | 996M/1.65G [00:15&lt;00:09, 65.8MB/s]
- 61%|██████████████████████▍              | 1.00G/1.65G [00:15&lt;00:09, 65.9MB/s]
- 61%|██████████████████████▌              | 1.01G/1.65G [00:15&lt;00:09, 65.9MB/s]
- 61%|██████████████████████▋              | 1.02G/1.65G [00:15&lt;00:09, 66.0MB/s]
- 62%|██████████████████████▉              | 1.02G/1.65G [00:15&lt;00:09, 65.9MB/s]
- 62%|███████████████████████              | 1.03G/1.65G [00:16&lt;00:09, 66.0MB/s]
- 63%|███████████████████████▏             | 1.04G/1.65G [00:16&lt;00:09, 66.1MB/s]
- 63%|███████████████████████▎             | 1.04G/1.65G [00:16&lt;00:09, 66.0MB/s]
- 63%|███████████████████████▍             | 1.05G/1.65G [00:16&lt;00:09, 66.0MB/s]
- 64%|███████████████████████▋             | 1.06G/1.65G [00:16&lt;00:09, 66.0MB/s]
- 64%|███████████████████████▊             | 1.06G/1.65G [00:16&lt;00:08, 65.9MB/s]
- 65%|███████████████████████▉             | 1.07G/1.65G [00:16&lt;00:08, 66.0MB/s]
- 65%|████████████████████████             | 1.08G/1.65G [00:16&lt;00:08, 66.0MB/s]
- 65%|████████████████████████▏            | 1.08G/1.65G [00:16&lt;00:08, 66.1MB/s]
- 66%|████████████████████████▍            | 1.09G/1.65G [00:16&lt;00:08, 65.9MB/s]
- 66%|████████████████████████▌            | 1.10G/1.65G [00:17&lt;00:08, 66.0MB/s]
- 67%|████████████████████████▋            | 1.10G/1.65G [00:17&lt;00:08, 66.0MB/s]
- 67%|████████████████████████▊            | 1.11G/1.65G [00:17&lt;00:08, 66.1MB/s]
- 67%|████████████████████████▉            | 1.12G/1.65G [00:17&lt;00:08, 66.0MB/s]
- 68%|█████████████████████████            | 1.12G/1.65G [00:17&lt;00:08, 66.0MB/s]
- 68%|█████████████████████████▎           | 1.13G/1.65G [00:17&lt;00:07, 66.0MB/s]
- 69%|█████████████████████████▍           | 1.14G/1.65G [00:17&lt;00:07, 66.1MB/s]
- 69%|█████████████████████████▌           | 1.14G/1.65G [00:17&lt;00:07, 66.1MB/s]
- 69%|█████████████████████████▋           | 1.15G/1.65G [00:17&lt;00:07, 66.1MB/s]
- 70%|█████████████████████████▊           | 1.15G/1.65G [00:17&lt;00:07, 66.1MB/s]
- 70%|██████████████████████████           | 1.16G/1.65G [00:18&lt;00:07, 66.1MB/s]
- 71%|██████████████████████████▏          | 1.17G/1.65G [00:18&lt;00:07, 66.0MB/s]
- 71%|██████████████████████████▎          | 1.17G/1.65G [00:18&lt;00:07, 65.8MB/s]
- 71%|██████████████████████████▍          | 1.18G/1.65G [00:18&lt;00:07, 65.9MB/s]
- 72%|██████████████████████████▌          | 1.19G/1.65G [00:18&lt;00:07, 65.9MB/s]
- 72%|██████████████████████████▋          | 1.19G/1.65G [00:18&lt;00:06, 65.9MB/s]
- 73%|██████████████████████████▉          | 1.20G/1.65G [00:18&lt;00:06, 65.9MB/s]
- 73%|███████████████████████████          | 1.21G/1.65G [00:18&lt;00:06, 66.0MB/s]
- 73%|███████████████████████████▏         | 1.21G/1.65G [00:18&lt;00:06, 65.9MB/s]
- 74%|███████████████████████████▎         | 1.22G/1.65G [00:18&lt;00:06, 65.9MB/s]
- 74%|███████████████████████████▍         | 1.23G/1.65G [00:19&lt;00:06, 66.0MB/s]
- 75%|███████████████████████████▋         | 1.23G/1.65G [00:19&lt;00:06, 66.0MB/s]
- 75%|███████████████████████████▊         | 1.24G/1.65G [00:19&lt;00:06, 66.0MB/s]
- 75%|███████████████████████████▉         | 1.25G/1.65G [00:19&lt;00:06, 65.9MB/s]
- 76%|████████████████████████████         | 1.25G/1.65G [00:19&lt;00:06, 65.8MB/s]
- 76%|████████████████████████████▏        | 1.26G/1.65G [00:19&lt;00:05, 65.9MB/s]
- 77%|████████████████████████████▎        | 1.27G/1.65G [00:19&lt;00:05, 65.9MB/s]
- 77%|████████████████████████████▌        | 1.27G/1.65G [00:19&lt;00:05, 66.0MB/s]
- 77%|████████████████████████████▋        | 1.28G/1.65G [00:19&lt;00:05, 66.5MB/s]
- 78%|████████████████████████████▊        | 1.29G/1.65G [00:19&lt;00:06, 55.6MB/s]
- 78%|████████████████████████████▉        | 1.29G/1.65G [00:20&lt;00:06, 56.9MB/s]
- 79%|█████████████████████████████        | 1.30G/1.65G [00:20&lt;00:06, 58.8MB/s]
- 79%|█████████████████████████████▏       | 1.31G/1.65G [00:20&lt;00:05, 60.9MB/s]
- 79%|█████████████████████████████▍       | 1.31G/1.65G [00:20&lt;00:05, 62.3MB/s]
- 80%|█████████████████████████████▌       | 1.32G/1.65G [00:20&lt;00:05, 63.4MB/s]
- 80%|█████████████████████████████▋       | 1.33G/1.65G [00:20&lt;00:05, 64.1MB/s]
- 81%|█████████████████████████████▊       | 1.33G/1.65G [00:20&lt;00:04, 64.6MB/s]
- 81%|█████████████████████████████▉       | 1.34G/1.65G [00:20&lt;00:04, 65.0MB/s]
- 81%|██████████████████████████████▏      | 1.35G/1.65G [00:20&lt;00:04, 65.2MB/s]
- 82%|██████████████████████████████▎      | 1.35G/1.65G [00:20&lt;00:04, 65.5MB/s]
- 82%|██████████████████████████████▍      | 1.36G/1.65G [00:21&lt;00:04, 65.6MB/s]
- 83%|██████████████████████████████▌      | 1.37G/1.65G [00:21&lt;00:04, 65.7MB/s]
- 83%|██████████████████████████████▋      | 1.37G/1.65G [00:21&lt;00:04, 65.7MB/s]
- 83%|██████████████████████████████▊      | 1.38G/1.65G [00:21&lt;00:04, 65.8MB/s]
- 84%|███████████████████████████████      | 1.39G/1.65G [00:21&lt;00:04, 65.8MB/s]
- 84%|███████████████████████████████▏     | 1.39G/1.65G [00:21&lt;00:03, 65.8MB/s]
- 85%|███████████████████████████████▎     | 1.40G/1.65G [00:21&lt;00:03, 65.8MB/s]
- 85%|███████████████████████████████▍     | 1.41G/1.65G [00:21&lt;00:03, 65.9MB/s]
- 85%|███████████████████████████████▌     | 1.41G/1.65G [00:21&lt;00:03, 65.9MB/s]
- 86%|███████████████████████████████▊     | 1.42G/1.65G [00:21&lt;00:03, 66.0MB/s]
- 86%|███████████████████████████████▉     | 1.43G/1.65G [00:22&lt;00:03, 66.1MB/s]
- 87%|████████████████████████████████     | 1.43G/1.65G [00:22&lt;00:03, 66.1MB/s]
- 87%|████████████████████████████████▏    | 1.44G/1.65G [00:22&lt;00:03, 65.8MB/s]
- 87%|████████████████████████████████▎    | 1.44G/1.65G [00:22&lt;00:03, 65.9MB/s]
- 88%|████████████████████████████████▍    | 1.45G/1.65G [00:22&lt;00:03, 65.9MB/s]
- 88%|████████████████████████████████▋    | 1.46G/1.65G [00:22&lt;00:02, 65.9MB/s]
- 89%|████████████████████████████████▊    | 1.46G/1.65G [00:22&lt;00:02, 65.9MB/s]
- 89%|████████████████████████████████▉    | 1.47G/1.65G [00:22&lt;00:02, 65.9MB/s]
- 89%|█████████████████████████████████    | 1.48G/1.65G [00:22&lt;00:02, 65.7MB/s]
- 90%|█████████████████████████████████▏   | 1.48G/1.65G [00:23&lt;00:03, 46.0MB/s]
- 90%|█████████████████████████████████▎   | 1.49G/1.65G [00:23&lt;00:03, 49.3MB/s]
- 91%|█████████████████████████████████▌   | 1.50G/1.65G [00:23&lt;00:02, 53.2MB/s]
- 91%|█████████████████████████████████▋   | 1.50G/1.65G [00:23&lt;00:02, 56.7MB/s]
- 91%|█████████████████████████████████▊   | 1.51G/1.65G [00:23&lt;00:02, 59.3MB/s]
- 92%|█████████████████████████████████▉   | 1.52G/1.65G [00:23&lt;00:02, 61.4MB/s]
- 92%|██████████████████████████████████   | 1.52G/1.65G [00:23&lt;00:02, 62.8MB/s]
- 93%|██████████████████████████████████▎  | 1.53G/1.65G [00:23&lt;00:01, 63.9MB/s]
- 93%|██████████████████████████████████▍  | 1.54G/1.65G [00:23&lt;00:01, 64.6MB/s]
- 93%|██████████████████████████████████▌  | 1.54G/1.65G [00:24&lt;00:01, 65.2MB/s]
- 94%|██████████████████████████████████▋  | 1.55G/1.65G [00:24&lt;00:01, 65.5MB/s]
- 94%|██████████████████████████████████▊  | 1.56G/1.65G [00:24&lt;00:01, 65.8MB/s]
- 95%|██████████████████████████████████▉  | 1.56G/1.65G [00:24&lt;00:01, 65.9MB/s]
- 95%|███████████████████████████████████▏ | 1.57G/1.65G [00:24&lt;00:01, 66.1MB/s]
- 95%|███████████████████████████████████▎ | 1.58G/1.65G [00:24&lt;00:01, 66.1MB/s]
- 96%|███████████████████████████████████▍ | 1.58G/1.65G [00:24&lt;00:01, 66.3MB/s]
- 96%|███████████████████████████████████▌ | 1.59G/1.65G [00:24&lt;00:00, 66.5MB/s]
- 97%|███████████████████████████████████▋ | 1.60G/1.65G [00:24&lt;00:00, 66.5MB/s]
- 97%|███████████████████████████████████▉ | 1.60G/1.65G [00:24&lt;00:00, 66.4MB/s]
- 97%|████████████████████████████████████ | 1.61G/1.65G [00:25&lt;00:00, 66.4MB/s]
- 98%|████████████████████████████████████▏| 1.62G/1.65G [00:25&lt;00:00, 66.5MB/s]
- 98%|████████████████████████████████████▎| 1.62G/1.65G [00:25&lt;00:00, 66.6MB/s]
- 99%|████████████████████████████████████▍| 1.63G/1.65G [00:25&lt;00:00, 66.6MB/s]
- 99%|████████████████████████████████████▋| 1.64G/1.65G [00:25&lt;00:00, 66.6MB/s]
- 99%|████████████████████████████████████▊| 1.64G/1.65G [00:25&lt;00:00, 66.6MB/s]
-100%|████████████████████████████████████▉| 1.65G/1.65G [00:25&lt;00:00, 66.2MB/s]
+  0%|                                     | 4.51M/1.65G [00:00&lt;00:36, 45.1MB/s]
+  1%|▎                                    | 11.4M/1.65G [00:00&lt;00:27, 59.4MB/s]
+  1%|▍                                    | 18.4M/1.65G [00:00&lt;00:25, 64.2MB/s]
+  2%|▌                                    | 25.4M/1.65G [00:00&lt;00:24, 66.4MB/s]
+  2%|▋                                    | 32.4M/1.65G [00:00&lt;00:23, 67.7MB/s]
+  2%|▉                                    | 39.4M/1.65G [00:00&lt;00:23, 68.4MB/s]
+  3%|█                                    | 46.4M/1.65G [00:00&lt;00:23, 69.0MB/s]
+  3%|█▏                                   | 53.4M/1.65G [00:00&lt;00:23, 69.3MB/s]
+  4%|█▎                                   | 60.4M/1.65G [00:00&lt;00:22, 69.5MB/s]
+  4%|█▌                                   | 67.4M/1.65G [00:01&lt;00:22, 69.4MB/s]
+  5%|█▋                                   | 74.4M/1.65G [00:01&lt;00:22, 69.7MB/s]
+  5%|█▊                                   | 81.4M/1.65G [00:01&lt;00:22, 69.7MB/s]
+  5%|█▉                                   | 88.4M/1.65G [00:01&lt;00:22, 69.8MB/s]
+  6%|██▏                                  | 95.4M/1.65G [00:01&lt;00:22, 69.9MB/s]
+  6%|██▎                                   | 102M/1.65G [00:01&lt;00:22, 69.9MB/s]
+  7%|██▌                                   | 109M/1.65G [00:01&lt;00:22, 69.4MB/s]
+  7%|██▋                                   | 116M/1.65G [00:01&lt;00:22, 69.4MB/s]
+  7%|██▊                                   | 123M/1.65G [00:01&lt;00:21, 69.6MB/s]
+  8%|██▉                                   | 130M/1.65G [00:01&lt;00:21, 69.9MB/s]
+  8%|███▏                                  | 137M/1.65G [00:02&lt;00:21, 69.9MB/s]
+  9%|███▎                                  | 144M/1.65G [00:02&lt;00:21, 69.9MB/s]
+  9%|███▍                                  | 151M/1.65G [00:02&lt;00:21, 70.1MB/s]
+ 10%|███▋                                  | 158M/1.65G [00:02&lt;00:21, 70.1MB/s]
+ 10%|███▊                                  | 165M/1.65G [00:02&lt;00:21, 70.0MB/s]
+ 10%|███▉                                  | 172M/1.65G [00:02&lt;00:21, 70.1MB/s]
+ 11%|████▏                                 | 179M/1.65G [00:02&lt;00:21, 70.1MB/s]
+ 11%|████▎                                 | 187M/1.65G [00:02&lt;00:20, 70.0MB/s]
+ 12%|████▍                                 | 194M/1.65G [00:02&lt;00:20, 69.9MB/s]
+ 12%|████▌                                 | 201M/1.65G [00:02&lt;00:20, 70.1MB/s]
+ 13%|████▊                                 | 208M/1.65G [00:03&lt;00:20, 70.1MB/s]
+ 13%|████▉                                 | 215M/1.65G [00:03&lt;00:20, 70.0MB/s]
+ 13%|█████                                 | 222M/1.65G [00:03&lt;00:20, 70.1MB/s]
+ 14%|█████▎                                | 229M/1.65G [00:03&lt;00:20, 70.2MB/s]
+ 14%|█████▍                                | 236M/1.65G [00:03&lt;00:20, 70.1MB/s]
+ 15%|█████▌                                | 243M/1.65G [00:03&lt;00:20, 70.2MB/s]
+ 15%|█████▋                                | 250M/1.65G [00:03&lt;00:19, 70.2MB/s]
+ 16%|█████▉                                | 257M/1.65G [00:03&lt;00:19, 70.2MB/s]
+ 16%|██████                                | 264M/1.65G [00:03&lt;00:19, 70.1MB/s]
+ 16%|██████▏                               | 271M/1.65G [00:03&lt;00:19, 70.1MB/s]
+ 17%|██████▍                               | 278M/1.65G [00:04&lt;00:19, 70.3MB/s]
+ 17%|██████▌                               | 285M/1.65G [00:04&lt;00:19, 70.2MB/s]
+ 18%|██████▋                               | 292M/1.65G [00:04&lt;00:19, 70.3MB/s]
+ 18%|██████▊                               | 299M/1.65G [00:04&lt;00:19, 70.2MB/s]
+ 19%|███████                               | 306M/1.65G [00:04&lt;00:19, 70.1MB/s]
+ 19%|███████▏                              | 313M/1.65G [00:04&lt;00:19, 70.1MB/s]
+ 19%|███████▎                              | 320M/1.65G [00:04&lt;00:19, 70.0MB/s]
+ 20%|███████▌                              | 327M/1.65G [00:04&lt;00:18, 70.0MB/s]
+ 20%|███████▋                              | 334M/1.65G [00:04&lt;00:18, 70.2MB/s]
+ 21%|███████▊                              | 341M/1.65G [00:04&lt;00:18, 70.2MB/s]
+ 21%|████████                              | 348M/1.65G [00:05&lt;00:18, 70.1MB/s]
+ 21%|████████▏                             | 355M/1.65G [00:05&lt;00:21, 60.3MB/s]
+ 22%|████████▎                             | 361M/1.65G [00:05&lt;00:22, 57.6MB/s]
+ 22%|████████▍                             | 368M/1.65G [00:05&lt;00:21, 60.8MB/s]
+ 23%|████████▋                             | 375M/1.65G [00:05&lt;00:20, 63.3MB/s]
+ 23%|████████▊                             | 382M/1.65G [00:05&lt;00:19, 65.1MB/s]
+ 24%|████████▉                             | 389M/1.65G [00:05&lt;00:19, 66.5MB/s]
+ 24%|█████████                             | 396M/1.65G [00:05&lt;00:18, 67.5MB/s]
+ 24%|█████████▎                            | 403M/1.65G [00:05&lt;00:18, 68.3MB/s]
+ 25%|█████████▍                            | 410M/1.65G [00:05&lt;00:18, 68.7MB/s]
+ 25%|█████████▌                            | 417M/1.65G [00:06&lt;00:17, 69.0MB/s]
+ 26%|█████████▊                            | 424M/1.65G [00:06&lt;00:17, 69.2MB/s]
+ 26%|█████████▉                            | 431M/1.65G [00:06&lt;00:17, 69.5MB/s]
+ 27%|██████████                            | 438M/1.65G [00:06&lt;00:17, 69.6MB/s]
+ 27%|██████████▏                           | 445M/1.65G [00:06&lt;00:17, 69.9MB/s]
+ 27%|██████████▍                           | 452M/1.65G [00:06&lt;00:17, 70.0MB/s]
+ 28%|██████████▌                           | 459M/1.65G [00:06&lt;00:17, 70.1MB/s]
+ 28%|██████████▋                           | 466M/1.65G [00:06&lt;00:16, 70.0MB/s]
+ 29%|██████████▉                           | 473M/1.65G [00:06&lt;00:16, 70.2MB/s]
+ 29%|███████████                           | 480M/1.65G [00:06&lt;00:16, 70.1MB/s]
+ 29%|███████████▏                          | 487M/1.65G [00:07&lt;00:16, 70.2MB/s]
+ 30%|███████████▎                          | 495M/1.65G [00:07&lt;00:16, 70.3MB/s]
+ 30%|███████████▌                          | 502M/1.65G [00:07&lt;00:16, 70.1MB/s]
+ 31%|███████████▋                          | 509M/1.65G [00:07&lt;00:16, 70.2MB/s]
+ 31%|███████████▊                          | 516M/1.65G [00:07&lt;00:16, 70.2MB/s]
+ 32%|████████████                          | 523M/1.65G [00:07&lt;00:16, 70.1MB/s]
+ 32%|████████████▏                         | 530M/1.65G [00:07&lt;00:16, 70.0MB/s]
+ 32%|████████████▎                         | 537M/1.65G [00:07&lt;00:16, 69.2MB/s]
+ 33%|████████████▌                         | 544M/1.65G [00:07&lt;00:15, 69.6MB/s]
+ 33%|████████████▋                         | 551M/1.65G [00:07&lt;00:15, 69.8MB/s]
+ 34%|████████████▊                         | 558M/1.65G [00:08&lt;00:15, 69.8MB/s]
+ 34%|████████████▉                         | 565M/1.65G [00:08&lt;00:15, 69.8MB/s]
+ 35%|█████████████▏                        | 572M/1.65G [00:08&lt;00:15, 69.8MB/s]
+ 35%|█████████████▎                        | 579M/1.65G [00:08&lt;00:15, 69.9MB/s]
+ 35%|█████████████▍                        | 586M/1.65G [00:08&lt;00:15, 70.0MB/s]
+ 36%|█████████████▋                        | 593M/1.65G [00:08&lt;00:15, 70.0MB/s]
+ 36%|█████████████▊                        | 600M/1.65G [00:08&lt;00:15, 70.1MB/s]
+ 37%|█████████████▉                        | 607M/1.65G [00:08&lt;00:14, 70.2MB/s]
+ 37%|██████████████                        | 614M/1.65G [00:08&lt;00:14, 70.2MB/s]
+ 38%|██████████████▎                       | 621M/1.65G [00:08&lt;00:14, 70.2MB/s]
+ 38%|██████████████▍                       | 628M/1.65G [00:09&lt;00:14, 70.1MB/s]
+ 38%|██████████████▌                       | 635M/1.65G [00:09&lt;00:14, 70.1MB/s]
+ 39%|██████████████▊                       | 642M/1.65G [00:09&lt;00:14, 70.1MB/s]
+ 39%|██████████████▉                       | 649M/1.65G [00:09&lt;00:14, 70.1MB/s]
+ 40%|███████████████                       | 656M/1.65G [00:09&lt;00:14, 70.1MB/s]
+ 40%|███████████████▏                      | 663M/1.65G [00:09&lt;00:14, 70.0MB/s]
+ 41%|███████████████▍                      | 670M/1.65G [00:09&lt;00:14, 70.1MB/s]
+ 41%|███████████████▌                      | 677M/1.65G [00:09&lt;00:13, 70.1MB/s]
+ 41%|███████████████▋                      | 684M/1.65G [00:09&lt;00:13, 70.3MB/s]
+ 42%|███████████████▉                      | 691M/1.65G [00:09&lt;00:13, 70.2MB/s]
+ 42%|████████████████                      | 698M/1.65G [00:10&lt;00:13, 70.1MB/s]
+ 43%|████████████████▏                     | 705M/1.65G [00:10&lt;00:13, 70.2MB/s]
+ 43%|████████████████▎                     | 712M/1.65G [00:10&lt;00:13, 68.6MB/s]
+ 44%|████████████████▌                     | 719M/1.65G [00:10&lt;00:16, 56.5MB/s]
+ 44%|████████████████▋                     | 726M/1.65G [00:10&lt;00:15, 58.8MB/s]
+ 44%|████████████████▊                     | 733M/1.65G [00:10&lt;00:14, 61.8MB/s]
+ 45%|█████████████████                     | 740M/1.65G [00:10&lt;00:14, 64.0MB/s]
+ 45%|█████████████████▏                    | 747M/1.65G [00:10&lt;00:13, 65.7MB/s]
+ 46%|█████████████████▎                    | 754M/1.65G [00:10&lt;00:13, 67.0MB/s]
+ 46%|█████████████████▍                    | 761M/1.65G [00:11&lt;00:13, 67.9MB/s]
+ 46%|█████████████████▋                    | 768M/1.65G [00:11&lt;00:12, 68.5MB/s]
+ 47%|█████████████████▊                    | 775M/1.65G [00:11&lt;00:12, 69.1MB/s]
+ 47%|█████████████████▉                    | 782M/1.65G [00:11&lt;00:12, 69.3MB/s]
+ 48%|██████████████████▏                   | 789M/1.65G [00:11&lt;00:12, 69.5MB/s]
+ 48%|██████████████████▎                   | 796M/1.65G [00:11&lt;00:12, 69.8MB/s]
+ 49%|██████████████████▍                   | 803M/1.65G [00:11&lt;00:12, 70.0MB/s]
+ 49%|██████████████████▌                   | 810M/1.65G [00:11&lt;00:12, 70.1MB/s]
+ 49%|██████████████████▊                   | 817M/1.65G [00:11&lt;00:11, 70.2MB/s]
+ 50%|██████████████████▉                   | 824M/1.65G [00:11&lt;00:11, 70.2MB/s]
+ 50%|███████████████████                   | 831M/1.65G [00:12&lt;00:11, 70.2MB/s]
+ 51%|███████████████████▎                  | 838M/1.65G [00:12&lt;00:11, 70.1MB/s]
+ 51%|███████████████████▍                  | 845M/1.65G [00:12&lt;00:11, 70.1MB/s]
+ 52%|███████████████████▌                  | 852M/1.65G [00:12&lt;00:11, 70.2MB/s]
+ 52%|███████████████████▋                  | 859M/1.65G [00:12&lt;00:11, 70.2MB/s]
+ 52%|███████████████████▉                  | 866M/1.65G [00:12&lt;00:11, 70.3MB/s]
+ 53%|████████████████████                  | 873M/1.65G [00:12&lt;00:11, 70.2MB/s]
+ 53%|████████████████████▏                 | 880M/1.65G [00:12&lt;00:11, 70.2MB/s]
+ 54%|████████████████████▍                 | 887M/1.65G [00:12&lt;00:10, 70.2MB/s]
+ 54%|████████████████████▌                 | 894M/1.65G [00:12&lt;00:10, 70.5MB/s]
+ 55%|████████████████████▋                 | 901M/1.65G [00:13&lt;00:10, 70.4MB/s]
+ 55%|████████████████████▉                 | 908M/1.65G [00:13&lt;00:10, 70.5MB/s]
+ 55%|█████████████████████                 | 915M/1.65G [00:13&lt;00:10, 70.4MB/s]
+ 56%|█████████████████████▏                | 922M/1.65G [00:13&lt;00:10, 70.4MB/s]
+ 56%|█████████████████████▎                | 929M/1.65G [00:13&lt;00:10, 70.5MB/s]
+ 57%|█████████████████████▌                | 936M/1.65G [00:13&lt;00:10, 70.4MB/s]
+ 57%|█████████████████████▋                | 944M/1.65G [00:13&lt;00:10, 70.6MB/s]
+ 58%|█████████████████████▊                | 951M/1.65G [00:13&lt;00:09, 70.5MB/s]
+ 58%|██████████████████████                | 958M/1.65G [00:13&lt;00:09, 70.5MB/s]
+ 58%|██████████████████████▏               | 965M/1.65G [00:13&lt;00:09, 70.5MB/s]
+ 59%|██████████████████████▎               | 972M/1.65G [00:14&lt;00:09, 70.4MB/s]
+ 59%|██████████████████████▌               | 979M/1.65G [00:14&lt;00:09, 70.5MB/s]
+ 60%|██████████████████████▋               | 986M/1.65G [00:14&lt;00:09, 70.4MB/s]
+ 60%|██████████████████████▊               | 993M/1.65G [00:14&lt;00:09, 70.4MB/s]
+ 61%|██████████████████████▍              | 1.00G/1.65G [00:14&lt;00:09, 70.4MB/s]
+ 61%|██████████████████████▌              | 1.01G/1.65G [00:14&lt;00:09, 70.4MB/s]
+ 61%|██████████████████████▋              | 1.01G/1.65G [00:14&lt;00:09, 70.3MB/s]
+ 62%|██████████████████████▊              | 1.02G/1.65G [00:14&lt;00:08, 70.2MB/s]
+ 62%|███████████████████████              | 1.03G/1.65G [00:14&lt;00:08, 70.1MB/s]
+ 63%|███████████████████████▏             | 1.04G/1.65G [00:14&lt;00:08, 70.1MB/s]
+ 63%|███████████████████████▎             | 1.04G/1.65G [00:15&lt;00:08, 70.3MB/s]
+ 63%|███████████████████████▍             | 1.05G/1.65G [00:15&lt;00:08, 70.1MB/s]
+ 64%|███████████████████████▋             | 1.06G/1.65G [00:15&lt;00:08, 70.3MB/s]
+ 64%|███████████████████████▊             | 1.06G/1.65G [00:15&lt;00:08, 70.1MB/s]
+ 65%|███████████████████████▉             | 1.07G/1.65G [00:15&lt;00:08, 70.2MB/s]
+ 65%|████████████████████████             | 1.08G/1.65G [00:15&lt;00:08, 70.3MB/s]
+ 66%|████████████████████████▎            | 1.08G/1.65G [00:15&lt;00:08, 70.3MB/s]
+ 66%|████████████████████████▍            | 1.09G/1.65G [00:15&lt;00:07, 70.3MB/s]
+ 66%|████████████████████████▌            | 1.10G/1.65G [00:15&lt;00:07, 70.3MB/s]
+ 67%|████████████████████████▊            | 1.11G/1.65G [00:15&lt;00:07, 70.3MB/s]
+ 67%|████████████████████████▉            | 1.11G/1.65G [00:16&lt;00:07, 70.4MB/s]
+ 68%|█████████████████████████            | 1.12G/1.65G [00:16&lt;00:07, 70.5MB/s]
+ 68%|█████████████████████████▏           | 1.13G/1.65G [00:16&lt;00:07, 70.5MB/s]
+ 69%|█████████████████████████▍           | 1.13G/1.65G [00:16&lt;00:07, 70.5MB/s]
+ 69%|█████████████████████████▌           | 1.14G/1.65G [00:16&lt;00:07, 70.5MB/s]
+ 69%|█████████████████████████▋           | 1.15G/1.65G [00:16&lt;00:07, 70.5MB/s]
+ 70%|█████████████████████████▊           | 1.16G/1.65G [00:16&lt;00:07, 70.5MB/s]
+ 70%|██████████████████████████           | 1.16G/1.65G [00:16&lt;00:06, 70.5MB/s]
+ 71%|██████████████████████████▏          | 1.17G/1.65G [00:16&lt;00:06, 70.6MB/s]
+ 71%|██████████████████████████▎          | 1.18G/1.65G [00:16&lt;00:06, 70.5MB/s]
+ 72%|██████████████████████████▍          | 1.18G/1.65G [00:17&lt;00:06, 70.6MB/s]
+ 72%|██████████████████████████▋          | 1.19G/1.65G [00:17&lt;00:06, 70.6MB/s]
+ 72%|██████████████████████████▊          | 1.20G/1.65G [00:17&lt;00:06, 70.6MB/s]
+ 73%|██████████████████████████▉          | 1.20G/1.65G [00:17&lt;00:06, 70.6MB/s]
+ 73%|███████████████████████████          | 1.21G/1.65G [00:17&lt;00:06, 70.6MB/s]
+ 74%|███████████████████████████▎         | 1.22G/1.65G [00:17&lt;00:06, 70.6MB/s]
+ 74%|███████████████████████████▍         | 1.23G/1.65G [00:17&lt;00:06, 70.6MB/s]
+ 75%|███████████████████████████▌         | 1.23G/1.65G [00:17&lt;00:05, 70.7MB/s]
+ 75%|███████████████████████████▊         | 1.24G/1.65G [00:17&lt;00:05, 70.6MB/s]
+ 75%|███████████████████████████▉         | 1.25G/1.65G [00:17&lt;00:05, 70.5MB/s]
+ 76%|████████████████████████████         | 1.25G/1.65G [00:18&lt;00:05, 70.3MB/s]
+ 76%|████████████████████████████▏        | 1.26G/1.65G [00:18&lt;00:05, 70.3MB/s]
+ 77%|████████████████████████████▍        | 1.27G/1.65G [00:18&lt;00:05, 70.4MB/s]
+ 77%|████████████████████████████▌        | 1.28G/1.65G [00:18&lt;00:05, 70.4MB/s]
+ 78%|████████████████████████████▋        | 1.28G/1.65G [00:18&lt;00:05, 70.3MB/s]
+ 78%|████████████████████████████▊        | 1.29G/1.65G [00:18&lt;00:05, 70.5MB/s]
+ 78%|█████████████████████████████        | 1.30G/1.65G [00:18&lt;00:05, 70.4MB/s]
+ 79%|█████████████████████████████▏       | 1.30G/1.65G [00:18&lt;00:04, 70.4MB/s]
+ 79%|█████████████████████████████▎       | 1.31G/1.65G [00:18&lt;00:04, 70.5MB/s]
+ 80%|█████████████████████████████▍       | 1.32G/1.65G [00:18&lt;00:04, 70.5MB/s]
+ 80%|█████████████████████████████▋       | 1.32G/1.65G [00:19&lt;00:04, 70.4MB/s]
+ 81%|█████████████████████████████▊       | 1.33G/1.65G [00:19&lt;00:04, 70.5MB/s]
+ 81%|█████████████████████████████▉       | 1.34G/1.65G [00:19&lt;00:04, 70.4MB/s]
+ 81%|██████████████████████████████       | 1.35G/1.65G [00:19&lt;00:04, 70.4MB/s]
+ 82%|██████████████████████████████▎      | 1.35G/1.65G [00:19&lt;00:04, 70.4MB/s]
+ 82%|██████████████████████████████▍      | 1.36G/1.65G [00:19&lt;00:04, 70.5MB/s]
+ 83%|██████████████████████████████▌      | 1.37G/1.65G [00:19&lt;00:04, 58.4MB/s]
+ 83%|██████████████████████████████▋      | 1.37G/1.65G [00:19&lt;00:04, 58.9MB/s]
+ 83%|██████████████████████████████▉      | 1.38G/1.65G [00:19&lt;00:04, 61.9MB/s]
+ 84%|███████████████████████████████      | 1.39G/1.65G [00:20&lt;00:04, 64.3MB/s]
+ 84%|███████████████████████████████▏     | 1.39G/1.65G [00:20&lt;00:03, 66.2MB/s]
+ 85%|███████████████████████████████▎     | 1.40G/1.65G [00:20&lt;00:03, 67.4MB/s]
+ 85%|███████████████████████████████▌     | 1.41G/1.65G [00:20&lt;00:03, 68.3MB/s]
+ 86%|███████████████████████████████▋     | 1.42G/1.65G [00:20&lt;00:03, 68.9MB/s]
+ 86%|███████████████████████████████▊     | 1.42G/1.65G [00:20&lt;00:03, 69.3MB/s]
+ 86%|███████████████████████████████▉     | 1.43G/1.65G [00:20&lt;00:03, 69.7MB/s]
+ 87%|████████████████████████████████▏    | 1.44G/1.65G [00:20&lt;00:03, 69.9MB/s]
+ 87%|████████████████████████████████▎    | 1.44G/1.65G [00:20&lt;00:02, 70.1MB/s]
+ 88%|████████████████████████████████▍    | 1.45G/1.65G [00:20&lt;00:02, 70.2MB/s]
+ 88%|████████████████████████████████▋    | 1.46G/1.65G [00:21&lt;00:02, 70.3MB/s]
+ 89%|████████████████████████████████▊    | 1.46G/1.65G [00:21&lt;00:02, 70.3MB/s]
+ 89%|████████████████████████████████▉    | 1.47G/1.65G [00:21&lt;00:02, 70.3MB/s]
+ 89%|█████████████████████████████████    | 1.48G/1.65G [00:21&lt;00:02, 70.3MB/s]
+ 90%|█████████████████████████████████▎   | 1.49G/1.65G [00:21&lt;00:02, 70.4MB/s]
+ 90%|█████████████████████████████████▍   | 1.49G/1.65G [00:21&lt;00:02, 70.4MB/s]
+ 91%|█████████████████████████████████▌   | 1.50G/1.65G [00:21&lt;00:02, 70.4MB/s]
+ 91%|█████████████████████████████████▋   | 1.51G/1.65G [00:21&lt;00:02, 70.4MB/s]
+ 92%|█████████████████████████████████▉   | 1.51G/1.65G [00:21&lt;00:01, 70.5MB/s]
+ 92%|██████████████████████████████████   | 1.52G/1.65G [00:21&lt;00:01, 70.5MB/s]
+ 92%|██████████████████████████████████▏  | 1.53G/1.65G [00:22&lt;00:01, 70.5MB/s]
+ 93%|██████████████████████████████████▎  | 1.54G/1.65G [00:22&lt;00:01, 70.3MB/s]
+ 93%|██████████████████████████████████▌  | 1.54G/1.65G [00:22&lt;00:01, 70.3MB/s]
+ 94%|██████████████████████████████████▋  | 1.55G/1.65G [00:22&lt;00:01, 70.3MB/s]
+ 94%|██████████████████████████████████▊  | 1.56G/1.65G [00:22&lt;00:01, 70.3MB/s]
+ 95%|██████████████████████████████████▉  | 1.56G/1.65G [00:22&lt;00:01, 70.3MB/s]
+ 95%|███████████████████████████████████▏ | 1.57G/1.65G [00:22&lt;00:01, 70.5MB/s]
+ 95%|███████████████████████████████████▎ | 1.58G/1.65G [00:22&lt;00:01, 70.4MB/s]
+ 96%|███████████████████████████████████▍ | 1.58G/1.65G [00:22&lt;00:00, 70.4MB/s]
+ 96%|███████████████████████████████████▋ | 1.59G/1.65G [00:22&lt;00:00, 70.2MB/s]
+ 97%|███████████████████████████████████▊ | 1.60G/1.65G [00:23&lt;00:00, 70.3MB/s]
+ 97%|███████████████████████████████████▉ | 1.61G/1.65G [00:23&lt;00:01, 24.8MB/s]
+ 98%|████████████████████████████████████ | 1.61G/1.65G [00:23&lt;00:01, 30.7MB/s]
+ 98%|████████████████████████████████████▎| 1.62G/1.65G [00:23&lt;00:00, 36.9MB/s]
+ 98%|████████████████████████████████████▍| 1.63G/1.65G [00:24&lt;00:00, 43.1MB/s]
+ 99%|████████████████████████████████████▌| 1.63G/1.65G [00:24&lt;00:00, 48.6MB/s]
+ 99%|████████████████████████████████████▋| 1.64G/1.65G [00:24&lt;00:00, 53.5MB/s]
+100%|████████████████████████████████████▉| 1.65G/1.65G [00:24&lt;00:00, 57.5MB/s]
   0%|                                              | 0.00/1.65G [00:00&lt;?, ?B/s]
-100%|█████████████████████████████████████| 1.65G/1.65G [00:00&lt;00:00, 3.53TB/s]
+100%|█████████████████████████████████████| 1.65G/1.65G [00:00&lt;00:00, 4.29TB/s]
 Removing projector &lt;Projection | PCA-v1, active : False, n_channels : 102&gt;
 Removing projector &lt;Projection | PCA-v2, active : False, n_channels : 102&gt;
 Removing projector &lt;Projection | PCA-v3, active : False, n_channels : 102&gt;
@@ -852,11 +745,11 @@ which scales down the border of each split with a tukey window.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>./github/workspace/alphacsc/utils/optim.py:136: DeprecationWarning: Please use `scalar_search_armijo` from the `scipy.optimize` namespace, the `scipy.optimize.linesearch` namespace is deprecated.
   step_size, obj_uv = optimize.linesearch.scalar_search_armijo(
 ................................................+
-....
-[GreedyCDL] Converged after 54 iteration, (dz, du) = 9.394e-05, 7.529e-05
-[GreedyCDL] Fit in 4725.4s
+........
+[GreedyCDL] Converged after 58 iteration, (dz, du) = 6.781e-05, 9.363e-05
+[GreedyCDL] Fit in 5298.9s
 
-&lt;alphacsc.convolutional_dictionary_learning.GreedyCDL object at 0x7ffbb19dee50&gt;
+&lt;alphacsc.convolutional_dictionary_learning.GreedyCDL object at 0x7faba01baf40&gt;
 </pre></div>
 </div>
 <p>Then we call the <cite>transform</cite> method, which returns the sparse codes
@@ -1061,12 +954,12 @@ the fiducials with the MRI.</p></li>
 of Gaussian noise model with identity covariance matrix is satisfied.</p></li>
 </ul>
 <p>We recommend users to consult the MNE documentation for further information.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;subjects&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a><span class="p">,</span> <span class="s1">&#39;subjects&#39;</span><span class="p">)</span>
 <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname_bem</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">subjects_dir</span></a><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;bem&#39;</span><span class="p">,</span>
                          <span class="s1">&#39;sample-5120-bem-sol.fif&#39;</span><span class="p">)</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname_trans</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname_trans</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;sample_audvis_raw-trans.fif&#39;</span><span class="p">)</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname_cov</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_audvis-cov.fif&#39;</span><span class="p">)</span>
+<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname_cov</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data_path</span></a><span class="p">,</span> <span class="s1">&#39;MEG&#39;</span><span class="p">,</span> <span class="s1">&#39;sample&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_audvis-cov.fif&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Let us construct an evoked object for MNE with the spatial pattern of the
@@ -1110,7 +1003,7 @@ goodness of fit.</p>
 <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_sample_evoked_response_003.png" srcset="../../_images/sphx_glr_plot_sample_evoked_response_003.png" alt=", Atom #4 (GOF 80.11%), Temporal pattern 4" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 88 minutes  0.363 seconds)</p>
+<img src="../../_images/sphx_glr_plot_sample_evoked_response_003.png" srcset="../../_images/sphx_glr_plot_sample_evoked_response_003.png" alt=", Atom #4 (GOF 78.16%), Temporal pattern 4" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 97 minutes  30.172 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-sample-evoked-response-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b5f4fe8b8b1715cdf1a5937177423d6c/plot_sample_evoked_response.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_sample_evoked_response.py</span></code></a></p>
@@ -1132,7 +1025,7 @@ goodness of fit.</p>
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
   <a class='left-prev' id="prev-link" href="sample_evoked_response_dicodile.html" title="previous page">
-      <i class="fas fa-angle-left"></i>
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
           <p class="prev-next-title">Extracting artifact and evoked response atoms from the MNE sample dataset</p>
@@ -1143,7 +1036,7 @@ goodness of fit.</p>
       <p class="prev-next-subtitle">next</p>
       <p class="prev-next-title">Univariate CSC with an alpha-stable distribution</p>
   </div>
-  <i class="fas fa-angle-right"></i>
+  <i class="fa-solid fa-angle-right"></i>
   </a>
 </div>
             </footer>
@@ -1157,7 +1050,7 @@ goodness of fit.</p>
 <div class="toc-item">
   
 <div class="tocsection onthispage">
-    <i class="fas fa-list"></i> On this page
+    <i class="fa-solid fa-list"></i> On this page
 </div>
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -1183,13 +1076,18 @@ goodness of fit.</p>
 
 <div class="toc-item">
   
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
 </div>
 
 <div class="toc-item">
   
 <div class="tocsection sourcelink">
     <a href="../../_sources/auto_examples/multicsc/plot_sample_evoked_response.rst.txt">
-        <i class="fas fa-file-alt"></i> Show Source
+        <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
 </div>
 
@@ -1214,7 +1112,7 @@ goodness of fit.</p>
     
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=9b1a4fa89bdd0e95b23b"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
 
   <footer class="bd-footer"><div class="bd-footer__inner container">
   
@@ -1231,7 +1129,7 @@ goodness of fit.</p>
   <div class="footer-item">
     
 <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
 </p>
 
   </div>
