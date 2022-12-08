@@ -6,24 +6,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Extracting cross-frequency coupling waveforms from rodent LFP data &#8212; alphacsc 0.1.dev1 documentation</title>
-  <script>
+  
+  
+  
+  <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
   
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
@@ -32,7 +32,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -55,6 +56,10 @@
   
   
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   
   <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
@@ -117,25 +122,25 @@
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                <li class="nav-item">
-                    <a class="nav-link" href="../../models.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../models.html">
                         Model descriptions
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
 
-                <li class="nav-item current active">
-                    <a class="nav-link" href="../index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
                         Examples Gallery
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="../../api.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../api.html">
                         API Documentation
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
     </ul>
 </nav>
@@ -144,12 +149,14 @@
     </div>
 
     <div id="navbar-end">
-      <div class="navbar-end-item navbar-end__search-button-container">
-        
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
   <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-      </div>
+        </div>
+      
       
       <div class="navbar-end-item">
         <div class="version-switcher__container dropdown">
@@ -195,11 +202,13 @@
 
 
   
-  <div class="search-button-container--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
   <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-  </div>
+    </div>
+  
 
   
   <label class="sidebar-toggle secondary-toggle" for="__secondary">
@@ -229,25 +238,25 @@
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                <li class="nav-item">
-                    <a class="nav-link" href="../../models.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../models.html">
                         Model descriptions
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
 
-                <li class="nav-item current active">
-                    <a class="nav-link" href="../index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
                         Examples Gallery
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="../../api.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../api.html">
                         API Documentation
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
     </ul>
 </nav>
@@ -352,8 +361,11 @@
     </div>
   </div>
 
+  
+  <div id="rtd-footer-container"></div>
+
       </div>
-      <main class="bd-main">
+      <main id="main-content" class="bd-main">
         
         
         <div class="bd-content">
@@ -453,58 +465,58 @@ described with a comodulogram, computed for instance with the <a class="referenc
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_cross_frequency_coupling_001.png" srcset="../../_images/sphx_glr_plot_cross_frequency_coupling_001.png" alt="plot cross frequency coupling" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[                                        ] 0% | 0.00 sec | comodulogram: DAR(10, 1)
-[                                        ] 2% | 0.82 sec | comodulogram: DAR(10, 1)
-[.                                       ] 4% | 1.30 sec | comodulogram: DAR(10, 1)
-[..                                      ] 6% | 1.78 sec | comodulogram: DAR(10, 1)
-[...                                     ] 8% | 2.26 sec | comodulogram: DAR(10, 1)
-[....                                    ] 10% | 2.73 sec | comodulogram: DAR(10, 1)
+[                                        ] 2% | 0.85 sec | comodulogram: DAR(10, 1)
+[.                                       ] 4% | 1.33 sec | comodulogram: DAR(10, 1)
+[..                                      ] 6% | 1.81 sec | comodulogram: DAR(10, 1)
+[...                                     ] 8% | 2.28 sec | comodulogram: DAR(10, 1)
+[....                                    ] 10% | 2.75 sec | comodulogram: DAR(10, 1)
 [....                                    ] 12% | 3.23 sec | comodulogram: DAR(10, 1)
-[.....                                   ] 14% | 3.73 sec | comodulogram: DAR(10, 1)
-[......                                  ] 16% | 4.22 sec | comodulogram: DAR(10, 1)
-[.......                                 ] 18% | 4.72 sec | comodulogram: DAR(10, 1)
-[........                                ] 20% | 5.21 sec | comodulogram: DAR(10, 1)
-[........                                ] 22% | 5.71 sec | comodulogram: DAR(10, 1)
-[.........                               ] 24% | 6.19 sec | comodulogram: DAR(10, 1)
-[..........                              ] 26% | 6.67 sec | comodulogram: DAR(10, 1)
-[...........                             ] 28% | 7.15 sec | comodulogram: DAR(10, 1)
-[............                            ] 30% | 7.66 sec | comodulogram: DAR(10, 1)
-[............                            ] 32% | 8.14 sec | comodulogram: DAR(10, 1)
-[.............                           ] 34% | 8.63 sec | comodulogram: DAR(10, 1)
-[..............                          ] 36% | 9.10 sec | comodulogram: DAR(10, 1)
-[...............                         ] 38% | 9.56 sec | comodulogram: DAR(10, 1)
-[................                        ] 40% | 10.05 sec | comodulogram: DAR(10, 1)
-[................                        ] 42% | 10.54 sec | comodulogram: DAR(10, 1)
-[.................                       ] 44% | 11.01 sec | comodulogram: DAR(10, 1)
-[..................                      ] 46% | 11.50 sec | comodulogram: DAR(10, 1)
-[...................                     ] 48% | 11.99 sec | comodulogram: DAR(10, 1)
-[....................                    ] 50% | 12.46 sec | comodulogram: DAR(10, 1)
-[....................                    ] 52% | 12.92 sec | comodulogram: DAR(10, 1)
-[.....................                   ] 54% | 13.38 sec | comodulogram: DAR(10, 1)
-[......................                  ] 56% | 13.86 sec | comodulogram: DAR(10, 1)
-[.......................                 ] 58% | 14.33 sec | comodulogram: DAR(10, 1)
-[........................                ] 60% | 14.79 sec | comodulogram: DAR(10, 1)
-[........................                ] 62% | 15.25 sec | comodulogram: DAR(10, 1)
-[.........................               ] 64% | 15.71 sec | comodulogram: DAR(10, 1)
-[..........................              ] 66% | 16.18 sec | comodulogram: DAR(10, 1)
-[...........................             ] 68% | 16.67 sec | comodulogram: DAR(10, 1)
-[............................            ] 70% | 17.15 sec | comodulogram: DAR(10, 1)
-[............................            ] 72% | 17.65 sec | comodulogram: DAR(10, 1)
-[.............................           ] 74% | 18.14 sec | comodulogram: DAR(10, 1)
-[..............................          ] 76% | 18.64 sec | comodulogram: DAR(10, 1)
-[...............................         ] 78% | 19.13 sec | comodulogram: DAR(10, 1)
-[................................        ] 80% | 19.64 sec | comodulogram: DAR(10, 1)
-[................................        ] 82% | 20.10 sec | comodulogram: DAR(10, 1)
-[.................................       ] 84% | 20.58 sec | comodulogram: DAR(10, 1)
-[..................................      ] 86% | 21.06 sec | comodulogram: DAR(10, 1)
-[...................................     ] 88% | 21.54 sec | comodulogram: DAR(10, 1)
-[....................................    ] 90% | 22.02 sec | comodulogram: DAR(10, 1)
-[....................................    ] 92% | 22.50 sec | comodulogram: DAR(10, 1)
-[.....................................   ] 94% | 22.98 sec | comodulogram: DAR(10, 1)
-[......................................  ] 96% | 23.46 sec | comodulogram: DAR(10, 1)
-[....................................... ] 98% | 23.94 sec | comodulogram: DAR(10, 1)
-[........................................] 100% | 24.42 sec | comodulogram: DAR(10, 1)
+[.....                                   ] 14% | 3.72 sec | comodulogram: DAR(10, 1)
+[......                                  ] 16% | 4.21 sec | comodulogram: DAR(10, 1)
+[.......                                 ] 18% | 4.68 sec | comodulogram: DAR(10, 1)
+[........                                ] 20% | 5.13 sec | comodulogram: DAR(10, 1)
+[........                                ] 22% | 5.61 sec | comodulogram: DAR(10, 1)
+[.........                               ] 24% | 6.08 sec | comodulogram: DAR(10, 1)
+[..........                              ] 26% | 6.56 sec | comodulogram: DAR(10, 1)
+[...........                             ] 28% | 7.01 sec | comodulogram: DAR(10, 1)
+[............                            ] 30% | 7.48 sec | comodulogram: DAR(10, 1)
+[............                            ] 32% | 7.96 sec | comodulogram: DAR(10, 1)
+[.............                           ] 34% | 8.44 sec | comodulogram: DAR(10, 1)
+[..............                          ] 36% | 8.90 sec | comodulogram: DAR(10, 1)
+[...............                         ] 38% | 9.35 sec | comodulogram: DAR(10, 1)
+[................                        ] 40% | 9.84 sec | comodulogram: DAR(10, 1)
+[................                        ] 42% | 10.31 sec | comodulogram: DAR(10, 1)
+[.................                       ] 44% | 10.76 sec | comodulogram: DAR(10, 1)
+[..................                      ] 46% | 11.24 sec | comodulogram: DAR(10, 1)
+[...................                     ] 48% | 11.72 sec | comodulogram: DAR(10, 1)
+[....................                    ] 50% | 12.18 sec | comodulogram: DAR(10, 1)
+[....................                    ] 52% | 12.64 sec | comodulogram: DAR(10, 1)
+[.....................                   ] 54% | 13.10 sec | comodulogram: DAR(10, 1)
+[......................                  ] 56% | 13.58 sec | comodulogram: DAR(10, 1)
+[.......................                 ] 58% | 14.03 sec | comodulogram: DAR(10, 1)
+[........................                ] 60% | 14.48 sec | comodulogram: DAR(10, 1)
+[........................                ] 62% | 14.93 sec | comodulogram: DAR(10, 1)
+[.........................               ] 64% | 15.40 sec | comodulogram: DAR(10, 1)
+[..........................              ] 66% | 15.86 sec | comodulogram: DAR(10, 1)
+[...........................             ] 68% | 16.32 sec | comodulogram: DAR(10, 1)
+[............................            ] 70% | 16.79 sec | comodulogram: DAR(10, 1)
+[............................            ] 72% | 17.26 sec | comodulogram: DAR(10, 1)
+[.............................           ] 74% | 17.73 sec | comodulogram: DAR(10, 1)
+[..............................          ] 76% | 18.20 sec | comodulogram: DAR(10, 1)
+[...............................         ] 78% | 18.66 sec | comodulogram: DAR(10, 1)
+[................................        ] 80% | 19.12 sec | comodulogram: DAR(10, 1)
+[................................        ] 82% | 19.58 sec | comodulogram: DAR(10, 1)
+[.................................       ] 84% | 20.05 sec | comodulogram: DAR(10, 1)
+[..................................      ] 86% | 20.50 sec | comodulogram: DAR(10, 1)
+[...................................     ] 88% | 20.96 sec | comodulogram: DAR(10, 1)
+[....................................    ] 90% | 21.42 sec | comodulogram: DAR(10, 1)
+[....................................    ] 92% | 21.88 sec | comodulogram: DAR(10, 1)
+[.....................................   ] 94% | 22.35 sec | comodulogram: DAR(10, 1)
+[......................................  ] 96% | 22.81 sec | comodulogram: DAR(10, 1)
+[....................................... ] 98% | 23.27 sec | comodulogram: DAR(10, 1)
+[........................................] 100% | 23.73 sec | comodulogram: DAR(10, 1)
 
-[........................................] 100% | 24.42 sec | comodulogram: DAR(10, 1)
+[........................................] 100% | 23.73 sec | comodulogram: DAR(10, 1)
 </pre></div>
 </div>
 <p>We fit a CSC model on the data.</p>
@@ -549,7 +561,7 @@ waveforms of the signal on which we can clearly see the CFC.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_cross_frequency_coupling_002.png" srcset="../../_images/sphx_glr_plot_cross_frequency_coupling_002.png" alt="Temporal pattern 0, Temporal pattern 1, Temporal pattern 2" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 9 minutes  43.824 seconds)</p>
+<img src="../../_images/sphx_glr_plot_cross_frequency_coupling_002.png" srcset="../../_images/sphx_glr_plot_cross_frequency_coupling_002.png" alt="Temporal pattern 0, Temporal pattern 1, Temporal pattern 2" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 10 minutes  33.290 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-csc-plot-cross-frequency-coupling-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/7d38078ea50eae3afa9448ad09afc5da/plot_cross_frequency_coupling.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_cross_frequency_coupling.py</span></code></a></p>
@@ -630,7 +642,8 @@ waveforms of the signal on which we can clearly see the CFC.</p>
     
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
 
   <footer class="bd-footer"><div class="bd-footer__inner container">
   
@@ -642,6 +655,16 @@ waveforms of the signal on which we can clearly see the CFC.</p>
 
 </p>
 
+  </div>
+  
+  <div class="footer-item">
+    <p class="theme-version">
+    Built with the
+    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
+        PyData Sphinx Theme
+    </a>
+    0.12.0.
+</p>
   </div>
   
   <div class="footer-item">

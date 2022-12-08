@@ -6,24 +6,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Extracting \(\mu\)-wave from the somato-sensory dataset &#8212; alphacsc 0.1.dev1 documentation</title>
-  <script>
+  
+  
+  
+  <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
   
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
@@ -32,7 +32,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -56,6 +57,10 @@
   
   
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   
   <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
@@ -118,25 +123,25 @@
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                <li class="nav-item">
-                    <a class="nav-link" href="../../models.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../models.html">
                         Model descriptions
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
 
-                <li class="nav-item current active">
-                    <a class="nav-link" href="../index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
                         Examples Gallery
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="../../api.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../api.html">
                         API Documentation
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
     </ul>
 </nav>
@@ -145,12 +150,14 @@
     </div>
 
     <div id="navbar-end">
-      <div class="navbar-end-item navbar-end__search-button-container">
-        
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
   <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-      </div>
+        </div>
+      
       
       <div class="navbar-end-item">
         <div class="version-switcher__container dropdown">
@@ -196,11 +203,13 @@
 
 
   
-  <div class="search-button-container--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
   <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-  </div>
+    </div>
+  
 
   
   <label class="sidebar-toggle secondary-toggle" for="__secondary">
@@ -230,25 +239,25 @@
     </p>
     <ul id="navbar-main-elements" class="navbar-nav">
         
-                <li class="nav-item">
-                    <a class="nav-link" href="../../models.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../models.html">
                         Model descriptions
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
 
-                <li class="nav-item current active">
-                    <a class="nav-link" href="../index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../index.html">
                         Examples Gallery
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="../../api.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../api.html">
                         API Documentation
-                    </a>
-                </li>
+                      </a>
+                    </li>
                 
     </ul>
 </nav>
@@ -353,8 +362,11 @@
     </div>
   </div>
 
+  
+  <div id="rtd-footer-container"></div>
+
       </div>
-      <main class="bd-main">
+      <main id="main-content" class="bd-main">
         
         
         <div class="bd-content">
@@ -433,109 +445,108 @@ before and finishing 4 seconds after.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using default location ~/mne_data for somato...
 
   0%|                                               | 0.00/611M [00:00&lt;?, ?B/s]
-  1%|▏                                     | 3.15M/611M [00:00&lt;00:19, 31.5MB/s]
-  1%|▌                                     | 9.14M/611M [00:00&lt;00:12, 48.2MB/s]
-  2%|▉                                     | 15.2M/611M [00:00&lt;00:11, 53.9MB/s]
-  3%|█▎                                    | 21.0M/611M [00:00&lt;00:10, 55.6MB/s]
-  4%|█▋                                    | 27.1M/611M [00:00&lt;00:10, 57.6MB/s]
-  5%|██                                    | 33.2M/611M [00:00&lt;00:09, 58.6MB/s]
-  6%|██▍                                   | 39.2M/611M [00:00&lt;00:09, 59.0MB/s]
-  7%|██▊                                   | 45.3M/611M [00:00&lt;00:09, 59.5MB/s]
-  8%|███▏                                  | 51.3M/611M [00:00&lt;00:09, 59.8MB/s]
-  9%|███▌                                  | 57.3M/611M [00:01&lt;00:09, 59.9MB/s]
- 10%|███▉                                  | 63.3M/611M [00:01&lt;00:09, 60.0MB/s]
- 11%|████▎                                 | 69.4M/611M [00:01&lt;00:09, 60.1MB/s]
- 12%|████▋                                 | 75.4M/611M [00:01&lt;00:08, 60.2MB/s]
- 13%|█████                                 | 81.5M/611M [00:01&lt;00:08, 60.5MB/s]
- 14%|█████▍                                | 87.6M/611M [00:01&lt;00:08, 60.6MB/s]
- 15%|█████▊                                | 93.7M/611M [00:01&lt;00:08, 60.7MB/s]
- 16%|██████▏                               | 99.8M/611M [00:01&lt;00:08, 60.7MB/s]
- 17%|██████▊                                | 106M/611M [00:01&lt;00:08, 60.8MB/s]
- 18%|███████▏                               | 112M/611M [00:01&lt;00:08, 60.9MB/s]
- 19%|███████▌                               | 118M/611M [00:02&lt;00:08, 61.0MB/s]
- 20%|███████▉                               | 124M/611M [00:02&lt;00:07, 61.0MB/s]
- 21%|████████▎                              | 130M/611M [00:02&lt;00:07, 61.0MB/s]
- 22%|████████▋                              | 136M/611M [00:02&lt;00:07, 61.0MB/s]
- 23%|█████████                              | 143M/611M [00:02&lt;00:07, 61.0MB/s]
- 24%|█████████▍                             | 149M/611M [00:02&lt;00:07, 61.1MB/s]
- 25%|█████████▉                             | 155M/611M [00:02&lt;00:07, 61.1MB/s]
- 26%|██████████▎                            | 161M/611M [00:02&lt;00:07, 61.1MB/s]
- 27%|██████████▋                            | 167M/611M [00:02&lt;00:07, 61.1MB/s]
- 28%|███████████                            | 173M/611M [00:02&lt;00:07, 61.3MB/s]
- 29%|███████████▍                           | 179M/611M [00:03&lt;00:07, 61.1MB/s]
- 30%|███████████▊                           | 185M/611M [00:03&lt;00:06, 61.0MB/s]
- 31%|████████████▏                          | 192M/611M [00:03&lt;00:06, 60.9MB/s]
- 32%|████████████▌                          | 198M/611M [00:03&lt;00:06, 60.8MB/s]
- 33%|█████████████                          | 204M/611M [00:03&lt;00:06, 60.9MB/s]
- 34%|█████████████▍                         | 210M/611M [00:03&lt;00:06, 61.1MB/s]
- 35%|█████████████▊                         | 216M/611M [00:03&lt;00:06, 61.0MB/s]
- 36%|██████████████▏                        | 222M/611M [00:03&lt;00:06, 61.1MB/s]
- 37%|██████████████▌                        | 228M/611M [00:03&lt;00:06, 61.2MB/s]
- 38%|██████████████▉                        | 234M/611M [00:03&lt;00:06, 61.2MB/s]
- 39%|███████████████▎                       | 240M/611M [00:04&lt;00:06, 60.7MB/s]
- 40%|███████████████▊                       | 247M/611M [00:04&lt;00:05, 60.7MB/s]
- 41%|████████████████▏                      | 253M/611M [00:04&lt;00:05, 60.8MB/s]
- 42%|████████████████▌                      | 259M/611M [00:04&lt;00:05, 60.9MB/s]
- 43%|████████████████▉                      | 265M/611M [00:04&lt;00:05, 60.9MB/s]
- 44%|█████████████████▎                     | 271M/611M [00:04&lt;00:05, 61.0MB/s]
- 45%|█████████████████▋                     | 277M/611M [00:04&lt;00:05, 61.1MB/s]
- 46%|██████████████████                     | 283M/611M [00:04&lt;00:05, 61.1MB/s]
- 47%|██████████████████▍                    | 289M/611M [00:04&lt;00:05, 61.1MB/s]
- 48%|██████████████████▉                    | 295M/611M [00:04&lt;00:05, 61.0MB/s]
- 49%|███████████████████▎                   | 302M/611M [00:05&lt;00:05, 61.0MB/s]
- 50%|███████████████████▋                   | 308M/611M [00:05&lt;00:05, 57.2MB/s]
- 51%|████████████████████                   | 313M/611M [00:05&lt;00:05, 51.9MB/s]
- 52%|████████████████████▍                  | 319M/611M [00:05&lt;00:05, 54.2MB/s]
- 53%|████████████████████▊                  | 326M/611M [00:05&lt;00:05, 56.1MB/s]
- 54%|█████████████████████▏                 | 332M/611M [00:05&lt;00:04, 57.4MB/s]
- 55%|█████████████████████▌                 | 338M/611M [00:05&lt;00:04, 58.0MB/s]
- 56%|█████████████████████▉                 | 344M/611M [00:05&lt;00:04, 58.6MB/s]
- 57%|██████████████████████▎                | 350M/611M [00:05&lt;00:04, 59.0MB/s]
- 58%|██████████████████████▋                | 356M/611M [00:05&lt;00:04, 59.2MB/s]
- 59%|███████████████████████                | 362M/611M [00:06&lt;00:04, 59.4MB/s]
- 60%|███████████████████████▍               | 368M/611M [00:06&lt;00:04, 59.4MB/s]
- 61%|███████████████████████▊               | 374M/611M [00:06&lt;00:03, 59.6MB/s]
- 62%|████████████████████████▏              | 380M/611M [00:06&lt;00:03, 59.8MB/s]
- 63%|████████████████████████▋              | 386M/611M [00:06&lt;00:03, 59.8MB/s]
- 64%|█████████████████████████              | 392M/611M [00:06&lt;00:03, 60.0MB/s]
- 65%|█████████████████████████▍             | 398M/611M [00:06&lt;00:03, 59.9MB/s]
- 66%|█████████████████████████▊             | 404M/611M [00:06&lt;00:03, 59.8MB/s]
- 67%|██████████████████████████▏            | 410M/611M [00:06&lt;00:03, 59.8MB/s]
- 68%|██████████████████████████▌            | 416M/611M [00:06&lt;00:03, 59.9MB/s]
- 69%|██████████████████████████▉            | 422M/611M [00:07&lt;00:03, 60.1MB/s]
- 70%|███████████████████████████▎           | 428M/611M [00:07&lt;00:03, 60.5MB/s]
- 71%|███████████████████████████▋           | 434M/611M [00:07&lt;00:02, 60.8MB/s]
- 72%|████████████████████████████           | 440M/611M [00:07&lt;00:02, 60.6MB/s]
- 73%|████████████████████████████▍          | 446M/611M [00:07&lt;00:02, 60.7MB/s]
- 74%|████████████████████████████▉          | 452M/611M [00:07&lt;00:02, 60.9MB/s]
- 75%|█████████████████████████████▎         | 458M/611M [00:07&lt;00:02, 60.8MB/s]
- 76%|█████████████████████████████▋         | 464M/611M [00:07&lt;00:02, 61.0MB/s]
- 77%|██████████████████████████████         | 471M/611M [00:07&lt;00:02, 61.1MB/s]
- 78%|██████████████████████████████▍        | 477M/611M [00:07&lt;00:02, 60.7MB/s]
- 79%|██████████████████████████████▊        | 483M/611M [00:08&lt;00:02, 60.6MB/s]
- 80%|███████████████████████████████▏       | 489M/611M [00:08&lt;00:02, 60.5MB/s]
- 81%|███████████████████████████████▌       | 495M/611M [00:08&lt;00:01, 60.6MB/s]
- 82%|████████████████████████████████       | 501M/611M [00:08&lt;00:01, 60.7MB/s]
- 83%|████████████████████████████████▍      | 507M/611M [00:08&lt;00:01, 60.8MB/s]
- 84%|████████████████████████████████▊      | 513M/611M [00:08&lt;00:01, 60.5MB/s]
- 85%|█████████████████████████████████▏     | 519M/611M [00:08&lt;00:01, 60.6MB/s]
- 86%|█████████████████████████████████▌     | 525M/611M [00:08&lt;00:01, 60.8MB/s]
- 87%|█████████████████████████████████▉     | 532M/611M [00:08&lt;00:01, 60.9MB/s]
- 88%|██████████████████████████████████▎    | 538M/611M [00:08&lt;00:01, 60.3MB/s]
- 89%|██████████████████████████████████▋    | 544M/611M [00:09&lt;00:01, 60.4MB/s]
- 90%|███████████████████████████████████    | 550M/611M [00:09&lt;00:01, 60.2MB/s]
- 91%|███████████████████████████████████▌   | 556M/611M [00:09&lt;00:00, 60.1MB/s]
- 92%|███████████████████████████████████▉   | 562M/611M [00:09&lt;00:00, 60.2MB/s]
- 93%|████████████████████████████████████▎  | 568M/611M [00:09&lt;00:00, 60.5MB/s]
- 94%|████████████████████████████████████▋  | 574M/611M [00:09&lt;00:00, 60.7MB/s]
- 95%|█████████████████████████████████████  | 580M/611M [00:09&lt;00:00, 60.7MB/s]
- 96%|█████████████████████████████████████▍ | 586M/611M [00:09&lt;00:00, 60.7MB/s]
- 97%|█████████████████████████████████████▊ | 592M/611M [00:09&lt;00:00, 60.7MB/s]
- 98%|██████████████████████████████████████▏| 598M/611M [00:09&lt;00:00, 60.6MB/s]
- 99%|██████████████████████████████████████▌| 604M/611M [00:10&lt;00:00, 27.9MB/s]
-100%|██████████████████████████████████████▉| 611M/611M [00:10&lt;00:00, 33.4MB/s]
+  1%|▎                                     | 4.73M/611M [00:00&lt;00:12, 47.3MB/s]
+  2%|▋                                     | 10.5M/611M [00:00&lt;00:11, 53.5MB/s]
+  3%|█                                     | 16.6M/611M [00:00&lt;00:10, 56.8MB/s]
+  4%|█▍                                    | 22.6M/611M [00:00&lt;00:10, 58.3MB/s]
+  5%|█▊                                    | 28.7M/611M [00:00&lt;00:09, 59.3MB/s]
+  6%|██▏                                   | 34.8M/611M [00:00&lt;00:09, 59.8MB/s]
+  7%|██▌                                   | 41.0M/611M [00:00&lt;00:09, 60.3MB/s]
+  8%|██▉                                   | 47.0M/611M [00:00&lt;00:09, 60.4MB/s]
+  9%|███▎                                  | 53.1M/611M [00:00&lt;00:09, 60.7MB/s]
+ 10%|███▋                                  | 59.2M/611M [00:01&lt;00:09, 60.7MB/s]
+ 11%|████                                  | 65.3M/611M [00:01&lt;00:08, 60.6MB/s]
+ 12%|████▍                                 | 71.4M/611M [00:01&lt;00:08, 60.6MB/s]
+ 13%|████▊                                 | 77.4M/611M [00:01&lt;00:08, 60.4MB/s]
+ 14%|█████▏                                | 83.5M/611M [00:01&lt;00:08, 60.6MB/s]
+ 15%|█████▌                                | 89.6M/611M [00:01&lt;00:08, 60.6MB/s]
+ 16%|█████▉                                | 95.7M/611M [00:01&lt;00:08, 60.4MB/s]
+ 17%|██████▍                                | 102M/611M [00:01&lt;00:08, 60.4MB/s]
+ 18%|██████▉                                | 108M/611M [00:01&lt;00:08, 60.4MB/s]
+ 19%|███████▎                               | 114M/611M [00:01&lt;00:08, 60.5MB/s]
+ 20%|███████▋                               | 120M/611M [00:02&lt;00:08, 60.6MB/s]
+ 21%|████████                               | 126M/611M [00:02&lt;00:08, 60.5MB/s]
+ 22%|████████▍                              | 132M/611M [00:02&lt;00:07, 60.7MB/s]
+ 23%|████████▊                              | 138M/611M [00:02&lt;00:07, 60.7MB/s]
+ 24%|█████████▏                             | 144M/611M [00:02&lt;00:07, 60.8MB/s]
+ 25%|█████████▌                             | 150M/611M [00:02&lt;00:07, 60.9MB/s]
+ 26%|█████████▉                             | 156M/611M [00:02&lt;00:07, 60.8MB/s]
+ 27%|██████████▍                            | 163M/611M [00:02&lt;00:07, 60.7MB/s]
+ 28%|██████████▊                            | 169M/611M [00:02&lt;00:07, 60.7MB/s]
+ 29%|███████████▏                           | 175M/611M [00:02&lt;00:07, 60.8MB/s]
+ 30%|███████████▌                           | 181M/611M [00:03&lt;00:07, 60.9MB/s]
+ 31%|███████████▉                           | 187M/611M [00:03&lt;00:06, 60.8MB/s]
+ 32%|████████████▎                          | 193M/611M [00:03&lt;00:06, 60.8MB/s]
+ 33%|████████████▋                          | 199M/611M [00:03&lt;00:06, 60.7MB/s]
+ 34%|█████████████                          | 205M/611M [00:03&lt;00:06, 60.7MB/s]
+ 35%|█████████████▍                         | 211M/611M [00:03&lt;00:06, 60.8MB/s]
+ 36%|█████████████▉                         | 217M/611M [00:03&lt;00:06, 60.9MB/s]
+ 37%|██████████████▎                        | 223M/611M [00:03&lt;00:06, 60.8MB/s]
+ 38%|██████████████▋                        | 230M/611M [00:03&lt;00:06, 61.1MB/s]
+ 39%|███████████████                        | 236M/611M [00:03&lt;00:06, 61.0MB/s]
+ 40%|███████████████▍                       | 242M/611M [00:04&lt;00:06, 60.9MB/s]
+ 41%|███████████████▊                       | 248M/611M [00:04&lt;00:05, 60.8MB/s]
+ 42%|████████████████▏                      | 254M/611M [00:04&lt;00:05, 60.8MB/s]
+ 43%|████████████████▌                      | 260M/611M [00:04&lt;00:05, 60.7MB/s]
+ 44%|████████████████▉                      | 266M/611M [00:04&lt;00:05, 60.7MB/s]
+ 45%|█████████████████▍                     | 272M/611M [00:04&lt;00:05, 60.6MB/s]
+ 46%|█████████████████▊                     | 278M/611M [00:04&lt;00:05, 60.6MB/s]
+ 47%|██████████████████▏                    | 284M/611M [00:04&lt;00:05, 60.7MB/s]
+ 48%|██████████████████▌                    | 290M/611M [00:04&lt;00:05, 60.7MB/s]
+ 49%|██████████████████▉                    | 296M/611M [00:04&lt;00:05, 60.5MB/s]
+ 50%|███████████████████▎                   | 303M/611M [00:05&lt;00:05, 60.3MB/s]
+ 51%|███████████████████▋                   | 309M/611M [00:05&lt;00:04, 60.4MB/s]
+ 52%|████████████████████                   | 315M/611M [00:05&lt;00:04, 60.5MB/s]
+ 53%|████████████████████▍                  | 321M/611M [00:05&lt;00:04, 60.6MB/s]
+ 54%|████████████████████▉                  | 327M/611M [00:05&lt;00:04, 60.7MB/s]
+ 55%|█████████████████████▎                 | 333M/611M [00:05&lt;00:04, 60.9MB/s]
+ 56%|█████████████████████▋                 | 339M/611M [00:05&lt;00:04, 60.7MB/s]
+ 57%|██████████████████████                 | 345M/611M [00:05&lt;00:04, 60.8MB/s]
+ 58%|██████████████████████▍                | 351M/611M [00:05&lt;00:04, 60.7MB/s]
+ 59%|██████████████████████▊                | 357M/611M [00:05&lt;00:04, 60.8MB/s]
+ 60%|███████████████████████▏               | 363M/611M [00:06&lt;00:04, 60.8MB/s]
+ 61%|███████████████████████▌               | 370M/611M [00:06&lt;00:03, 60.7MB/s]
+ 62%|███████████████████████▉               | 376M/611M [00:06&lt;00:03, 60.6MB/s]
+ 63%|████████████████████████▍              | 382M/611M [00:06&lt;00:03, 60.4MB/s]
+ 63%|████████████████████████▊              | 388M/611M [00:06&lt;00:03, 60.3MB/s]
+ 64%|█████████████████████████▏             | 394M/611M [00:06&lt;00:03, 60.5MB/s]
+ 65%|█████████████████████████▌             | 400M/611M [00:06&lt;00:03, 60.5MB/s]
+ 66%|█████████████████████████▉             | 406M/611M [00:06&lt;00:03, 60.5MB/s]
+ 67%|██████████████████████████▎            | 412M/611M [00:06&lt;00:03, 60.7MB/s]
+ 68%|██████████████████████████▋            | 418M/611M [00:06&lt;00:03, 60.8MB/s]
+ 69%|███████████████████████████            | 424M/611M [00:07&lt;00:03, 59.7MB/s]
+ 70%|███████████████████████████▍           | 430M/611M [00:07&lt;00:03, 59.9MB/s]
+ 71%|███████████████████████████▊           | 436M/611M [00:07&lt;00:02, 60.0MB/s]
+ 72%|████████████████████████████▎          | 442M/611M [00:07&lt;00:02, 60.0MB/s]
+ 73%|████████████████████████████▋          | 448M/611M [00:07&lt;00:02, 60.3MB/s]
+ 74%|█████████████████████████████          | 454M/611M [00:07&lt;00:02, 60.6MB/s]
+ 75%|█████████████████████████████▍         | 461M/611M [00:07&lt;00:02, 60.7MB/s]
+ 76%|█████████████████████████████▊         | 467M/611M [00:07&lt;00:02, 60.6MB/s]
+ 77%|██████████████████████████████▏        | 473M/611M [00:07&lt;00:02, 55.9MB/s]
+ 78%|██████████████████████████████▌        | 478M/611M [00:07&lt;00:02, 50.3MB/s]
+ 79%|██████████████████████████████▉        | 484M/611M [00:08&lt;00:02, 53.0MB/s]
+ 80%|███████████████████████████████▎       | 491M/611M [00:08&lt;00:02, 55.3MB/s]
+ 81%|███████████████████████████████▋       | 497M/611M [00:08&lt;00:01, 57.0MB/s]
+ 82%|████████████████████████████████       | 503M/611M [00:08&lt;00:01, 58.0MB/s]
+ 83%|████████████████████████████████▌      | 509M/611M [00:08&lt;00:01, 58.8MB/s]
+ 84%|████████████████████████████████▉      | 515M/611M [00:08&lt;00:01, 59.3MB/s]
+ 85%|█████████████████████████████████▎     | 521M/611M [00:08&lt;00:01, 59.8MB/s]
+ 86%|█████████████████████████████████▋     | 527M/611M [00:08&lt;00:01, 60.3MB/s]
+ 87%|██████████████████████████████████     | 533M/611M [00:08&lt;00:01, 60.4MB/s]
+ 88%|██████████████████████████████████▍    | 539M/611M [00:08&lt;00:01, 60.2MB/s]
+ 89%|██████████████████████████████████▊    | 545M/611M [00:09&lt;00:01, 60.4MB/s]
+ 90%|███████████████████████████████████▏   | 551M/611M [00:09&lt;00:00, 60.6MB/s]
+ 91%|███████████████████████████████████▌   | 557M/611M [00:09&lt;00:00, 60.5MB/s]
+ 92%|███████████████████████████████████▉   | 564M/611M [00:09&lt;00:00, 60.5MB/s]
+ 93%|████████████████████████████████████▍  | 570M/611M [00:09&lt;00:00, 60.4MB/s]
+ 94%|████████████████████████████████████▊  | 576M/611M [00:09&lt;00:00, 60.7MB/s]
+ 95%|█████████████████████████████████████▏ | 582M/611M [00:09&lt;00:00, 60.6MB/s]
+ 96%|█████████████████████████████████████▌ | 588M/611M [00:09&lt;00:00, 60.6MB/s]
+ 97%|█████████████████████████████████████▉ | 594M/611M [00:09&lt;00:00, 60.6MB/s]
+ 98%|██████████████████████████████████████▎| 600M/611M [00:09&lt;00:00, 60.5MB/s]
+ 99%|██████████████████████████████████████▋| 606M/611M [00:10&lt;00:00, 60.5MB/s]
   0%|                                               | 0.00/611M [00:00&lt;?, ?B/s]
-100%|███████████████████████████████████████| 611M/611M [00:00&lt;00:00, 1.15TB/s]
+100%|███████████████████████████████████████| 611M/611M [00:00&lt;00:00, 1.08TB/s]
 Attempting to create new mne-python configuration file:
 /github/home/.mne/mne-python.json
 Opening raw data file /github/home/mne_data/MNE-somato-data/sub-01/meg/sub-01_task-somato_meg.fif...
@@ -615,9 +626,9 @@ Using data from preloaded Raw for 111 events and 1803 original time points ...
   step_size, obj_uv = optimize.linesearch.scalar_search_armijo(
 .............
 [BatchCDL] Converged after 14 iteration, (dz, du) = 8.765e-05, 8.726e-05
-[BatchCDL] Fit in 898.8s
+[BatchCDL] Fit in 896.1s
 
-&lt;alphacsc.convolutional_dictionary_learning.BatchCDL object at 0x7f47c3460130&gt;
+&lt;alphacsc.convolutional_dictionary_learning.BatchCDL object at 0x7f07725650d0&gt;
 </pre></div>
 </div>
 <p>Display the 4-th atom, which displays a <span class="math notranslate nohighlight">\(\mu\)</span>-waveform in its temporal
@@ -658,7 +669,7 @@ pattern.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_somato_mu_waves_001.png" srcset="../../_images/sphx_glr_plot_somato_mu_waves_001.png" alt="Learned spatial pattern, Learned temporal waveform, Power Spectral Density" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 15 minutes  34.053 seconds)</p>
+<img src="../../_images/sphx_glr_plot_somato_mu_waves_001.png" srcset="../../_images/sphx_glr_plot_somato_mu_waves_001.png" alt="Learned spatial pattern, Learned temporal waveform, Power Spectral Density" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 15 minutes  32.294 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-somato-mu-waves-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/809f9c170688e8d6832319a2470e8039/plot_somato_mu_waves.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_somato_mu_waves.py</span></code></a></p>
@@ -739,7 +750,8 @@ pattern.</p>
     
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
 
   <footer class="bd-footer"><div class="bd-footer__inner container">
   
@@ -751,6 +763,16 @@ pattern.</p>
 
 </p>
 
+  </div>
+  
+  <div class="footer-item">
+    <p class="theme-version">
+    Built with the
+    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
+        PyData Sphinx Theme
+    </a>
+    0.12.0.
+</p>
   </div>
   
   <div class="footer-item">
