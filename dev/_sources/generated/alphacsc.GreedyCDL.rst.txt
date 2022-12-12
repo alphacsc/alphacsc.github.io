@@ -16,6 +16,7 @@
       ~GreedyCDL.__init__
       ~GreedyCDL.fit
       ~GreedyCDL.fit_transform
+      ~GreedyCDL.set_output
       ~GreedyCDL.transform
       ~GreedyCDL.transform_inverse
    

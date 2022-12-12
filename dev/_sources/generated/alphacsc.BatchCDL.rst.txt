@@ -16,6 +16,7 @@
       ~BatchCDL.__init__
       ~BatchCDL.fit
       ~BatchCDL.fit_transform
+      ~BatchCDL.set_output
       ~BatchCDL.transform
       ~BatchCDL.transform_inverse
    
