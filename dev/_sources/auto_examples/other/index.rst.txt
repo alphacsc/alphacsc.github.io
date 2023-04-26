@@ -21,7 +21,7 @@ Other shift-invariant dictionary learning algorithms
 .. only:: html
 
   .. image:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
-    :alt: MoTIF on simulated data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_other_plot_simulate_motif.py`
 
@@ -38,7 +38,7 @@ Other shift-invariant dictionary learning algorithms
 .. only:: html
 
   .. image:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
-    :alt: SWM on simulated data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py`
 

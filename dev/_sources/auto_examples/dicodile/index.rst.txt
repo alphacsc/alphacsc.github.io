@@ -21,7 +21,7 @@ Univariate and Multivariate CSC with 'dicodile' solver
 .. only:: html
 
   .. image:: /auto_examples/dicodile/images/thumb/sphx_glr_plot_gait_thumb.png
-    :alt: Gait (steps) example
+    :alt:
 
   :ref:`sphx_glr_auto_examples_dicodile_plot_gait.py`
 

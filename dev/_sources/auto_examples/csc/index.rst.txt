@@ -21,7 +21,7 @@ Univariate CSC
 .. only:: html
 
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
-    :alt: Selecting random state for CSC
+    :alt:
 
   :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py`
 
@@ -38,7 +38,7 @@ Univariate CSC
 .. only:: html
 
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_lfp_data_thumb.png
-    :alt: CSC to learn LFP spiking atoms
+    :alt:
 
   :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py`
 
@@ -55,7 +55,7 @@ Univariate CSC
 .. only:: html
 
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_cross_frequency_coupling_thumb.png
-    :alt: Extracting cross-frequency coupling waveforms from rodent LFP data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py`
 
@@ -72,7 +72,7 @@ Univariate CSC
 .. only:: html
 
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
-    :alt: Vanilla CSC on simulated data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py`
 

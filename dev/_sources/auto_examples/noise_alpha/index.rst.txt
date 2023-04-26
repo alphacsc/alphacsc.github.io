@@ -21,7 +21,7 @@ Univariate CSC with an alpha-stable distribution
 .. only:: html
 
   .. image:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
-    :alt: Alpha CSC on simulated data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_noise_alpha_plot_simulate_alphacsc.py`
 
@@ -38,7 +38,7 @@ Univariate CSC with an alpha-stable distribution
 .. only:: html
 
   .. image:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_empirical_strong_artifacts_thumb.png
-    :alt: Alpha CSC on empirical time-series with strong artifacts
+    :alt:
 
   :ref:`sphx_glr_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py`
 

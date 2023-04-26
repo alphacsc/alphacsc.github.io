@@ -39,7 +39,7 @@ Univariate CSC
 .. only:: html
 
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
-    :alt: Selecting random state for CSC
+    :alt:
 
   :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py`
 
@@ -56,7 +56,7 @@ Univariate CSC
 .. only:: html
 
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_lfp_data_thumb.png
-    :alt: CSC to learn LFP spiking atoms
+    :alt:
 
   :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py`
 
@@ -73,7 +73,7 @@ Univariate CSC
 .. only:: html
 
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_cross_frequency_coupling_thumb.png
-    :alt: Extracting cross-frequency coupling waveforms from rodent LFP data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py`
 
@@ -90,7 +90,7 @@ Univariate CSC
 .. only:: html
 
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
-    :alt: Vanilla CSC on simulated data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py`
 
@@ -122,7 +122,7 @@ Univariate and Multivariate CSC with 'dicodile' solver
 .. only:: html
 
   .. image:: /auto_examples/dicodile/images/thumb/sphx_glr_plot_gait_thumb.png
-    :alt: Gait (steps) example
+    :alt:
 
   :ref:`sphx_glr_auto_examples_dicodile_plot_gait.py`
 
@@ -154,13 +154,13 @@ Multivariate CSC with rank 1 constraints
 .. only:: html
 
   .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_somato_mu_waves_thumb.png
-    :alt: Extracting :math:`\mu`-wave from the somato-sensory dataset
+    :alt:
 
   :ref:`sphx_glr_auto_examples_multicsc_plot_somato_mu_waves.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Extracting :math:`\mu`-wave from the somato-sensory dataset</div>
+      <div class="sphx-glr-thumbnail-title">Extracting \mu-wave from the somato-sensory dataset</div>
     </div>
 
 
@@ -171,7 +171,7 @@ Multivariate CSC with rank 1 constraints
 .. only:: html
 
   .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_sample_evoked_response_dicodile_thumb.png
-    :alt: Extracting artifact and evoked response atoms from the MNE sample dataset
+    :alt:
 
   :ref:`sphx_glr_auto_examples_multicsc_sample_evoked_response_dicodile.py`
 
@@ -188,7 +188,7 @@ Multivariate CSC with rank 1 constraints
 .. only:: html
 
   .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_sample_evoked_response_thumb.png
-    :alt: Extracting artifact and evoked response atoms from the sample dataset
+    :alt:
 
   :ref:`sphx_glr_auto_examples_multicsc_plot_sample_evoked_response.py`
 
@@ -220,7 +220,7 @@ Univariate CSC with an alpha-stable distribution
 .. only:: html
 
   .. image:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_simulate_alphacsc_thumb.png
-    :alt: Alpha CSC on simulated data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_noise_alpha_plot_simulate_alphacsc.py`
 
@@ -237,7 +237,7 @@ Univariate CSC with an alpha-stable distribution
 .. only:: html
 
   .. image:: /auto_examples/noise_alpha/images/thumb/sphx_glr_plot_empirical_strong_artifacts_thumb.png
-    :alt: Alpha CSC on empirical time-series with strong artifacts
+    :alt:
 
   :ref:`sphx_glr_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py`
 
@@ -269,7 +269,7 @@ Other shift-invariant dictionary learning algorithms
 .. only:: html
 
   .. image:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
-    :alt: MoTIF on simulated data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_other_plot_simulate_motif.py`
 
@@ -286,7 +286,7 @@ Other shift-invariant dictionary learning algorithms
 .. only:: html
 
   .. image:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
-    :alt: SWM on simulated data
+    :alt:
 
   :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py`
 
@@ -304,6 +304,7 @@ Other shift-invariant dictionary learning algorithms
 .. toctree::
    :hidden:
    :includehidden:
+
 
    /auto_examples/csc/index.rst
    /auto_examples/dicodile/index.rst
