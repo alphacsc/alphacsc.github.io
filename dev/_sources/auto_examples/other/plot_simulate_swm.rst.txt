@@ -10232,7 +10232,7 @@ is present. Now let us plot the atoms.
  .. code-block:: none
 
 
-    [<matplotlib.lines.Line2D object at 0x7fdcd88b4310>]
+    [<matplotlib.lines.Line2D object at 0x7f23efbad9d0>]
 
 
 
@@ -10265,7 +10265,7 @@ and the cost function over iterations
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.804 seconds)
+   **Total running time of the script:** ( 0 minutes  13.664 seconds)
 
 
 .. _sphx_glr_download_auto_examples_other_plot_simulate_swm.py:

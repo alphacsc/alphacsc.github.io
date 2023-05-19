@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>CSC to learn LFP spiking atoms &#8212; alphacsc 0.1.dev1 documentation</title>
   
@@ -473,11 +472,12 @@ Creating ~/mne_data
 Downloading file &#39;LFP_data_contiguous_1250_Hz.mat&#39; from &#39;https://github.com/hitziger/AWL/raw/master/Experiments/data/LFP_data_contiguous_1250_Hz.mat&#39; to &#39;/github/home/mne_data/LFP&#39;.
 
   0%|                                              | 0.00/14.4M [00:00&lt;?, ?B/s]
- 24%|████████▉                            | 3.47M/14.4M [00:00&lt;00:00, 34.7MB/s]
- 48%|█████████████████▊                   | 6.95M/14.4M [00:00&lt;00:00, 32.4MB/s]
- 78%|████████████████████████████▋        | 11.2M/14.4M [00:00&lt;00:00, 36.8MB/s]
+ 28%|██████████▎                          | 4.04M/14.4M [00:00&lt;00:00, 40.4MB/s]
+ 57%|████████████████████▉                | 8.15M/14.4M [00:00&lt;00:00, 40.8MB/s]
+ 87%|████████████████████████████████▏    | 12.5M/14.4M [00:00&lt;00:00, 42.2MB/s]
   0%|                                              | 0.00/14.4M [00:00&lt;?, ?B/s]
-100%|█████████████████████████████████████| 14.4M/14.4M [00:00&lt;00:00, 22.0GB/s]
+100%|█████████████████████████████████████| 14.4M/14.4M [00:00&lt;00:00, 18.5GB/s]
+Download complete in 01s (13.8 MB)
 </pre></div>
 </div>
 <p>It is a mat file, so we use scipy to load it</p>
@@ -518,7 +518,7 @@ Designing a one-pass, zero-phase, non-causal highpass filter:
 - Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
 - Lower passband edge: 1.00
 - Lower transition bandwidth: 1.00 Hz (-6 dB cutoff frequency: 0.50 Hz)
-- Filter length: 4125 samples (3.300 sec)
+- Filter length: 4125 samples (3.300 s)
 
 [Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
 [Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.2s remaining:    0.0s
@@ -823,7 +823,7 @@ Using method dual for projection
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_lfp_data_002.png" srcset="../../_images/sphx_glr_plot_lfp_data_002.png" alt="plot lfp data" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  6.362 seconds)</p>
+<img src="../../_images/sphx_glr_plot_lfp_data_002.png" srcset="../../_images/sphx_glr_plot_lfp_data_002.png" alt="plot lfp data" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  12.175 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-csc-plot-lfp-data-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/f93a497b17a2035de2f8a7969f6a761b/plot_lfp_data.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_lfp_data.py</span></code></a></p>
@@ -918,7 +918,7 @@ Using method dual for projection
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
     <br/>
   </p>
 </div>
