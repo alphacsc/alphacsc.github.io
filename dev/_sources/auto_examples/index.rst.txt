@@ -16,6 +16,9 @@ Examples Gallery
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -31,10 +34,11 @@ Univariate CSC
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The CSC problem is non-convex. Therefore, the solution depends on the initialization. Here, we ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The CSC problem is non-convex. Therefore, the solution depends on the initialization. Here, we show how to select the best atoms amongst different initializations.">
 
 .. only:: html
 
@@ -51,7 +55,7 @@ Univariate CSC
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Here, we show how CSC can be used to learn spiking atoms from Local Field Potential (LFP) data ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Here, we show how CSC can be used to learn spiking atoms from Local Field Potential (LFP) data [1].">
 
 .. only:: html
 
@@ -68,7 +72,7 @@ Univariate CSC
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie. The data is ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie. The data is a single LFP channel recorded on a rodent&#x27;s striatum [1]_. Interestingly in this time-serie, the high frequency oscillations around 80 Hz are modulated in amplitude by the low-frequency oscillation around 3 Hz, a phenomenon known as cross-frequency coupling (CFC).">
 
 .. only:: html
 
@@ -85,7 +89,7 @@ Univariate CSC
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates vanilla CSC on simulated data. Note that vanilla CSC is just a specia...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates vanilla CSC on simulated data. Note that vanilla CSC is just a special case of alphaCSC with alpha=2.">
 
 .. only:: html
 
@@ -99,6 +103,8 @@ Univariate CSC
       <div class="sphx-glr-thumbnail-title">Vanilla CSC on simulated data</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -114,6 +120,7 @@ Univariate and Multivariate CSC with 'dicodile' solver
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -132,6 +139,8 @@ Univariate and Multivariate CSC with 'dicodile' solver
     </div>
 
 
+.. thumbnail-parent-div-close
+
 .. raw:: html
 
     </div>
@@ -146,10 +155,11 @@ Multivariate CSC with rank 1 constraints
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 atoms [1]_ on the multivariate somato-sensorymotor...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 atoms [1]_ on the multivariate somato-sensorymotor dataset from mne. The displayed results highlight the presence of \mu-waves located in the SI cortex.">
 
 .. only:: html
 
@@ -166,7 +176,7 @@ Multivariate CSC with rank 1 constraints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from mne. We display a selection of atoms, featuring heartbeat and eyeblink artifacts, two atoms of evoked responses, and a non-sinusoidal oscillation.">
 
 .. only:: html
 
@@ -183,7 +193,7 @@ Multivariate CSC with rank 1 constraints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from mne. We display a selection of atoms, featuring heartbeat and eyeblink artifacts, two atoms of evoked responses, and a non-sinusoidal oscillation.">
 
 .. only:: html
 
@@ -197,6 +207,8 @@ Multivariate CSC with rank 1 constraints
       <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the sample dataset</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -212,6 +224,7 @@ Univariate CSC with an alpha-stable distribution
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -232,7 +245,7 @@ Univariate CSC with an alpha-stable distribution
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie affected by s...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie affected by strong artifacts. The data is a single LFP channel recorded on a rodent&#x27;s striatum [1]_. Interestingly in this time-serie, the high frequency oscillations around 80 Hz are modulated in amplitude by the low-frequency oscillation around 3 Hz, a phenomenon known as cross-frequency coupling (CFC).">
 
 .. only:: html
 
@@ -246,6 +259,8 @@ Univariate CSC with an alpha-stable distribution
       <div class="sphx-glr-thumbnail-title">Alpha CSC on empirical time-series with strong artifacts</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -261,10 +276,11 @@ Other shift-invariant dictionary learning algorithms
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates MoTIF [1] on simulated data. In the alphacsc module, we are offering ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates MoTIF [1] on simulated data. In the alphacsc module, we are offering all the alternatives for the users to try. Please cite our paper [2] if you use this implementation.">
 
 .. only:: html
 
@@ -281,7 +297,7 @@ Other shift-invariant dictionary learning algorithms
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how the sliding window method (SWM) [1] works on simulated data. The code is...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how the sliding window method (SWM) [1] works on simulated data. The code is adapted from the neurodsp package from Voytek lab. Note that, at present, it does not implement parallel tempering.">
 
 .. only:: html
 
@@ -295,6 +311,8 @@ Other shift-invariant dictionary learning algorithms
       <div class="sphx-glr-thumbnail-title">SWM on simulated data</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

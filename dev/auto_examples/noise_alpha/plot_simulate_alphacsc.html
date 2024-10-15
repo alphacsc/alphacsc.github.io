@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
@@ -14,37 +14,40 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=6aee1ebc"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/noise_alpha/plot_simulate_alphacsc';</script>
     <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://alphacsc.github.io/stable/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
         </script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -59,19 +62,23 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -93,19 +100,29 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -117,40 +134,34 @@
     
   </div>
   
-  
   <div class="col-lg-9 navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+        <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../models.html">
-                        Model descriptions
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../models.html">
+    Model descriptions
+  </a>
+</li>
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
-                        Examples Gallery
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../api.html">
-                        API Documentation
-                      </a>
-                    </li>
-                
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples Gallery
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api.html">
+    API Documentation
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -161,13 +172,16 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
@@ -175,18 +189,27 @@ document.write(`
 <script>
 document.write(`
   <div class="version-switcher__container dropdown">
-    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
-      dev  <!-- this text may get changed later by javascript -->
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
       <span class="caret"></span>
     </button>
-    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
-    <!-- dropdown will be populated by javascript on page load -->
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
     </div>
   </div>
 `);
 </script></div>
       
-        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+        <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -197,8 +220,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -209,8 +232,8 @@ document.write(`
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-box"></i></span>
-            <label class="sr-only">PyPI</label></a>
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
         </li>
 </ul></div>
       
@@ -220,27 +243,33 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
-    </label>
+    </button>
   
 </div>
 
-    </nav>
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -251,37 +280,35 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+          
+          
+            <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../models.html">
-                        Model descriptions
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../models.html">
+    Model descriptions
+  </a>
+</li>
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="../index.html">
-                        Examples Gallery
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../api.html">
-                        API Documentation
-                      </a>
-                    </li>
-                
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Examples Gallery
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api.html">
+    API Documentation
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -293,18 +320,27 @@ document.write(`
 <script>
 document.write(`
   <div class="version-switcher__container dropdown">
-    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
-      dev  <!-- this text may get changed later by javascript -->
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
       <span class="caret"></span>
     </button>
-    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
-    <!-- dropdown will be populated by javascript on page load -->
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
     </div>
   </div>
 `);
 </script></div>
         
-          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+          <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
           
@@ -315,8 +351,8 @@ document.write(`
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -327,8 +363,8 @@ document.write(`
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fas fa-box"></i></span>
-            <label class="sr-only">PyPI</label></a>
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
         </li>
 </ul></div>
         
@@ -337,37 +373,38 @@ document.write(`
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../csc/index.html">Univariate CSC</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../csc/index.html">Univariate CSC</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../csc/plot_simulate_randomstate.html">Selecting random state for CSC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csc/plot_lfp_data.html">CSC to learn LFP spiking atoms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csc/plot_cross_frequency_coupling.html">Extracting cross-frequency coupling waveforms from rodent LFP data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csc/plot_simulate_csc.html">Vanilla CSC on simulated data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../dicodile/index.html">Univariate and Multivariate CSC with ‘dicodile’ solver</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dicodile/index.html">Univariate and Multivariate CSC with ‘dicodile’ solver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../dicodile/plot_gait.html">Gait (steps) example</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../multicsc/index.html">Multivariate CSC with rank 1 constraints</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../multicsc/index.html">Multivariate CSC with rank 1 constraints</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../multicsc/plot_somato_mu_waves.html">Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../multicsc/sample_evoked_response_dicodile.html">Extracting artifact and evoked response atoms from the MNE sample dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../multicsc/plot_sample_evoked_response.html">Extracting artifact and evoked response atoms from the sample dataset</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Univariate CSC with an alpha-stable distribution</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Univariate CSC with an alpha-stable distribution</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Alpha CSC on simulated data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_empirical_strong_artifacts.html">Alpha CSC on empirical time-series with strong artifacts</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../other/index.html">Other shift-invariant dictionary learning algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../other/index.html">Other shift-invariant dictionary learning algorithms</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../other/plot_simulate_motif.html">MoTIF on simulated data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../other/plot_simulate_swm.html">SWM on simulated data</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 </div>
 </nav></div>
@@ -382,13 +419,13 @@ document.write(`
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -397,8 +434,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../../index.html" class="nav-link" aria-label="Home">
@@ -411,7 +448,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Univariate CSC with an alpha-stable distribution</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Alpha CSC on simulated data</li>
+    <li class="breadcrumb-item active" aria-current="page">Alpha CSC...</li>
   </ul>
 </nav>
 </div>
@@ -426,15 +463,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#sphx-glr-download-auto-examples-noise-alpha-plot-simulate-alphacsc-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code</p>
+to download the full example code.</p>
 </div>
 <section class="sphx-glr-example-title" id="alpha-csc-on-simulated-data">
-<span id="sphx-glr-auto-examples-noise-alpha-plot-simulate-alphacsc-py"></span><h1>Alpha CSC on simulated data<a class="headerlink" href="#alpha-csc-on-simulated-data" title="Permalink to this heading">#</a></h1>
+<span id="sphx-glr-auto-examples-noise-alpha-plot-simulate-alphacsc-py"></span><h1>Alpha CSC on simulated data<a class="headerlink" href="#alpha-csc-on-simulated-data" title="Link to this heading">#</a></h1>
 <p>This example demonstrates alphaCSC <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> on simulated data.</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id2" role="doc-footnote">
@@ -445,7 +482,7 @@ Sparse Coding</a>.
 Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
 </aside>
 </aside>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Tom Dupre La Tour &lt;tom.duprelatour@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Umut Simsekli &lt;umut.simsekli@telecom-paristech.fr&gt;</span>
 <span class="c1">#          Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
@@ -454,7 +491,7 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
 </pre></div>
 </div>
 <p>Let us first define the parameters of our model.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a> <span class="o">=</span> <span class="mi">64</span>  <span class="c1"># L</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a> <span class="o">=</span> <span class="mi">64</span>  <span class="c1"># L</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a> <span class="o">=</span> <span class="mi">512</span>  <span class="c1"># T</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># K</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_trials</span></a> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># N</span>
@@ -464,14 +501,14 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
 </pre></div>
 </div>
 <p>Next, we define the parameters for alpha CSC</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter_global</span></a> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter_global</span></a> <span class="o">=</span> <span class="mi">10</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter_optim</span></a> <span class="o">=</span> <span class="mi">50</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter_mcmc</span></a> <span class="o">=</span> <span class="mi">100</span>
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_burnin_mcmc</span></a> <span class="o">=</span> <span class="mi">50</span>
 </pre></div>
 </div>
 <p>Here, we simulate the data</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.simulate</span> <span class="kn">import</span> <span class="n">simulate_data</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc.simulate</span> <span class="kn">import</span> <span class="n">simulate_data</span>
 
 <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">random_state_simulate</span></a> <span class="o">=</span> <span class="mi">1</span>
 <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ds_true</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">z_true</span></a> <span class="o">=</span> <span class="n">simulate_data</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_trials</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a><span class="p">,</span>
@@ -479,7 +516,7 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
 </pre></div>
 </div>
 <p>Add some noise and corrupt some trials even with impulsive noise</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">levy_stable</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">levy_stable</span>
 <span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <span class="n">check_random_state</span>
 
 <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fraction_corrupted</span></a> <span class="o">=</span> <span class="mf">0.02</span>
@@ -487,11 +524,11 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
 
 <span class="c1"># Add stationary noise:</span>
 <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.random.RandomState.html#numpy.random.RandomState" title="numpy.random.RandomState" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rng</span></a> <span class="o">=</span> <span class="n">check_random_state</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">random_state_simulate</span></a><span class="p">)</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a> <span class="o">+=</span> <span class="mf">0.01</span> <span class="o">*</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.random.RandomState.html#numpy.random.RandomState" title="numpy.random.RandomState" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rng</span></a><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span>
+<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a> <span class="o">+=</span> <span class="mf">0.01</span> <span class="o">*</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.random.RandomState.randn.html#numpy.random.RandomState.randn" title="numpy.random.RandomState.randn" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-method"><span class="n">rng</span><span class="o">.</span><span class="n">randn</span></a><span class="p">(</span><span class="o">*</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span>
 
 <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">noise_level</span></a> <span class="o">=</span> <span class="mf">0.005</span>
 <span class="c1"># add impulsive noise</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx_corrupted</span></a> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.random.RandomState.html#numpy.random.RandomState" title="numpy.random.RandomState" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">rng</span></a><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_trials</span></a><span class="p">,</span>
+<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx_corrupted</span></a> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.random.RandomState.randint.html#numpy.random.RandomState.randint" title="numpy.random.RandomState.randint" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-method"><span class="n">rng</span><span class="o">.</span><span class="n">randint</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_trials</span></a><span class="p">,</span>
                             <span class="n">size</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_corrupted_trials</span></a><span class="p">)</span>
 <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">[</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx_corrupted</span></a><span class="p">]</span> <span class="o">+=</span> <a href="https://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.stats.rv_continuous.rvs.html#scipy.stats.rv_continuous.rvs" title="scipy.stats.rv_continuous.rvs" class="sphx-glr-backref-module-scipy-stats sphx-glr-backref-type-py-method"><span class="n">levy_stable</span><span class="o">.</span><span class="n">rvs</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">alpha</span></a><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">noise_level</span></a><span class="p">,</span>
                                     <span class="n">size</span><span class="o">=</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_corrupted_trials</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a><span class="p">),</span>
@@ -499,7 +536,7 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
 </pre></div>
 </div>
 <p>and then alpha CSC on the same data</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <a href="../../generated/alphacsc.learn_d_z_weighted.html#alphacsc.learn_d_z_weighted" title="alphacsc.learn_d_z_weighted" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-function"><span class="n">learn_d_z_weighted</span></a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <a href="../../generated/alphacsc.learn_d_z_weighted.html#alphacsc.learn_d_z_weighted" title="alphacsc.learn_d_z_weighted" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-function"><span class="n">learn_d_z_weighted</span></a>
 
 <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">d_hat</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">z_hat</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Tau</span></a> <span class="o">=</span> <a href="../../generated/alphacsc.learn_d_z_weighted.html#alphacsc.learn_d_z_weighted" title="alphacsc.learn_d_z_weighted" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-function"><span class="n">learn_d_z_weighted</span></a><span class="p">(</span>
     <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">reg</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">reg</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">alpha</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">alpha</span></a><span class="p">,</span>
@@ -509,7 +546,9 @@ Advances in Neural Information Processing Systems (NIPS), pages 1099–1108.</p>
     <span class="n">random_state</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Global Iter: 0/10       V_0/50 .................................................
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Global Iter: 0/10       V_0/50 /github/workspace/alphacsc/update_d.py:172: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  lambd_hats[k] = lambd_hat
+.................................................
 Global Iter: 1/10       V_0/50 .................................................
 Global Iter: 2/10       V_0/50 .................................................
 Global Iter: 3/10       V_0/50 .................................................
@@ -523,7 +562,7 @@ Global Iter: 9/10       V_0/50 .................................................
 </div>
 <p>Finally, let’s compare the results. Now, it works even in the presence
 of impulsive noise.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">d_hat</span><span class="o">.</span><span class="n">T</span></a><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha$CSC&#39;</span><span class="p">)</span>
@@ -535,7 +574,7 @@ of impulsive noise.</p>
 </div>
 <img src="../../_images/sphx_glr_plot_simulate_alphacsc_001.png" srcset="../../_images/sphx_glr_plot_simulate_alphacsc_001.png" alt="plot simulate alphacsc" class = "sphx-glr-single-img"/><p>We can even visualize the weights to see what time points were
 downweighted by the algorithm</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a><span class="p">])</span>
 <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>
@@ -553,13 +592,16 @@ downweighted by the algorithm</p>
 <img src="../../_images/sphx_glr_plot_simulate_alphacsc_002.png" srcset="../../_images/sphx_glr_plot_simulate_alphacsc_002.png" alt="plot simulate alphacsc" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Text(31.222222222222214, 0.5, &#39;Corrupted trial&#39;)
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 3 minutes  51.102 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (3 minutes 29.335 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-noise-alpha-plot-simulate-alphacsc-py">
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/ac1d5e5b7848fd1863f130120853ee74/plot_simulate_alphacsc.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_simulate_alphacsc.ipynb</span></code></a></p>
+</div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/7283d5df8fe2d5837016280eafd0afe1/plot_simulate_alphacsc.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_simulate_alphacsc.py</span></code></a></p>
 </div>
-<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/ac1d5e5b7848fd1863f130120853ee74/plot_simulate_alphacsc.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_simulate_alphacsc.ipynb</span></code></a></p>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/bd329f616f82672aaab908d8b6217477/plot_simulate_alphacsc.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">plot_simulate_alphacsc.zip</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -570,11 +612,10 @@ downweighted by the algorithm</p>
               
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="index.html"
@@ -594,10 +635,7 @@ downweighted by the algorithm</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -606,7 +644,9 @@ downweighted by the algorithm</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
+
   <div class="tocsection sourcelink">
     <a href="../../_sources/auto_examples/noise_alpha/plot_simulate_alphacsc.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
@@ -629,8 +669,8 @@ downweighted by the algorithm</p>
     <script src="/versionwarning.js"></script>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -638,6 +678,7 @@ downweighted by the algorithm</p>
     <div class="footer-items__start">
       
         <div class="footer-item">
+
   <p class="copyright">
     
       © Copyright 2017-2018, Mainak Jas.
@@ -647,8 +688,9 @@ downweighted by the algorithm</p>
 </div>
       
         <div class="footer-item">
+
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     <br/>
   </p>
 </div>
@@ -656,10 +698,12 @@ downweighted by the algorithm</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
 </p></div>
       
     </div>

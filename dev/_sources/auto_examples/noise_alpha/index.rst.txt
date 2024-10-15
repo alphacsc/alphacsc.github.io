@@ -13,6 +13,7 @@ Univariate CSC with an alpha-stable distribution
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -33,7 +34,7 @@ Univariate CSC with an alpha-stable distribution
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie affected by s...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie affected by strong artifacts. The data is a single LFP channel recorded on a rodent&#x27;s striatum [1]_. Interestingly in this time-serie, the high frequency oscillations around 80 Hz are modulated in amplitude by the low-frequency oscillation around 3 Hz, a phenomenon known as cross-frequency coupling (CFC).">
 
 .. only:: html
 
@@ -47,6 +48,8 @@ Univariate CSC with an alpha-stable distribution
       <div class="sphx-glr-thumbnail-title">Alpha CSC on empirical time-series with strong artifacts</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

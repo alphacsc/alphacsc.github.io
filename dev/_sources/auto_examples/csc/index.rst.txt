@@ -13,10 +13,11 @@ Univariate CSC
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The CSC problem is non-convex. Therefore, the solution depends on the initialization. Here, we ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The CSC problem is non-convex. Therefore, the solution depends on the initialization. Here, we show how to select the best atoms amongst different initializations.">
 
 .. only:: html
 
@@ -33,7 +34,7 @@ Univariate CSC
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Here, we show how CSC can be used to learn spiking atoms from Local Field Potential (LFP) data ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Here, we show how CSC can be used to learn spiking atoms from Local Field Potential (LFP) data [1].">
 
 .. only:: html
 
@@ -50,7 +51,7 @@ Univariate CSC
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie. The data is ...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie. The data is a single LFP channel recorded on a rodent&#x27;s striatum [1]_. Interestingly in this time-serie, the high frequency oscillations around 80 Hz are modulated in amplitude by the low-frequency oscillation around 3 Hz, a phenomenon known as cross-frequency coupling (CFC).">
 
 .. only:: html
 
@@ -67,7 +68,7 @@ Univariate CSC
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates vanilla CSC on simulated data. Note that vanilla CSC is just a specia...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates vanilla CSC on simulated data. Note that vanilla CSC is just a special case of alphaCSC with alpha=2.">
 
 .. only:: html
 
@@ -81,6 +82,8 @@ Univariate CSC
       <div class="sphx-glr-thumbnail-title">Vanilla CSC on simulated data</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

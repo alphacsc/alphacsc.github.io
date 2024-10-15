@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_csc_plot_simulate_randomstate.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -28,7 +28,7 @@ best atoms amongst different initializations.
 
 .. GENERATED FROM PYTHON SOURCE LINES 11-19
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Authors: Mainak Jas <mainak.jas@telecom-paristech.fr>
@@ -51,7 +51,7 @@ As before, let us first define the parameters of our model.
 
 .. GENERATED FROM PYTHON SOURCE LINES 21-30
 
-.. code-block:: default
+.. code-block:: Python
 
 
     n_times_atom = 64  # L
@@ -75,7 +75,7 @@ Here, we simulate the data
 
 .. GENERATED FROM PYTHON SOURCE LINES 32-51
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc.simulate import simulate_data # noqa
@@ -109,7 +109,7 @@ Now, we run vanilla CSC on the data but with different initializations.
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-66
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc import learn_d_z # noqa
@@ -160,7 +160,7 @@ Now, let us look at the atoms for different initializations.
 
 .. GENERATED FROM PYTHON SOURCE LINES 71-78
 
-.. code-block:: default
+.. code-block:: Python
 
     import matplotlib.pyplot as plt # noqa
     fig, axes = plt.subplots(1, 5, figsize=(17, 3), sharex=True, sharey=True)
@@ -190,7 +190,7 @@ Now, we select the best atom amongst them.
 
 .. GENERATED FROM PYTHON SOURCE LINES 83-89
 
-.. code-block:: default
+.. code-block:: Python
 
     import numpy as np # noqa
 
@@ -213,7 +213,7 @@ Now, we select the best atom amongst them.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  21.545 seconds)
+   **Total running time of the script:** (1 minutes 27.101 seconds)
 
 
 .. _sphx_glr_download_auto_examples_csc_plot_simulate_randomstate.py:
@@ -222,16 +222,17 @@ Now, we select the best atom amongst them.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: plot_simulate_randomstate.ipynb <plot_simulate_randomstate.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_simulate_randomstate.py <plot_simulate_randomstate.py>`
 
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
+    .. container:: sphx-glr-download sphx-glr-download-zip
 
-      :download:`Download Jupyter notebook: plot_simulate_randomstate.ipynb <plot_simulate_randomstate.ipynb>`
+      :download:`Download zipped: plot_simulate_randomstate.zip <plot_simulate_randomstate.zip>`
 
 
 .. only:: html

@@ -13,6 +13,7 @@ Univariate and Multivariate CSC with 'dicodile' solver
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -30,6 +31,8 @@ Univariate and Multivariate CSC with 'dicodile' solver
       <div class="sphx-glr-thumbnail-title">Gait (steps) example</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

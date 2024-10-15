@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_noise_alpha_plot_simulate_alphacsc.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -32,7 +32,7 @@ This example demonstrates alphaCSC [1]_ on simulated data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 14-22
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Authors: Mainak Jas <mainak.jas@telecom-paristech.fr>
@@ -55,7 +55,7 @@ Let us first define the parameters of our model.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-33
 
-.. code-block:: default
+.. code-block:: Python
 
 
     n_times_atom = 64  # L
@@ -79,7 +79,7 @@ Next, we define the parameters for alpha CSC
 
 .. GENERATED FROM PYTHON SOURCE LINES 35-41
 
-.. code-block:: default
+.. code-block:: Python
 
 
     n_iter_global = 10
@@ -100,7 +100,7 @@ Here, we simulate the data
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-50
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc.simulate import simulate_data
@@ -122,7 +122,7 @@ Add some noise and corrupt some trials even with impulsive noise
 
 .. GENERATED FROM PYTHON SOURCE LINES 52-71
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from scipy.stats import levy_stable
@@ -156,7 +156,7 @@ and then alpha CSC on the same data
 
 .. GENERATED FROM PYTHON SOURCE LINES 73-83
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc import learn_d_z_weighted
@@ -176,7 +176,9 @@ and then alpha CSC on the same data
 
  .. code-block:: none
 
-    Global Iter: 0/10       V_0/50 .................................................
+    Global Iter: 0/10       V_0/50 /github/workspace/alphacsc/update_d.py:172: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+      lambd_hats[k] = lambd_hat
+    .................................................
     Global Iter: 1/10       V_0/50 .................................................
     Global Iter: 2/10       V_0/50 .................................................
     Global Iter: 3/10       V_0/50 .................................................
@@ -197,7 +199,7 @@ of impulsive noise.
 
 .. GENERATED FROM PYTHON SOURCE LINES 86-96
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import matplotlib.pyplot as plt
@@ -228,7 +230,7 @@ downweighted by the algorithm
 
 .. GENERATED FROM PYTHON SOURCE LINES 99-113
 
-.. code-block:: default
+.. code-block:: Python
 
 
     fig, axes = plt.subplots(2, 1, sharex=True)
@@ -265,7 +267,7 @@ downweighted by the algorithm
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  51.102 seconds)
+   **Total running time of the script:** (3 minutes 29.335 seconds)
 
 
 .. _sphx_glr_download_auto_examples_noise_alpha_plot_simulate_alphacsc.py:
@@ -274,16 +276,17 @@ downweighted by the algorithm
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: plot_simulate_alphacsc.ipynb <plot_simulate_alphacsc.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: plot_simulate_alphacsc.py <plot_simulate_alphacsc.py>`
 
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
+    .. container:: sphx-glr-download sphx-glr-download-zip
 
-      :download:`Download Jupyter notebook: plot_simulate_alphacsc.ipynb <plot_simulate_alphacsc.ipynb>`
+      :download:`Download zipped: plot_simulate_alphacsc.zip <plot_simulate_alphacsc.zip>`
 
 
 .. only:: html

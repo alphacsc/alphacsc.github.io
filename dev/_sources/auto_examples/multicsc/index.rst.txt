@@ -13,10 +13,11 @@ Multivariate CSC with rank 1 constraints
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 atoms [1]_ on the multivariate somato-sensorymotor...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 atoms [1]_ on the multivariate somato-sensorymotor dataset from mne. The displayed results highlight the presence of \mu-waves located in the SI cortex.">
 
 .. only:: html
 
@@ -33,7 +34,7 @@ Multivariate CSC with rank 1 constraints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from mne. We display a selection of atoms, featuring heartbeat and eyeblink artifacts, two atoms of evoked responses, and a non-sinusoidal oscillation.">
 
 .. only:: html
 
@@ -50,7 +51,7 @@ Multivariate CSC with rank 1 constraints
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from mne. We display a selection of atoms, featuring heartbeat and eyeblink artifacts, two atoms of evoked responses, and a non-sinusoidal oscillation.">
 
 .. only:: html
 
@@ -64,6 +65,8 @@ Multivariate CSC with rank 1 constraints
       <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the sample dataset</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

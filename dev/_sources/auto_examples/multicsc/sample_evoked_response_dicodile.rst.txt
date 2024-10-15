@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_auto_examples_multicsc_sample_evoked_response_dicodile.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -34,7 +34,7 @@ non-sinusoidal oscillation.
 
 .. GENERATED FROM PYTHON SOURCE LINES 17-27
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Authors: Thomas Moreau <thomas.moreau@inria.fr>
@@ -53,7 +53,7 @@ Let us first define the parameters of our model.
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-43
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # sampling frequency. The signal will be resampled to match this.
@@ -79,7 +79,7 @@ greedy learning (i.e. add one atom at the time)
 
 .. GENERATED FROM PYTHON SOURCE LINES 48-87
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc import BatchCDL  # noqa: E402
@@ -130,7 +130,7 @@ object and select the gradiometers from the signal.
 
 .. GENERATED FROM PYTHON SOURCE LINES 92-107
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import os  # noqa: E402
@@ -156,7 +156,7 @@ drift which can impact the CSC results. The signal is also resampled to
 
 .. GENERATED FROM PYTHON SOURCE LINES 111-119
 
-.. code-block:: default
+.. code-block:: Python
 
 
     print("Preprocessing the data...", end='', flush=True)
@@ -173,7 +173,7 @@ Load the data as an array and reshape it to be 3d
 
 .. GENERATED FROM PYTHON SOURCE LINES 121-129
 
-.. code-block:: default
+.. code-block:: Python
 
 
     X = raw.get_data(picks=['meg'])
@@ -190,7 +190,7 @@ Fit the model and learn rank1 atoms
 
 .. GENERATED FROM PYTHON SOURCE LINES 131-134
 
-.. code-block:: default
+.. code-block:: Python
 
 
     cdl.fit(X_split)
@@ -203,7 +203,7 @@ associated with X, without changing the dictionary learned during the `fit`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 137-140
 
-.. code-block:: default
+.. code-block:: Python
 
 
     z_hat = cdl.transform(X[np.newaxis, :, :])
@@ -219,7 +219,7 @@ responses, and a non-sinusoidal oscillation.
 
 .. GENERATED FROM PYTHON SOURCE LINES 146-196
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import matplotlib.pyplot as plt  # noqa: E402
@@ -285,7 +285,7 @@ learning atoms.
 
 .. GENERATED FROM PYTHON SOURCE LINES 205-212
 
-.. code-block:: default
+.. code-block:: Python
 
 
     event_id = [1, 2, 3, 4]
@@ -305,7 +305,7 @@ not statistically significant values, computing with sampling.
 
 .. GENERATED FROM PYTHON SOURCE LINES 218-263
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc.utils.signal import fast_hilbert  # noqa: E402
@@ -374,7 +374,7 @@ We recommend users to consult the MNE documentation for further information.
 
 .. GENERATED FROM PYTHON SOURCE LINES 280-289
 
-.. code-block:: default
+.. code-block:: Python
 
 
     subjects_dir = os.path.join(data_path, 'subjects')
@@ -393,7 +393,7 @@ atoms.
 
 .. GENERATED FROM PYTHON SOURCE LINES 292-295
 
-.. code-block:: default
+.. code-block:: Python
 
 
     evoked = mne.EvokedArray(cdl.u_hat_.T, info)
@@ -405,7 +405,7 @@ Fit a dipole to each of the atoms.
 
 .. GENERATED FROM PYTHON SOURCE LINES 297-301
 
-.. code-block:: default
+.. code-block:: Python
 
 
     dip = mne.fit_dipole(evoked, fname_cov, fname_bem, fname_trans,
@@ -419,7 +419,7 @@ goodness of fit.
 
 .. GENERATED FROM PYTHON SOURCE LINES 304-332
 
-.. code-block:: default
+.. code-block:: Python
 
 
     atom_dipole_idx = 4
@@ -451,27 +451,23 @@ goodness of fit.
     fig.tight_layout()
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-
 .. _sphx_glr_download_auto_examples_multicsc_sample_evoked_response_dicodile.py:
 
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: sample_evoked_response_dicodile.ipynb <sample_evoked_response_dicodile.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: sample_evoked_response_dicodile.py <sample_evoked_response_dicodile.py>`
 
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
+    .. container:: sphx-glr-download sphx-glr-download-zip
 
-      :download:`Download Jupyter notebook: sample_evoked_response_dicodile.ipynb <sample_evoked_response_dicodile.ipynb>`
+      :download:`Download zipped: sample_evoked_response_dicodile.zip <sample_evoked_response_dicodile.zip>`
 
 
 .. only:: html
