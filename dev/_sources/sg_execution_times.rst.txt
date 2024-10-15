@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**69:50.575** total execution time for 12 files **from all galleries**:
+**00:00.000** total execution time for 12 files **from all galleries**:
 
 .. container::
 
@@ -32,39 +32,39 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_examples_multicsc_plot_sample_evoked_response.py` (``../examples/multicsc/plot_sample_evoked_response.py``)
-     - 41:01.317
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_multicsc_plot_somato_mu_waves.py` (``../examples/multicsc/plot_somato_mu_waves.py``)
-     - 10:59.746
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py` (``../examples/noise_alpha/plot_empirical_strong_artifacts.py``)
-     - 05:37.967
-     - 0.0
    * - :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py` (``../examples/csc/plot_cross_frequency_coupling.py``)
-     - 03:32.511
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_noise_alpha_plot_simulate_alphacsc.py` (``../examples/noise_alpha/plot_simulate_alphacsc.py``)
-     - 03:29.335
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py` (``../examples/csc/plot_lfp_data.py``)
-     - 02:14.707
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py` (``../examples/csc/plot_simulate_randomstate.py``)
-     - 01:27.101
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_dicodile_plot_gait.py` (``../examples/dicodile/plot_gait.py``)
-     - 00:43.677
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py` (``../examples/csc/plot_simulate_csc.py``)
-     - 00:35.434
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py` (``../examples/other/plot_simulate_swm.py``)
-     - 00:06.375
+   * - :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py` (``../examples/csc/plot_simulate_randomstate.py``)
+     - 00:00.000
      - 0.0
-   * - :ref:`sphx_glr_auto_examples_other_plot_simulate_motif.py` (``../examples/other/plot_simulate_motif.py``)
-     - 00:02.405
+   * - :ref:`sphx_glr_auto_examples_dicodile_plot_gait.py` (``../examples/dicodile/plot_gait.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_multicsc_plot_sample_evoked_response.py` (``../examples/multicsc/plot_sample_evoked_response.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_multicsc_plot_somato_mu_waves.py` (``../examples/multicsc/plot_somato_mu_waves.py``)
+     - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_auto_examples_multicsc_sample_evoked_response_dicodile.py` (``../examples/multicsc/sample_evoked_response_dicodile.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py` (``../examples/noise_alpha/plot_empirical_strong_artifacts.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_noise_alpha_plot_simulate_alphacsc.py` (``../examples/noise_alpha/plot_simulate_alphacsc.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_other_plot_simulate_motif.py` (``../examples/other/plot_simulate_motif.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py` (``../examples/other/plot_simulate_swm.py``)
      - 00:00.000
      - 0.0
