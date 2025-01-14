@@ -10,8 +10,8 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_auto_examples_other_plot_simulate_swm.py>`
-        to download the full example code
+        :ref:`Go to the end <sphx_glr_download_auto_examples_other_plot_simulate_swm.py>`
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -34,7 +34,7 @@ implement parallel tempering.
 
 .. GENERATED FROM PYTHON SOURCE LINES 16-22
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Authors: Scott Cole
@@ -55,7 +55,7 @@ Let us define the model parameters
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-29
 
-.. code-block:: default
+.. code-block:: Python
 
 
     n_times_atom = 64  # L
@@ -76,7 +76,7 @@ we simulate only one atom.
 
 .. GENERATED FROM PYTHON SOURCE LINES 32-34
 
-.. code-block:: default
+.. code-block:: Python
 
     n_atoms = 1  # K
 
@@ -93,7 +93,7 @@ A minimum spacing between the windows averaged must be found.
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-38
 
-.. code-block:: default
+.. code-block:: Python
 
     min_spacing = 200  # G
 
@@ -110,7 +110,7 @@ Now, we can simulate
 
 .. GENERATED FROM PYTHON SOURCE LINES 40-51
 
-.. code-block:: default
+.. code-block:: Python
 
     from alphacsc import check_random_state
     from alphacsc.simulate import simulate_data
@@ -138,7 +138,7 @@ If this number is not known, we will end up estimating more/less windows.
 
 .. GENERATED FROM PYTHON SOURCE LINES 55-58
 
-.. code-block:: default
+.. code-block:: Python
 
     import numpy as np
     window_starts = rng.choice(np.arange(n_trials * n_times), size=n_trials)
@@ -156,7 +156,7 @@ Now, we apply the SWM algorithm now.
 
 .. GENERATED FROM PYTHON SOURCE LINES 60-68
 
-.. code-block:: default
+.. code-block:: Python
 
     from alphacsc.other.swm import sliding_window_matching
 
@@ -171,8 +171,6 @@ Now, we apply the SWM algorithm now.
 
 
 .. rst-class:: sphx-glr-script-out
-
- Out:
 
  .. code-block:: none
 
@@ -10185,7 +10183,7 @@ Let us look at the data at the time windows when the atoms are found.
 
 .. GENERATED FROM PYTHON SOURCE LINES 70-77
 
-.. code-block:: default
+.. code-block:: Python
 
     import matplotlib.pyplot as plt
     fig, axes = plt.subplots(2, n_trials // 2, sharex=True, sharey=True,
@@ -10213,7 +10211,7 @@ is present. Now let us plot the atoms.
 
 .. GENERATED FROM PYTHON SOURCE LINES 80-85
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plt.figure()
@@ -10231,12 +10229,10 @@ is present. Now let us plot the atoms.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    [<matplotlib.lines.Line2D object at 0x7f587ff72fd0>]
+    [<matplotlib.lines.Line2D object at 0x7f6122c9be80>]
 
 
 
@@ -10246,7 +10242,7 @@ and the cost function over iterations
 
 .. GENERATED FROM PYTHON SOURCE LINES 87-93
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plt.figure()
@@ -10269,28 +10265,26 @@ and the cost function over iterations
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.538 seconds)
+   **Total running time of the script:** (0 minutes 6.441 seconds)
 
 
 .. _sphx_glr_download_auto_examples_other_plot_simulate_swm.py:
 
+.. only:: html
 
-.. only :: html
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_simulate_swm.ipynb <plot_simulate_swm.ipynb>`
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_simulate_swm.py <plot_simulate_swm.py>`
 
-     :download:`Download Python source code: plot_simulate_swm.py <plot_simulate_swm.py>`
+    .. container:: sphx-glr-download sphx-glr-download-zip
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_simulate_swm.ipynb <plot_simulate_swm.ipynb>`
+      :download:`Download zipped: plot_simulate_swm.zip <plot_simulate_swm.zip>`
 
 
 .. only:: html

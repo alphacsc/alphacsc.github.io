@@ -1,0 +1,100 @@
+
+
+.. _sphx_glr_auto_examples_csc:
+
+.. _csc_examples:
+
+Univariate CSC
+--------------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The CSC problem is non-convex. Therefore, the solution depends on the initialization. Here, we show how to select the best atoms amongst different initializations.">
+
+.. only:: html
+
+  .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Selecting random state for CSC</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Here, we show how CSC can be used to learn spiking atoms from Local Field Potential (LFP) data [1].">
+
+.. only:: html
+
+  .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_lfp_data_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">CSC to learn LFP spiking atoms</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn univariate atoms on a univariate time-serie. The data is a single LFP channel recorded on a rodent&#x27;s striatum [1]_. Interestingly in this time-serie, the high frequency oscillations around 80 Hz are modulated in amplitude by the low-frequency oscillation around 3 Hz, a phenomenon known as cross-frequency coupling (CFC).">
+
+.. only:: html
+
+  .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_cross_frequency_coupling_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Extracting cross-frequency coupling waveforms from rodent LFP data</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates vanilla CSC on simulated data. Note that vanilla CSC is just a special case of alphaCSC with alpha=2.">
+
+.. only:: html
+
+  .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Vanilla CSC on simulated data</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/csc/plot_simulate_randomstate
+   /auto_examples/csc/plot_lfp_data
+   /auto_examples/csc/plot_cross_frequency_coupling
+   /auto_examples/csc/plot_simulate_csc
+

@@ -1,0 +1,6 @@
+﻿alphacsc.utils.signal.split\_signal
+===================================
+
+.. currentmodule:: alphacsc.utils.signal
+
+.. autofunction:: split_signal

@@ -26,7 +26,7 @@ non-sinusoidal oscillation.
 ###############################################################################
 # Let us first define the parameters of our model.
 
-# sampling frequency. The signal will be resampled to match this.
+# Sampling frequency the signal will be resampled to
 sfreq = 150.
 
 # Define the shape of the dictionary
@@ -36,7 +36,7 @@ n_times_atom = int(round(sfreq * 1.0))  # 1000. ms
 # Regularization parameter which control sparsity
 reg = 0.1
 
-# number of processors for parallel computing
+# Number of processors for parallel computing
 n_jobs = 5
 
 # To accelerate the run time of this example, we split the signal in n_slits.
@@ -71,8 +71,8 @@ cdl = GreedyCDL(
     eps=1e-4,
     # solver for the z-step
     solver_z="lgcd",
-    solver_z_kwargs={'tol': 1e-3,
-                     'max_iter': 100000},
+    solver_z_kwargs={'tol': 1e-2,
+                     'max_iter': 10000},
     # solver for the d-step
     solver_d='alternate_adaptive',
     solver_d_kwargs={'max_iter': 300},
@@ -122,7 +122,8 @@ print('done')
 # To reduce the impact of border artifacts, we use `apply_window=True`
 # which scales down the border of each split with a tukey window.
 
-from alphacsc.utils import split_signal
+from alphacsc.utils.signal import split_signal
+
 X = raw.get_data(picks=['meg'])
 info = raw.copy().pick_types(meg=True).info  # info of the loaded channels
 X_split = split_signal(X, n_splits=n_splits, apply_window=True)

@@ -1,0 +1,64 @@
+
+
+.. _sphx_glr_auto_examples_other:
+
+.. _other_examples:
+
+Other shift-invariant dictionary learning algorithms
+----------------------------------------------------
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates MoTIF [1] on simulated data. In the alphacsc module, we are offering all the alternatives for the users to try. Please cite our paper [2] if you use this implementation.">
+
+.. only:: html
+
+  .. image:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_other_plot_simulate_motif.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">MoTIF on simulated data</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows how the sliding window method (SWM) [1] works on simulated data. The code is adapted from the neurodsp package from Voytek lab. Note that, at present, it does not implement parallel tempering.">
+
+.. only:: html
+
+  .. image:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">SWM on simulated data</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/other/plot_simulate_motif
+   /auto_examples/other/plot_simulate_swm
+

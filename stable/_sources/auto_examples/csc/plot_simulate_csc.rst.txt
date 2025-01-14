@@ -10,8 +10,8 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_auto_examples_csc_plot_simulate_csc.py>`
-        to download the full example code
+        :ref:`Go to the end <sphx_glr_download_auto_examples_csc_plot_simulate_csc.py>`
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -27,7 +27,7 @@ Note that `vanilla` CSC is just a special case of alphaCSC with alpha=2.
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-17
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Authors: Mainak Jas <mainak.jas@telecom-paristech.fr>
@@ -50,7 +50,7 @@ Let us first define the parameters of our model.
 
 .. GENERATED FROM PYTHON SOURCE LINES 19-28
 
-.. code-block:: default
+.. code-block:: Python
 
 
     n_times_atom = 64  # L
@@ -74,7 +74,7 @@ Here, we simulate the data
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-37
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc.simulate import simulate_data # noqa
@@ -96,7 +96,7 @@ Add some noise and corrupt some trials
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-53
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from scipy.stats import levy_stable # noqa
@@ -125,7 +125,7 @@ Let us look at the first 10 trials to see how they look.
 
 .. GENERATED FROM PYTHON SOURCE LINES 55-59
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc.viz.callback import plot_data # noqa
@@ -152,7 +152,7 @@ Now, we run vanilla CSC on the data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 64-75
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc import learn_d_z # noqa
@@ -171,11 +171,13 @@ Now, we run vanilla CSC on the data.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
-    V_0/50 .................................................
+    V_0/50 /github/workspace/alphacsc/update_d.py:224: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+      lhs_c_copy[0] += lambd
+    /github/workspace/alphacsc/update_d.py:172: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+      lambd_hats[k] = lambd_hat
+    .................................................
     Vanilla CSC
 
 
@@ -187,7 +189,7 @@ Finally, let's compare the results.
 
 .. GENERATED FROM PYTHON SOURCE LINES 77-83
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import matplotlib.pyplot as plt # noqa
@@ -206,12 +208,10 @@ Finally, let's compare the results.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    [<matplotlib.lines.Line2D object at 0x7f58a00ac820>, <matplotlib.lines.Line2D object at 0x7f58a00ac850>]
+    [<matplotlib.lines.Line2D object at 0x7f6162edd370>, <matplotlib.lines.Line2D object at 0x7f6162edd700>]
 
 
 
@@ -221,7 +221,7 @@ We can also visualize the learned activations
 
 .. GENERATED FROM PYTHON SOURCE LINES 85-88
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plot_data([z[:10] for z in z_hat], ['stem'] * n_atoms)
@@ -247,7 +247,7 @@ such data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 93-107
 
-.. code-block:: default
+.. code-block:: Python
 
 
     alpha = 1.2
@@ -274,8 +274,6 @@ such data.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     V_0/50 .................................................
@@ -286,28 +284,26 @@ such data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  22.977 seconds)
+   **Total running time of the script:** (0 minutes 34.976 seconds)
 
 
 .. _sphx_glr_download_auto_examples_csc_plot_simulate_csc.py:
 
+.. only:: html
 
-.. only :: html
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_simulate_csc.ipynb <plot_simulate_csc.ipynb>`
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_simulate_csc.py <plot_simulate_csc.py>`
 
-     :download:`Download Python source code: plot_simulate_csc.py <plot_simulate_csc.py>`
+    .. container:: sphx-glr-download sphx-glr-download-zip
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_simulate_csc.ipynb <plot_simulate_csc.ipynb>`
+      :download:`Download zipped: plot_simulate_csc.zip <plot_simulate_csc.zip>`
 
 
 .. only:: html

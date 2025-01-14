@@ -10,8 +10,8 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_auto_examples_other_plot_simulate_motif.py>`
-        to download the full example code
+        :ref:`Go to the end <sphx_glr_download_auto_examples_other_plot_simulate_motif.py>`
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -37,7 +37,7 @@ to try. Please cite our paper [2] if you use this implementation.
 
 .. GENERATED FROM PYTHON SOURCE LINES 19-27
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Authors: Mainak Jas <mainak.jas@telecom-paristech.fr>
@@ -60,7 +60,7 @@ Let us first import the modules.
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-34
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import matplotlib.pyplot as plt
@@ -81,7 +81,7 @@ to avoid overlapping atoms which MoTIF cannot handle
 
 .. GENERATED FROM PYTHON SOURCE LINES 37-43
 
-.. code-block:: default
+.. code-block:: Python
 
 
     n_times_atom = 64  # L
@@ -102,7 +102,7 @@ simulate the data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 45-55
 
-.. code-block:: default
+.. code-block:: Python
 
 
     random_state_simulate = 1
@@ -132,7 +132,7 @@ Finally, let us estimate the atoms.
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-67
 
-.. code-block:: default
+.. code-block:: Python
 
 
     ds_hat = learn_atoms(X, n_atoms, n_times_atom, n_iter=n_iter,
@@ -150,13 +150,8 @@ Finally, let us estimate the atoms.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
-    /github/workspace/alphacsc/other/motif.py:34: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
-    Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-      match = np.zeros((n_atoms, n_trials), dtype=np.int)
     [seed 42] Atom 0 Iteration 0
     [seed 42] Atom 0 Iteration 1
     [seed 42] Atom 0 Iteration 2
@@ -178,7 +173,7 @@ Finally, let us estimate the atoms.
     [seed 42] Atom 1 Iteration 8
     [seed 42] Atom 1 Iteration 9
 
-    [<matplotlib.lines.Line2D object at 0x7f587ec65a60>, <matplotlib.lines.Line2D object at 0x7f587ec65640>]
+    [<matplotlib.lines.Line2D object at 0x7f6140e1f520>, <matplotlib.lines.Line2D object at 0x7f6140e1f4f0>]
 
 
 
@@ -188,7 +183,7 @@ Compare this to the original atoms
 
 .. GENERATED FROM PYTHON SOURCE LINES 69-72
 
-.. code-block:: default
+.. code-block:: Python
 
     plt.figure()
     plt.plot(ds_true.T)
@@ -208,28 +203,26 @@ Compare this to the original atoms
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.572 seconds)
+   **Total running time of the script:** (0 minutes 2.010 seconds)
 
 
 .. _sphx_glr_download_auto_examples_other_plot_simulate_motif.py:
 
+.. only:: html
 
-.. only :: html
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_simulate_motif.ipynb <plot_simulate_motif.ipynb>`
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_simulate_motif.py <plot_simulate_motif.py>`
 
-     :download:`Download Python source code: plot_simulate_motif.py <plot_simulate_motif.py>`
+    .. container:: sphx-glr-download sphx-glr-download-zip
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_simulate_motif.ipynb <plot_simulate_motif.ipynb>`
+      :download:`Download zipped: plot_simulate_motif.zip <plot_simulate_motif.zip>`
 
 
 .. only:: html

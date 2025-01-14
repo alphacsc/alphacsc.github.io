@@ -10,8 +10,8 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py>`
-        to download the full example code
+        :ref:`Go to the end <sphx_glr_download_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py>`
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -50,7 +50,7 @@ in the data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 32-40
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Authors: Tom Dupre La Tour <tom.duprelatour@telecom-paristech.fr>
@@ -73,7 +73,7 @@ Let us first load the data sample.
 
 .. GENERATED FROM PYTHON SOURCE LINES 42-54
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import mne
@@ -93,8 +93,6 @@ Let us first load the data sample.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     (1, 630000)
@@ -108,7 +106,7 @@ Now let us take a closer look, plotting the 100 first seconds of the signal.
 
 .. GENERATED FROM PYTHON SOURCE LINES 56-63
 
-.. code-block:: default
+.. code-block:: Python
 
 
     start, stop = [0, 100]  # in seconds
@@ -141,7 +139,7 @@ approaches to tackle these artifacts:
 
 .. GENERATED FROM PYTHON SOURCE LINES 71-95
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Define a clean data section.
@@ -173,8 +171,6 @@ approaches to tackle these artifacts:
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     Setting up high-pass filter at 1 Hz
@@ -186,7 +182,7 @@ approaches to tackle these artifacts:
     - Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
     - Lower passband edge: 1.00
     - Lower transition bandwidth: 1.00 Hz (-6 dB cutoff frequency: 0.50 Hz)
-    - Filter length: 1155 samples (3.300 sec)
+    - Filter length: 1155 samples (3.300 s)
 
     Setting up high-pass filter at 1 Hz
 
@@ -197,7 +193,7 @@ approaches to tackle these artifacts:
     - Hamming window with 0.0194 passband ripple and 53 dB stopband attenuation
     - Lower passband edge: 1.00
     - Lower transition bandwidth: 1.00 Hz (-6 dB cutoff frequency: 0.50 Hz)
-    - Filter length: 1155 samples (3.300 sec)
+    - Filter length: 1155 samples (3.300 s)
 
 
 
@@ -211,7 +207,7 @@ described with a comodulogram, computed for instance with the `pactools
 
 .. GENERATED FROM PYTHON SOURCE LINES 99-108
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from pactools import Comodulogram
@@ -233,12 +229,10 @@ described with a comodulogram, computed for instance with the `pactools
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
-    [                                        ] 0% | 0.00 sec | comodulogram: DAR(10, 1)     [                                        ] 2% | 0.29 sec | comodulogram: DAR(10, 1)     [.                                       ] 4% | 0.42 sec | comodulogram: DAR(10, 1)     [..                                      ] 6% | 0.54 sec | comodulogram: DAR(10, 1)     [...                                     ] 8% | 0.67 sec | comodulogram: DAR(10, 1)     [....                                    ] 10% | 0.80 sec | comodulogram: DAR(10, 1)     [....                                    ] 12% | 0.93 sec | comodulogram: DAR(10, 1)     [.....                                   ] 14% | 1.06 sec | comodulogram: DAR(10, 1)     [......                                  ] 16% | 1.19 sec | comodulogram: DAR(10, 1)     [.......                                 ] 18% | 1.32 sec | comodulogram: DAR(10, 1)     [........                                ] 20% | 1.45 sec | comodulogram: DAR(10, 1)     [........                                ] 22% | 1.58 sec | comodulogram: DAR(10, 1)     [.........                               ] 24% | 1.70 sec | comodulogram: DAR(10, 1)     [..........                              ] 26% | 1.83 sec | comodulogram: DAR(10, 1)     [...........                             ] 28% | 1.97 sec | comodulogram: DAR(10, 1)     [............                            ] 30% | 2.09 sec | comodulogram: DAR(10, 1)     [............                            ] 32% | 2.23 sec | comodulogram: DAR(10, 1)     [.............                           ] 34% | 2.36 sec | comodulogram: DAR(10, 1)     [..............                          ] 36% | 2.50 sec | comodulogram: DAR(10, 1)     [...............                         ] 38% | 2.62 sec | comodulogram: DAR(10, 1)     [................                        ] 40% | 2.75 sec | comodulogram: DAR(10, 1)     [................                        ] 42% | 2.88 sec | comodulogram: DAR(10, 1)     [.................                       ] 44% | 3.01 sec | comodulogram: DAR(10, 1)     [..................                      ] 46% | 3.14 sec | comodulogram: DAR(10, 1)     [...................                     ] 48% | 3.27 sec | comodulogram: DAR(10, 1)     [....................                    ] 50% | 3.40 sec | comodulogram: DAR(10, 1)     [....................                    ] 52% | 3.53 sec | comodulogram: DAR(10, 1)     [.....................                   ] 54% | 3.66 sec | comodulogram: DAR(10, 1)     [......................                  ] 56% | 3.79 sec | comodulogram: DAR(10, 1)     [.......................                 ] 58% | 3.92 sec | comodulogram: DAR(10, 1)     [........................                ] 60% | 4.05 sec | comodulogram: DAR(10, 1)     [........................                ] 62% | 4.18 sec | comodulogram: DAR(10, 1)     [.........................               ] 64% | 4.31 sec | comodulogram: DAR(10, 1)     [..........................              ] 66% | 4.44 sec | comodulogram: DAR(10, 1)     [...........................             ] 68% | 4.57 sec | comodulogram: DAR(10, 1)     [............................            ] 70% | 4.70 sec | comodulogram: DAR(10, 1)     [............................            ] 72% | 4.83 sec | comodulogram: DAR(10, 1)     [.............................           ] 74% | 4.96 sec | comodulogram: DAR(10, 1)     [..............................          ] 76% | 5.09 sec | comodulogram: DAR(10, 1)     [...............................         ] 78% | 5.21 sec | comodulogram: DAR(10, 1)     [................................        ] 80% | 5.34 sec | comodulogram: DAR(10, 1)     [................................        ] 82% | 5.47 sec | comodulogram: DAR(10, 1)     [.................................       ] 84% | 5.60 sec | comodulogram: DAR(10, 1)     [..................................      ] 86% | 5.73 sec | comodulogram: DAR(10, 1)     [...................................     ] 88% | 5.86 sec | comodulogram: DAR(10, 1)     [....................................    ] 90% | 5.99 sec | comodulogram: DAR(10, 1)     [....................................    ] 92% | 6.12 sec | comodulogram: DAR(10, 1)     [.....................................   ] 94% | 6.25 sec | comodulogram: DAR(10, 1)     [......................................  ] 96% | 6.38 sec | comodulogram: DAR(10, 1)     [....................................... ] 98% | 6.51 sec | comodulogram: DAR(10, 1)     [........................................] 100% | 6.64 sec | comodulogram: DAR(10, 1) 
-    [........................................] 100% | 6.64 sec | comodulogram: DAR(10, 1) 
+    [                                        ] 0% | 0.00 sec | comodulogram: DAR(10, 1)     [                                        ] 2% | 0.22 sec | comodulogram: DAR(10, 1)     [.                                       ] 4% | 0.32 sec | comodulogram: DAR(10, 1)     [..                                      ] 6% | 0.42 sec | comodulogram: DAR(10, 1)     [...                                     ] 8% | 0.53 sec | comodulogram: DAR(10, 1)     [....                                    ] 10% | 0.63 sec | comodulogram: DAR(10, 1)     [....                                    ] 12% | 0.73 sec | comodulogram: DAR(10, 1)     [.....                                   ] 14% | 0.84 sec | comodulogram: DAR(10, 1)     [......                                  ] 16% | 0.94 sec | comodulogram: DAR(10, 1)     [.......                                 ] 18% | 1.05 sec | comodulogram: DAR(10, 1)     [........                                ] 20% | 1.15 sec | comodulogram: DAR(10, 1)     [........                                ] 22% | 1.26 sec | comodulogram: DAR(10, 1)     [.........                               ] 24% | 1.36 sec | comodulogram: DAR(10, 1)     [..........                              ] 26% | 1.46 sec | comodulogram: DAR(10, 1)     [...........                             ] 28% | 1.58 sec | comodulogram: DAR(10, 1)     [............                            ] 30% | 1.68 sec | comodulogram: DAR(10, 1)     [............                            ] 32% | 1.79 sec | comodulogram: DAR(10, 1)     [.............                           ] 34% | 1.90 sec | comodulogram: DAR(10, 1)     [..............                          ] 36% | 2.01 sec | comodulogram: DAR(10, 1)     [...............                         ] 38% | 2.12 sec | comodulogram: DAR(10, 1)     [................                        ] 40% | 2.23 sec | comodulogram: DAR(10, 1)     [................                        ] 42% | 2.34 sec | comodulogram: DAR(10, 1)     [.................                       ] 44% | 2.44 sec | comodulogram: DAR(10, 1)     [..................                      ] 46% | 2.55 sec | comodulogram: DAR(10, 1)     [...................                     ] 48% | 2.65 sec | comodulogram: DAR(10, 1)     [....................                    ] 50% | 2.75 sec | comodulogram: DAR(10, 1)     [....................                    ] 52% | 2.86 sec | comodulogram: DAR(10, 1)     [.....................                   ] 54% | 2.97 sec | comodulogram: DAR(10, 1)     [......................                  ] 56% | 3.07 sec | comodulogram: DAR(10, 1)     [.......................                 ] 58% | 3.18 sec | comodulogram: DAR(10, 1)     [........................                ] 60% | 3.33 sec | comodulogram: DAR(10, 1)     [........................                ] 62% | 3.43 sec | comodulogram: DAR(10, 1)     [.........................               ] 64% | 3.53 sec | comodulogram: DAR(10, 1)     [..........................              ] 66% | 3.63 sec | comodulogram: DAR(10, 1)     [...........................             ] 68% | 3.74 sec | comodulogram: DAR(10, 1)     [............................            ] 70% | 3.84 sec | comodulogram: DAR(10, 1)     [............................            ] 72% | 3.94 sec | comodulogram: DAR(10, 1)     [.............................           ] 74% | 4.05 sec | comodulogram: DAR(10, 1)     [..............................          ] 76% | 4.15 sec | comodulogram: DAR(10, 1)     [...............................         ] 78% | 4.25 sec | comodulogram: DAR(10, 1)     [................................        ] 80% | 4.37 sec | comodulogram: DAR(10, 1)     [................................        ] 82% | 4.47 sec | comodulogram: DAR(10, 1)     [.................................       ] 84% | 4.57 sec | comodulogram: DAR(10, 1)     [..................................      ] 86% | 4.68 sec | comodulogram: DAR(10, 1)     [...................................     ] 88% | 4.78 sec | comodulogram: DAR(10, 1)     [....................................    ] 90% | 4.88 sec | comodulogram: DAR(10, 1)     [....................................    ] 92% | 4.98 sec | comodulogram: DAR(10, 1)     [.....................................   ] 94% | 5.09 sec | comodulogram: DAR(10, 1)     [......................................  ] 96% | 5.19 sec | comodulogram: DAR(10, 1)     [....................................... ] 98% | 5.29 sec | comodulogram: DAR(10, 1)     [........................................] 100% | 5.44 sec | comodulogram: DAR(10, 1) 
+    [........................................] 100% | 5.44 sec | comodulogram: DAR(10, 1) 
 
 
 
@@ -248,7 +242,7 @@ Here we define the plotting function which display the learned atoms.
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-133
 
-.. code-block:: default
+.. code-block:: Python
 
 
 
@@ -286,7 +280,7 @@ Then we define the common parameters of the different models.
 
 .. GENERATED FROM PYTHON SOURCE LINES 135-156
 
-.. code-block:: default
+.. code-block:: Python
 
 
     common_params = dict(
@@ -323,7 +317,7 @@ prototypical waveforms of the signal on which we can clearly see the CFC.
 
 .. GENERATED FROM PYTHON SOURCE LINES 159-168
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from alphacsc import learn_d_z, learn_d_z_weighted
@@ -345,11 +339,13 @@ prototypical waveforms of the signal on which we can clearly see the CFC.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
-    V_0/10 .........
+    V_0/10 /github/workspace/alphacsc/update_d.py:224: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+      lhs_c_copy[0] += lambd
+    /github/workspace/alphacsc/update_d.py:172: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+      lambd_hats[k] = lambd_hat
+    .........
 
 
 
@@ -361,7 +357,7 @@ by the artifacts, and we cannot see CFC anymore in the temporal waveforms.
 
 .. GENERATED FROM PYTHON SOURCE LINES 171-178
 
-.. code-block:: default
+.. code-block:: Python
 
 
     X = data_dirty
@@ -381,8 +377,6 @@ by the artifacts, and we cannot see CFC anymore in the temporal waveforms.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     V_0/10 .........
@@ -398,7 +392,7 @@ waveforms.
 
 .. GENERATED FROM PYTHON SOURCE LINES 182-190
 
-.. code-block:: default
+.. code-block:: Python
 
 
     X = data_dirty
@@ -419,8 +413,6 @@ waveforms.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
     Global Iter: 0/3        V_0/10 .........
@@ -433,28 +425,26 @@ waveforms.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 11 minutes  40.010 seconds)
+   **Total running time of the script:** (5 minutes 40.308 seconds)
 
 
 .. _sphx_glr_download_auto_examples_noise_alpha_plot_empirical_strong_artifacts.py:
 
+.. only:: html
 
-.. only :: html
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
+      :download:`Download Jupyter notebook: plot_empirical_strong_artifacts.ipynb <plot_empirical_strong_artifacts.ipynb>`
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: plot_empirical_strong_artifacts.py <plot_empirical_strong_artifacts.py>`
 
-     :download:`Download Python source code: plot_empirical_strong_artifacts.py <plot_empirical_strong_artifacts.py>`
+    .. container:: sphx-glr-download sphx-glr-download-zip
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: plot_empirical_strong_artifacts.ipynb <plot_empirical_strong_artifacts.ipynb>`
+      :download:`Download zipped: plot_empirical_strong_artifacts.zip <plot_empirical_strong_artifacts.zip>`
 
 
 .. only:: html
