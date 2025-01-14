@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:43.677** total execution time for 1 file **from auto_examples/dicodile**:
+**00:44.707** total execution time for 1 file **from auto_examples/dicodile**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_dicodile_plot_gait.py` (``plot_gait.py``)
-     - 00:43.677
+     - 00:44.707
      - 0.0

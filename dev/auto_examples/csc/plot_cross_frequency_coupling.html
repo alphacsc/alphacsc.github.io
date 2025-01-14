@@ -16,38 +16,42 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=6aee1ebc"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/csc/plot_cross_frequency_coupling';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://alphacsc.github.io/stable/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
-        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
         </script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -55,6 +59,7 @@
     <link rel="prev" title="CSC to learn LFP spiking atoms" href="plot_lfp_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.dev1" />
   </head>
   
   
@@ -70,19 +75,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -90,7 +84,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -98,8 +91,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -173,41 +166,33 @@
         <div class="navbar-item navbar-persistent--container">
           
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-2"
-      type="button"
-      class="version-switcher__button btn btn-sm dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-2"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-2"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-2">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
   </div>
-`);
-</script></div>
+</div></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -244,15 +229,11 @@ document.write(`
   
     <div class="navbar-persistent--mobile">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
@@ -271,7 +252,8 @@ document.write(`
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -317,28 +299,24 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
-<script>
-document.write(`
-  <div class="version-switcher__container dropdown">
-    <button id="pst-version-switcher-button-3"
-      type="button"
-      class="version-switcher__button btn btn-sm dropdown-toggle"
-      data-bs-toggle="dropdown"
-      aria-haspopup="listbox"
-      aria-controls="pst-version-switcher-list-3"
-      aria-label="Version switcher list"
-    >
-      Choose version  <!-- this text may get changed later by javascript -->
-      <span class="caret"></span>
-    </button>
-    <div id="pst-version-switcher-list-3"
-      class="version-switcher__menu dropdown-menu list-group-flush py-0"
-      role="listbox" aria-labelledby="pst-version-switcher-button-3">
-      <!-- dropdown will be populated by javascript on page load -->
-    </div>
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
   </div>
-`);
-</script></div>
+</div></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -412,9 +390,14 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -432,8 +415,6 @@ document.write(`
       
         <div class="header-article-item">
 
-
-
 <nav aria-label="Breadcrumb" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
@@ -448,7 +429,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Univariate CSC</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Extracting...</li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Extracting cross-frequency coupling waveforms from rodent LFP data</span></li>
   </ul>
 </nav>
 </div>
@@ -498,9 +479,9 @@ Nature Communications, 8:13920, 2017</p>
 </pre></div>
 </div>
 <p>Let us first load the data sample.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mne</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mne</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># sample frequency</span>
 <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a> <span class="o">=</span> <span class="mf">350.</span>
@@ -539,7 +520,7 @@ Designing a one-pass, zero-phase, non-causal highpass filter:
 </div>
 <p>This sample contains CFC between 3 Hz and 80 Hz. This phenomenon can be
 described with a comodulogram, computed for instance with the <a class="reference external" href="http://pactools.github.io/">pactools</a> Python library.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pactools</span> <span class="kn">import</span> <span class="n">Comodulogram</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pactools</span><span class="w"> </span><span class="kn">import</span> <span class="n">Comodulogram</span>
 
 <span class="n">comod</span> <span class="o">=</span> <span class="n">Comodulogram</span><span class="p">(</span><span class="n">fs</span><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a><span class="p">,</span> <span class="n">low_fq_range</span><span class="o">=</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">10.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
                      <span class="n">low_fq_width</span><span class="o">=</span><span class="mf">2.</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;duprelatour&#39;</span><span class="p">)</span>
@@ -549,62 +530,62 @@ described with a comodulogram, computed for instance with the <a class="referenc
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_cross_frequency_coupling_001.png" srcset="../../_images/sphx_glr_plot_cross_frequency_coupling_001.png" alt="plot cross frequency coupling" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[                                        ] 0% | 0.00 sec | comodulogram: DAR(10, 1)
-[                                        ] 2% | 0.59 sec | comodulogram: DAR(10, 1)
-[.                                       ] 4% | 0.93 sec | comodulogram: DAR(10, 1)
-[..                                      ] 6% | 1.27 sec | comodulogram: DAR(10, 1)
-[...                                     ] 8% | 1.62 sec | comodulogram: DAR(10, 1)
-[....                                    ] 10% | 1.96 sec | comodulogram: DAR(10, 1)
-[....                                    ] 12% | 2.31 sec | comodulogram: DAR(10, 1)
-[.....                                   ] 14% | 2.65 sec | comodulogram: DAR(10, 1)
-[......                                  ] 16% | 2.99 sec | comodulogram: DAR(10, 1)
-[.......                                 ] 18% | 3.34 sec | comodulogram: DAR(10, 1)
-[........                                ] 20% | 3.69 sec | comodulogram: DAR(10, 1)
-[........                                ] 22% | 4.03 sec | comodulogram: DAR(10, 1)
-[.........                               ] 24% | 4.37 sec | comodulogram: DAR(10, 1)
-[..........                              ] 26% | 4.72 sec | comodulogram: DAR(10, 1)
-[...........                             ] 28% | 5.03 sec | comodulogram: DAR(10, 1)
-[............                            ] 30% | 5.38 sec | comodulogram: DAR(10, 1)
-[............                            ] 32% | 5.73 sec | comodulogram: DAR(10, 1)
-[.............                           ] 34% | 6.08 sec | comodulogram: DAR(10, 1)
-[..............                          ] 36% | 6.39 sec | comodulogram: DAR(10, 1)
-[...............                         ] 38% | 6.72 sec | comodulogram: DAR(10, 1)
-[................                        ] 40% | 7.07 sec | comodulogram: DAR(10, 1)
-[................                        ] 42% | 7.41 sec | comodulogram: DAR(10, 1)
-[.................                       ] 44% | 7.73 sec | comodulogram: DAR(10, 1)
-[..................                      ] 46% | 8.07 sec | comodulogram: DAR(10, 1)
-[...................                     ] 48% | 8.42 sec | comodulogram: DAR(10, 1)
-[....................                    ] 50% | 8.74 sec | comodulogram: DAR(10, 1)
-[....................                    ] 52% | 9.05 sec | comodulogram: DAR(10, 1)
-[.....................                   ] 54% | 9.36 sec | comodulogram: DAR(10, 1)
-[......................                  ] 56% | 9.71 sec | comodulogram: DAR(10, 1)
-[.......................                 ] 58% | 10.02 sec | comodulogram: DAR(10, 1)
-[........................                ] 60% | 10.33 sec | comodulogram: DAR(10, 1)
-[........................                ] 62% | 10.64 sec | comodulogram: DAR(10, 1)
-[.........................               ] 64% | 10.95 sec | comodulogram: DAR(10, 1)
-[..........................              ] 66% | 11.26 sec | comodulogram: DAR(10, 1)
-[...........................             ] 68% | 11.57 sec | comodulogram: DAR(10, 1)
-[............................            ] 70% | 11.87 sec | comodulogram: DAR(10, 1)
-[............................            ] 72% | 12.18 sec | comodulogram: DAR(10, 1)
-[.............................           ] 74% | 12.50 sec | comodulogram: DAR(10, 1)
-[..............................          ] 76% | 12.80 sec | comodulogram: DAR(10, 1)
-[...............................         ] 78% | 13.11 sec | comodulogram: DAR(10, 1)
-[................................        ] 80% | 13.42 sec | comodulogram: DAR(10, 1)
-[................................        ] 82% | 13.73 sec | comodulogram: DAR(10, 1)
-[.................................       ] 84% | 14.04 sec | comodulogram: DAR(10, 1)
-[..................................      ] 86% | 14.35 sec | comodulogram: DAR(10, 1)
-[...................................     ] 88% | 14.65 sec | comodulogram: DAR(10, 1)
-[....................................    ] 90% | 14.96 sec | comodulogram: DAR(10, 1)
-[....................................    ] 92% | 15.26 sec | comodulogram: DAR(10, 1)
-[.....................................   ] 94% | 15.57 sec | comodulogram: DAR(10, 1)
-[......................................  ] 96% | 15.88 sec | comodulogram: DAR(10, 1)
-[....................................... ] 98% | 16.19 sec | comodulogram: DAR(10, 1)
-[........................................] 100% | 16.50 sec | comodulogram: DAR(10, 1)
+[                                        ] 2% | 0.58 sec | comodulogram: DAR(10, 1)
+[.                                       ] 4% | 0.92 sec | comodulogram: DAR(10, 1)
+[..                                      ] 6% | 1.25 sec | comodulogram: DAR(10, 1)
+[...                                     ] 8% | 1.58 sec | comodulogram: DAR(10, 1)
+[....                                    ] 10% | 1.92 sec | comodulogram: DAR(10, 1)
+[....                                    ] 12% | 2.25 sec | comodulogram: DAR(10, 1)
+[.....                                   ] 14% | 2.59 sec | comodulogram: DAR(10, 1)
+[......                                  ] 16% | 2.93 sec | comodulogram: DAR(10, 1)
+[.......                                 ] 18% | 3.26 sec | comodulogram: DAR(10, 1)
+[........                                ] 20% | 3.58 sec | comodulogram: DAR(10, 1)
+[........                                ] 22% | 3.92 sec | comodulogram: DAR(10, 1)
+[.........                               ] 24% | 4.26 sec | comodulogram: DAR(10, 1)
+[..........                              ] 26% | 4.61 sec | comodulogram: DAR(10, 1)
+[...........                             ] 28% | 4.91 sec | comodulogram: DAR(10, 1)
+[............                            ] 30% | 5.25 sec | comodulogram: DAR(10, 1)
+[............                            ] 32% | 5.60 sec | comodulogram: DAR(10, 1)
+[.............                           ] 34% | 5.94 sec | comodulogram: DAR(10, 1)
+[..............                          ] 36% | 6.26 sec | comodulogram: DAR(10, 1)
+[...............                         ] 38% | 6.58 sec | comodulogram: DAR(10, 1)
+[................                        ] 40% | 6.92 sec | comodulogram: DAR(10, 1)
+[................                        ] 42% | 7.27 sec | comodulogram: DAR(10, 1)
+[.................                       ] 44% | 7.59 sec | comodulogram: DAR(10, 1)
+[..................                      ] 46% | 7.93 sec | comodulogram: DAR(10, 1)
+[...................                     ] 48% | 8.26 sec | comodulogram: DAR(10, 1)
+[....................                    ] 50% | 8.57 sec | comodulogram: DAR(10, 1)
+[....................                    ] 52% | 8.88 sec | comodulogram: DAR(10, 1)
+[.....................                   ] 54% | 9.19 sec | comodulogram: DAR(10, 1)
+[......................                  ] 56% | 9.53 sec | comodulogram: DAR(10, 1)
+[.......................                 ] 58% | 9.84 sec | comodulogram: DAR(10, 1)
+[........................                ] 60% | 10.14 sec | comodulogram: DAR(10, 1)
+[........................                ] 62% | 10.45 sec | comodulogram: DAR(10, 1)
+[.........................               ] 64% | 10.76 sec | comodulogram: DAR(10, 1)
+[..........................              ] 66% | 11.06 sec | comodulogram: DAR(10, 1)
+[...........................             ] 68% | 11.36 sec | comodulogram: DAR(10, 1)
+[............................            ] 70% | 11.66 sec | comodulogram: DAR(10, 1)
+[............................            ] 72% | 11.98 sec | comodulogram: DAR(10, 1)
+[.............................           ] 74% | 12.28 sec | comodulogram: DAR(10, 1)
+[..............................          ] 76% | 12.58 sec | comodulogram: DAR(10, 1)
+[...............................         ] 78% | 12.88 sec | comodulogram: DAR(10, 1)
+[................................        ] 80% | 13.18 sec | comodulogram: DAR(10, 1)
+[................................        ] 82% | 13.48 sec | comodulogram: DAR(10, 1)
+[.................................       ] 84% | 13.78 sec | comodulogram: DAR(10, 1)
+[..................................      ] 86% | 14.08 sec | comodulogram: DAR(10, 1)
+[...................................     ] 88% | 14.38 sec | comodulogram: DAR(10, 1)
+[....................................    ] 90% | 14.69 sec | comodulogram: DAR(10, 1)
+[....................................    ] 92% | 14.98 sec | comodulogram: DAR(10, 1)
+[.....................................   ] 94% | 15.28 sec | comodulogram: DAR(10, 1)
+[......................................  ] 96% | 15.58 sec | comodulogram: DAR(10, 1)
+[....................................... ] 98% | 15.88 sec | comodulogram: DAR(10, 1)
+[........................................] 100% | 16.19 sec | comodulogram: DAR(10, 1)
 
-[........................................] 100% | 16.50 sec | comodulogram: DAR(10, 1)
+[........................................] 100% | 16.19 sec | comodulogram: DAR(10, 1)
 </pre></div>
 </div>
 <p>We fit a CSC model on the data.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">alphacsc</span> <span class="kn">import</span> <a href="../../generated/alphacsc.learn_d_z.html#alphacsc.learn_d_z" title="alphacsc.learn_d_z" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-function"><span class="n">learn_d_z</span></a>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">alphacsc</span><span class="w"> </span><span class="kn">import</span> <a href="../../generated/alphacsc.learn_d_z.html#alphacsc.learn_d_z" title="alphacsc.learn_d_z" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-function"><span class="n">learn_d_z</span></a>
 
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">params</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
     <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
@@ -649,7 +630,7 @@ waveforms of the signal on which we can clearly see the CFC.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_cross_frequency_coupling_002.png" srcset="../../_images/sphx_glr_plot_cross_frequency_coupling_002.png" alt="Temporal pattern 0, Temporal pattern 1, Temporal pattern 2" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (3 minutes 32.511 seconds)</p>
+<img src="../../_images/sphx_glr_plot_cross_frequency_coupling_002.png" srcset="../../_images/sphx_glr_plot_cross_frequency_coupling_002.png" alt="Temporal pattern 0, Temporal pattern 1, Temporal pattern 2" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (3 minutes 29.249 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-csc-plot-cross-frequency-coupling-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/03e0e962c3c8dd9eaea799176eeed768/plot_cross_frequency_coupling.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_cross_frequency_coupling.ipynb</span></code></a></p>
@@ -699,17 +680,18 @@ waveforms of the signal on which we can clearly see the CFC.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="../../_sources/auto_examples/csc/plot_cross_frequency_coupling.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/auto_examples/csc/plot_cross_frequency_coupling.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
 
 </div></div>
               
@@ -726,8 +708,8 @@ waveforms of the signal on which we can clearly see the CFC.</p>
     <script src="/versionwarning.js"></script>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -760,7 +742,8 @@ waveforms of the signal on which we can clearly see the CFC.</p>
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
 </p></div>
       
     </div>

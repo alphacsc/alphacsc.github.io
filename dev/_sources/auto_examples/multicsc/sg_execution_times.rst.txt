@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**52:01.063** total execution time for 3 files **from auto_examples/multicsc**:
+**33:52.236** total execution time for 3 files **from auto_examples/multicsc**:
 
 .. container::
 
@@ -33,10 +33,10 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_multicsc_plot_sample_evoked_response.py` (``plot_sample_evoked_response.py``)
-     - 41:01.317
+     - 28:36.721
      - 0.0
    * - :ref:`sphx_glr_auto_examples_multicsc_plot_somato_mu_waves.py` (``plot_somato_mu_waves.py``)
-     - 10:59.746
+     - 05:15.516
      - 0.0
    * - :ref:`sphx_glr_auto_examples_multicsc_sample_evoked_response_dicodile.py` (``sample_evoked_response_dicodile.py``)
      - 00:00.000

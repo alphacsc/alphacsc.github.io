@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**07:49.754** total execution time for 4 files **from auto_examples/csc**:
+**07:42.487** total execution time for 4 files **from auto_examples/csc**:
 
 .. container::
 
@@ -33,14 +33,14 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py` (``plot_cross_frequency_coupling.py``)
-     - 03:32.511
+     - 03:29.249
      - 0.0
    * - :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py` (``plot_lfp_data.py``)
-     - 02:14.707
+     - 02:11.247
      - 0.0
    * - :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py` (``plot_simulate_randomstate.py``)
-     - 01:27.101
+     - 01:26.636
      - 0.0
    * - :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py` (``plot_simulate_csc.py``)
-     - 00:35.434
+     - 00:35.355
      - 0.0
