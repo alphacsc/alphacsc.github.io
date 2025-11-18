@@ -63,7 +63,7 @@ to detect steps and compare our findings with the ground truth.
 
     Downloading data from http://dev.ipol.im/~truong/GaitData.zip (192.3 MB)
 
-    file_sizes:   0%|                                    | 0.00/202M [00:00<?, ?B/s]    file_sizes:   0%|                            | 24.6k/202M [00:00<24:06, 139kB/s]    file_sizes:   0%|                            | 49.2k/202M [00:00<24:06, 139kB/s]    file_sizes:   0%|                             | 106k/202M [00:00<14:59, 224kB/s]    file_sizes:   0%|                             | 221k/202M [00:00<08:33, 392kB/s]    file_sizes:   0%|                             | 451k/202M [00:00<04:39, 719kB/s]    file_sizes:   0%|▏                           | 909k/202M [00:01<02:27, 1.36MB/s]    file_sizes:   1%|▏                          | 1.83M/202M [00:01<01:16, 2.61MB/s]    file_sizes:   2%|▍                          | 3.66M/202M [00:01<00:38, 5.09MB/s]    file_sizes:   4%|█                          | 7.59M/202M [00:01<00:19, 10.0MB/s]    file_sizes:   5%|█▍                         | 10.5M/202M [00:01<00:16, 11.9MB/s]    file_sizes:   7%|█▊                         | 13.4M/202M [00:01<00:14, 13.2MB/s]    file_sizes:   8%|██▏                        | 16.2M/202M [00:02<00:13, 14.0MB/s]    file_sizes:   9%|██▌                        | 19.1M/202M [00:02<00:12, 14.7MB/s]    file_sizes:  11%|██▉                        | 22.0M/202M [00:02<00:11, 15.1MB/s]    file_sizes:  12%|███▎                       | 24.4M/202M [00:02<00:12, 14.8MB/s]    file_sizes:  14%|███▋                       | 27.3M/202M [00:02<00:11, 15.2MB/s]    file_sizes:  15%|████                       | 30.1M/202M [00:03<00:11, 15.4MB/s]    file_sizes:  16%|████▍                      | 33.0M/202M [00:03<00:10, 15.7MB/s]    file_sizes:  18%|████▊                      | 35.9M/202M [00:03<00:10, 15.8MB/s]    file_sizes:  19%|█████▏                     | 38.8M/202M [00:03<00:10, 15.9MB/s]    file_sizes:  21%|█████▌                     | 41.7M/202M [00:03<00:10, 16.0MB/s]    file_sizes:  22%|█████▉                     | 44.6M/202M [00:03<00:09, 16.0MB/s]    file_sizes:  24%|██████▎                    | 47.4M/202M [00:04<00:09, 16.0MB/s]    file_sizes:  25%|██████▋                    | 50.3M/202M [00:04<00:09, 16.1MB/s]    file_sizes:  26%|███████                    | 52.7M/202M [00:04<00:09, 15.4MB/s]    file_sizes:  28%|███████▍                   | 55.6M/202M [00:04<00:09, 15.6MB/s]    file_sizes:  29%|███████▊                   | 58.4M/202M [00:04<00:09, 15.8MB/s]    file_sizes:  30%|████████▏                  | 61.3M/202M [00:04<00:08, 15.9MB/s]    file_sizes:  32%|████████▌                  | 64.2M/202M [00:05<00:08, 16.0MB/s]    file_sizes:  33%|████████▉                  | 67.1M/202M [00:05<00:08, 16.0MB/s]    file_sizes:  35%|█████████▎                 | 70.0M/202M [00:05<00:08, 16.0MB/s]    file_sizes:  36%|█████████▊                 | 72.9M/202M [00:05<00:08, 16.1MB/s]    file_sizes:  38%|██████████▏                | 75.8M/202M [00:05<00:07, 16.1MB/s]    file_sizes:  39%|██████████▍                | 78.1M/202M [00:06<00:07, 15.5MB/s]    file_sizes:  40%|██████████▊                | 81.0M/202M [00:06<00:07, 15.7MB/s]    file_sizes:  42%|███████████▏               | 83.9M/202M [00:06<00:07, 15.8MB/s]    file_sizes:  43%|███████████▌               | 86.8M/202M [00:06<00:07, 15.9MB/s]    file_sizes:  44%|████████████               | 89.6M/202M [00:06<00:07, 15.9MB/s]    file_sizes:  46%|████████████▍              | 92.5M/202M [00:06<00:06, 16.0MB/s]    file_sizes:  47%|████████████▊              | 95.4M/202M [00:07<00:06, 16.0MB/s]    file_sizes:  49%|█████████████▏             | 98.3M/202M [00:07<00:06, 16.1MB/s]    file_sizes:  50%|██████████████              | 101M/202M [00:07<00:06, 16.1MB/s]    file_sizes:  52%|██████████████▍             | 104M/202M [00:07<00:06, 16.1MB/s]    file_sizes:  53%|██████████████▊             | 107M/202M [00:07<00:05, 16.1MB/s]    file_sizes:  54%|███████████████▎            | 110M/202M [00:08<00:05, 16.1MB/s]    file_sizes:  56%|███████████████▌            | 112M/202M [00:08<00:05, 15.5MB/s]    file_sizes:  57%|███████████████▉            | 115M/202M [00:08<00:05, 15.7MB/s]    file_sizes:  58%|████████████████▍           | 118M/202M [00:08<00:05, 15.8MB/s]    file_sizes:  60%|████████████████▊           | 121M/202M [00:08<00:05, 15.9MB/s]    file_sizes:  61%|█████████████████▏          | 124M/202M [00:08<00:04, 16.0MB/s]    file_sizes:  63%|█████████████████▌          | 127M/202M [00:09<00:04, 16.0MB/s]    file_sizes:  64%|█████████████████▉          | 129M/202M [00:09<00:04, 16.0MB/s]    file_sizes:  66%|██████████████████▍         | 132M/202M [00:09<00:04, 16.1MB/s]    file_sizes:  67%|██████████████████▊         | 135M/202M [00:09<00:04, 16.1MB/s]    file_sizes:  68%|███████████████████         | 138M/202M [00:09<00:04, 15.4MB/s]    file_sizes:  70%|███████████████████▌        | 141M/202M [00:09<00:03, 15.6MB/s]    file_sizes:  71%|███████████████████▉        | 143M/202M [00:10<00:03, 15.8MB/s]    file_sizes:  73%|████████████████████▎       | 146M/202M [00:10<00:03, 15.9MB/s]    file_sizes:  74%|████████████████████▋       | 149M/202M [00:10<00:03, 15.9MB/s]    file_sizes:  75%|█████████████████████       | 152M/202M [00:10<00:03, 16.0MB/s]    file_sizes:  77%|█████████████████████▍      | 155M/202M [00:10<00:02, 15.7MB/s]    file_sizes:  78%|█████████████████████▉      | 158M/202M [00:11<00:02, 15.8MB/s]    file_sizes:  80%|██████████████████████▎     | 160M/202M [00:11<00:02, 15.9MB/s]    file_sizes:  81%|██████████████████████▋     | 163M/202M [00:11<00:02, 16.0MB/s]    file_sizes:  82%|███████████████████████     | 166M/202M [00:11<00:02, 16.0MB/s]    file_sizes:  84%|███████████████████████▍    | 169M/202M [00:11<00:02, 16.0MB/s]    file_sizes:  85%|███████████████████████▉    | 172M/202M [00:11<00:01, 16.1MB/s]    file_sizes:  87%|████████████████████████▎   | 175M/202M [00:12<00:01, 16.1MB/s]    file_sizes:  88%|████████████████████████▌   | 177M/202M [00:12<00:01, 15.4MB/s]    file_sizes:  89%|█████████████████████████   | 180M/202M [00:12<00:01, 15.6MB/s]    file_sizes:  91%|█████████████████████████▍  | 183M/202M [00:12<00:01, 15.8MB/s]    file_sizes:  92%|█████████████████████████▊  | 186M/202M [00:12<00:00, 15.9MB/s]    file_sizes:  94%|██████████████████████████▏ | 189M/202M [00:13<00:00, 15.9MB/s]    file_sizes:  95%|██████████████████████████▌ | 192M/202M [00:13<00:00, 16.0MB/s]    file_sizes:  96%|███████████████████████████ | 195M/202M [00:13<00:00, 16.0MB/s]    file_sizes:  98%|███████████████████████████▍| 197M/202M [00:13<00:00, 16.0MB/s]    file_sizes:  99%|███████████████████████████▊| 200M/202M [00:13<00:00, 16.1MB/s]    file_sizes: 100%|████████████████████████████| 202M/202M [00:13<00:00, 14.7MB/s]
+    file_sizes:   0%|                                    | 0.00/202M [00:00<?, ?B/s]    file_sizes:   0%|                            | 24.6k/202M [00:00<20:22, 165kB/s]    file_sizes:   0%|                            | 49.2k/202M [00:00<20:24, 165kB/s]    file_sizes:   0%|                             | 106k/202M [00:00<12:40, 265kB/s]    file_sizes:   0%|                             | 221k/202M [00:00<07:14, 463kB/s]    file_sizes:   0%|                             | 451k/202M [00:00<03:57, 849kB/s]    file_sizes:   0%|▏                           | 909k/202M [00:00<02:05, 1.60MB/s]    file_sizes:   1%|▎                          | 2.09M/202M [00:01<00:56, 3.54MB/s]    file_sizes:   2%|▌                          | 3.92M/202M [00:01<00:32, 6.10MB/s]    file_sizes:   4%|▉                          | 7.33M/202M [00:01<00:18, 10.6MB/s]    file_sizes:   5%|█▎                         | 10.2M/202M [00:01<00:14, 12.9MB/s]    file_sizes:   6%|█▊                         | 13.1M/202M [00:01<00:13, 14.4MB/s]    file_sizes:   8%|██▏                        | 16.0M/202M [00:01<00:12, 15.4MB/s]    file_sizes:   9%|██▍                        | 18.3M/202M [00:02<00:11, 15.5MB/s]    file_sizes:  11%|██▊                        | 21.2M/202M [00:02<00:11, 16.1MB/s]    file_sizes:  12%|███▏                       | 24.1M/202M [00:02<00:10, 16.6MB/s]    file_sizes:  13%|███▌                       | 27.0M/202M [00:02<00:10, 16.9MB/s]    file_sizes:  15%|████                       | 29.9M/202M [00:02<00:10, 17.1MB/s]    file_sizes:  16%|████▍                      | 33.0M/202M [00:02<00:09, 18.0MB/s]    file_sizes:  18%|████▊                      | 35.6M/202M [00:02<00:09, 17.9MB/s]    file_sizes:  19%|█████                      | 38.3M/202M [00:03<00:09, 17.6MB/s]    file_sizes:  20%|█████▌                     | 41.1M/202M [00:03<00:09, 17.6MB/s]    file_sizes:  22%|█████▉                     | 44.0M/202M [00:03<00:09, 17.5MB/s]    file_sizes:  23%|██████▎                    | 47.2M/202M [00:03<00:08, 18.0MB/s]    file_sizes:  25%|██████▋                    | 50.1M/202M [00:03<00:08, 18.0MB/s]    file_sizes:  26%|███████                    | 52.4M/202M [00:03<00:08, 17.3MB/s]    file_sizes:  27%|███████▍                   | 55.3M/202M [00:04<00:08, 17.4MB/s]    file_sizes:  29%|███████▊                   | 58.4M/202M [00:04<00:07, 17.9MB/s]    file_sizes:  30%|████████▏                  | 61.1M/202M [00:04<00:07, 17.8MB/s]    file_sizes:  32%|████████▌                  | 64.0M/202M [00:04<00:07, 17.8MB/s]    file_sizes:  33%|████████▉                  | 66.8M/202M [00:04<00:07, 17.8MB/s]    file_sizes:  34%|█████████▎                 | 69.5M/202M [00:04<00:07, 17.6MB/s]    file_sizes:  36%|█████████▋                 | 72.6M/202M [00:05<00:07, 18.0MB/s]    file_sizes:  37%|██████████                 | 75.5M/202M [00:05<00:07, 18.0MB/s]    file_sizes:  39%|██████████▌                | 78.6M/202M [00:05<00:06, 18.2MB/s]    file_sizes:  40%|██████████▉                | 81.5M/202M [00:05<00:06, 18.1MB/s]    file_sizes:  42%|███████████▎               | 84.1M/202M [00:05<00:06, 17.8MB/s]    file_sizes:  43%|███████████▋               | 87.0M/202M [00:05<00:06, 17.8MB/s]    file_sizes:  44%|████████████               | 89.6M/202M [00:06<00:06, 17.6MB/s]    file_sizes:  46%|████████████▍              | 92.8M/202M [00:06<00:06, 17.9MB/s]    file_sizes:  47%|████████████▊              | 95.7M/202M [00:06<00:05, 17.9MB/s]    file_sizes:  49%|█████████████▏             | 98.0M/202M [00:06<00:05, 17.4MB/s]    file_sizes:  50%|██████████████              | 101M/202M [00:06<00:05, 17.6MB/s]    file_sizes:  52%|██████████████▍             | 104M/202M [00:06<00:05, 17.8MB/s]    file_sizes:  53%|██████████████▊             | 107M/202M [00:06<00:05, 17.6MB/s]    file_sizes:  54%|███████████████▏            | 110M/202M [00:07<00:05, 17.7MB/s]    file_sizes:  56%|███████████████▌            | 112M/202M [00:07<00:05, 17.8MB/s]    file_sizes:  57%|███████████████▉            | 115M/202M [00:07<00:04, 17.6MB/s]    file_sizes:  58%|████████████████▍           | 118M/202M [00:07<00:04, 17.7MB/s]    file_sizes:  60%|████████████████▊           | 121M/202M [00:07<00:04, 17.8MB/s]    file_sizes:  61%|█████████████████▏          | 124M/202M [00:07<00:04, 18.1MB/s]    file_sizes:  63%|█████████████████▌          | 127M/202M [00:08<00:04, 17.8MB/s]    file_sizes:  64%|█████████████████▉          | 129M/202M [00:08<00:04, 17.6MB/s]    file_sizes:  66%|██████████████████▎         | 132M/202M [00:08<00:03, 17.7MB/s]    file_sizes:  67%|██████████████████▊         | 135M/202M [00:08<00:03, 18.0MB/s]    file_sizes:  69%|███████████████████▏        | 138M/202M [00:08<00:03, 18.0MB/s]    file_sizes:  70%|███████████████████▌        | 141M/202M [00:08<00:03, 18.0MB/s]    file_sizes:  71%|███████████████████▉        | 144M/202M [00:09<00:03, 18.0MB/s]    file_sizes:  73%|████████████████████▎       | 146M/202M [00:09<00:03, 17.5MB/s]    file_sizes:  74%|████████████████████▋       | 149M/202M [00:09<00:03, 17.5MB/s]    file_sizes:  76%|█████████████████████▏      | 152M/202M [00:09<00:02, 17.8MB/s]    file_sizes:  77%|█████████████████████▌      | 155M/202M [00:09<00:02, 17.6MB/s]    file_sizes:  78%|█████████████████████▉      | 158M/202M [00:09<00:02, 17.5MB/s]    file_sizes:  80%|██████████████████████▎     | 160M/202M [00:10<00:02, 17.7MB/s]    file_sizes:  81%|██████████████████████▋     | 164M/202M [00:10<00:02, 18.1MB/s]    file_sizes:  82%|███████████████████████     | 166M/202M [00:10<00:01, 17.9MB/s]    file_sizes:  83%|███████████████████████▎    | 168M/202M [00:10<00:02, 14.2MB/s]    file_sizes:  85%|███████████████████████▊    | 172M/202M [00:10<00:01, 16.0MB/s]    file_sizes:  86%|████████████████████████▏   | 174M/202M [00:10<00:01, 15.4MB/s]    file_sizes:  87%|████████████████████████▎   | 175M/202M [00:11<00:02, 12.7MB/s]    file_sizes:  89%|████████████████████████▉   | 179M/202M [00:11<00:01, 15.1MB/s]    file_sizes:  90%|█████████████████████████▎  | 182M/202M [00:11<00:01, 16.4MB/s]    file_sizes:  92%|█████████████████████████▊  | 186M/202M [00:11<00:00, 17.3MB/s]    file_sizes:  93%|██████████████████████████▏ | 188M/202M [00:11<00:00, 13.9MB/s]    file_sizes:  96%|██████████████████████████▊ | 193M/202M [00:12<00:00, 13.9MB/s]    file_sizes:  97%|███████████████████████████ | 195M/202M [00:12<00:00, 11.4MB/s]    file_sizes:  99%|███████████████████████████▌| 199M/202M [00:12<00:00, 11.5MB/s]    file_sizes:  99%|███████████████████████████▊| 200M/202M [00:13<00:00, 9.50MB/s]    file_sizes: 100%|███████████████████████████▉| 201M/202M [00:13<00:00, 7.73MB/s]    file_sizes: 100%|████████████████████████████| 202M/202M [00:13<00:00, 14.8MB/s]
     Successfully downloaded file to /github/home/data/dicodile/gait/GaitData.zip
 
 
@@ -121,7 +121,7 @@ contains a numpy array with the trial time series for each sensor axis, at
  .. code-block:: none
 
 
-    [<matplotlib.lines.Line2D object at 0x7f05c4de6220>]
+    [<matplotlib.lines.Line2D object at 0x7f33ffb27890>]
 
 
 
@@ -158,7 +158,7 @@ same plot.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f05c4e4bc40>
+    <matplotlib.legend.Legend object at 0x7f340668acf0>
 
 
 
@@ -277,21 +277,21 @@ a single-channel time series so it is (1, 1, n_times).
  .. code-block:: none
 
     (8, 1, 200)
-    Started 4 workers in 1.68s
+    Started 4 workers in 1.6s
     [BatchCDL] CD iterations 0 / 3
     [BatchCDL] lambda = 2.658e+00
     [BatchCDL] Objective (z) : 4.270e+03 (sparsity: 3.010e-03)
     [BatchCDL] Resampled atom 0
     [BatchCDL] Objective (d) : 3.674e+03
     [BatchCDL] CD iterations 1 / 3
-    [BatchCDL] Objective (z) : 3.401e+03 (sparsity: 3.315e-03)
+    [BatchCDL] Objective (z) : 3.401e+03 (sparsity: 3.301e-03)
     [BatchCDL] Resampled atom 1
     [BatchCDL] Objective (d) : 3.323e+03
     [BatchCDL] CD iterations 2 / 3
-    [BatchCDL] Objective (z) : 3.219e+03 (sparsity: 3.294e-03)
+    [BatchCDL] Objective (z) : 3.219e+03 (sparsity: 3.288e-03)
     [BatchCDL] Resampled atom 5
     [BatchCDL] Objective (d) : 3.153e+03
-    [BatchCDL] Fit in 12.3s
+    [BatchCDL] Fit in 10.9s
 
 
 
@@ -354,7 +354,7 @@ Plot a small part of the original and reconstructed signals
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f05bdd17880>
+    <matplotlib.legend.Legend object at 0x7f33ffe60190>
 
 
 
@@ -379,7 +379,7 @@ Check that our representation is indeed sparse:
  .. code-block:: none
 
 
-    486
+    np.int64(485)
 
 
 
@@ -406,7 +406,7 @@ original signal is the (normalized) cross-correlation. Let’s compute this:
  .. code-block:: none
 
 
-    array([0.98280099])
+    array([0.98280152])
 
 
 
@@ -466,7 +466,7 @@ Let’s look at a small portion of multi-channel data
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f05bdc187c0>
+    <matplotlib.legend.Legend object at 0x7f33ffe4b890>
 
 
 
@@ -567,18 +567,18 @@ version here as well)
 
  .. code-block:: none
 
-    Started 4 workers in 1.65s
+    Started 4 workers in 1.56s
     [BatchCDL] CD iterations 0 / 3
     [BatchCDL] lambda = 3.191e+00
-    [BatchCDL] Objective (z) : 7.983e+03 (sparsity: 5.457e-03)
+    [BatchCDL] Objective (z) : 7.983e+03 (sparsity: 5.504e-03)
     [BatchCDL] Objective (d) : 7.598e+03
     [BatchCDL] CD iterations 1 / 3
-    [BatchCDL] Objective (z) : 7.473e+03 (sparsity: 4.257e-03)
+    [BatchCDL] Objective (z) : 7.473e+03 (sparsity: 4.332e-03)
     [BatchCDL] Objective (d) : 7.436e+03
     [BatchCDL] CD iterations 2 / 3
-    [BatchCDL] Objective (z) : 7.404e+03 (sparsity: 3.857e-03)
+    [BatchCDL] Objective (z) : 7.404e+03 (sparsity: 3.918e-03)
     [BatchCDL] Objective (d) : 7.376e+03
-    [BatchCDL] Fit in 14.6s
+    [BatchCDL] Fit in 13.1s
 
 
 
@@ -663,7 +663,7 @@ along with the activations.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 44.707 seconds)
+   **Total running time of the script:** (0 minutes 40.843 seconds)
 
 
 .. _sphx_glr_download_auto_examples_dicodile_plot_gait.py:
