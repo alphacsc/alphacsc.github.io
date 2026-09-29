@@ -8,29 +8,16 @@ Univariate CSC
 --------------
 
 
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
 
 .. raw:: html
 
     <div class="sphx-glr-thumbnails">
 
 .. thumbnail-parent-div-open
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="The CSC problem is non-convex. Therefore, the solution depends on the initialization. Here, we show how to select the best atoms amongst different initializations.">
-
-.. only:: html
-
-  .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_auto_examples_csc_plot_simulate_randomstate.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Selecting random state for CSC</div>
-    </div>
-
 
 .. raw:: html
 
@@ -41,11 +28,28 @@ Univariate CSC
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_lfp_data_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_examples_csc_plot_lfp_data.py`
+  :doc:`/auto_examples/csc/plot_lfp_data`
 
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">CSC to learn LFP spiking atoms</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The CSC problem is non-convex. Therefore, the solution depends on the initialization. Here, we show how to select the best atoms amongst different initializations.">
+
+.. only:: html
+
+  .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_randomstate_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/csc/plot_simulate_randomstate`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Selecting random state for CSC</div>
     </div>
 
 
@@ -58,7 +62,7 @@ Univariate CSC
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_cross_frequency_coupling_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_examples_csc_plot_cross_frequency_coupling.py`
+  :doc:`/auto_examples/csc/plot_cross_frequency_coupling`
 
 .. raw:: html
 
@@ -75,7 +79,7 @@ Univariate CSC
   .. image:: /auto_examples/csc/images/thumb/sphx_glr_plot_simulate_csc_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py`
+  :doc:`/auto_examples/csc/plot_simulate_csc`
 
 .. raw:: html
 
@@ -93,8 +97,8 @@ Univariate CSC
 .. toctree::
    :hidden:
 
-   /auto_examples/csc/plot_simulate_randomstate
    /auto_examples/csc/plot_lfp_data
+   /auto_examples/csc/plot_simulate_randomstate
    /auto_examples/csc/plot_cross_frequency_coupling
    /auto_examples/csc/plot_simulate_csc
 

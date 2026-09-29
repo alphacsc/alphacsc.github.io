@@ -176,9 +176,7 @@ and then alpha CSC on the same data
 
  .. code-block:: none
 
-    Global Iter: 0/10       V_0/50 /github/workspace/alphacsc/update_d.py:172: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-      lambd_hats[k] = lambd_hat
-    .................................................
+    Global Iter: 0/10       V_0/50 .................................................
     Global Iter: 1/10       V_0/50 .................................................
     Global Iter: 2/10       V_0/50 .................................................
     Global Iter: 3/10       V_0/50 .................................................
@@ -260,14 +258,14 @@ downweighted by the algorithm
  .. code-block:: none
 
 
-    Text(31.222222222222214, 0.5, 'Corrupted trial')
+    Text(30.722222222222214, 0.5, 'Corrupted trial')
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (3 minutes 40.848 seconds)
+   **Total running time of the script:** (3 minutes 41.957 seconds)
 
 
 .. _sphx_glr_download_auto_examples_noise_alpha_plot_simulate_alphacsc.py:

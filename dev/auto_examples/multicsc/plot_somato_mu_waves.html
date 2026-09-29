@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -27,33 +26,35 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
 
     <script src="../../_static/documentation_options.js?v=31120846"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/sg-tags.js?v=d80f6fa4"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/multicsc/plot_somato_mu_waves';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://alphacsc.github.io/stable/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             false;
         </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Extracting artifact and evoked response atoms from the MNE sample dataset" href="sample_evoked_response_dicodile.html" />
@@ -61,20 +62,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="99.9.dev1" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -100,9 +107,9 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -167,7 +174,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -206,8 +213,7 @@
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -218,8 +224,7 @@
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">PyPI</span></a>
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
         </li>
 </ul></div>
       
@@ -230,7 +235,7 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -239,7 +244,7 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -330,8 +335,7 @@
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -342,8 +346,7 @@
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">PyPI</span></a>
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
         </li>
 </ul></div>
         
@@ -352,14 +355,22 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
         <div class="sidebar-primary-item">
+
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../csc/index.html">Univariate CSC</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../csc/plot_simulate_randomstate.html">Selecting random state for CSC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csc/plot_lfp_data.html">CSC to learn LFP spiking atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../csc/plot_simulate_randomstate.html">Selecting random state for CSC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csc/plot_cross_frequency_coupling.html">Extracting cross-frequency coupling waveforms from rodent LFP data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../csc/plot_simulate_csc.html">Vanilla CSC on simulated data</a></li>
 </ul>
@@ -369,7 +380,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Multivariate CSC with rank 1 constraints</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset</a></li>
+<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sample_evoked_response_dicodile.html">Extracting artifact and evoked response atoms from the MNE sample dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_sample_evoked_response.html">Extracting artifact and evoked response atoms from the sample dataset</a></li>
 </ul>
@@ -465,147 +476,132 @@ the presence of <span class="math notranslate nohighlight">\(\mu\)</span>-waves 
 Processing Systems (NIPS).</p>
 </aside>
 </aside>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Thomas Moreau &lt;thomas.moreau@inria.fr&gt;</span>
-<span class="c1">#          Mainak Jas &lt;mainak.jas@telecom-paristech.fr&gt;</span>
-<span class="c1">#          Tom Dupre La Tour &lt;tom.duprelatour@telecom-paristech.fr&gt;</span>
-<span class="c1">#          Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
-<span class="c1">#</span>
-<span class="c1"># License: BSD (3-clause)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="c1"># Authors: Thomas Moreau &lt;thomas.moreau&#64;inria.fr&gt;</span><span class="w">
+</span><span class="c1">#          Mainak Jas &lt;mainak.jas&#64;telecom-paristech.fr&gt;</span><span class="w">
+</span><span class="c1">#          Tom Dupre La Tour &lt;tom.duprelatour&#64;telecom-paristech.fr&gt;</span><span class="w">
+</span><span class="c1">#          Alexandre Gramfort &lt;alexandre.gramfort&#64;telecom-paristech.fr&gt;</span><span class="w">
+</span><span class="c1">#</span><span class="w">
+</span><span class="c1"># License: BSD (3-clause)</span><span class="w">
+</span></pre></div></div>
 <p>Let us first define the parameters of our model.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a> <span class="o">=</span> <span class="mf">150.</span>
-
-<span class="c1"># Define the shape of the dictionary</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a> <span class="o">=</span> <span class="mi">25</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a> <span class="o">*</span> <span class="mf">1.0</span><span class="p">))</span>  <span class="c1"># 1000. ms</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a> <span class="o">=</span> <span class="mf">150.</span><span class="w">
+</span><span class="w">
+</span><span class="c1"># Define the shape of the dictionary</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_atoms</span></a> <span class="o">=</span> <span class="mi">25</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times_atom</span></a> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a> <span class="o">*</span> <span class="mf">1.0</span><span class="p">)</span><span class="p">)</span>  <span class="c1"># 1000. ms</span><span class="w">
+</span></pre></div></div>
 <p>Next, we define the parameters for multivariate CSC</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">alphacsc</span><span class="w"> </span><span class="kn">import</span> <a href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class"><span class="n">BatchCDL</span></a>
-<a href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cdl</span></a> <span class="o">=</span> <a href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class"><span class="n">BatchCDL</span></a><span class="p">(</span>
-    <span class="c1"># Shape of the dictionary</span>
-    <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a><span class="p">,</span>
-    <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a><span class="p">,</span>
-    <span class="c1"># Request a rank1 dictionary with unit norm temporal and spatial maps</span>
-    <span class="n">rank1</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">uv_constraint</span><span class="o">=</span><span class="s1">&#39;separate&#39;</span><span class="p">,</span>
-    <span class="c1"># Initialize the dictionary with random chunk from the data</span>
-    <span class="n">D_init</span><span class="o">=</span><span class="s1">&#39;chunk&#39;</span><span class="p">,</span>
-    <span class="c1"># rescale the regularization parameter to be 20% of lambda_max</span>
-    <span class="n">lmbd_max</span><span class="o">=</span><span class="s2">&quot;scaled&quot;</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span>
-    <span class="c1"># Number of iteration for the alternate minimization and cvg threshold</span>
-    <span class="n">n_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span>
-    <span class="c1"># solver for the z-step</span>
-    <span class="n">solver_z</span><span class="o">=</span><span class="s2">&quot;lgcd&quot;</span><span class="p">,</span> <span class="n">solver_z_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;tol&#39;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="s1">&#39;max_iter&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">},</span>
-    <span class="c1"># solver for the d-step</span>
-    <span class="n">solver_d</span><span class="o">=</span><span class="s1">&#39;alternate_adaptive&#39;</span><span class="p">,</span> <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;max_iter&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">},</span>
-    <span class="c1"># Technical parameters</span>
-    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">from</span><span class="w"> </span><span class="nn">alphacsc</span><span class="w"> </span><span class="kn">import</span> <a class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class reference internal" href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL"><span class="n">BatchCDL</span></a><span class="w">
+</span><a class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL"><span class="n">cdl</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class reference internal" href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL"><span class="n">BatchCDL</span></a><span class="p">(</span><span class="w">
+</span>    <span class="c1"># Shape of the dictionary</span><span class="w">
+</span>    <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_atoms</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_atoms</span></a><span class="p">,</span><span class="w">
+</span>    <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times_atom</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times_atom</span></a><span class="p">,</span><span class="w">
+</span>    <span class="c1"># Request a rank1 dictionary with unit norm temporal and spatial maps</span><span class="w">
+</span>    <span class="n">rank1</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">uv_constraint</span><span class="o">=</span><span class="s1">'</span><span class="s1">separate</span><span class="s1">'</span><span class="p">,</span><span class="w">
+</span>    <span class="c1"># Initialize the dictionary with random chunk from the data</span><span class="w">
+</span>    <span class="n">D_init</span><span class="o">=</span><span class="s1">'</span><span class="s1">chunk</span><span class="s1">'</span><span class="p">,</span><span class="w">
+</span>    <span class="c1"># rescale the regularization parameter to be 20% of lambda_max</span><span class="w">
+</span>    <span class="n">lmbd_max</span><span class="o">=</span><span class="s2">&quot;</span><span class="s2">scaled</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">reg</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span><span class="w">
+</span>    <span class="c1"># Number of iteration for the alternate minimization and cvg threshold</span><span class="w">
+</span>    <span class="n">n_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span><span class="w">
+</span>    <span class="c1"># solver for the z-step</span><span class="w">
+</span>    <span class="n">solver_z</span><span class="o">=</span><span class="s2">&quot;</span><span class="s2">lgcd</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">solver_z_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">'</span><span class="s1">tol</span><span class="s1">'</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span> <span class="s1">'</span><span class="s1">max_iter</span><span class="s1">'</span><span class="p">:</span> <span class="mi">1000</span><span class="p">}</span><span class="p">,</span><span class="w">
+</span>    <span class="c1"># solver for the d-step</span><span class="w">
+</span>    <span class="n">solver_d</span><span class="o">=</span><span class="s1">'</span><span class="s1">alternate_adaptive</span><span class="s1">'</span><span class="p">,</span> <span class="n">solver_d_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">'</span><span class="s1">max_iter</span><span class="s1">'</span><span class="p">:</span> <span class="mi">300</span><span class="p">}</span><span class="p">,</span><span class="w">
+</span>    <span class="c1"># Technical parameters</span><span class="w">
+</span>    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <p>Here, we load the data from the somato-sensory dataset and preprocess them
 in epochs. The epochs are selected around the stim, starting 2 seconds
 before and finishing 4 seconds after.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">alphacsc.datasets.mne_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_data</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_lim</span></a> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info" class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">info</span></a> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="s1">&#39;somato&#39;</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t_lim</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">from</span><span class="w"> </span><span class="nn">alphacsc</span><span class="nn">.</span><span class="nn">datasets</span><span class="nn">.</span><span class="nn">mne_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_data</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="tuple"><span class="n">t_lim</span></a> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info"><span class="n">info</span></a> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="s1">'</span><span class="s1">somato</span><span class="s1">'</span><span class="p">,</span> <span class="n">epoch</span><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="tuple"><span class="n">t_lim</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using default location ~/mne_data for somato...
+Fetching 1 file for the somato dataset ...
 
-  0%|                                               | 0.00/611M [00:00&lt;?, ?B/s]
-  0%|▏                                     | 2.63M/611M [00:00&lt;00:23, 26.3MB/s]
-  2%|▌                                     | 10.0M/611M [00:00&lt;00:11, 54.3MB/s]
-  3%|█                                     | 17.4M/611M [00:00&lt;00:09, 63.0MB/s]
-  4%|█▌                                    | 24.7M/611M [00:00&lt;00:08, 67.0MB/s]
-  5%|█▉                                    | 32.1M/611M [00:00&lt;00:08, 69.5MB/s]
-  6%|██▍                                   | 39.4M/611M [00:00&lt;00:08, 70.7MB/s]
-  8%|██▉                                   | 46.4M/611M [00:00&lt;00:08, 70.0MB/s]
-  9%|███▎                                  | 53.7M/611M [00:00&lt;00:07, 70.9MB/s]
- 10%|███▊                                  | 61.0M/611M [00:00&lt;00:07, 71.3MB/s]
- 11%|████▎                                 | 68.3M/611M [00:01&lt;00:07, 72.1MB/s]
- 12%|████▋                                 | 75.6M/611M [00:01&lt;00:07, 72.3MB/s]
- 14%|█████▏                                | 82.9M/611M [00:01&lt;00:07, 72.1MB/s]
- 15%|█████▌                                | 90.2M/611M [00:01&lt;00:07, 72.5MB/s]
- 16%|██████                                | 97.4M/611M [00:01&lt;00:07, 72.4MB/s]
- 17%|██████▋                                | 105M/611M [00:01&lt;00:07, 72.1MB/s]
- 18%|███████▏                               | 112M/611M [00:01&lt;00:06, 72.3MB/s]
- 20%|███████▌                               | 119M/611M [00:01&lt;00:06, 72.2MB/s]
- 21%|████████                               | 126M/611M [00:01&lt;00:06, 72.3MB/s]
- 22%|████████▌                              | 134M/611M [00:01&lt;00:06, 72.7MB/s]
- 23%|█████████                              | 141M/611M [00:02&lt;00:06, 72.9MB/s]
- 24%|█████████▍                             | 148M/611M [00:02&lt;00:06, 73.0MB/s]
- 26%|█████████▉                             | 156M/611M [00:02&lt;00:06, 73.0MB/s]
- 27%|██████████▍                            | 163M/611M [00:02&lt;00:06, 73.1MB/s]
- 28%|██████████▉                            | 170M/611M [00:02&lt;00:06, 73.3MB/s]
- 29%|███████████▎                           | 178M/611M [00:02&lt;00:05, 73.2MB/s]
- 30%|███████████▊                           | 185M/611M [00:02&lt;00:05, 72.9MB/s]
- 32%|████████████▎                          | 192M/611M [00:02&lt;00:05, 72.7MB/s]
- 33%|████████████▊                          | 200M/611M [00:02&lt;00:05, 72.6MB/s]
- 34%|█████████████▏                         | 207M/611M [00:02&lt;00:05, 72.7MB/s]
- 35%|█████████████▋                         | 214M/611M [00:03&lt;00:05, 72.5MB/s]
- 36%|██████████████▏                        | 222M/611M [00:03&lt;00:05, 72.6MB/s]
- 37%|██████████████▌                        | 229M/611M [00:03&lt;00:05, 72.7MB/s]
- 39%|███████████████                        | 236M/611M [00:03&lt;00:05, 73.0MB/s]
- 40%|███████████████▌                       | 244M/611M [00:03&lt;00:05, 73.1MB/s]
- 41%|████████████████                       | 251M/611M [00:03&lt;00:04, 73.7MB/s]
- 42%|████████████████▌                      | 259M/611M [00:03&lt;00:04, 74.0MB/s]
- 44%|████████████████▉                      | 266M/611M [00:03&lt;00:04, 74.3MB/s]
- 45%|█████████████████▍                     | 274M/611M [00:03&lt;00:04, 74.6MB/s]
- 46%|█████████████████▉                     | 281M/611M [00:03&lt;00:04, 74.6MB/s]
- 47%|██████████████████▍                    | 288M/611M [00:04&lt;00:04, 74.4MB/s]
- 48%|██████████████████▉                    | 296M/611M [00:04&lt;00:04, 73.7MB/s]
- 50%|███████████████████▍                   | 303M/611M [00:04&lt;00:04, 73.6MB/s]
- 51%|███████████████████▊                   | 311M/611M [00:04&lt;00:04, 73.2MB/s]
- 52%|████████████████████▎                  | 318M/611M [00:04&lt;00:03, 73.5MB/s]
- 53%|████████████████████▊                  | 326M/611M [00:04&lt;00:03, 74.0MB/s]
- 55%|█████████████████████▎                 | 333M/611M [00:04&lt;00:03, 74.3MB/s]
- 56%|█████████████████████▊                 | 341M/611M [00:04&lt;00:03, 74.4MB/s]
- 57%|██████████████████████▏                | 348M/611M [00:04&lt;00:03, 74.7MB/s]
- 58%|██████████████████████▋                | 356M/611M [00:04&lt;00:03, 74.7MB/s]
- 59%|███████████████████████▏               | 363M/611M [00:05&lt;00:03, 74.9MB/s]
- 61%|███████████████████████▋               | 371M/611M [00:05&lt;00:03, 75.7MB/s]
- 62%|████████████████████████▏              | 378M/611M [00:05&lt;00:03, 64.6MB/s]
- 63%|████████████████████████▌              | 385M/611M [00:05&lt;00:03, 65.4MB/s]
- 64%|█████████████████████████              | 392M/611M [00:05&lt;00:03, 67.5MB/s]
- 65%|█████████████████████████▌             | 400M/611M [00:05&lt;00:03, 68.7MB/s]
- 67%|█████████████████████████▉             | 407M/611M [00:05&lt;00:02, 69.9MB/s]
- 68%|██████████████████████████▍            | 414M/611M [00:05&lt;00:02, 70.7MB/s]
- 69%|██████████████████████████▉            | 422M/611M [00:05&lt;00:02, 71.3MB/s]
- 70%|███████████████████████████▍           | 429M/611M [00:05&lt;00:02, 71.8MB/s]
- 71%|███████████████████████████▊           | 436M/611M [00:06&lt;00:02, 72.0MB/s]
- 73%|████████████████████████████▎          | 443M/611M [00:06&lt;00:02, 72.1MB/s]
- 74%|████████████████████████████▊          | 451M/611M [00:06&lt;00:02, 72.2MB/s]
- 75%|█████████████████████████████▏         | 458M/611M [00:06&lt;00:02, 72.2MB/s]
- 76%|█████████████████████████████▋         | 465M/611M [00:06&lt;00:02, 72.2MB/s]
- 77%|██████████████████████████████▏        | 472M/611M [00:06&lt;00:01, 72.3MB/s]
- 79%|██████████████████████████████▋        | 480M/611M [00:06&lt;00:01, 72.4MB/s]
- 80%|███████████████████████████████        | 487M/611M [00:06&lt;00:01, 72.2MB/s]
- 81%|███████████████████████████████▌       | 494M/611M [00:06&lt;00:01, 72.3MB/s]
- 82%|████████████████████████████████       | 501M/611M [00:06&lt;00:01, 72.4MB/s]
- 83%|████████████████████████████████▍      | 509M/611M [00:07&lt;00:01, 72.4MB/s]
- 84%|████████████████████████████████▉      | 516M/611M [00:07&lt;00:01, 72.4MB/s]
- 86%|█████████████████████████████████▍     | 523M/611M [00:07&lt;00:01, 72.6MB/s]
- 87%|█████████████████████████████████▉     | 530M/611M [00:07&lt;00:01, 72.5MB/s]
- 88%|██████████████████████████████████▎    | 538M/611M [00:07&lt;00:01, 72.5MB/s]
- 89%|██████████████████████████████████▊    | 545M/611M [00:07&lt;00:00, 72.3MB/s]
- 90%|███████████████████████████████████▎   | 552M/611M [00:07&lt;00:00, 72.1MB/s]
- 92%|███████████████████████████████████▋   | 559M/611M [00:07&lt;00:00, 71.8MB/s]
- 93%|████████████████████████████████████▏  | 566M/611M [00:07&lt;00:00, 71.8MB/s]
- 94%|████████████████████████████████████▋  | 574M/611M [00:07&lt;00:00, 71.9MB/s]
- 95%|█████████████████████████████████████  | 581M/611M [00:08&lt;00:00, 71.8MB/s]
- 96%|█████████████████████████████████████▌ | 588M/611M [00:08&lt;00:00, 71.7MB/s]
- 98%|██████████████████████████████████████ | 595M/611M [00:08&lt;00:00, 71.9MB/s]
- 99%|██████████████████████████████████████▍| 603M/611M [00:08&lt;00:00, 72.1MB/s]
-100%|██████████████████████████████████████▉| 610M/611M [00:08&lt;00:00, 72.9MB/s]
-  0%|                                               | 0.00/611M [00:00&lt;?, ?B/s]
-100%|███████████████████████████████████████| 611M/611M [00:00&lt;00:00, 4.07TB/s]
-/usr/local/lib/python3.13/site-packages/pooch/processors.py:262: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.
-  tar_file.extractall(path=extract_dir)
+  0%|                                               | 0.00/610M [00:00&lt;?, ?B/s]
+  0%|                                       | 146k/610M [00:00&lt;07:37, 1.33MB/s]
+  0%|                                      | 1.53M/610M [00:00&lt;01:12, 8.40MB/s]
+  2%|▌                                     | 9.28M/610M [00:00&lt;00:15, 39.3MB/s]
+  3%|█                                     | 17.3M/610M [00:00&lt;00:10, 55.2MB/s]
+  4%|█▌                                    | 25.6M/610M [00:00&lt;00:08, 65.2MB/s]
+  6%|██                                    | 33.9M/610M [00:00&lt;00:08, 71.2MB/s]
+  7%|██▋                                   | 42.2M/610M [00:00&lt;00:07, 74.9MB/s]
+  8%|███▏                                  | 50.5M/610M [00:00&lt;00:07, 77.4MB/s]
+ 10%|███▋                                  | 58.8M/610M [00:00&lt;00:06, 79.2MB/s]
+ 11%|████▏                                 | 67.2M/610M [00:01&lt;00:06, 80.8MB/s]
+ 12%|████▋                                 | 75.5M/610M [00:01&lt;00:06, 81.4MB/s]
+ 14%|█████▏                                | 83.8M/610M [00:01&lt;00:06, 82.0MB/s]
+ 15%|█████▋                                | 92.2M/610M [00:01&lt;00:06, 82.5MB/s]
+ 16%|██████▍                                | 101M/610M [00:01&lt;00:06, 82.7MB/s]
+ 18%|██████▉                                | 109M/610M [00:01&lt;00:06, 82.9MB/s]
+ 19%|███████▍                               | 117M/610M [00:01&lt;00:05, 83.1MB/s]
+ 21%|████████                               | 126M/610M [00:01&lt;00:05, 82.9MB/s]
+ 22%|████████▌                              | 134M/610M [00:01&lt;00:05, 83.1MB/s]
+ 23%|█████████                              | 142M/610M [00:01&lt;00:05, 83.1MB/s]
+ 25%|█████████▌                             | 151M/610M [00:02&lt;00:05, 82.8MB/s]
+ 26%|██████████▏                            | 159M/610M [00:02&lt;00:05, 83.1MB/s]
+ 27%|██████████▋                            | 167M/610M [00:02&lt;00:05, 83.1MB/s]
+ 29%|███████████▏                           | 175M/610M [00:02&lt;00:05, 83.1MB/s]
+ 30%|███████████▊                           | 184M/610M [00:02&lt;00:05, 83.2MB/s]
+ 32%|████████████▎                          | 192M/610M [00:02&lt;00:05, 83.3MB/s]
+ 33%|████████████▊                          | 201M/610M [00:02&lt;00:04, 83.0MB/s]
+ 34%|█████████████▎                         | 209M/610M [00:02&lt;00:04, 82.9MB/s]
+ 36%|█████████████▉                         | 217M/610M [00:02&lt;00:04, 83.0MB/s]
+ 37%|██████████████▍                        | 226M/610M [00:02&lt;00:04, 83.1MB/s]
+ 38%|██████████████▉                        | 234M/610M [00:03&lt;00:04, 83.3MB/s]
+ 40%|███████████████▍                       | 242M/610M [00:03&lt;00:04, 83.3MB/s]
+ 41%|████████████████                       | 251M/610M [00:03&lt;00:04, 83.3MB/s]
+ 42%|████████████████▌                      | 259M/610M [00:03&lt;00:04, 83.4MB/s]
+ 44%|█████████████████                      | 267M/610M [00:03&lt;00:04, 83.6MB/s]
+ 45%|█████████████████▋                     | 276M/610M [00:03&lt;00:03, 83.8MB/s]
+ 47%|██████████████████▏                    | 284M/610M [00:03&lt;00:03, 83.8MB/s]
+ 48%|██████████████████▋                    | 292M/610M [00:03&lt;00:03, 83.7MB/s]
+ 49%|███████████████████▏                   | 301M/610M [00:03&lt;00:03, 83.9MB/s]
+ 51%|███████████████████▊                   | 309M/610M [00:03&lt;00:03, 84.0MB/s]
+ 52%|████████████████████▎                  | 318M/610M [00:04&lt;00:03, 83.4MB/s]
+ 53%|████████████████████▊                  | 326M/610M [00:04&lt;00:03, 83.7MB/s]
+ 55%|█████████████████████▍                 | 335M/610M [00:04&lt;00:03, 83.7MB/s]
+ 56%|█████████████████████▉                 | 343M/610M [00:04&lt;00:03, 84.0MB/s]
+ 58%|██████████████████████▍                | 351M/610M [00:04&lt;00:03, 84.0MB/s]
+ 59%|███████████████████████                | 360M/610M [00:04&lt;00:02, 84.0MB/s]
+ 60%|███████████████████████▌               | 368M/610M [00:04&lt;00:02, 83.9MB/s]
+ 62%|████████████████████████               | 377M/610M [00:04&lt;00:02, 83.7MB/s]
+ 63%|████████████████████████▌              | 385M/610M [00:04&lt;00:02, 83.9MB/s]
+ 64%|█████████████████████████▏             | 393M/610M [00:04&lt;00:02, 83.9MB/s]
+ 66%|█████████████████████████▋             | 402M/610M [00:05&lt;00:02, 84.1MB/s]
+ 67%|██████████████████████████▏            | 410M/610M [00:05&lt;00:02, 83.8MB/s]
+ 69%|██████████████████████████▊            | 419M/610M [00:05&lt;00:02, 83.9MB/s]
+ 70%|███████████████████████████▎           | 427M/610M [00:05&lt;00:02, 84.0MB/s]
+ 71%|███████████████████████████▊           | 436M/610M [00:05&lt;00:02, 84.1MB/s]
+ 73%|████████████████████████████▍          | 444M/610M [00:05&lt;00:01, 84.0MB/s]
+ 74%|████████████████████████████▉          | 452M/610M [00:05&lt;00:01, 84.1MB/s]
+ 76%|█████████████████████████████▍         | 461M/610M [00:05&lt;00:01, 84.1MB/s]
+ 77%|█████████████████████████████▉         | 469M/610M [00:05&lt;00:01, 84.1MB/s]
+ 78%|██████████████████████████████▌        | 478M/610M [00:05&lt;00:01, 84.0MB/s]
+ 80%|███████████████████████████████        | 486M/610M [00:06&lt;00:01, 84.0MB/s]
+ 81%|███████████████████████████████▌       | 494M/610M [00:06&lt;00:01, 83.9MB/s]
+ 82%|████████████████████████████████▏      | 503M/610M [00:06&lt;00:01, 84.0MB/s]
+ 84%|████████████████████████████████▋      | 511M/610M [00:06&lt;00:01, 84.0MB/s]
+ 85%|█████████████████████████████████▏     | 520M/610M [00:06&lt;00:01, 83.9MB/s]
+ 87%|█████████████████████████████████▊     | 528M/610M [00:06&lt;00:00, 84.0MB/s]
+ 88%|██████████████████████████████████▎    | 537M/610M [00:06&lt;00:00, 83.8MB/s]
+ 89%|██████████████████████████████████▊    | 545M/610M [00:06&lt;00:00, 83.9MB/s]
+ 91%|███████████████████████████████████▎   | 553M/610M [00:06&lt;00:00, 83.8MB/s]
+ 92%|███████████████████████████████████▉   | 562M/610M [00:06&lt;00:00, 83.6MB/s]
+ 93%|████████████████████████████████████▍  | 570M/610M [00:07&lt;00:00, 83.7MB/s]
+ 95%|████████████████████████████████████▉  | 578M/610M [00:07&lt;00:00, 83.8MB/s]
+ 96%|█████████████████████████████████████▌ | 587M/610M [00:07&lt;00:00, 83.8MB/s]
+ 98%|██████████████████████████████████████ | 595M/610M [00:07&lt;00:00, 83.5MB/s]
+ 99%|██████████████████████████████████████▌| 604M/610M [00:07&lt;00:00, 83.5MB/s]
+  0%|                                               | 0.00/610M [00:00&lt;?, ?B/s]
+100%|███████████████████████████████████████| 610M/610M [00:00&lt;00:00, 2.80TB/s]
 Attempting to create new mne-python configuration file:
 /github/home/.mne/mne-python.json
 Could not read the /github/home/.mne/mne-python.json json file during the writing. Assuming it is empty. Got: Expecting value: line 1 column 1 (char 0)
-Download complete in 18s (582.2 MB)
+Download complete in 17s (581.8 MB)
 Opening raw data file /github/home/mne_data/MNE-somato-data/sub-01/meg/sub-01_task-somato_meg.fif...
     Range : 237600 ... 506999 =    791.189 ...  1688.266 secs
 Ready.
@@ -650,8 +646,8 @@ Using data from preloaded Raw for 111 events and 1202 original time points ...
     Rejecting  epoch based on EOG : [&#39;EOG 061&#39;]
 5 bad epochs dropped
 NOTE: pick_types() is a legacy function. New code should use inst.pick(...).
-/github/workspace/alphacsc/datasets/mne_data.py:98: RuntimeWarning: Something went wrong in the data-driven estimation of the data rank as it exceeds the theoretical rank from the info (204 &gt; 64). Consider setting rank to &quot;auto&quot; or setting it explicitly as an integer.
-  cov = mne.compute_covariance(epochs_cov)
+/usr/local/lib/python3.13/contextlib.py:85: RuntimeWarning: Something went wrong in the data-driven estimation of the data rank as it exceeds the theoretical rank from the info (204 &gt; 64). Consider setting rank to &quot;auto&quot; or setting it explicitly as an integer.
+  return func(*args, **kwds)
 Reducing data rank from 204 -&gt; 204
 Estimating covariance using EMPIRICAL
 Done.
@@ -676,54 +672,52 @@ NOTE: pick_types() is a legacy function. New code should use inst.pick(...).
 </pre></div>
 </div>
 <p>Fit the model and learn rank1 atoms</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cdl</span></a><span class="o">.</span><span class="n">fit</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X</span></a><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL"><span class="n">cdl</span></a><span class="o">.</span><span class="n">fit</span><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X</span></a><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>..............
-[BatchCDL] Fit in 352.9s
+[BatchCDL] Fit in 420.8s
 
-&lt;alphacsc.convolutional_dictionary_learning.BatchCDL object at 0x7f33fc5cc550&gt;
+&lt;alphacsc.convolutional_dictionary_learning.BatchCDL object at 0x7fc4d0ae16d0&gt;
 </pre></div>
 </div>
 <p>Display the 4-th atom, which displays a <span class="math notranslate nohighlight">\(\mu\)</span>-waveform in its temporal
 pattern.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mne</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i_atom</span></a> <span class="o">=</span> <span class="mi">4</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_plots</span></a> <span class="o">=</span> <span class="mi">3</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figsize</span></a> <span class="o">=</span> <span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_plots</span></a> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_plots</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figsize</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">figsize</span></a><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># Plot the spatial map of the learn atom using mne topomap</span>
-<span class="n">ax</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">u_hat</span></a> <span class="o">=</span> <a href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cdl</span></a><span class="o">.</span><span class="n">u_hat_</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i_atom</span></a><span class="p">]</span>
-<a href="https://mne.tools/stable/generated/mne.viz.plot_topomap.html#mne.viz.plot_topomap" title="mne.viz.plot_topomap" class="sphx-glr-backref-module-mne-viz sphx-glr-backref-type-py-function"><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_topomap</span></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">u_hat</span></a><span class="p">,</span> <a href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info" class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">info</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Learned spatial pattern&#39;</span><span class="p">)</span>
-
-<span class="c1"># Plot the temporal pattern of the learn atom</span>
-<span class="n">ax</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">v_hat</span></a> <span class="o">=</span> <a href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cdl</span></a><span class="o">.</span><span class="n">v_hat_</span><span class="p">[</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i_atom</span></a><span class="p">]</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">v_hat</span><span class="o">.</span><span class="n">size</span></a><span class="p">)</span> <span class="o">/</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">v_hat</span></a><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Time (sec)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Learned temporal waveform&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Plot the psd of the time atom</span>
-<span class="n">ax</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">psd</span></a> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.fft.rfft.html#numpy.fft.rfft" title="numpy.fft.rfft" class="sphx-glr-backref-module-numpy-fft sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">v_hat</span></a><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">frequencies</span></a> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">psd</span></a><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">frequencies</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">psd</span></a><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Frequencies (Hz)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Power Spectral Density&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<img src="../../_images/sphx_glr_plot_somato_mu_waves_001.png" srcset="../../_images/sphx_glr_plot_somato_mu_waves_001.png" alt="Learned spatial pattern, Learned temporal waveform, Power Spectral Density" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (6 minutes 20.268 seconds)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">import</span><span class="w"> </span><span class="nn">mne</span><span class="w">
+</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span><span class="w">
+</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="nn">.</span><span class="nn">pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span><span class="w">
+</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">i_atom</span></a> <span class="o">=</span> <span class="mi">4</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_plots</span></a> <span class="o">=</span> <span class="mi">3</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="tuple"><span class="n">figsize</span></a> <span class="o">=</span> <span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_plots</span></a> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="matplotlib.figure.Figure"><span class="n">fig</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">axes</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" title="matplotlib.pyplot.subplots"><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span></a><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_plots</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="tuple"><span class="n">figsize</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="tuple"><span class="n">figsize</span></a><span class="p">,</span> <span class="n">squeeze</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="c1"># Plot the spatial map of the learn atom using mne topomap</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><span class="n">ax</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">u_hat</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL"><span class="n">cdl</span></a><span class="o">.</span><span class="n">u_hat_</span><span class="p">[</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">i_atom</span></a><span class="p">]</span><span class="w">
+</span><a class="sphx-glr-backref-module-mne-viz sphx-glr-backref-type-py-function reference external" href="https://mne.tools/stable/generated/mne.viz.plot_topomap.html#mne.viz.plot_topomap" title="mne.viz.plot_topomap"><span class="n">mne</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_topomap</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">u_hat</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info"><span class="n">info</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">axes</span></a><span class="o">=</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><span class="n">ax</span></a><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set.html#matplotlib.axes.Axes.set" title="matplotlib.axes.Axes.set"><span class="n">ax</span><span class="o">.</span><span class="n">set</span></a><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'</span><span class="s1">Learned spatial pattern</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="c1"># Plot the temporal pattern of the learn atom</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><span class="n">ax</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">v_hat</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../generated/alphacsc.BatchCDL.html#alphacsc.BatchCDL" title="alphacsc.BatchCDL"><span class="n">cdl</span></a><span class="o">.</span><span class="n">v_hat_</span><span class="p">[</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">i_atom</span></a><span class="p">]</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">t</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">v_hat</span><span class="o">.</span><span class="n">size</span></a><span class="p">)</span> <span class="o">/</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html#matplotlib.axes.Axes.plot" title="matplotlib.axes.Axes.plot"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">t</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">v_hat</span></a><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set.html#matplotlib.axes.Axes.set" title="matplotlib.axes.Axes.set"><span class="n">ax</span><span class="o">.</span><span class="n">set</span></a><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'</span><span class="s1">Time (sec)</span><span class="s1">'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'</span><span class="s1">Learned temporal waveform</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.grid.html#matplotlib.axes.Axes.grid" title="matplotlib.axes.Axes.grid"><span class="n">ax</span><span class="o">.</span><span class="n">grid</span></a><span class="p">(</span><span class="kc">True</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="c1"># Plot the psd of the time atom</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><span class="n">ax</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">axes</span></a><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">psd</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc"><span class="n">np</span><span class="o">.</span><span class="n">abs</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy-fft sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.fft.rfft.html#numpy.fft.rfft" title="numpy.fft.rfft"><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">v_hat</span></a><span class="p">)</span><span class="p">)</span> <span class="o">*</span><span class="o">*</span> <span class="mi">2</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">frequencies</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">psd</span></a><span class="p">)</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.semilogy.html#matplotlib.axes.Axes.semilogy" title="matplotlib.axes.Axes.semilogy"><span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">frequencies</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">psd</span></a><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set.html#matplotlib.axes.Axes.set" title="matplotlib.axes.Axes.set"><span class="n">ax</span><span class="o">.</span><span class="n">set</span></a><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'</span><span class="s1">Frequencies (Hz)</span><span class="s1">'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'</span><span class="s1">Power Spectral Density</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.grid.html#matplotlib.axes.Axes.grid" title="matplotlib.axes.Axes.grid"><span class="n">ax</span><span class="o">.</span><span class="n">grid</span></a><span class="p">(</span><span class="kc">True</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlim.html#matplotlib.axes.Axes.set_xlim" title="matplotlib.axes.Axes.set_xlim"><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">(</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">(</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<img src="../../_images/sphx_glr_plot_somato_mu_waves_001.png" srcset="../../_images/sphx_glr_plot_somato_mu_waves_001.png" alt="Learned spatial pattern, Learned temporal waveform, Power Spectral Density" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (7 minutes 27.884 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-somato-mu-waves-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/459bf889828ac9ab18de851934cb9bef/plot_somato_mu_waves.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_somato_mu_waves.ipynb</span></code></a></p>
@@ -778,13 +772,13 @@ pattern.</p>
 
 
   <div class="sidebar-secondary-item">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../_sources/auto_examples/multicsc/plot_somato_mu_waves.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div></div>
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/auto_examples/multicsc/plot_somato_mu_waves.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
 
 </div></div>
               
@@ -801,8 +795,8 @@ pattern.</p>
     <script src="/versionwarning.js"></script>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -823,7 +817,6 @@ pattern.</p>
 
   <p class="sphinx-version">
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
-    <br/>
   </p>
 </div>
       
@@ -836,7 +829,7 @@ pattern.</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
 </p></div>
       
     </div>

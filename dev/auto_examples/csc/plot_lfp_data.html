@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -27,53 +26,61 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=c83e6b79" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
 
     <script src="../../_static/documentation_options.js?v=31120846"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/sg-tags.js?v=d80f6fa4"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'auto_examples/csc/plot_lfp_data';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://alphacsc.github.io/stable/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             false;
         </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Extracting cross-frequency coupling waveforms from rodent LFP data" href="plot_cross_frequency_coupling.html" />
-    <link rel="prev" title="Selecting random state for CSC" href="plot_simulate_randomstate.html" />
+    <link rel="next" title="Selecting random state for CSC" href="plot_simulate_randomstate.html" />
+    <link rel="prev" title="Univariate CSC" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="99.9.dev1" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -99,9 +106,9 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -166,7 +173,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -205,8 +212,7 @@
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -217,8 +223,7 @@
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">PyPI</span></a>
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
         </li>
 </ul></div>
       
@@ -229,7 +234,7 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -238,7 +243,7 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -329,8 +334,7 @@
           
           
           
-          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/alphacsc/alphacsc" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -341,8 +345,7 @@
           
           
           
-          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">PyPI</span></a>
+          <a href="https://pypi.org/project/alphacsc/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-box fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
         </li>
 </ul></div>
         
@@ -351,14 +354,22 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
         <div class="sidebar-primary-item">
+
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Univariate CSC</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">CSC to learn LFP spiking atoms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_simulate_randomstate.html">Selecting random state for CSC</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">CSC to learn LFP spiking atoms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_cross_frequency_coupling.html">Extracting cross-frequency coupling waveforms from rodent LFP data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_simulate_csc.html">Vanilla CSC on simulated data</a></li>
 </ul>
@@ -461,74 +472,67 @@ Neurophysiological Signals. IEEE Transactions on Signal Processing (2017).</p>
 </dd>
 </dl>
 <p>First, let us fetch the data (~14 MB)</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mne.datasets</span><span class="w"> </span><span class="kn">import</span> <a href="https://mne.tools/stable/generated/mne.datasets.fetch_dataset.html#mne.datasets.fetch_dataset" title="mne.datasets.fetch_dataset" class="sphx-glr-backref-module-mne-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_dataset</span></a>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mne.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_config</span>
-
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">url</span></a> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https://github.com/hitziger/AWL/raw/master/Experiments/data/&#39;</span>
-       <span class="s1">&#39;LFP_data_contiguous_1250_Hz.mat&#39;</span><span class="p">)</span>
-
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">folder_name</span></a> <span class="o">=</span> <span class="s2">&quot;LFP&quot;</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">archive_name</span></a> <span class="o">=</span> <span class="s2">&quot;LFP_data_contiguous_1250_Hz.mat&quot;</span>
-
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname</span></a> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.datasets.fetch_dataset.html#mne.datasets.fetch_dataset" title="mne.datasets.fetch_dataset" class="sphx-glr-backref-module-mne-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_dataset</span></a><span class="p">(</span>
-    <span class="p">{</span><span class="s2">&quot;dataset_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LFP_data&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;url&quot;</span><span class="p">:</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">url</span></a><span class="p">,</span>
-     <span class="s2">&quot;archive_name&quot;</span><span class="p">:</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">archive_name</span></a><span class="p">,</span>
-     <span class="s2">&quot;folder_name&quot;</span><span class="p">:</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">folder_name</span></a><span class="p">,</span>
-     <span class="s2">&quot;hash&quot;</span><span class="p">:</span> <span class="kc">None</span>
-     <span class="p">},</span>
-    <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">force_update</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
-
-<a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">archive_name</span></a><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w">
+</span><span class="kn">from</span><span class="w"> </span><span class="nn">mne</span><span class="nn">.</span><span class="nn">datasets</span><span class="w"> </span><span class="kn">import</span> <a class="sphx-glr-backref-module-mne-datasets sphx-glr-backref-type-py-function reference external" href="https://mne.tools/stable/generated/mne.datasets.fetch_dataset.html#mne.datasets.fetch_dataset" title="mne.datasets.fetch_dataset"><span class="n">fetch_dataset</span></a><span class="w">
+</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">url</span></a> <span class="o">=</span> <span class="p">(</span><span class="s1">'</span><span class="s1">https://github.com/hitziger/AWL/raw/master/Experiments/data/</span><span class="s1">'</span><span class="w">
+</span>       <span class="s1">'</span><span class="s1">LFP_data_contiguous_1250_Hz.mat</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">folder_name</span></a> <span class="o">=</span> <span class="s2">&quot;</span><span class="s2">LFP</span><span class="s2">&quot;</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">archive_name</span></a> <span class="o">=</span> <span class="s2">&quot;</span><span class="s2">LFP_data_contiguous_1250_Hz.mat</span><span class="s2">&quot;</span><span class="w">
+</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">fname</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-mne-datasets sphx-glr-backref-type-py-function reference external" href="https://mne.tools/stable/generated/mne.datasets.fetch_dataset.html#mne.datasets.fetch_dataset" title="mne.datasets.fetch_dataset"><span class="n">fetch_dataset</span></a><span class="p">(</span><span class="w">
+</span>    <span class="p">{</span><span class="s2">&quot;</span><span class="s2">dataset_name</span><span class="s2">&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="s2">LFP_data</span><span class="s2">&quot;</span><span class="p">,</span><span class="w">
+</span>     <span class="s2">&quot;</span><span class="s2">url</span><span class="s2">&quot;</span><span class="p">:</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">url</span></a><span class="p">,</span><span class="w">
+</span>     <span class="s2">&quot;</span><span class="s2">archive_name</span><span class="s2">&quot;</span><span class="p">:</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">archive_name</span></a><span class="p">,</span><span class="w">
+</span>     <span class="s2">&quot;</span><span class="s2">folder_name</span><span class="s2">&quot;</span><span class="p">:</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">folder_name</span></a><span class="p">,</span><span class="w">
+</span>     <span class="s2">&quot;</span><span class="s2">hash</span><span class="s2">&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="w">
+</span>     <span class="p">}</span><span class="p">,</span><span class="w">
+</span>    <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="w">
+</span>    <span class="n">force_update</span><span class="o">=</span><span class="kc">False</span><span class="w">
+</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">fname</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function reference external" href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">fname</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">archive_name</span></a><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Using default location ~/mne_data for LFP_data...
 Creating /github/home/mne_data
+Fetching 1 file for the LFP_data dataset ...
 Downloading file &#39;LFP_data_contiguous_1250_Hz.mat&#39; from &#39;https://github.com/hitziger/AWL/raw/master/Experiments/data/LFP_data_contiguous_1250_Hz.mat&#39; to &#39;/github/home/mne_data/LFP&#39;.
 
   0%|                                              | 0.00/14.4M [00:00&lt;?, ?B/s]
- 51%|██████████████████▉                  | 7.36M/14.4M [00:00&lt;00:00, 73.6MB/s]
+ 46%|████████████████▉                    | 6.61M/14.4M [00:00&lt;00:00, 66.1MB/s]
+ 96%|███████████████████████████████████▋ | 13.9M/14.4M [00:00&lt;00:00, 70.1MB/s]
   0%|                                              | 0.00/14.4M [00:00&lt;?, ?B/s]
-100%|█████████████████████████████████████| 14.4M/14.4M [00:00&lt;00:00, 65.7GB/s]
+100%|█████████████████████████████████████| 14.4M/14.4M [00:00&lt;00:00, 76.6GB/s]
 Download complete in 00s (13.8 MB)
 </pre></div>
 </div>
 <p>It is a mat file, so we use scipy to load it</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">io</span>
-
-<a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.io.loadmat.html#scipy.io.loadmat" title="scipy.io.loadmat" class="sphx-glr-backref-module-scipy-io sphx-glr-backref-type-py-function"><span class="n">io</span><span class="o">.</span><span class="n">loadmat</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">fname</span></a><span class="p">)</span>
-<span class="n">X</span><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a> <span class="o">=</span> <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/github/workspace/examples/csc/plot_lfp_data.py:44: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-  X, sfreq = data[&#39;X&#39;].T, float(data[&#39;sfreq&#39;])
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">io</span><span class="w">
+</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-scipy-io sphx-glr-backref-type-py-function reference external" href="https://scipy.github.io/devdocs/reference/generated/scipy.io.loadmat.html#scipy.io.loadmat" title="scipy.io.loadmat"><span class="n">io</span><span class="o">.</span><span class="n">loadmat</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">fname</span></a><span class="p">)</span><span class="w">
+</span><span class="n">X</span><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">X</span><span class="s1">'</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">data</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">sfreq</span><span class="s1">'</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <p>And now let us look at the data</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="mi">11000</span><span class="p">,</span> <span class="mi">15000</span>
-<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">times</span></a> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span> <span class="o">/</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">times</span></a><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$ V&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">])</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span><span class="w">
+</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="nn">.</span><span class="nn">pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span><span class="w">
+</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">start</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">stop</span></a> <span class="o">=</span> <span class="mi">11000</span><span class="p">,</span> <span class="mi">15000</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="list"><span class="n">times</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">start</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">stop</span></a><span class="p">)</span> <span class="o">/</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="list"><span class="n">times</span></a><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">start</span></a><span class="p">:</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">stop</span></a><span class="p">]</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'</span><span class="s1">b</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s1">'</span><span class="s1">Time (s)</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="sa">r</span><span class="s1">'</span><span class="s1">$</span><span class="s1">\</span><span class="s1">mu$ V</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlim.html#matplotlib.pyplot.xlim" title="matplotlib.pyplot.xlim"><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span></a><span class="p">(</span><span class="p">[</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">]</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <img src="../../_images/sphx_glr_plot_lfp_data_001.png" srcset="../../_images/sphx_glr_plot_lfp_data_001.png" alt="plot lfp data" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(9.0, 12.0)
 </pre></div>
 </div>
 <p>and filter it using a convenient function from MNE. This will remove low
 frequency drifts, but we keep the high frequencies</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mne.filter</span><span class="w"> </span><span class="kn">import</span> <a href="https://mne.tools/stable/generated/mne.filter.filter_data.html#mne.filter.filter_data" title="mne.filter.filter_data" class="sphx-glr-backref-module-mne-filter sphx-glr-backref-type-py-function"><span class="n">filter_data</span></a>
-<span class="n">X</span> <span class="o">=</span> <a href="https://mne.tools/stable/generated/mne.filter.filter_data.html#mne.filter.filter_data" title="mne.filter.filter_data" class="sphx-glr-backref-module-mne-filter sphx-glr-backref-type-py-function"><span class="n">filter_data</span></a><span class="p">(</span>
-    <span class="n">X</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class"><span class="n">np</span><span class="o">.</span><span class="n">float64</span></a><span class="p">),</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sfreq</span></a><span class="p">,</span> <span class="n">l_freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fir_design</span><span class="o">=</span><span class="s1">&#39;firwin&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">from</span><span class="w"> </span><span class="nn">mne</span><span class="nn">.</span><span class="nn">filter</span><span class="w"> </span><span class="kn">import</span> <a class="sphx-glr-backref-module-mne-filter sphx-glr-backref-type-py-function reference external" href="https://mne.tools/stable/generated/mne.filter.filter_data.html#mne.filter.filter_data" title="mne.filter.filter_data"><span class="n">filter_data</span></a><span class="w">
+</span><span class="n">X</span> <span class="o">=</span> <a class="sphx-glr-backref-module-mne-filter sphx-glr-backref-type-py-function reference external" href="https://mne.tools/stable/generated/mne.filter.filter_data.html#mne.filter.filter_data" title="mne.filter.filter_data"><span class="n">filter_data</span></a><span class="p">(</span><span class="w">
+</span>    <span class="n">X</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.float64" title="numpy.float64"><span class="n">np</span><span class="o">.</span><span class="n">float64</span></a><span class="p">)</span><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a><span class="p">,</span> <span class="n">l_freq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">h_freq</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fir_design</span><span class="o">=</span><span class="s1">'</span><span class="s1">firwin</span><span class="s1">'</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Setting up high-pass filter at 1 Hz
 
 FIR filter parameters
@@ -542,55 +546,49 @@ Designing a one-pass, zero-phase, non-causal highpass filter:
 </pre></div>
 </div>
 <p>Now, we define the parameters of our model.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">reg</span></a> <span class="o">=</span> <span class="mf">6.0</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a> <span class="o">=</span> <span class="mi">2500</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a> <span class="o">=</span> <span class="mi">350</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_trials</span></a> <span class="o">=</span> <span class="mi">100</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a> <span class="o">=</span> <span class="mi">3</span>
-<a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter</span></a> <span class="o">=</span> <span class="mi">60</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">reg</span></a> <span class="o">=</span> <span class="mf">6.0</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times</span></a> <span class="o">=</span> <span class="mi">2500</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times_atom</span></a> <span class="o">=</span> <span class="mi">350</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_trials</span></a> <span class="o">=</span> <span class="mi">100</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_atoms</span></a> <span class="o">=</span> <span class="mi">3</span><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_iter</span></a> <span class="o">=</span> <span class="mi">60</span><span class="w">
+</span></pre></div></div>
 <p>Let’s stick to one random state for now, but if you want to learn how to
 select the random state, consult <span class="xref std std-ref">this example</span>.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">random_state</span></a> <span class="o">=</span> <span class="mi">10</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">random_state</span></a> <span class="o">=</span> <span class="mi">10</span><span class="w">
+</span></pre></div></div>
 <p>Now, we epoch the trials</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">overlap</span></a> <span class="o">=</span> <span class="mi">0</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">starts</span></a> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a> <span class="o">-</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">overlap</span></a><span class="p">)</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stops</span></a> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a> <span class="o">-</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">overlap</span></a><span class="p">)</span>
-
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span></a> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx</span></a><span class="p">,</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">starts</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stops</span></a><span class="p">)):</span>
-    <span class="k">if</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">idx</span></a> <span class="o">&gt;=</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_trials</span></a><span class="p">:</span>
-        <span class="k">break</span>
-    <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span><span class="o">.</span><span class="n">append</span></a><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">])</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span></a> <span class="o">=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.vstack.html#numpy.vstack" title="numpy.vstack" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">vstack</span></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span></a><span class="p">)</span>
-<span class="k">del</span> <span class="n">X</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">overlap</span></a> <span class="o">=</span> <span class="mi">0</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">starts</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times</span></a> <span class="o">-</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">overlap</span></a><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">stops</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times</span></a><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times</span></a> <span class="o">-</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">overlap</span></a><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span></a> <span class="o">=</span> <span class="p">[</span><span class="p">]</span><span class="w">
+</span><span class="k">for</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">idx</span></a><span class="p">,</span> <span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">start</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">stop</span></a><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">starts</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">stops</span></a><span class="p">)</span><span class="p">)</span><span class="p">:</span><span class="w">
+</span>    <span class="k">if</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">idx</span></a> <span class="o">&gt;</span><span class="o">=</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_trials</span></a><span class="p">:</span><span class="w">
+</span>        <span class="k">break</span><span class="w">
+</span>    <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span><span class="o">.</span><span class="n">append</span></a><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">start</span></a><span class="p">:</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute reference external" href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int64" title="numpy.int64"><span class="n">stop</span></a><span class="p">]</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.vstack.html#numpy.vstack" title="numpy.vstack"><span class="n">np</span><span class="o">.</span><span class="n">vstack</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span></a><span class="p">)</span><span class="w">
+</span><span class="k">del</span> <span class="n">X</span><span class="w">
+</span></pre></div></div>
 <p>We remove the mean and scale to unit variance.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span></a> <span class="o">-=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span></a><span class="p">)</span>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span></a> <span class="o">/=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.std.html#numpy.std" title="numpy.std" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">std</span></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span></a><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span></a> <span class="o">-</span><span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span></a><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span></a> <span class="o">/</span><span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.std.html#numpy.std" title="numpy.std"><span class="n">np</span><span class="o">.</span><span class="n">std</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span></a><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <p>The convolutions can result in edge artifacts at the edges of the trials.
 Therefore, we discount the contributions from the edges by windowing the
 trials.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.hamming.html#numpy.hamming" title="numpy.hamming" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">hamming</span></a>
-<a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span></a> <span class="o">*=</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.hamming.html#numpy.hamming" title="numpy.hamming" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">hamming</span></a><span class="p">(</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times</span></a><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.hamming.html#numpy.hamming" title="numpy.hamming"><span class="n">hamming</span></a><span class="w">
+</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span></a> <span class="o">*</span><span class="o">=</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.hamming.html#numpy.hamming" title="numpy.hamming"><span class="n">hamming</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times</span></a><span class="p">)</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:</span><span class="p">]</span><span class="w">
+</span></pre></div></div>
 <p>Of course, in a data-limited setting we want to use as much of the data as
 possible. If this is the case, you can set <cite>overlap</cite> to non-zero (for example
 half the epoch length).</p>
 <p>Now, we run regular CSC since the trials are not too noisy</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">alphacsc</span><span class="w"> </span><span class="kn">import</span> <a href="../../generated/alphacsc.learn_d_z.html#alphacsc.learn_d_z" title="alphacsc.learn_d_z" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-function"><span class="n">learn_d_z</span></a>
-<a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pobj</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">times</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">d_hat</span></a><span class="p">,</span> <a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">z_hat</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">reg</span></a> <span class="o">=</span> <a href="../../generated/alphacsc.learn_d_z.html#alphacsc.learn_d_z" title="alphacsc.learn_d_z" class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-function"><span class="n">learn_d_z</span></a><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">X_new</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_atoms</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_times_atom</span></a><span class="p">,</span>
-                                           <a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">reg</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">reg</span></a><span class="p">,</span> <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n_iter</span></a><span class="p">,</span>
-                                           <a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">random_state</span></a><span class="o">=</span><a href="https://docs.python.org/3/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">random_state</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">from</span><span class="w"> </span><span class="nn">alphacsc</span><span class="w"> </span><span class="kn">import</span> <a class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-function reference internal" href="../../generated/alphacsc.learn_d_z.html#alphacsc.learn_d_z" title="alphacsc.learn_d_z"><span class="n">learn_d_z</span></a><span class="w">
+</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="list"><span class="n">pobj</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="list"><span class="n">times</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">d_hat</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">z_hat</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">reg</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-function reference internal" href="../../generated/alphacsc.learn_d_z.html#alphacsc.learn_d_z" title="alphacsc.learn_d_z"><span class="n">learn_d_z</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_new</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_atoms</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_times_atom</span></a><span class="p">,</span><span class="w">
+</span>                                           <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">reg</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">reg</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_iter</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_iter</span></a><span class="p">,</span><span class="w">
+</span>                                           <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">random_state</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">random_state</span></a><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Coordinate descent loop 0 / 60 [n_jobs=1]
 [seed 10] Objective (z_hat) : 51134.32096508
 Using method dual for projection
@@ -668,178 +666,177 @@ Coordinate descent loop 18 / 60 [n_jobs=1]
 Using method dual for projection
 [seed 10] Objective (d) 18391.78226334
 Coordinate descent loop 19 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18331.73169084
+[seed 10] Objective (z_hat) : 18331.73169083
 Using method dual for projection
-[seed 10] Objective (d) 18328.84451727
+[seed 10] Objective (d) 18328.84451726
 Coordinate descent loop 20 / 60 [n_jobs=1]
 [seed 10] Objective (z_hat) : 18274.15271778
 Using method dual for projection
-[seed 10] Objective (d) 18297.40702014
+[seed 10] Objective (d) 18297.40702016
 Coordinate descent loop 21 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18257.44912767
+[seed 10] Objective (z_hat) : 18257.44912769
 Using method dual for projection
-[seed 10] Objective (d) 18276.17808986
+[seed 10] Objective (d) 18276.17808995
 Coordinate descent loop 22 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18243.49274443
+[seed 10] Objective (z_hat) : 18243.49274454
 Using method dual for projection
-[seed 10] Objective (d) 18261.00618814
+[seed 10] Objective (d) 18261.00618827
 Coordinate descent loop 23 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18234.36110418
+[seed 10] Objective (z_hat) : 18234.36110427
 Using method dual for projection
-[seed 10] Objective (d) 18208.94505659
+[seed 10] Objective (d) 18208.94505672
 Coordinate descent loop 24 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18179.04646093
+[seed 10] Objective (z_hat) : 18179.04646107
 Using method dual for projection
-[seed 10] Objective (d) 18179.60670466
+[seed 10] Objective (d) 18179.60670479
 Coordinate descent loop 25 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18156.84098659
+[seed 10] Objective (z_hat) : 18156.84098663
 Using method dual for projection
-[seed 10] Objective (d) 18166.58627528
+[seed 10] Objective (d) 18166.58627498
 Coordinate descent loop 26 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18145.85002331
+[seed 10] Objective (z_hat) : 18145.85002304
 Using method dual for projection
-[seed 10] Objective (d) 18152.93057101
+[seed 10] Objective (d) 18152.93057060
 Coordinate descent loop 27 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18131.29820977
+[seed 10] Objective (z_hat) : 18131.29820961
 Using method dual for projection
-[seed 10] Objective (d) 18131.16931986
+[seed 10] Objective (d) 18131.16932189
 Coordinate descent loop 28 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18119.63496022
+[seed 10] Objective (z_hat) : 18119.63496228
 Using method dual for projection
-[seed 10] Objective (d) 18111.53150601
+[seed 10] Objective (d) 18111.53150795
 Coordinate descent loop 29 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18095.94337119
+[seed 10] Objective (z_hat) : 18095.94337378
 Using method dual for projection
-[seed 10] Objective (d) 18106.50706309
+[seed 10] Objective (d) 18106.50707362
 Coordinate descent loop 30 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18098.05238801
+[seed 10] Objective (z_hat) : 18098.05239661
 Using method dual for projection
-[seed 10] Objective (d) 18097.82989536
+[seed 10] Objective (d) 18097.82991020
 Coordinate descent loop 31 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18084.15731509
+[seed 10] Objective (z_hat) : 18084.15733281
 Using method dual for projection
-[seed 10] Objective (d) 18025.10057344
+[seed 10] Objective (d) 18025.10057645
 Coordinate descent loop 32 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18015.48731929
+[seed 10] Objective (z_hat) : 18015.48731605
 Using method dual for projection
-[seed 10] Objective (d) 18015.15575173
+[seed 10] Objective (d) 18015.15574800
 Coordinate descent loop 33 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18009.09808184
+[seed 10] Objective (z_hat) : 18009.09808771
 Using method dual for projection
-[seed 10] Objective (d) 18010.63889014
+[seed 10] Objective (d) 18010.63889989
 Coordinate descent loop 34 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18004.88799026
+[seed 10] Objective (z_hat) : 18004.88799120
 Using method dual for projection
-[seed 10] Objective (d) 18058.43299622
+[seed 10] Objective (d) 18058.43303552
 Coordinate descent loop 35 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18049.18824514
+[seed 10] Objective (z_hat) : 18049.18833230
 Using method dual for projection
-[seed 10] Objective (d) 17997.43391151
+[seed 10] Objective (d) 17997.43395687
 Coordinate descent loop 36 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17990.54846012
+[seed 10] Objective (z_hat) : 17990.54846407
 Using method dual for projection
-[seed 10] Objective (d) 17990.87720120
+[seed 10] Objective (d) 17990.87720134
 Coordinate descent loop 37 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17985.96104119
+[seed 10] Objective (z_hat) : 17985.96104076
 Using method dual for projection
-[seed 10] Objective (d) 17988.72475350
+[seed 10] Objective (d) 17988.72474585
 Coordinate descent loop 38 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17984.75059814
+[seed 10] Objective (z_hat) : 17984.75059698
 Using method dual for projection
-[seed 10] Objective (d) 18049.42016194
+[seed 10] Objective (d) 18049.42009731
 Coordinate descent loop 39 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 18046.54421717
+[seed 10] Objective (z_hat) : 18046.54419197
 Using method dual for projection
-[seed 10] Objective (d) 17984.35862183
+[seed 10] Objective (d) 17984.35870034
 Coordinate descent loop 40 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17980.96890961
+[seed 10] Objective (z_hat) : 17980.96906752
 Using method dual for projection
-[seed 10] Objective (d) 17980.80680588
+[seed 10] Objective (d) 17980.80697890
 Coordinate descent loop 41 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17972.69334792
+[seed 10] Objective (z_hat) : 17972.69407403
 Using method dual for projection
-[seed 10] Objective (d) 17972.04042137
+[seed 10] Objective (d) 17972.04105938
 Coordinate descent loop 42 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17966.98520329
+[seed 10] Objective (z_hat) : 17966.98587455
 Using method dual for projection
-[seed 10] Objective (d) 17966.83021975
+[seed 10] Objective (d) 17966.83088839
 Coordinate descent loop 43 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17962.43883801
+[seed 10] Objective (z_hat) : 17962.43975487
 Using method dual for projection
-[seed 10] Objective (d) 17977.53757640
+[seed 10] Objective (d) 17977.54092686
 Coordinate descent loop 44 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17975.03848495
+[seed 10] Objective (z_hat) : 17975.04273241
 Using method dual for projection
-[seed 10] Objective (d) 17966.13321317
+[seed 10] Objective (d) 17966.09235983
 Coordinate descent loop 45 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17963.73287315
+[seed 10] Objective (z_hat) : 17963.69171965
 Using method dual for projection
-[seed 10] Objective (d) 17978.89804489
+[seed 10] Objective (d) 17978.87790191
 Coordinate descent loop 46 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17976.74368634
+[seed 10] Objective (z_hat) : 17976.73152210
 Using method dual for projection
-[seed 10] Objective (d) 17972.54416171
+[seed 10] Objective (d) 17972.60504337
 Coordinate descent loop 47 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17970.51804918
+[seed 10] Objective (z_hat) : 17970.60607032
 Using method dual for projection
-[seed 10] Objective (d) 17972.13711885
+[seed 10] Objective (d) 17972.20845819
 Coordinate descent loop 48 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17970.00311159
+[seed 10] Objective (z_hat) : 17970.10862554
 Using method dual for projection
-[seed 10] Objective (d) 17963.24658884
+[seed 10] Objective (d) 17963.32070008
 Coordinate descent loop 49 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17961.19262797
+[seed 10] Objective (z_hat) : 17961.24354013
 Using method dual for projection
-[seed 10] Objective (d) 17969.93968333
+[seed 10] Objective (d) 17970.11169403
 Coordinate descent loop 50 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17965.80773028
+[seed 10] Objective (z_hat) : 17966.00909391
 Using method dual for projection
-[seed 10] Objective (d) 17965.59699217
+[seed 10] Objective (d) 17965.49841997
 Coordinate descent loop 51 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17963.81857389
+[seed 10] Objective (z_hat) : 17963.60184111
 Using method dual for projection
-[seed 10] Objective (d) 17970.06369897
+[seed 10] Objective (d) 17967.90486974
 Coordinate descent loop 52 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17968.46972767
+[seed 10] Objective (z_hat) : 17966.38353653
 Using method dual for projection
-[seed 10] Objective (d) 17962.81540665
+[seed 10] Objective (d) 17962.93566670
 Coordinate descent loop 53 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17960.61175180
+[seed 10] Objective (z_hat) : 17960.37462985
 Using method dual for projection
-[seed 10] Objective (d) 17951.02970316
+[seed 10] Objective (d) 17958.59714164
 Coordinate descent loop 54 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17949.43679149
+[seed 10] Objective (z_hat) : 17957.24493534
 Using method dual for projection
-[seed 10] Objective (d) 17958.78922443
+[seed 10] Objective (d) 17950.79677886
 Coordinate descent loop 55 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17957.61467534
+[seed 10] Objective (z_hat) : 17949.66178579
 Using method dual for projection
-[seed 10] Objective (d) 17957.38018059
+[seed 10] Objective (d) 17953.00062751
 Coordinate descent loop 56 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17956.17192556
+[seed 10] Objective (z_hat) : 17951.98212475
 Using method dual for projection
-[seed 10] Objective (d) 17955.83032225
+[seed 10] Objective (d) 17956.73542696
 Coordinate descent loop 57 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17954.91710469
+[seed 10] Objective (z_hat) : 17955.71212288
 Using method dual for projection
-[seed 10] Objective (d) 17954.02018637
+[seed 10] Objective (d) 17953.19596635
 Coordinate descent loop 58 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17952.99486207
+[seed 10] Objective (z_hat) : 17952.24531318
 Using method dual for projection
-[seed 10] Objective (d) 17955.46127494
+[seed 10] Objective (d) 17955.98374890
 Coordinate descent loop 59 / 60 [n_jobs=1]
-[seed 10] Objective (z_hat) : 17953.82645631
+[seed 10] Objective (z_hat) : 17954.52194692
 Using method dual for projection
-[seed 10] Objective (d) 17943.85910638
+[seed 10] Objective (d) 17949.09277827
 </pre></div>
 </div>
 <p>Let’s look at the atoms now.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><a href="https://docs.scipy.org/doc/numpy-1.9.1/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">d_hat</span><span class="o">.</span><span class="n">T</span></a><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<img src="../../_images/sphx_glr_plot_lfp_data_002.png" srcset="../../_images/sphx_glr_plot_lfp_data_002.png" alt="plot lfp data" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (2 minutes 8.294 seconds)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">d_hat</span><span class="o">.</span><span class="n">T</span></a><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">(</span><span class="p">)</span><span class="w">
+</span></pre></div></div>
+<img src="../../_images/sphx_glr_plot_lfp_data_002.png" srcset="../../_images/sphx_glr_plot_lfp_data_002.png" alt="plot lfp data" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (2 minutes 11.136 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-csc-plot-lfp-data-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/36d282d722d4c587351794a92515965e/plot_lfp_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_lfp_data.ipynb</span></code></a></p>
@@ -865,20 +862,20 @@ Using method dual for projection
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="plot_simulate_randomstate.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Selecting random state for CSC</p>
+        <p class="prev-next-title">Univariate CSC</p>
       </div>
     </a>
     <a class="right-next"
-       href="plot_cross_frequency_coupling.html"
+       href="plot_simulate_randomstate.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Extracting cross-frequency coupling waveforms from rodent LFP data</p>
+        <p class="prev-next-title">Selecting random state for CSC</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -894,13 +891,13 @@ Using method dual for projection
 
 
   <div class="sidebar-secondary-item">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../_sources/auto_examples/csc/plot_lfp_data.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div></div>
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/auto_examples/csc/plot_lfp_data.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
 
 </div></div>
               
@@ -917,8 +914,8 @@ Using method dual for projection
     <script src="/versionwarning.js"></script>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -939,7 +936,6 @@ Using method dual for projection
 
   <p class="sphinx-version">
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
-    <br/>
   </p>
 </div>
       
@@ -952,7 +948,7 @@ Using method dual for projection
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
 </p></div>
       
     </div>

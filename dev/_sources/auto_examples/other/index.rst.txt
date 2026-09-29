@@ -8,6 +8,10 @@ Other shift-invariant dictionary learning algorithms
 ----------------------------------------------------
 
 
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
 
 .. raw:: html
 
@@ -24,7 +28,7 @@ Other shift-invariant dictionary learning algorithms
   .. image:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_motif_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_examples_other_plot_simulate_motif.py`
+  :doc:`/auto_examples/other/plot_simulate_motif`
 
 .. raw:: html
 
@@ -41,7 +45,7 @@ Other shift-invariant dictionary learning algorithms
   .. image:: /auto_examples/other/images/thumb/sphx_glr_plot_simulate_swm_thumb.png
     :alt:
 
-  :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py`
+  :doc:`/auto_examples/other/plot_simulate_swm`
 
 .. raw:: html
 
