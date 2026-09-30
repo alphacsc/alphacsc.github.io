@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**63:08.284** total execution time for 12 files **from all galleries**:
+**81:53.476** total execution time for 13 files **from all galleries**:
 
 .. container::
 
@@ -33,7 +33,7 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_auto_examples_multicsc_plot_sample_evoked_response.py` (``../examples/multicsc/plot_sample_evoked_response.py``)
-     - 37:52.649
+     - 56:03.059
      - 0.0
    * - :ref:`sphx_glr_auto_examples_multicsc_plot_somato_mu_waves.py` (``../examples/multicsc/plot_somato_mu_waves.py``)
      - 07:27.884
@@ -58,6 +58,9 @@ Computation times
      - 0.0
    * - :ref:`sphx_glr_auto_examples_csc_plot_simulate_csc.py` (``../examples/csc/plot_simulate_csc.py``)
      - 00:38.235
+     - 0.0
+   * - :ref:`sphx_glr_auto_examples_no-overlap_plot_no_overlap.py` (``../examples/no-overlap/plot_no_overlap.py``)
+     - 00:34.782
      - 0.0
    * - :ref:`sphx_glr_auto_examples_other_plot_simulate_swm.py` (``../examples/other/plot_simulate_swm.py``)
      - 00:05.915

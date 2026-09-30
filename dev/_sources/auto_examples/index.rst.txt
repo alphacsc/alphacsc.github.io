@@ -196,6 +196,23 @@ Multivariate CSC with rank 1 constraints
 
 .. only:: html
 
+  .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_sample_evoked_response_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/multicsc/plot_sample_evoked_response`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the sample dataset</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from mne. We display a selection of atoms, featuring heartbeat and eyeblink artifacts, two atoms of evoked responses, and a non-sinusoidal oscillation.">
+
+.. only:: html
+
   .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_sample_evoked_response_dicodile_thumb.png
     :alt:
 
@@ -207,20 +224,42 @@ Multivariate CSC with rank 1 constraints
     </div>
 
 
+.. thumbnail-parent-div-close
+
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from mne. We display a selection of atoms, featuring heartbeat and eyeblink artifacts, two atoms of evoked responses, and a non-sinusoidal oscillation.">
+    </div>
+
+
+l0-normalized CSC without overlap
+---------------------------------
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we use the no-overlap solver on an open dataset of gait (steps) IMU time-series to discover patterns in the data. We will then use those to attempt to detect steps and compare our findings with the ground truth.">
 
 .. only:: html
 
-  .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_sample_evoked_response_thumb.png
+  .. image:: /auto_examples/no-overlap/images/thumb/sphx_glr_plot_no_overlap_thumb.png
     :alt:
 
-  :doc:`/auto_examples/multicsc/plot_sample_evoked_response`
+  :doc:`/auto_examples/no-overlap/plot_no_overlap`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the sample dataset</div>
+      <div class="sphx-glr-thumbnail-title">No-overlap example</div>
     </div>
 
 
@@ -351,6 +390,7 @@ Other shift-invariant dictionary learning algorithms
    /auto_examples/csc/index.rst
    /auto_examples/dicodile/index.rst
    /auto_examples/multicsc/index.rst
+   /auto_examples/no-overlap/index.rst
    /auto_examples/noise_alpha/index.rst
    /auto_examples/other/index.rst
 

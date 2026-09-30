@@ -1,12 +1,12 @@
 
 :orphan:
 
-.. _sphx_glr_auto_examples_multicsc_sg_execution_times:
+.. _sphx_glr_auto_examples_no-overlap_sg_execution_times:
 
 
 Computation times
 =================
-**63:30.943** total execution time for 3 files **from auto_examples/multicsc**:
+**00:34.782** total execution time for 1 file **from auto_examples/no-overlap**:
 
 .. container::
 
@@ -32,12 +32,6 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
-   * - :ref:`sphx_glr_auto_examples_multicsc_plot_sample_evoked_response.py` (``plot_sample_evoked_response.py``)
-     - 56:03.059
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_multicsc_plot_somato_mu_waves.py` (``plot_somato_mu_waves.py``)
-     - 07:27.884
-     - 0.0
-   * - :ref:`sphx_glr_auto_examples_multicsc_sample_evoked_response_dicodile.py` (``sample_evoked_response_dicodile.py``)
-     - 00:00.000
+   * - :ref:`sphx_glr_auto_examples_no-overlap_plot_no_overlap.py` (``plot_no_overlap.py``)
+     - 00:34.782
      - 0.0

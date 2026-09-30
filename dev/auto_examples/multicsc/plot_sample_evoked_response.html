@@ -56,8 +56,8 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Univariate CSC with an alpha-stable distribution" href="../noise_alpha/index.html" />
-    <link rel="prev" title="Extracting artifact and evoked response atoms from the MNE sample dataset" href="sample_evoked_response_dicodile.html" />
+    <link rel="next" title="Extracting artifact and evoked response atoms from the MNE sample dataset" href="sample_evoked_response_dicodile.html" />
+    <link rel="prev" title="Extracting \(\mu\)-wave from the somato-sensory dataset" href="plot_somato_mu_waves.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="99.9.dev1" />
@@ -380,8 +380,12 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Multivariate CSC with rank 1 constraints</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="plot_somato_mu_waves.html">Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sample_evoked_response_dicodile.html">Extracting artifact and evoked response atoms from the MNE sample dataset</a></li>
 <li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">Extracting artifact and evoked response atoms from the sample dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_evoked_response_dicodile.html">Extracting artifact and evoked response atoms from the MNE sample dataset</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../no-overlap/index.html">l0-normalized CSC without overlap</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../no-overlap/plot_no_overlap.html">No-overlap example</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../noise_alpha/index.html">Univariate CSC with an alpha-stable distribution</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -546,249 +550,246 @@ object and select the gradiometers from the signal.</p>
 </span><span class="kn">import</span><span class="w"> </span><span class="nn">mne</span><span class="w">
 </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span><span class="w">
 </span><span class="w">
-</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Loading the data...</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'</span><span class="s1">'</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="w">
+</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Loading the data...</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'</span><span class="s1"> </span><span class="s1">'</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath"><span class="n">data_path</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-mne-datasets-sample sphx-glr-backref-type-py-function reference external" href="https://mne.tools/stable/generated/mne.datasets.sample.data_path.html#mne.datasets.sample.data_path" title="mne.datasets.sample.data_path"><span class="n">mne</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">data_path</span></a><span class="p">(</span><span class="p">)</span><span class="w">
-</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">subjects_dir</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function reference external" href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath"><span class="n">data_path</span></a><span class="p">,</span> <span class="s2">&quot;</span><span class="s2">subjects</span><span class="s2">&quot;</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">data_dir</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function reference external" href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.PosixPath" title="pathlib.PosixPath"><span class="n">data_path</span></a><span class="p">,</span> <span class="s1">'</span><span class="s1">MEG</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="s1">sample</span><span class="s1">'</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">file_name</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function reference external" href="https://docs.python.org/3/library/os.path.html#os.path.join" title="os.path.join"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">data_dir</span></a><span class="p">,</span> <span class="s1">'</span><span class="s1">sample_audvis_raw.fif</span><span class="s1">'</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><span class="n">raw</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-function reference external" href="https://mne.tools/stable/generated/mne.io.read_raw_fif.html#mne.io.read_raw_fif" title="mne.io.read_raw_fif"><span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="str"><span class="n">file_name</span></a><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="w">
-</span><a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.pick_types" title="mne.io.Raw.pick_types"><span class="n">raw</span><span class="o">.</span><span class="n">pick_types</span></a><span class="p">(</span><span class="n">meg</span><span class="o">=</span><span class="s1">'</span><span class="s1">grad</span><span class="s1">'</span><span class="p">,</span> <span class="n">eeg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">eog</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="w">
+</span><a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.pick" title="mne.io.Raw.pick"><span class="n">raw</span><span class="o">.</span><span class="n">pick</span></a><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">'</span><span class="s1">grad</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'</span><span class="s1">stim</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="w">
 </span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="s1">done</span><span class="s1">'</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading the data...Using default location ~/mne_data for sample...
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading the data... Using default location ~/mne_data for sample...
+Creating /github/home/mne_data
 Fetching 1 file for the sample dataset ...
+Downloading file &#39;MNE-sample-data-processed.tar.gz&#39; from &#39;https://osf.io/download/86qa2?version=6&#39; to &#39;/github/home/mne_data&#39;.
 
   0%|                                              | 0.00/1.65G [00:00&lt;?, ?B/s]
   0%|                                     | 2.93M/1.65G [00:00&lt;00:56, 29.3MB/s]
-  1%|▏                                    | 10.8M/1.65G [00:00&lt;00:28, 58.2MB/s]
-  1%|▍                                    | 18.9M/1.65G [00:00&lt;00:23, 68.8MB/s]
-  2%|▌                                    | 27.0M/1.65G [00:00&lt;00:22, 73.7MB/s]
-  2%|▊                                    | 35.2M/1.65G [00:00&lt;00:21, 76.4MB/s]
-  3%|▉                                    | 43.3M/1.65G [00:00&lt;00:20, 78.2MB/s]
-  3%|█▏                                   | 51.5M/1.65G [00:00&lt;00:20, 79.4MB/s]
-  4%|█▎                                   | 59.6M/1.65G [00:00&lt;00:19, 79.9MB/s]
-  4%|█▌                                   | 67.7M/1.65G [00:00&lt;00:19, 80.2MB/s]
-  5%|█▋                                   | 75.9M/1.65G [00:01&lt;00:19, 80.7MB/s]
-  5%|█▉                                   | 84.1M/1.65G [00:01&lt;00:19, 81.3MB/s]
-  6%|██                                   | 92.3M/1.65G [00:01&lt;00:19, 81.5MB/s]
-  6%|██▎                                   | 100M/1.65G [00:01&lt;00:19, 81.3MB/s]
-  7%|██▍                                   | 109M/1.65G [00:01&lt;00:18, 81.5MB/s]
-  7%|██▋                                   | 117M/1.65G [00:01&lt;00:18, 81.4MB/s]
-  8%|██▊                                   | 125M/1.65G [00:01&lt;00:18, 81.2MB/s]
-  8%|███                                   | 133M/1.65G [00:01&lt;00:18, 81.2MB/s]
-  9%|███▏                                  | 141M/1.65G [00:01&lt;00:18, 81.3MB/s]
-  9%|███▍                                  | 149M/1.65G [00:01&lt;00:18, 81.3MB/s]
- 10%|███▌                                  | 158M/1.65G [00:02&lt;00:18, 81.6MB/s]
- 10%|███▊                                  | 166M/1.65G [00:02&lt;00:18, 81.7MB/s]
- 11%|███▉                                  | 174M/1.65G [00:02&lt;00:18, 81.7MB/s]
- 11%|████▏                                 | 182M/1.65G [00:02&lt;00:17, 81.7MB/s]
- 12%|████▍                                 | 190M/1.65G [00:02&lt;00:17, 81.6MB/s]
- 12%|████▌                                 | 199M/1.65G [00:02&lt;00:17, 81.7MB/s]
- 13%|████▊                                 | 207M/1.65G [00:02&lt;00:17, 81.7MB/s]
- 13%|████▉                                 | 215M/1.65G [00:02&lt;00:17, 81.9MB/s]
- 14%|█████▏                                | 223M/1.65G [00:02&lt;00:17, 81.9MB/s]
- 14%|█████▎                                | 231M/1.65G [00:02&lt;00:17, 81.4MB/s]
- 14%|█████▌                                | 239M/1.65G [00:03&lt;00:17, 81.2MB/s]
- 15%|█████▋                                | 248M/1.65G [00:03&lt;00:17, 81.2MB/s]
- 15%|█████▉                                | 256M/1.65G [00:03&lt;00:17, 81.2MB/s]
- 16%|██████                                | 264M/1.65G [00:03&lt;00:17, 80.7MB/s]
- 16%|██████▎                               | 272M/1.65G [00:03&lt;00:17, 81.0MB/s]
- 17%|██████▍                               | 280M/1.65G [00:03&lt;00:16, 81.2MB/s]
- 17%|██████▋                               | 288M/1.65G [00:03&lt;00:16, 81.2MB/s]
- 18%|██████▊                               | 296M/1.65G [00:03&lt;00:16, 81.3MB/s]
- 18%|███████                               | 305M/1.65G [00:03&lt;00:16, 81.3MB/s]
- 19%|███████▏                              | 313M/1.65G [00:03&lt;00:16, 81.0MB/s]
- 19%|███████▍                              | 321M/1.65G [00:04&lt;00:16, 81.0MB/s]
- 20%|███████▌                              | 329M/1.65G [00:04&lt;00:16, 81.1MB/s]
- 20%|███████▋                              | 337M/1.65G [00:04&lt;00:16, 81.1MB/s]
- 21%|███████▉                              | 345M/1.65G [00:04&lt;00:16, 80.9MB/s]
- 21%|████████                              | 353M/1.65G [00:04&lt;00:16, 81.2MB/s]
- 22%|████████▎                             | 362M/1.65G [00:04&lt;00:15, 81.3MB/s]
- 22%|████████▍                             | 370M/1.65G [00:04&lt;00:15, 81.2MB/s]
- 23%|████████▋                             | 378M/1.65G [00:04&lt;00:15, 81.0MB/s]
- 23%|████████▊                             | 386M/1.65G [00:04&lt;00:15, 80.9MB/s]
- 24%|█████████                             | 394M/1.65G [00:04&lt;00:15, 80.8MB/s]
- 24%|█████████▏                            | 402M/1.65G [00:05&lt;00:16, 74.7MB/s]
- 25%|█████████▍                            | 410M/1.65G [00:05&lt;00:17, 69.8MB/s]
- 25%|█████████▌                            | 418M/1.65G [00:05&lt;00:16, 72.9MB/s]
- 26%|█████████▊                            | 426M/1.65G [00:05&lt;00:16, 75.4MB/s]
- 26%|█████████▉                            | 434M/1.65G [00:05&lt;00:15, 77.3MB/s]
- 27%|██████████▏                           | 442M/1.65G [00:05&lt;00:15, 78.6MB/s]
- 27%|██████████▎                           | 450M/1.65G [00:05&lt;00:15, 79.3MB/s]
- 28%|██████████▌                           | 458M/1.65G [00:05&lt;00:14, 79.7MB/s]
- 28%|██████████▋                           | 466M/1.65G [00:05&lt;00:14, 79.7MB/s]
- 29%|██████████▉                           | 475M/1.65G [00:05&lt;00:14, 80.1MB/s]
- 29%|███████████                           | 483M/1.65G [00:06&lt;00:14, 80.6MB/s]
- 30%|███████████▎                          | 491M/1.65G [00:06&lt;00:14, 80.8MB/s]
- 30%|███████████▍                          | 499M/1.65G [00:06&lt;00:14, 80.5MB/s]
- 31%|███████████▋                          | 507M/1.65G [00:06&lt;00:14, 80.9MB/s]
- 31%|███████████▊                          | 515M/1.65G [00:06&lt;00:14, 80.9MB/s]
- 32%|████████████                          | 523M/1.65G [00:06&lt;00:13, 80.7MB/s]
- 32%|████████████▏                         | 531M/1.65G [00:06&lt;00:13, 80.7MB/s]
- 33%|████████████▍                         | 539M/1.65G [00:06&lt;00:14, 78.3MB/s]
- 33%|████████████▌                         | 547M/1.65G [00:06&lt;00:14, 78.9MB/s]
- 34%|████████████▊                         | 556M/1.65G [00:06&lt;00:13, 79.5MB/s]
- 34%|████████████▉                         | 564M/1.65G [00:07&lt;00:13, 80.1MB/s]
- 35%|█████████████▏                        | 572M/1.65G [00:07&lt;00:13, 80.2MB/s]
- 35%|█████████████▎                        | 580M/1.65G [00:07&lt;00:13, 80.5MB/s]
- 36%|█████████████▌                        | 588M/1.65G [00:07&lt;00:13, 80.7MB/s]
- 36%|█████████████▋                        | 596M/1.65G [00:07&lt;00:13, 80.8MB/s]
- 37%|█████████████▉                        | 604M/1.65G [00:07&lt;00:12, 81.2MB/s]
- 37%|██████████████                        | 612M/1.65G [00:07&lt;00:12, 81.4MB/s]
- 38%|██████████████▎                       | 621M/1.65G [00:07&lt;00:12, 81.5MB/s]
- 38%|██████████████▍                       | 629M/1.65G [00:07&lt;00:12, 81.4MB/s]
- 39%|██████████████▋                       | 637M/1.65G [00:07&lt;00:12, 81.5MB/s]
- 39%|██████████████▊                       | 645M/1.65G [00:08&lt;00:12, 81.6MB/s]
- 40%|███████████████                       | 653M/1.65G [00:08&lt;00:12, 81.7MB/s]
- 40%|███████████████▏                      | 661M/1.65G [00:08&lt;00:12, 81.7MB/s]
- 41%|███████████████▍                      | 670M/1.65G [00:08&lt;00:12, 81.8MB/s]
- 41%|███████████████▌                      | 678M/1.65G [00:08&lt;00:11, 81.8MB/s]
- 42%|███████████████▊                      | 686M/1.65G [00:08&lt;00:11, 81.6MB/s]
- 42%|███████████████▉                      | 694M/1.65G [00:08&lt;00:11, 81.6MB/s]
- 42%|████████████████▏                     | 702M/1.65G [00:08&lt;00:11, 81.6MB/s]
- 43%|████████████████▎                     | 711M/1.65G [00:08&lt;00:11, 81.1MB/s]
- 43%|████████████████▌                     | 719M/1.65G [00:08&lt;00:11, 81.3MB/s]
- 44%|████████████████▋                     | 727M/1.65G [00:09&lt;00:11, 81.6MB/s]
- 44%|████████████████▉                     | 735M/1.65G [00:09&lt;00:11, 81.6MB/s]
- 45%|█████████████████                     | 743M/1.65G [00:09&lt;00:11, 81.6MB/s]
- 45%|█████████████████▎                    | 751M/1.65G [00:09&lt;00:11, 81.7MB/s]
- 46%|█████████████████▍                    | 760M/1.65G [00:09&lt;00:10, 81.6MB/s]
- 46%|█████████████████▋                    | 768M/1.65G [00:09&lt;00:10, 81.5MB/s]
- 47%|█████████████████▊                    | 776M/1.65G [00:09&lt;00:10, 81.4MB/s]
- 47%|██████████████████                    | 784M/1.65G [00:09&lt;00:10, 81.5MB/s]
- 48%|██████████████████▏                   | 792M/1.65G [00:09&lt;00:10, 81.1MB/s]
- 48%|██████████████████▍                   | 800M/1.65G [00:09&lt;00:10, 81.3MB/s]
- 49%|██████████████████▌                   | 809M/1.65G [00:10&lt;00:10, 81.2MB/s]
- 49%|██████████████████▊                   | 817M/1.65G [00:10&lt;00:10, 81.2MB/s]
- 50%|██████████████████▉                   | 825M/1.65G [00:10&lt;00:10, 81.3MB/s]
- 50%|███████████████████▏                  | 833M/1.65G [00:10&lt;00:10, 81.5MB/s]
- 51%|███████████████████▎                  | 841M/1.65G [00:10&lt;00:09, 81.5MB/s]
- 51%|███████████████████▌                  | 849M/1.65G [00:10&lt;00:09, 80.9MB/s]
- 52%|███████████████████▋                  | 857M/1.65G [00:10&lt;00:10, 78.1MB/s]
- 52%|███████████████████▉                  | 865M/1.65G [00:10&lt;00:10, 72.5MB/s]
- 53%|████████████████████                  | 873M/1.65G [00:10&lt;00:11, 66.3MB/s]
- 53%|████████████████████▏                 | 880M/1.65G [00:11&lt;00:11, 68.3MB/s]
- 54%|████████████████████▍                 | 887M/1.65G [00:11&lt;00:10, 69.9MB/s]
- 54%|████████████████████▌                 | 895M/1.65G [00:11&lt;00:10, 71.0MB/s]
- 55%|████████████████████▋                 | 902M/1.65G [00:11&lt;00:10, 71.8MB/s]
- 55%|████████████████████▉                 | 909M/1.65G [00:11&lt;00:10, 71.9MB/s]
- 55%|█████████████████████                 | 917M/1.65G [00:11&lt;00:10, 72.1MB/s]
- 56%|█████████████████████▏                | 924M/1.65G [00:11&lt;00:10, 72.4MB/s]
- 56%|█████████████████████▍                | 931M/1.65G [00:11&lt;00:09, 73.0MB/s]
- 57%|█████████████████████▌                | 939M/1.65G [00:11&lt;00:10, 71.2MB/s]
- 57%|█████████████████████▋                | 946M/1.65G [00:11&lt;00:09, 71.6MB/s]
- 58%|█████████████████████▉                | 953M/1.65G [00:12&lt;00:09, 72.0MB/s]
- 58%|██████████████████████                | 961M/1.65G [00:12&lt;00:09, 72.3MB/s]
- 59%|██████████████████████▎               | 968M/1.65G [00:12&lt;00:09, 72.7MB/s]
- 59%|██████████████████████▍               | 975M/1.65G [00:12&lt;00:09, 72.8MB/s]
- 59%|██████████████████████▌               | 983M/1.65G [00:12&lt;00:09, 73.1MB/s]
- 60%|██████████████████████▊               | 990M/1.65G [00:12&lt;00:09, 73.4MB/s]
- 60%|██████████████████████▉               | 997M/1.65G [00:12&lt;00:08, 73.7MB/s]
- 61%|██████████████████████▍              | 1.00G/1.65G [00:12&lt;00:08, 73.5MB/s]
- 61%|██████████████████████▋              | 1.01G/1.65G [00:12&lt;00:08, 73.4MB/s]
- 62%|██████████████████████▊              | 1.02G/1.65G [00:12&lt;00:08, 72.5MB/s]
- 62%|██████████████████████▉              | 1.03G/1.65G [00:13&lt;00:08, 72.8MB/s]
- 63%|███████████████████████▏             | 1.03G/1.65G [00:13&lt;00:08, 72.9MB/s]
- 63%|███████████████████████▎             | 1.04G/1.65G [00:13&lt;00:08, 73.2MB/s]
- 63%|███████████████████████▍             | 1.05G/1.65G [00:13&lt;00:08, 73.5MB/s]
- 64%|███████████████████████▋             | 1.06G/1.65G [00:13&lt;00:08, 73.5MB/s]
- 64%|███████████████████████▊             | 1.06G/1.65G [00:13&lt;00:08, 73.2MB/s]
- 65%|███████████████████████▉             | 1.07G/1.65G [00:13&lt;00:07, 73.2MB/s]
- 65%|████████████████████████▏            | 1.08G/1.65G [00:13&lt;00:07, 73.4MB/s]
- 66%|████████████████████████▎            | 1.09G/1.65G [00:13&lt;00:07, 73.5MB/s]
- 66%|████████████████████████▍            | 1.09G/1.65G [00:13&lt;00:07, 73.6MB/s]
- 67%|████████████████████████▋            | 1.10G/1.65G [00:14&lt;00:07, 73.7MB/s]
- 67%|████████████████████████▊            | 1.11G/1.65G [00:14&lt;00:07, 73.8MB/s]
- 67%|████████████████████████▉            | 1.12G/1.65G [00:14&lt;00:07, 74.0MB/s]
- 68%|█████████████████████████▏           | 1.12G/1.65G [00:14&lt;00:07, 74.0MB/s]
- 68%|█████████████████████████▎           | 1.13G/1.65G [00:14&lt;00:07, 74.1MB/s]
- 69%|█████████████████████████▍           | 1.14G/1.65G [00:14&lt;00:06, 74.0MB/s]
- 69%|█████████████████████████▋           | 1.15G/1.65G [00:14&lt;00:06, 74.0MB/s]
- 70%|█████████████████████████▊           | 1.15G/1.65G [00:14&lt;00:06, 74.2MB/s]
- 70%|█████████████████████████▉           | 1.16G/1.65G [00:14&lt;00:06, 73.0MB/s]
- 71%|██████████████████████████▏          | 1.17G/1.65G [00:14&lt;00:06, 73.4MB/s]
- 71%|██████████████████████████▎          | 1.17G/1.65G [00:15&lt;00:06, 73.3MB/s]
- 72%|██████████████████████████▍          | 1.18G/1.65G [00:15&lt;00:06, 73.5MB/s]
- 72%|██████████████████████████▋          | 1.19G/1.65G [00:15&lt;00:06, 73.8MB/s]
- 72%|██████████████████████████▊          | 1.20G/1.65G [00:15&lt;00:06, 74.1MB/s]
- 73%|██████████████████████████▉          | 1.20G/1.65G [00:15&lt;00:06, 74.3MB/s]
- 73%|███████████████████████████▏         | 1.21G/1.65G [00:15&lt;00:05, 74.2MB/s]
- 74%|███████████████████████████▎         | 1.22G/1.65G [00:15&lt;00:05, 74.3MB/s]
- 74%|███████████████████████████▍         | 1.23G/1.65G [00:15&lt;00:05, 74.3MB/s]
- 75%|███████████████████████████▋         | 1.23G/1.65G [00:15&lt;00:05, 74.2MB/s]
- 75%|███████████████████████████▊         | 1.24G/1.65G [00:15&lt;00:05, 74.5MB/s]
- 76%|███████████████████████████▉         | 1.25G/1.65G [00:16&lt;00:05, 74.4MB/s]
- 76%|████████████████████████████▏        | 1.26G/1.65G [00:16&lt;00:05, 74.4MB/s]
- 76%|████████████████████████████▎        | 1.26G/1.65G [00:16&lt;00:05, 74.5MB/s]
- 77%|████████████████████████████▍        | 1.27G/1.65G [00:16&lt;00:05, 74.5MB/s]
- 77%|████████████████████████████▋        | 1.28G/1.65G [00:16&lt;00:05, 74.5MB/s]
- 78%|████████████████████████████▊        | 1.29G/1.65G [00:16&lt;00:04, 74.6MB/s]
- 78%|████████████████████████████▉        | 1.29G/1.65G [00:16&lt;00:04, 74.7MB/s]
- 79%|█████████████████████████████▏       | 1.30G/1.65G [00:16&lt;00:04, 74.7MB/s]
- 79%|█████████████████████████████▎       | 1.31G/1.65G [00:16&lt;00:04, 74.6MB/s]
- 80%|█████████████████████████████▍       | 1.32G/1.65G [00:16&lt;00:04, 74.5MB/s]
- 80%|█████████████████████████████▋       | 1.32G/1.65G [00:17&lt;00:04, 74.3MB/s]
- 81%|█████████████████████████████▊       | 1.33G/1.65G [00:17&lt;00:04, 74.5MB/s]
- 81%|█████████████████████████████▉       | 1.34G/1.65G [00:17&lt;00:04, 74.5MB/s]
- 81%|██████████████████████████████▏      | 1.35G/1.65G [00:17&lt;00:04, 74.6MB/s]
- 82%|██████████████████████████████▎      | 1.35G/1.65G [00:17&lt;00:04, 74.3MB/s]
- 82%|██████████████████████████████▍      | 1.36G/1.65G [00:17&lt;00:03, 74.3MB/s]
- 83%|██████████████████████████████▋      | 1.37G/1.65G [00:17&lt;00:03, 74.6MB/s]
- 83%|██████████████████████████████▊      | 1.38G/1.65G [00:17&lt;00:03, 74.6MB/s]
- 84%|██████████████████████████████▉      | 1.38G/1.65G [00:17&lt;00:03, 74.2MB/s]
- 84%|███████████████████████████████▏     | 1.39G/1.65G [00:17&lt;00:03, 74.0MB/s]
- 85%|███████████████████████████████▎     | 1.40G/1.65G [00:18&lt;00:03, 74.0MB/s]
- 85%|███████████████████████████████▍     | 1.41G/1.65G [00:18&lt;00:03, 74.2MB/s]
- 86%|███████████████████████████████▋     | 1.41G/1.65G [00:18&lt;00:03, 74.3MB/s]
- 86%|███████████████████████████████▊     | 1.42G/1.65G [00:18&lt;00:03, 68.4MB/s]
- 86%|███████████████████████████████▉     | 1.43G/1.65G [00:18&lt;00:03, 64.0MB/s]
- 87%|████████████████████████████████▏    | 1.44G/1.65G [00:18&lt;00:03, 66.7MB/s]
- 87%|████████████████████████████████▎    | 1.44G/1.65G [00:18&lt;00:03, 68.7MB/s]
- 88%|████████████████████████████████▍    | 1.45G/1.65G [00:18&lt;00:02, 70.2MB/s]
- 88%|████████████████████████████████▌    | 1.46G/1.65G [00:18&lt;00:02, 70.7MB/s]
- 89%|████████████████████████████████▊    | 1.46G/1.65G [00:19&lt;00:02, 71.8MB/s]
- 89%|████████████████████████████████▉    | 1.47G/1.65G [00:19&lt;00:02, 72.6MB/s]
- 90%|█████████████████████████████████    | 1.48G/1.65G [00:19&lt;00:02, 73.0MB/s]
- 90%|█████████████████████████████████▎   | 1.49G/1.65G [00:19&lt;00:02, 73.4MB/s]
- 90%|█████████████████████████████████▍   | 1.49G/1.65G [00:19&lt;00:02, 73.6MB/s]
- 91%|█████████████████████████████████▌   | 1.50G/1.65G [00:19&lt;00:02, 73.8MB/s]
- 91%|█████████████████████████████████▊   | 1.51G/1.65G [00:19&lt;00:01, 73.9MB/s]
- 92%|█████████████████████████████████▉   | 1.52G/1.65G [00:19&lt;00:01, 74.0MB/s]
- 92%|██████████████████████████████████   | 1.52G/1.65G [00:19&lt;00:01, 74.2MB/s]
- 93%|██████████████████████████████████▎  | 1.53G/1.65G [00:19&lt;00:01, 74.2MB/s]
- 93%|██████████████████████████████████▍  | 1.54G/1.65G [00:20&lt;00:01, 74.0MB/s]
- 94%|██████████████████████████████████▌  | 1.55G/1.65G [00:20&lt;00:01, 73.2MB/s]
- 94%|██████████████████████████████████▊  | 1.55G/1.65G [00:20&lt;00:01, 73.6MB/s]
- 94%|██████████████████████████████████▉  | 1.56G/1.65G [00:20&lt;00:01, 73.8MB/s]
- 95%|███████████████████████████████████  | 1.57G/1.65G [00:20&lt;00:01, 74.0MB/s]
- 95%|███████████████████████████████████▎ | 1.58G/1.65G [00:20&lt;00:01, 74.1MB/s]
- 96%|███████████████████████████████████▍ | 1.58G/1.65G [00:20&lt;00:00, 74.1MB/s]
- 96%|███████████████████████████████████▌ | 1.59G/1.65G [00:20&lt;00:00, 74.3MB/s]
- 97%|███████████████████████████████████▊ | 1.60G/1.65G [00:20&lt;00:00, 74.4MB/s]
- 97%|███████████████████████████████████▉ | 1.61G/1.65G [00:20&lt;00:00, 74.0MB/s]
- 98%|████████████████████████████████████ | 1.61G/1.65G [00:21&lt;00:00, 74.1MB/s]
- 98%|████████████████████████████████████▎| 1.62G/1.65G [00:21&lt;00:00, 74.3MB/s]
- 99%|████████████████████████████████████▍| 1.63G/1.65G [00:21&lt;00:00, 74.4MB/s]
- 99%|████████████████████████████████████▌| 1.64G/1.65G [00:21&lt;00:00, 73.6MB/s]
- 99%|████████████████████████████████████▊| 1.64G/1.65G [00:21&lt;00:00, 73.2MB/s]
-100%|████████████████████████████████████▉| 1.65G/1.65G [00:21&lt;00:00, 73.4MB/s]
+  1%|▏                                    | 9.84M/1.65G [00:00&lt;00:31, 52.7MB/s]
+  1%|▍                                    | 16.9M/1.65G [00:00&lt;00:26, 60.7MB/s]
+  1%|▌                                    | 23.8M/1.65G [00:00&lt;00:25, 64.0MB/s]
+  2%|▋                                    | 30.7M/1.65G [00:00&lt;00:24, 65.8MB/s]
+  2%|▊                                    | 37.6M/1.65G [00:00&lt;00:24, 66.9MB/s]
+  3%|▉                                    | 44.4M/1.65G [00:00&lt;00:23, 67.2MB/s]
+  3%|█▏                                   | 51.3M/1.65G [00:00&lt;00:23, 67.8MB/s]
+  4%|█▎                                   | 58.1M/1.65G [00:00&lt;00:23, 68.0MB/s]
+  4%|█▍                                   | 65.1M/1.65G [00:01&lt;00:23, 68.7MB/s]
+  4%|█▌                                   | 72.1M/1.65G [00:01&lt;00:22, 69.0MB/s]
+  5%|█▊                                   | 79.2M/1.65G [00:01&lt;00:22, 69.5MB/s]
+  5%|█▉                                   | 86.3M/1.65G [00:01&lt;00:22, 70.0MB/s]
+  6%|██                                   | 93.6M/1.65G [00:01&lt;00:21, 71.0MB/s]
+  6%|██▎                                   | 101M/1.65G [00:01&lt;00:21, 71.4MB/s]
+  7%|██▍                                   | 108M/1.65G [00:01&lt;00:21, 71.9MB/s]
+  7%|██▋                                   | 116M/1.65G [00:01&lt;00:21, 72.4MB/s]
+  7%|██▊                                   | 123M/1.65G [00:01&lt;00:21, 72.4MB/s]
+  8%|██▉                                   | 130M/1.65G [00:01&lt;00:20, 72.8MB/s]
+  8%|███▏                                  | 138M/1.65G [00:02&lt;00:20, 73.4MB/s]
+  9%|███▎                                  | 145M/1.65G [00:02&lt;00:20, 73.7MB/s]
+  9%|███▌                                  | 152M/1.65G [00:02&lt;00:20, 73.7MB/s]
+ 10%|███▋                                  | 160M/1.65G [00:02&lt;00:20, 74.2MB/s]
+ 10%|███▊                                  | 168M/1.65G [00:02&lt;00:19, 74.6MB/s]
+ 11%|████                                  | 175M/1.65G [00:02&lt;00:19, 74.6MB/s]
+ 11%|████▏                                 | 182M/1.65G [00:02&lt;00:19, 74.5MB/s]
+ 11%|████▎                                 | 190M/1.65G [00:02&lt;00:19, 74.9MB/s]
+ 12%|████▌                                 | 198M/1.65G [00:02&lt;00:19, 75.0MB/s]
+ 12%|████▋                                 | 205M/1.65G [00:02&lt;00:19, 74.9MB/s]
+ 13%|████▉                                 | 213M/1.65G [00:03&lt;00:18, 76.4MB/s]
+ 13%|█████                                 | 221M/1.65G [00:03&lt;00:18, 77.7MB/s]
+ 14%|█████▎                                | 229M/1.65G [00:03&lt;00:18, 79.0MB/s]
+ 14%|█████▍                                | 238M/1.65G [00:03&lt;00:17, 80.2MB/s]
+ 15%|█████▋                                | 246M/1.65G [00:03&lt;00:17, 80.6MB/s]
+ 15%|█████▊                                | 254M/1.65G [00:03&lt;00:17, 81.1MB/s]
+ 16%|██████                                | 262M/1.65G [00:03&lt;00:17, 81.7MB/s]
+ 16%|██████▏                               | 271M/1.65G [00:03&lt;00:16, 81.9MB/s]
+ 17%|██████▍                               | 279M/1.65G [00:03&lt;00:16, 82.1MB/s]
+ 17%|██████▌                               | 287M/1.65G [00:03&lt;00:16, 82.3MB/s]
+ 18%|██████▊                               | 295M/1.65G [00:04&lt;00:16, 80.6MB/s]
+ 18%|██████▉                               | 303M/1.65G [00:04&lt;00:17, 78.3MB/s]
+ 19%|███████▏                              | 311M/1.65G [00:04&lt;00:17, 77.6MB/s]
+ 19%|███████▎                              | 319M/1.65G [00:04&lt;00:17, 75.6MB/s]
+ 20%|███████▌                              | 327M/1.65G [00:04&lt;00:17, 77.7MB/s]
+ 20%|███████▋                              | 336M/1.65G [00:04&lt;00:16, 79.0MB/s]
+ 21%|███████▉                              | 344M/1.65G [00:04&lt;00:16, 79.9MB/s]
+ 21%|████████                              | 352M/1.65G [00:04&lt;00:16, 80.9MB/s]
+ 22%|████████▎                             | 360M/1.65G [00:04&lt;00:15, 81.2MB/s]
+ 22%|████████▍                             | 368M/1.65G [00:04&lt;00:15, 80.9MB/s]
+ 23%|████████▋                             | 376M/1.65G [00:05&lt;00:15, 81.0MB/s]
+ 23%|████████▊                             | 385M/1.65G [00:05&lt;00:15, 81.5MB/s]
+ 24%|█████████                             | 393M/1.65G [00:05&lt;00:15, 81.8MB/s]
+ 24%|█████████▏                            | 401M/1.65G [00:05&lt;00:15, 81.8MB/s]
+ 25%|█████████▍                            | 409M/1.65G [00:05&lt;00:15, 81.9MB/s]
+ 25%|█████████▌                            | 418M/1.65G [00:05&lt;00:15, 81.8MB/s]
+ 26%|█████████▊                            | 426M/1.65G [00:05&lt;00:14, 81.8MB/s]
+ 26%|█████████▉                            | 434M/1.65G [00:05&lt;00:14, 82.0MB/s]
+ 27%|██████████▏                           | 442M/1.65G [00:05&lt;00:14, 81.9MB/s]
+ 27%|██████████▎                           | 450M/1.65G [00:05&lt;00:14, 81.9MB/s]
+ 28%|██████████▌                           | 459M/1.65G [00:06&lt;00:14, 82.1MB/s]
+ 28%|██████████▋                           | 467M/1.65G [00:06&lt;00:14, 82.4MB/s]
+ 29%|██████████▉                           | 475M/1.65G [00:06&lt;00:15, 76.7MB/s]
+ 29%|███████████                           | 483M/1.65G [00:06&lt;00:17, 67.6MB/s]
+ 30%|███████████▎                          | 491M/1.65G [00:06&lt;00:16, 71.6MB/s]
+ 30%|███████████▍                          | 499M/1.65G [00:06&lt;00:15, 74.3MB/s]
+ 31%|███████████▋                          | 508M/1.65G [00:06&lt;00:14, 76.6MB/s]
+ 31%|███████████▊                          | 516M/1.65G [00:06&lt;00:14, 78.5MB/s]
+ 32%|████████████                          | 524M/1.65G [00:06&lt;00:14, 79.6MB/s]
+ 32%|████████████▏                         | 532M/1.65G [00:07&lt;00:13, 80.1MB/s]
+ 33%|████████████▍                         | 541M/1.65G [00:07&lt;00:13, 80.8MB/s]
+ 33%|████████████▌                         | 549M/1.65G [00:07&lt;00:13, 81.4MB/s]
+ 34%|████████████▊                         | 557M/1.65G [00:07&lt;00:13, 81.8MB/s]
+ 34%|█████████████                         | 565M/1.65G [00:07&lt;00:13, 82.2MB/s]
+ 35%|█████████████▏                        | 574M/1.65G [00:07&lt;00:13, 82.2MB/s]
+ 35%|█████████████▍                        | 582M/1.65G [00:07&lt;00:13, 82.1MB/s]
+ 36%|█████████████▌                        | 590M/1.65G [00:07&lt;00:12, 82.1MB/s]
+ 36%|█████████████▊                        | 598M/1.65G [00:07&lt;00:12, 82.2MB/s]
+ 37%|█████████████▉                        | 607M/1.65G [00:07&lt;00:12, 81.8MB/s]
+ 37%|██████████████▏                       | 615M/1.65G [00:08&lt;00:12, 80.7MB/s]
+ 38%|██████████████▎                       | 623M/1.65G [00:08&lt;00:12, 80.7MB/s]
+ 38%|██████████████▌                       | 631M/1.65G [00:08&lt;00:12, 81.3MB/s]
+ 39%|██████████████▋                       | 639M/1.65G [00:08&lt;00:12, 81.7MB/s]
+ 39%|██████████████▉                       | 648M/1.65G [00:08&lt;00:12, 82.0MB/s]
+ 40%|███████████████                       | 656M/1.65G [00:08&lt;00:12, 81.9MB/s]
+ 40%|███████████████▎                      | 664M/1.65G [00:08&lt;00:12, 82.1MB/s]
+ 41%|███████████████▍                      | 672M/1.65G [00:08&lt;00:11, 82.0MB/s]
+ 41%|███████████████▋                      | 681M/1.65G [00:08&lt;00:11, 81.8MB/s]
+ 42%|███████████████▊                      | 689M/1.65G [00:08&lt;00:11, 81.9MB/s]
+ 42%|████████████████                      | 697M/1.65G [00:09&lt;00:11, 81.1MB/s]
+ 43%|████████████████▏                     | 705M/1.65G [00:09&lt;00:11, 79.3MB/s]
+ 43%|████████████████▍                     | 713M/1.65G [00:09&lt;00:12, 78.1MB/s]
+ 44%|████████████████▌                     | 721M/1.65G [00:09&lt;00:12, 76.9MB/s]
+ 44%|████████████████▋                     | 729M/1.65G [00:09&lt;00:12, 76.3MB/s]
+ 45%|████████████████▉                     | 736M/1.65G [00:09&lt;00:12, 72.4MB/s]
+ 45%|█████████████████                     | 743M/1.65G [00:09&lt;00:13, 67.9MB/s]
+ 45%|█████████████████▎                    | 751M/1.65G [00:09&lt;00:12, 69.7MB/s]
+ 46%|█████████████████▍                    | 758M/1.65G [00:09&lt;00:12, 70.9MB/s]
+ 46%|█████████████████▌                    | 766M/1.65G [00:09&lt;00:12, 71.9MB/s]
+ 47%|█████████████████▊                    | 773M/1.65G [00:10&lt;00:12, 72.5MB/s]
+ 47%|█████████████████▉                    | 781M/1.65G [00:10&lt;00:11, 73.0MB/s]
+ 48%|██████████████████▏                   | 789M/1.65G [00:10&lt;00:11, 75.9MB/s]
+ 48%|██████████████████▎                   | 797M/1.65G [00:10&lt;00:10, 77.8MB/s]
+ 49%|██████████████████▌                   | 805M/1.65G [00:10&lt;00:10, 79.2MB/s]
+ 49%|██████████████████▋                   | 813M/1.65G [00:10&lt;00:10, 79.1MB/s]
+ 50%|██████████████████▉                   | 821M/1.65G [00:10&lt;00:10, 80.2MB/s]
+ 50%|███████████████████                   | 830M/1.65G [00:10&lt;00:10, 81.1MB/s]
+ 51%|███████████████████▎                  | 838M/1.65G [00:10&lt;00:10, 81.4MB/s]
+ 51%|███████████████████▍                  | 846M/1.65G [00:10&lt;00:09, 81.1MB/s]
+ 52%|███████████████████▋                  | 854M/1.65G [00:11&lt;00:09, 81.6MB/s]
+ 52%|███████████████████▊                  | 863M/1.65G [00:11&lt;00:09, 82.3MB/s]
+ 53%|████████████████████                  | 871M/1.65G [00:11&lt;00:09, 82.4MB/s]
+ 53%|████████████████████▏                 | 879M/1.65G [00:11&lt;00:09, 82.2MB/s]
+ 54%|████████████████████▍                 | 888M/1.65G [00:11&lt;00:09, 82.5MB/s]
+ 54%|████████████████████▌                 | 896M/1.65G [00:11&lt;00:09, 82.4MB/s]
+ 55%|████████████████████▊                 | 904M/1.65G [00:11&lt;00:09, 82.4MB/s]
+ 55%|████████████████████▉                 | 912M/1.65G [00:11&lt;00:09, 81.0MB/s]
+ 56%|█████████████████████▏                | 921M/1.65G [00:11&lt;00:10, 71.4MB/s]
+ 56%|█████████████████████▎                | 928M/1.65G [00:12&lt;00:10, 71.9MB/s]
+ 57%|█████████████████████▌                | 936M/1.65G [00:12&lt;00:09, 75.0MB/s]
+ 57%|█████████████████████▋                | 944M/1.65G [00:12&lt;00:09, 76.9MB/s]
+ 58%|█████████████████████▉                | 952M/1.65G [00:12&lt;00:08, 78.0MB/s]
+ 58%|██████████████████████                | 961M/1.65G [00:12&lt;00:08, 79.6MB/s]
+ 59%|██████████████████████▎               | 969M/1.65G [00:12&lt;00:08, 80.7MB/s]
+ 59%|██████████████████████▍               | 977M/1.65G [00:12&lt;00:08, 81.5MB/s]
+ 60%|██████████████████████▋               | 986M/1.65G [00:12&lt;00:08, 82.3MB/s]
+ 60%|██████████████████████▊               | 994M/1.65G [00:12&lt;00:07, 82.6MB/s]
+ 61%|██████████████████████▍              | 1.00G/1.65G [00:12&lt;00:07, 82.4MB/s]
+ 61%|██████████████████████▋              | 1.01G/1.65G [00:13&lt;00:07, 82.4MB/s]
+ 62%|██████████████████████▊              | 1.02G/1.65G [00:13&lt;00:07, 82.6MB/s]
+ 62%|██████████████████████▉              | 1.03G/1.65G [00:13&lt;00:07, 82.5MB/s]
+ 63%|███████████████████████▏             | 1.04G/1.65G [00:13&lt;00:07, 82.6MB/s]
+ 63%|███████████████████████▎             | 1.04G/1.65G [00:13&lt;00:07, 82.9MB/s]
+ 64%|███████████████████████▌             | 1.05G/1.65G [00:13&lt;00:07, 82.9MB/s]
+ 64%|███████████████████████▋             | 1.06G/1.65G [00:13&lt;00:07, 83.1MB/s]
+ 65%|███████████████████████▉             | 1.07G/1.65G [00:13&lt;00:07, 83.1MB/s]
+ 65%|████████████████████████             | 1.08G/1.65G [00:13&lt;00:06, 82.8MB/s]
+ 66%|████████████████████████▎            | 1.09G/1.65G [00:13&lt;00:06, 82.7MB/s]
+ 66%|████████████████████████▍            | 1.09G/1.65G [00:14&lt;00:06, 82.5MB/s]
+ 67%|████████████████████████▋            | 1.10G/1.65G [00:14&lt;00:06, 82.5MB/s]
+ 67%|████████████████████████▊            | 1.11G/1.65G [00:14&lt;00:06, 82.4MB/s]
+ 68%|█████████████████████████            | 1.12G/1.65G [00:14&lt;00:06, 82.3MB/s]
+ 68%|█████████████████████████▏           | 1.13G/1.65G [00:14&lt;00:06, 82.3MB/s]
+ 69%|█████████████████████████▍           | 1.13G/1.65G [00:14&lt;00:06, 81.6MB/s]
+ 69%|█████████████████████████▌           | 1.14G/1.65G [00:14&lt;00:06, 81.6MB/s]
+ 70%|█████████████████████████▊           | 1.15G/1.65G [00:14&lt;00:06, 81.6MB/s]
+ 70%|█████████████████████████▉           | 1.16G/1.65G [00:14&lt;00:06, 81.9MB/s]
+ 71%|██████████████████████████▏          | 1.17G/1.65G [00:14&lt;00:05, 82.0MB/s]
+ 71%|██████████████████████████▎          | 1.18G/1.65G [00:15&lt;00:05, 82.0MB/s]
+ 72%|██████████████████████████▌          | 1.18G/1.65G [00:15&lt;00:05, 81.7MB/s]
+ 72%|██████████████████████████▋          | 1.19G/1.65G [00:15&lt;00:05, 81.7MB/s]
+ 73%|██████████████████████████▉          | 1.20G/1.65G [00:15&lt;00:05, 81.7MB/s]
+ 73%|███████████████████████████          | 1.21G/1.65G [00:15&lt;00:05, 81.9MB/s]
+ 74%|███████████████████████████▏         | 1.22G/1.65G [00:15&lt;00:05, 81.9MB/s]
+ 74%|███████████████████████████▍         | 1.23G/1.65G [00:15&lt;00:05, 81.2MB/s]
+ 75%|███████████████████████████▌         | 1.23G/1.65G [00:15&lt;00:05, 81.3MB/s]
+ 75%|███████████████████████████▊         | 1.24G/1.65G [00:15&lt;00:05, 81.7MB/s]
+ 76%|███████████████████████████▉         | 1.25G/1.65G [00:15&lt;00:04, 81.7MB/s]
+ 76%|████████████████████████████▏        | 1.26G/1.65G [00:16&lt;00:04, 81.9MB/s]
+ 77%|████████████████████████████▎        | 1.27G/1.65G [00:16&lt;00:04, 80.1MB/s]
+ 77%|████████████████████████████▌        | 1.27G/1.65G [00:16&lt;00:04, 80.9MB/s]
+ 78%|████████████████████████████▋        | 1.28G/1.65G [00:16&lt;00:04, 81.3MB/s]
+ 78%|████████████████████████████▉        | 1.29G/1.65G [00:16&lt;00:04, 81.5MB/s]
+ 79%|█████████████████████████████        | 1.30G/1.65G [00:16&lt;00:04, 81.4MB/s]
+ 79%|█████████████████████████████▎       | 1.31G/1.65G [00:16&lt;00:04, 81.4MB/s]
+ 80%|█████████████████████████████▍       | 1.32G/1.65G [00:16&lt;00:04, 81.5MB/s]
+ 80%|█████████████████████████████▋       | 1.32G/1.65G [00:16&lt;00:04, 81.8MB/s]
+ 81%|█████████████████████████████▊       | 1.33G/1.65G [00:16&lt;00:03, 81.1MB/s]
+ 81%|█████████████████████████████▉       | 1.34G/1.65G [00:17&lt;00:03, 81.1MB/s]
+ 82%|██████████████████████████████▏      | 1.35G/1.65G [00:17&lt;00:03, 80.8MB/s]
+ 82%|██████████████████████████████▎      | 1.36G/1.65G [00:17&lt;00:03, 81.1MB/s]
+ 83%|██████████████████████████████▌      | 1.36G/1.65G [00:17&lt;00:03, 81.1MB/s]
+ 83%|██████████████████████████████▋      | 1.37G/1.65G [00:17&lt;00:03, 81.5MB/s]
+ 84%|██████████████████████████████▉      | 1.38G/1.65G [00:17&lt;00:03, 81.6MB/s]
+ 84%|███████████████████████████████      | 1.39G/1.65G [00:17&lt;00:03, 81.7MB/s]
+ 85%|███████████████████████████████▎     | 1.40G/1.65G [00:17&lt;00:03, 81.7MB/s]
+ 85%|███████████████████████████████▍     | 1.41G/1.65G [00:17&lt;00:03, 81.6MB/s]
+ 86%|███████████████████████████████▋     | 1.41G/1.65G [00:17&lt;00:02, 82.1MB/s]
+ 86%|███████████████████████████████▊     | 1.42G/1.65G [00:18&lt;00:02, 81.7MB/s]
+ 87%|████████████████████████████████     | 1.43G/1.65G [00:18&lt;00:02, 81.9MB/s]
+ 87%|████████████████████████████████▏    | 1.44G/1.65G [00:18&lt;00:02, 82.1MB/s]
+ 88%|████████████████████████████████▍    | 1.45G/1.65G [00:18&lt;00:02, 82.0MB/s]
+ 88%|████████████████████████████████▌    | 1.45G/1.65G [00:18&lt;00:02, 81.8MB/s]
+ 89%|████████████████████████████████▊    | 1.46G/1.65G [00:18&lt;00:02, 82.0MB/s]
+ 89%|████████████████████████████████▉    | 1.47G/1.65G [00:18&lt;00:02, 82.1MB/s]
+ 90%|█████████████████████████████████    | 1.48G/1.65G [00:18&lt;00:02, 82.3MB/s]
+ 90%|█████████████████████████████████▎   | 1.49G/1.65G [00:18&lt;00:02, 82.4MB/s]
+ 91%|█████████████████████████████████▍   | 1.50G/1.65G [00:18&lt;00:01, 82.8MB/s]
+ 91%|█████████████████████████████████▋   | 1.50G/1.65G [00:19&lt;00:01, 82.6MB/s]
+ 92%|█████████████████████████████████▊   | 1.51G/1.65G [00:19&lt;00:01, 81.9MB/s]
+ 92%|██████████████████████████████████   | 1.52G/1.65G [00:19&lt;00:01, 82.3MB/s]
+ 93%|██████████████████████████████████▏  | 1.53G/1.65G [00:19&lt;00:01, 82.2MB/s]
+ 93%|██████████████████████████████████▍  | 1.54G/1.65G [00:19&lt;00:01, 82.2MB/s]
+ 94%|██████████████████████████████████▌  | 1.55G/1.65G [00:19&lt;00:01, 82.0MB/s]
+ 94%|██████████████████████████████████▊  | 1.55G/1.65G [00:19&lt;00:01, 81.9MB/s]
+ 95%|██████████████████████████████████▉  | 1.56G/1.65G [00:19&lt;00:01, 81.9MB/s]
+ 95%|███████████████████████████████████▏ | 1.57G/1.65G [00:19&lt;00:01, 81.9MB/s]
+ 96%|███████████████████████████████████▎ | 1.58G/1.65G [00:19&lt;00:00, 82.0MB/s]
+ 96%|███████████████████████████████████▌ | 1.59G/1.65G [00:20&lt;00:00, 82.3MB/s]
+ 97%|███████████████████████████████████▋ | 1.59G/1.65G [00:20&lt;00:00, 82.0MB/s]
+ 97%|███████████████████████████████████▉ | 1.60G/1.65G [00:20&lt;00:00, 82.2MB/s]
+ 97%|████████████████████████████████████ | 1.61G/1.65G [00:20&lt;00:00, 82.1MB/s]
+ 98%|████████████████████████████████████▎| 1.62G/1.65G [00:20&lt;00:00, 81.0MB/s]
+ 98%|████████████████████████████████████▍| 1.63G/1.65G [00:20&lt;00:00, 81.4MB/s]
+ 99%|████████████████████████████████████▋| 1.64G/1.65G [00:20&lt;00:00, 81.4MB/s]
+ 99%|████████████████████████████████████▊| 1.64G/1.65G [00:20&lt;00:00, 81.8MB/s]
+100%|████████████████████████████████████▉| 1.65G/1.65G [00:20&lt;00:00, 82.1MB/s]
   0%|                                              | 0.00/1.65G [00:00&lt;?, ?B/s]
-100%|█████████████████████████████████████| 1.65G/1.65G [00:00&lt;00:00, 7.22TB/s]
-Download complete in 50s (1576.2 MB)
-NOTE: pick_types() is a legacy function. New code should use inst.pick(...).
+100%|█████████████████████████████████████| 1.65G/1.65G [00:00&lt;00:00, 8.91TB/s]
+Untarring contents of &#39;/github/home/mne_data/MNE-sample-data-processed.tar.gz&#39; to &#39;/github/home/mne_data&#39;
+Attempting to create new mne-python configuration file:
+/github/home/.mne/mne-python.json
+Could not read the /github/home/.mne/mne-python.json json file during the writing. Assuming it is empty. Got: Expecting value: line 1 column 1 (char 0)
+Download complete in 49s (1576.2 MB)
 done
 </pre></div>
 </div>
 <p>Then, we remove the powerline artifacts and high-pass filter to remove the
 drift which can impact the CSC technique. The signal is also resampled to
 150 Hz to reduce the computationnal burden.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Preprocessing the data...</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'</span><span class="s1">'</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="w">
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="s2">Preprocessing the data...</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'</span><span class="s1"> </span><span class="s1">'</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.notch_filter" title="mne.io.Raw.notch_filter"><span class="n">raw</span><span class="o">.</span><span class="n">notch_filter</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function reference external" href="https://numpy.org/devdocs/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_jobs</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_jobs</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.filter" title="mne.io.Raw.filter"><span class="n">raw</span><span class="o">.</span><span class="n">filter</span></a><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_jobs</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_jobs</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw" title="mne.io.Raw"><span class="n">raw</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.resample" title="mne.io.Raw.resample"><span class="n">raw</span><span class="o">.</span><span class="n">resample</span></a><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="float"><span class="n">sfreq</span></a><span class="p">,</span> <span class="n">npad</span><span class="o">=</span><span class="s1">'</span><span class="s1">auto</span><span class="s1">'</span><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_jobs</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_jobs</span></a><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="w">
 </span><span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="s1">done</span><span class="s1">'</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Preprocessing the data.../github/workspace/examples/multicsc/plot_sample_evoked_response.py:115: RuntimeWarning: Resampling of the stim channels caused event information to become unreliable. Consider finding events on the original data and passing the event matrix as a parameter.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Preprocessing the data... /github/workspace/examples/multicsc/plot_sample_evoked_response.py:114: RuntimeWarning: Resampling of the stim channels caused event information to become unreliable. Consider finding events on the original data and passing the event matrix as a parameter.
   raw = raw.resample(sfreq, npad=&#39;auto&#39;, n_jobs=n_jobs, verbose=False)
 done
 </pre></div>
@@ -800,20 +801,17 @@ which scales down the border of each split with a tukey window.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span class="kn">from</span><span class="w"> </span><span class="nn">alphacsc</span><span class="nn">.</span><span class="nn">utils</span><span class="nn">.</span><span class="nn">signal</span><span class="w"> </span><span class="kn">import</span> <a class="sphx-glr-backref-module-alphacsc-utils-signal sphx-glr-backref-type-py-function reference internal" href="../../generated/alphacsc.utils.signal.split_signal.html#alphacsc.utils.signal.split_signal" title="alphacsc.utils.signal.split_signal"><span class="n">split_signal</span></a><span class="w">
 </span><span class="w">
 </span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.get_data" title="mne.io.Raw.get_data"><span class="n">raw</span><span class="o">.</span><span class="n">get_data</span></a><span class="p">(</span><span class="n">picks</span><span class="o">=</span><span class="p">[</span><span class="s1">'</span><span class="s1">meg</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="w">
-</span><a class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info"><span class="n">info</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.copy" title="mne.io.Raw.copy"><span class="n">raw</span><span class="o">.</span><span class="n">copy</span></a><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">pick_types</span><span class="p">(</span><span class="n">meg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">info</span>  <span class="c1"># info of the loaded channels</span><span class="w">
+</span><a class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info"><span class="n">info</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-mne-io sphx-glr-backref-type-py-method reference external" href="https://mne.tools/stable/generated/mne.io.Raw.html#mne.io.Raw.copy" title="mne.io.Raw.copy"><span class="n">raw</span><span class="o">.</span><span class="n">copy</span></a><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">pick</span><span class="p">(</span><span class="s1">'</span><span class="s1">meg</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">info</span>  <span class="c1"># info of the loaded channels</span><span class="w">
 </span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_split</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-alphacsc-utils-signal sphx-glr-backref-type-py-function reference internal" href="../../generated/alphacsc.utils.signal.split_signal.html#alphacsc.utils.signal.split_signal" title="alphacsc.utils.signal.split_signal"><span class="n">split_signal</span></a><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_splits</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_splits</span></a><span class="p">,</span> <span class="n">apply_window</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>NOTE: pick_types() is a legacy function. New code should use inst.pick(...).
-</pre></div>
-</div>
 <p>Fit the model and learn rank1 atoms</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><a class="sphx-glr-backref-module-alphacsc sphx-glr-backref-type-py-class sphx-glr-backref-instance reference internal" href="../../generated/alphacsc.GreedyCDL.html#alphacsc.GreedyCDL" title="alphacsc.GreedyCDL"><span class="n">cdl</span></a><span class="o">.</span><span class="n">fit</span><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">X_split</span></a><span class="p">)</span><span class="w">
 </span></pre></div></div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>.................................................+
-.......
-[GreedyCDL] Fit in 2064.7s
+....................
+[GreedyCDL] Fit in 3195.2s
 
-&lt;alphacsc.convolutional_dictionary_learning.GreedyCDL object at 0x7fc4f1e05550&gt;
+&lt;alphacsc.convolutional_dictionary_learning.GreedyCDL object at 0x7f903c9c5160&gt;
 </pre></div>
 </div>
 <p>Then we call the <cite>transform</cite> method, which returns the sparse codes
@@ -943,7 +941,7 @@ not statistically significant values, computing with sampling.</p>
 </span>        <span class="c1"># plotting function</span><span class="w">
 </span>        <a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><span class="n">ax</span></a> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it_axes</span><span class="p">)</span><span class="w">
 </span>        <a class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info"><span class="n">this_info</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-mne sphx-glr-backref-type-py-method reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info.copy" title="mne.Info.copy"><span class="n">info</span><span class="o">.</span><span class="n">copy</span></a><span class="p">(</span><span class="p">)</span><span class="w">
-</span>        <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">event_info</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="list"><span class="n">event_id</span></a> <span class="o">=</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">this_event_id</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">events</span></a><span class="o">=</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">events</span></a><span class="p">)</span><span class="w">
+</span>        <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">event_info</span></a> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="list"><span class="n">event_id</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">this_event_id</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">events</span></a><span class="o">=</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">events</span></a><span class="p">)</span><span class="w">
 </span>        <a class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info"><span class="n">this_info</span></a><span class="p">[</span><span class="s1">'</span><span class="s1">temp</span><span class="s1">'</span><span class="p">]</span> <span class="o">=</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="dict"><span class="n">event_info</span></a><span class="w">
 </span>        <span class="n">plot_evoked_surrogates</span><span class="p">(</span><a class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><span class="n">correlation</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info"><span class="n">info</span></a><span class="o">=</span><a class="sphx-glr-backref-module-mne-_fiff-meas_info sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://mne.tools/stable/generated/mne.Info.html#mne.Info" title="mne._fiff.meas_info.Info"><span class="n">this_info</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="tuple"><span class="n">t_lim</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="tuple"><span class="n">t_lim</span></a><span class="p">,</span> <a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><span class="n">ax</span></a><span class="o">=</span><a class="sphx-glr-backref-module-matplotlib-axes sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.html#matplotlib.axes.Axes" title="matplotlib.axes.Axes"><span class="n">ax</span></a><span class="p">,</span><span class="w">
 </span>                               <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_jobs</span></a><span class="o">=</span><a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">n_jobs</span></a><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'</span><span class="s1">event </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <a class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="int"><span class="n">this_event_id</span></a><span class="p">)</span><span class="w">
@@ -1060,7 +1058,7 @@ goodness of fit.</p>
 </span><a class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.figure.Figure.suptitle.html#matplotlib.figure.Figure.suptitle" title="matplotlib.figure.Figure.suptitle"><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s1">'</span><span class="s1">'</span><span class="p">)</span><span class="w">
 </span><a class="sphx-glr-backref-module-matplotlib-figure sphx-glr-backref-type-py-method reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.figure.Figure.tight_layout.html#matplotlib.figure.Figure.tight_layout" title="matplotlib.figure.Figure.tight_layout"><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">(</span><span class="p">)</span><span class="w">
 </span></pre></div></div>
-<img src="../../_images/sphx_glr_plot_sample_evoked_response_003.png" srcset="../../_images/sphx_glr_plot_sample_evoked_response_003.png" alt=", Atom #4 (GOF 79.80%), Temporal pattern 4" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (37 minutes 52.649 seconds)</p>
+<img src="../../_images/sphx_glr_plot_sample_evoked_response_003.png" srcset="../../_images/sphx_glr_plot_sample_evoked_response_003.png" alt=", Atom #4 (GOF 10.51%), Temporal pattern 4" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (56 minutes 3.059 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-multicsc-plot-sample-evoked-response-py">
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/1c39b7d57f0cbdd5e17b12b075249eb0/plot_sample_evoked_response.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_sample_evoked_response.ipynb</span></code></a></p>
@@ -1087,20 +1085,20 @@ goodness of fit.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="sample_evoked_response_dicodile.html"
+       href="plot_somato_mu_waves.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Extracting artifact and evoked response atoms from the MNE sample dataset</p>
+        <p class="prev-next-title">Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset</p>
       </div>
     </a>
     <a class="right-next"
-       href="../noise_alpha/index.html"
+       href="sample_evoked_response_dicodile.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Univariate CSC with an alpha-stable distribution</p>
+        <p class="prev-next-title">Extracting artifact and evoked response atoms from the MNE sample dataset</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

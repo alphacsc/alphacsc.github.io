@@ -1,0 +1,50 @@
+
+
+.. _sphx_glr_auto_examples_no-overlap:
+
+.. _no_overlap_examples:
+
+l0-normalized CSC without overlap
+---------------------------------
+
+
+.. raw:: html
+
+  <div id='sg-tag-list' class='sphx-glr-tag-list'></div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we use the no-overlap solver on an open dataset of gait (steps) IMU time-series to discover patterns in the data. We will then use those to attempt to detect steps and compare our findings with the ground truth.">
+
+.. only:: html
+
+  .. image:: /auto_examples/no-overlap/images/thumb/sphx_glr_plot_no_overlap_thumb.png
+    :alt:
+
+  :doc:`/auto_examples/no-overlap/plot_no_overlap`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">No-overlap example</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/no-overlap/plot_no_overlap
+

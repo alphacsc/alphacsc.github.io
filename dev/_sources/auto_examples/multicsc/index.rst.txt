@@ -42,14 +42,14 @@ Multivariate CSC with rank 1 constraints
 
 .. only:: html
 
-  .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_sample_evoked_response_dicodile_thumb.png
+  .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_sample_evoked_response_thumb.png
     :alt:
 
-  :doc:`/auto_examples/multicsc/sample_evoked_response_dicodile`
+  :doc:`/auto_examples/multicsc/plot_sample_evoked_response`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the MNE sample dataset</div>
+      <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the sample dataset</div>
     </div>
 
 
@@ -59,14 +59,14 @@ Multivariate CSC with rank 1 constraints
 
 .. only:: html
 
-  .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_plot_sample_evoked_response_thumb.png
+  .. image:: /auto_examples/multicsc/images/thumb/sphx_glr_sample_evoked_response_dicodile_thumb.png
     :alt:
 
-  :doc:`/auto_examples/multicsc/plot_sample_evoked_response`
+  :doc:`/auto_examples/multicsc/sample_evoked_response_dicodile`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the sample dataset</div>
+      <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the MNE sample dataset</div>
     </div>
 
 
@@ -81,6 +81,6 @@ Multivariate CSC with rank 1 constraints
    :hidden:
 
    /auto_examples/multicsc/plot_somato_mu_waves
-   /auto_examples/multicsc/sample_evoked_response_dicodile
    /auto_examples/multicsc/plot_sample_evoked_response
+   /auto_examples/multicsc/sample_evoked_response_dicodile
 

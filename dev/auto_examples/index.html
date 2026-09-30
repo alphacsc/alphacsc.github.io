@@ -380,8 +380,12 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="multicsc/index.html">Multivariate CSC with rank 1 constraints</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="multicsc/plot_somato_mu_waves.html">Extracting <span class="math notranslate nohighlight">\(\mu\)</span>-wave from the somato-sensory dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multicsc/sample_evoked_response_dicodile.html">Extracting artifact and evoked response atoms from the MNE sample dataset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multicsc/plot_sample_evoked_response.html">Extracting artifact and evoked response atoms from the sample dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multicsc/sample_evoked_response_dicodile.html">Extracting artifact and evoked response atoms from the MNE sample dataset</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="no-overlap/index.html">l0-normalized CSC without overlap</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="no-overlap/plot_no_overlap.html">No-overlap example</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="noise_alpha/index.html">Univariate CSC with an alpha-stable distribution</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -459,8 +463,9 @@
 <li><p><a class="reference internal" href="#univariate-csc" id="id1">Univariate CSC</a></p></li>
 <li><p><a class="reference internal" href="#univariate-and-multivariate-csc-with-dicodile-solver" id="id2">Univariate and Multivariate CSC with ‘dicodile’ solver</a></p></li>
 <li><p><a class="reference internal" href="#multivariate-csc-with-rank-1-constraints" id="id3">Multivariate CSC with rank 1 constraints</a></p></li>
-<li><p><a class="reference internal" href="#univariate-csc-with-an-alpha-stable-distribution" id="id4">Univariate CSC with an alpha-stable distribution</a></p></li>
-<li><p><a class="reference internal" href="#other-shift-invariant-dictionary-learning-algorithms" id="id5">Other shift-invariant dictionary learning algorithms</a></p></li>
+<li><p><a class="reference internal" href="#l0-normalized-csc-without-overlap" id="id4">l0-normalized CSC without overlap</a></p></li>
+<li><p><a class="reference internal" href="#univariate-csc-with-an-alpha-stable-distribution" id="id5">Univariate CSC with an alpha-stable distribution</a></p></li>
+<li><p><a class="reference internal" href="#other-shift-invariant-dictionary-learning-algorithms" id="id6">Other shift-invariant dictionary learning algorithms</a></p></li>
 </ul>
 </nav>
 <div id='sg-tag-list' class='sphx-glr-tag-list'></div><div class="sphx-glr-thumbnails"></div><section id="univariate-csc">
@@ -489,15 +494,21 @@
 <div id='sg-tag-list' class='sphx-glr-tag-list'></div><div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 atoms [1]_ on the multivariate somato-sensorymotor dataset from mne. The displayed results highlight the presence of \mu-waves located in the SI cortex."><img alt="" src="../_images/sphx_glr_plot_somato_mu_waves_thumb.png" />
 <p><a class="reference internal" href="multicsc/plot_somato_mu_waves.html"><span class="doc">Extracting \mu-wave from the somato-sensory dataset</span></a></p>
   <div class="sphx-glr-thumbnail-title">Extracting \mu-wave from the somato-sensory dataset</div>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from mne. We display a selection of atoms, featuring heartbeat and eyeblink artifacts, two atoms of evoked responses, and a non-sinusoidal oscillation."><img alt="" src="../_images/sphx_glr_sample_evoked_response_dicodile_thumb.png" />
-<p><a class="reference internal" href="multicsc/sample_evoked_response_dicodile.html"><span class="doc">Extracting artifact and evoked response atoms from the MNE sample dataset</span></a></p>
-  <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the MNE sample dataset</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from mne. We display a selection of atoms, featuring heartbeat and eyeblink artifacts, two atoms of evoked responses, and a non-sinusoidal oscillation."><img alt="" src="../_images/sphx_glr_plot_sample_evoked_response_thumb.png" />
 <p><a class="reference internal" href="multicsc/plot_sample_evoked_response.html"><span class="doc">Extracting artifact and evoked response atoms from the sample dataset</span></a></p>
   <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the sample dataset</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how to learn rank-1 [1]_ atoms on the multivariate sample dataset from mne. We display a selection of atoms, featuring heartbeat and eyeblink artifacts, two atoms of evoked responses, and a non-sinusoidal oscillation."><img alt="" src="../_images/sphx_glr_sample_evoked_response_dicodile_thumb.png" />
+<p><a class="reference internal" href="multicsc/sample_evoked_response_dicodile.html"><span class="doc">Extracting artifact and evoked response atoms from the MNE sample dataset</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Extracting artifact and evoked response atoms from the MNE sample dataset</div>
+</div></div></section>
+<section id="l0-normalized-csc-without-overlap">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">l0-normalized CSC without overlap</a><a class="headerlink" href="#l0-normalized-csc-without-overlap" title="Link to this heading">#</a></h2>
+<div id='sg-tag-list' class='sphx-glr-tag-list'></div><div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="In this example, we use the no-overlap solver on an open dataset of gait (steps) IMU time-series to discover patterns in the data. We will then use those to attempt to detect steps and compare our findings with the ground truth."><img alt="" src="../_images/sphx_glr_plot_no_overlap_thumb.png" />
+<p><a class="reference internal" href="no-overlap/plot_no_overlap.html"><span class="doc">No-overlap example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">No-overlap example</div>
 </div></div></section>
 <section id="univariate-csc-with-an-alpha-stable-distribution">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Univariate CSC with an alpha-stable distribution</a><a class="headerlink" href="#univariate-csc-with-an-alpha-stable-distribution" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Univariate CSC with an alpha-stable distribution</a><a class="headerlink" href="#univariate-csc-with-an-alpha-stable-distribution" title="Link to this heading">#</a></h2>
 <div id='sg-tag-list' class='sphx-glr-tag-list'></div><div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates alphaCSC [1]_ on simulated data."><img alt="" src="../_images/sphx_glr_plot_simulate_alphacsc_thumb.png" />
 <p><a class="reference internal" href="noise_alpha/plot_simulate_alphacsc.html"><span class="doc">Alpha CSC on simulated data</span></a></p>
   <div class="sphx-glr-thumbnail-title">Alpha CSC on simulated data</div>
@@ -506,7 +517,7 @@
   <div class="sphx-glr-thumbnail-title">Alpha CSC on empirical time-series with strong artifacts</div>
 </div></div></section>
 <section id="other-shift-invariant-dictionary-learning-algorithms">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Other shift-invariant dictionary learning algorithms</a><a class="headerlink" href="#other-shift-invariant-dictionary-learning-algorithms" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Other shift-invariant dictionary learning algorithms</a><a class="headerlink" href="#other-shift-invariant-dictionary-learning-algorithms" title="Link to this heading">#</a></h2>
 <div id='sg-tag-list' class='sphx-glr-tag-list'></div><div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates MoTIF [1] on simulated data. In the alphacsc module, we are offering all the alternatives for the users to try. Please cite our paper [2] if you use this implementation."><img alt="" src="../_images/sphx_glr_plot_simulate_motif_thumb.png" />
 <p><a class="reference internal" href="other/plot_simulate_motif.html"><span class="doc">MoTIF on simulated data</span></a></p>
   <div class="sphx-glr-thumbnail-title">MoTIF on simulated data</div>
@@ -577,6 +588,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#univariate-csc">Univariate CSC</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#univariate-and-multivariate-csc-with-dicodile-solver">Univariate and Multivariate CSC with ‘dicodile’ solver</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-csc-with-rank-1-constraints">Multivariate CSC with rank 1 constraints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#l0-normalized-csc-without-overlap">l0-normalized CSC without overlap</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#univariate-csc-with-an-alpha-stable-distribution">Univariate CSC with an alpha-stable distribution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-shift-invariant-dictionary-learning-algorithms">Other shift-invariant dictionary learning algorithms</a></li>
 </ul>
